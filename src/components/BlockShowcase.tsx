@@ -137,7 +137,7 @@ const BlockShowcase: React.FC = () => {
       <Box
         className="block__header container"
         textAlign="center"
-        maxWidth="1000px"
+        maxWidth={{ base: "100%", md: "85%", lg: "100rem" }}
         margin="0 auto"
         data-aos="fade-up"
         data-aos-duration="500"
@@ -146,13 +146,13 @@ const BlockShowcase: React.FC = () => {
         <Text
           className="h2 block__heading"
           color={useColorModeValue("gray.700", "gray.700")}
-          marginBottom="4rem"
+          marginBottom="1.5rem"
           marginTop="0"
-          fontSize="7rem"
+          fontSize={{ base: "5.5rem", lg: "7rem" }}
           fontWeight="bold"
           lineHeight="1.1"
         >
-          Explore Our Inspiring Talk Schedule
+          Our Inspiring Talk Schedule
         </Text>
 
         <Text
@@ -160,7 +160,7 @@ const BlockShowcase: React.FC = () => {
           color={useColorModeValue("gray.600", "gray.600")}
           marginBottom="6rem"
           marginTop="0"
-          fontSize="2.5rem"
+          fontSize={{ base: "2.0rem", lg: "2.6rem" }}
           lineHeight="1.1"
         >
           Uncover a World of Ideas, Insights, and Inspiration in Our
@@ -174,10 +174,10 @@ const BlockShowcase: React.FC = () => {
             borderWidth="3px"
             borderColor={useColorModeValue("gray.700", "gray.700")}
             borderRadius="35px"
-            padding="5rem"
+            padding={{ base: "2rem", lg: "5rem" }}
             data-aos="fade-up"
             data-aos-duration="500"
-            width="70%"
+            width={{ base: "100%", lg: "70%" }}
           >
             <AgendaSlider />
           </Box>

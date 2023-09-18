@@ -720,7 +720,7 @@ const BlockFeatures: React.FC = () => {
             color="#E1DCA9"
             marginBottom="1rem"
             marginTop="0"
-            fontSize="7rem"
+            fontSize={{ base: "5.5rem", lg: "7rem" }}
             fontWeight="bold"
             lineHeight="1.1"
           >
@@ -729,7 +729,7 @@ const BlockFeatures: React.FC = () => {
           <Text
             className="p"
             color="silver"
-            fontSize="2.8rem"
+            fontSize={{ base: "2.0rem", lg: "2.8rem" }}
             // fontWeight="bold"
             marginBottom="11rem"
           >

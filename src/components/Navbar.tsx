@@ -81,6 +81,7 @@ const Navbar = () => {
       flexWrap="wrap"
       padding="0.5rem 1rem"
       alignItems="center"
+      // width="200vw"
     >
       <Link>
         <Image src={logo} width="6.5rem" alt="logo" />

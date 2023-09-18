@@ -33,12 +33,16 @@ function AgendaAccordionSection({
         flexDir={{ base: "column", md: "column", lg: "row" }}
         alignItems="center"
         width={"100%"}
-        padding={{ base: "2rem 1rem", md: "2rem 1rem", lg: "1.5rem 1rem" }}
+        padding={{ base: "1rem 1rem", md: "1rem 1rem", lg: "1.5rem 1rem" }}
         backgroundColor={titleBackgroundColor}
         _hover={{ bg: titleHoverColor }}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <Text fontSize="2.2rem" color={titleColor} flex="1">
+        <Text
+          fontSize={{ base: "1.8rem", md: "2.0rem", lg: "2.2rem" }}
+          color={titleColor}
+          flex="1"
+        >
           {title}
         </Text>
         <ChevronDownIcon
@@ -46,16 +50,20 @@ function AgendaAccordionSection({
           color={"gray.400"}
           style={{ transform: isOpen ? "rotate(180deg)" : "" }}
           transition="transform 0.3s ease-in-out"
-          marginTop={{ base: "2rem" }}
+          marginTop={{ base: "1rem" }}
         />
       </AccordionButton>
       <AccordionPanel
-        padding="2rem 2rem"
+        padding={{ base: "1rem 2rem", md: "2rem 2rem", lg: "2rem 2rem" }}
         backgroundColor={descriptionBackgroundColor}
         justifyContent="center"
         alignItems="center"
       >
-        <Text color={descriptionColor} textAlign="left" fontSize="2rem">
+        <Text
+          color={descriptionColor}
+          textAlign="left"
+          fontSize={{ base: "1.7rem", md: "1.8rem", lg: "2.0rem" }}
+        >
           {description}
         </Text>
       </AccordionPanel>

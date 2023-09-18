@@ -10,14 +10,15 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import speaker1 from "../assets/images/1VincentLariviere.png";
-import speaker2 from "../assets/images/2MyraVirgil.png";
-import speaker3 from "../assets/images/3KiraDolhan.png";
-import speaker4 from "../assets/images/4MiriamHan.png";
-import speaker5 from "../assets/images/5FloreDeshayes.png";
-import speaker6 from "../assets/images/6LeilaKosseim.png";
-import speaker7 from "../assets/images/7AndrewChurchil.png";
-import speaker8 from "../assets/images/8JanetPerlman.png";
+import vincent from "../assets/images/Vincent.webp";
+import myra from "../assets/images/Myra.webp";
+import kira from "../assets/images/Kira.webp";
+import miriam from "../assets/images/Miriam.webp";
+import flore from "../assets/images/Flore.webp";
+import leila from "../assets/images/Leila.webp";
+import andrew from "../assets/images/Andrew.webp";
+import janet from "../assets/images/Janet.webp";
+import peggy from "../assets/images/Peggy.webp";
 
 import AOS from "aos"; // Import AOS library
 import "aos/dist/aos.css"; // Import AOS styles
@@ -173,7 +174,7 @@ const BlockSpeakers: React.FC = () => {
       <Box
         className="block__header container"
         textAlign="center"
-        maxWidth="750px"
+        maxWidth="100rem"
         margin="0 auto"
         data-aos="fade-up"
         data-aos-duration="500"
@@ -183,7 +184,7 @@ const BlockSpeakers: React.FC = () => {
           color={useColorModeValue("#16F8B6", "#16F8B6")}
           marginBottom="2rem"
           marginTop="0"
-          fontSize="7rem"
+          fontSize={{ base: "5.5rem", lg: "7rem" }}
           fontWeight="bold"
           lineHeight="1.1"
         >
@@ -191,24 +192,23 @@ const BlockSpeakers: React.FC = () => {
         </Text>
 
         <Text
-          className="h3"
+          className="p"
           color={useColorModeValue("white", "white")}
           marginBottom="1rem"
           marginTop="0"
-          fontSize="2.5rem"
+          fontSize={{ base: "2.0rem", lg: "2.8rem" }}
           lineHeight="1.1"
         >
           Elevate Your Thinking: Get to Know Our TEDxAveLorne Speakers
         </Text>
-
         <Center>
-          <Box className="grid grid--2x8">
+          <Box className="grid grid--3x3">
             <Grid
               display="grid"
-              templateColumns={["repeat(2, 1fr)", null, null, "repeat(4, 1fr)"]}
-              templateRows={["repeat(4, 1fr)", null, null, "repeat(2, 1fr)"]}
+              templateColumns={["repeat(2, 1fr)", null, null, "repeat(3, 1fr)"]}
+              templateRows={["repeat(4, 1fr)", null, null, "repeat(3, 1fr)"]}
               rowGap={"10rem"}
-              columnGap={"13rem"}
+              columnGap={{ base: "5rem", lg: "13rem" }}
               padding="10rem 0"
               alignItems="center"
               data-aos="fade-up"
@@ -222,8 +222,8 @@ const BlockSpeakers: React.FC = () => {
               >
                 <Box
                   position="relative"
-                  width="15rem"
-                  height="15rem"
+                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
+                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
                   bg="white"
                   borderRadius="100%"
                   marginBottom="2rem"
@@ -247,7 +247,7 @@ const BlockSpeakers: React.FC = () => {
                     transition="opacity 0.2s ease-out"
                   ></Box>
                   <Image
-                    src={speaker1}
+                    src={vincent}
                     boxShadow="0 0 30px 1px black"
                     objectFit="cover"
                   />
@@ -266,11 +266,11 @@ const BlockSpeakers: React.FC = () => {
               >
                 <Box
                   position="relative"
-                  width="15rem"
-                  height="15rem"
+                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
+                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
                   bg="white"
                   borderRadius="100%"
-                  marginBottom="2rem"
+                  marginBottom="0rem"
                   overflow="hidden"
                   border="2px solid transparent"
                   transition="border-color 0.2s ease-out"
@@ -291,15 +291,20 @@ const BlockSpeakers: React.FC = () => {
                     transition="opacity 0.2s ease-out"
                   ></Box>
                   <Image
-                    src={speaker2}
+                    src={myra}
                     boxShadow="0 0 30px 1px black"
                     objectFit="cover"
                   />
                 </Box>
-                <Text fontWeight="bold" color="#F8F0C6" fontSize="2.3rem">
+                <Text
+                  fontWeight="bold"
+                  color="#F8F0C6"
+                  fontSize="2.3rem"
+                  marginTop="2rem"
+                >
                   Myra Virgil
                 </Text>
-                <Text fontSize="1.4rem" color="#48F380">
+                <Text fontSize="1.4rem" color="#48F380" marginBottom="-2rem">
                   Philanthropy Executive | Strategist | Storyteller
                 </Text>
               </Flex>
@@ -310,8 +315,8 @@ const BlockSpeakers: React.FC = () => {
               >
                 <Box
                   position="relative"
-                  width="15rem"
-                  height="15rem"
+                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
+                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
                   bg="white"
                   borderRadius="100%"
                   marginBottom="2rem"
@@ -335,7 +340,7 @@ const BlockSpeakers: React.FC = () => {
                     transition="opacity 0.2s ease-out"
                   ></Box>
                   <Image
-                    src={speaker3}
+                    src={kira}
                     boxShadow="0 0 30px 1px black"
                     objectFit="cover"
                   />
@@ -354,8 +359,8 @@ const BlockSpeakers: React.FC = () => {
               >
                 <Box
                   position="relative"
-                  width="15rem"
-                  height="15rem"
+                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
+                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
                   bg="white"
                   borderRadius="100%"
                   marginBottom="2rem"
@@ -379,7 +384,7 @@ const BlockSpeakers: React.FC = () => {
                     transition="opacity 0.2s ease-out"
                   ></Box>
                   <Image
-                    src={speaker4}
+                    src={miriam}
                     boxShadow="0 0 30px 1px black"
                     objectFit="cover"
                   />
@@ -399,8 +404,8 @@ const BlockSpeakers: React.FC = () => {
               >
                 <Box
                   position="relative"
-                  width="15rem"
-                  height="15rem"
+                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
+                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
                   bg="white"
                   borderRadius="100%"
                   marginBottom="2rem"
@@ -424,7 +429,7 @@ const BlockSpeakers: React.FC = () => {
                     transition="opacity 0.2s ease-out"
                   ></Box>
                   <Image
-                    src={speaker5}
+                    src={flore}
                     boxShadow="0 0 30px 1px black"
                     objectFit="cover"
                   />
@@ -443,8 +448,8 @@ const BlockSpeakers: React.FC = () => {
               >
                 <Box
                   position="relative"
-                  width="15rem"
-                  height="15rem"
+                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
+                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
                   bg="white"
                   borderRadius="100%"
                   marginBottom="2rem"
@@ -468,7 +473,7 @@ const BlockSpeakers: React.FC = () => {
                     transition="opacity 0.2s ease-out"
                   ></Box>
                   <Image
-                    src={speaker6}
+                    src={leila}
                     boxShadow="0 0 30px 1px black"
                     objectFit="cover"
                   />
@@ -488,8 +493,8 @@ const BlockSpeakers: React.FC = () => {
               >
                 <Box
                   position="relative"
-                  width="15rem"
-                  height="15rem"
+                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
+                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
                   bg="white"
                   borderRadius="100%"
                   marginBottom="2rem"
@@ -513,7 +518,7 @@ const BlockSpeakers: React.FC = () => {
                     transition="opacity 0.2s ease-out"
                   ></Box>
                   <Image
-                    src={speaker7}
+                    src={andrew}
                     boxShadow="0 0 30px 1px black"
                     objectFit="cover"
                   />
@@ -532,8 +537,8 @@ const BlockSpeakers: React.FC = () => {
               >
                 <Box
                   position="relative"
-                  width="15rem"
-                  height="15rem"
+                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
+                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
                   bg="white"
                   borderRadius="100%"
                   marginBottom="2rem"
@@ -557,13 +562,57 @@ const BlockSpeakers: React.FC = () => {
                     transition="opacity 0.2s ease-out"
                   ></Box>
                   <Image
-                    src={speaker8}
+                    src={janet}
                     boxShadow="0 0 30px 1px black"
                     objectFit="cover"
                   />
                 </Box>
                 <Text fontWeight="bold" color="#F8F0C6" fontSize="2.3rem">
                   Janet Perlman
+                </Text>
+                <Text fontSize="1.4rem" color="#48F380">
+                  Animator and Children's Book Author
+                </Text>
+              </Flex>
+              <Flex
+                flexDirection={"column"}
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Box
+                  position="relative"
+                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
+                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
+                  bg="white"
+                  borderRadius="100%"
+                  marginBottom="2rem"
+                  overflow="hidden"
+                  border="2px solid transparent"
+                  transition="border-color 0.2s ease-out"
+                  _hover={{
+                    borderColor: "#16F8B6",
+                  }}
+                >
+                  <Box
+                    position="absolute"
+                    width="100%"
+                    height="100%"
+                    bg="black"
+                    opacity="0"
+                    zIndex="1"
+                    _hover={{
+                      opacity: "0.2",
+                    }}
+                    transition="opacity 0.2s ease-out"
+                  ></Box>
+                  <Image
+                    src={peggy}
+                    boxShadow="0 0 30px 1px black"
+                    objectFit="cover"
+                  />
+                </Box>
+                <Text fontWeight="bold" color="#F8F0C6" fontSize="2.3rem">
+                  Pegy
                 </Text>
                 <Text fontSize="1.4rem" color="#48F380">
                   Animator and Children's Book Author

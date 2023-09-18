@@ -127,35 +127,35 @@ const BlockPlans: React.FC = () => {
     >
       <Box
         className="block__header container"
-        padding="6rem 2rem"
+        padding="0rem 2rem"
         textAlign="center"
-        maxWidth="1140px"
+        maxWidth="100rem"
         margin="0 auto"
-        data-aos="fade-up"
-        data-aos-duration="500"
       >
-        <Text
-          className="h2 block__heading"
-          color={useColorModeValue("gray.700", "gray.700")}
-          marginBottom="4rem"
-          marginTop="0"
-          fontSize="6rem"
-          fontWeight="bold"
-          lineHeight="1.1"
-        >
-          Be a Part of Something Extraordinary
-        </Text>
-        <Text
-          className="h3"
-          color={useColorModeValue("gray.600", "gray.600")}
-          marginBottom="10rem"
-          marginTop="0"
-          fontSize="2.5rem"
-          lineHeight="1.1"
-        >
-          Connect with Visionaries, Innovators, and Changemakers <br />{" "}
-          Speakers, Team Members, and Sponsors Welcome!
-        </Text>
+        <Box data-aos="fade-up" data-aos-duration="500">
+          <Text
+            className="h2 block__heading"
+            color={useColorModeValue("gray.700", "gray.700")}
+            marginBottom="4rem"
+            marginTop="0"
+            fontSize={{ base: "5.5rem", lg: "7rem" }}
+            fontWeight="bold"
+            lineHeight="1.1"
+          >
+            Be a Part of Something Extraordinary
+          </Text>
+          <Text
+            className="p"
+            color={useColorModeValue("gray.600", "gray.600")}
+            marginBottom="10rem"
+            marginTop="0"
+            fontSize={{ base: "2.0rem", lg: "2.8rem" }}
+            lineHeight="1.1"
+          >
+            Connect with Visionaries, Innovators, and Changemakers <br />{" "}
+            Speakers, Team Members, and Sponsors Welcome!
+          </Text>
+        </Box>
         <Box className="grid grid--1x3">
           <Grid
             display="grid"

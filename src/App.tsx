@@ -1,3 +1,5 @@
+import { Grid, GridItem, Show } from "@chakra-ui/react";
+
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import Lists from "./components/Lists";
@@ -21,17 +23,36 @@ import BlockDomain from "./components/BlockDomain";
 import BlockPlans from "./components/BlockPlans";
 import BlockFeatures from "./components/BlockFeatures";
 import BlockShowcase from "./components/BlockShowcase";
-import BlockTestimonials from "./components/BlockTestimonials";
+import BlockTestimonials1 from "./components/BlockTestimonials1";
 import BlockFooter from "./components/BlockFooter";
 import SocialMediaIcons from "./components/SocialMediaIcons";
 import BorderBox from "./components/BorderBox";
 import BlockSpeakers from "./components/BlockSpeakers";
 import BlockEvent from "./components/BlockEvent";
+import Navigationbar from "./components/Navigationbar";
+import SimpleCard from "./components/SimpleCard";
+import BlockTestimonials from "./components/BlockTestimonials";
+
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
+      {/* <Grid
+        templateAreas={{ base: `"nav" "main"`, lg: `"nav nav" "aside main"` }}
+      >
+        <GridItem area={"nav"}>
+          <Navigationbar />
+        </GridItem>
+        <Show above="lg">
+          <GridItem area={"aside"} bg="gold">
+            Aside
+          </GridItem>
+        </Show>
+        <GridItem area={"main"} bg={"tomato"}>
+          Main
+        </GridItem>
+      </Grid> */}
       <Navbar />
       <BlockHero />
       <BlockFeatures />
@@ -39,7 +60,9 @@ function App() {
       <BlockSpeakers />
       <BlockShowcase />
       <BlockPlans />
+      {/* <SimpleCard /> */}
       <BlockTestimonials />
+      {/* <BlockTestimonials1 /> */}
       <BlockFooter />
     </>
   );

@@ -869,7 +869,7 @@ const BlockFooter = () => {
                   <ListItem className="list__item" paddingBottom="0.5rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      // href="#"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color="#777"
@@ -981,7 +981,7 @@ const BlockFooter = () => {
                   <ListItem className="list__item" paddingBottom="1rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      // href="#"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color="#777"
@@ -1095,7 +1095,11 @@ const BlockFooter = () => {
             boxSize="4rem"
           />
         </Box>
-        <Box as="a" href="#" target="_blank">
+        <Box
+          as="a"
+          // href="#"
+          target="_blank"
+        >
           <IconButton
             aria-label="facebook"
             variant="ghost"

@@ -96,7 +96,8 @@ const BlockEvent: React.FC = () => {
             className="h2"
             color={useColorModeValue("#f04e2d", "#f04e2d")}
             marginBottom="1rem"
-            fontSize="7rem"
+            marginTop="0"
+            fontSize={{ base: "5.5rem", lg: "7rem" }}
             fontWeight="bold"
             lineHeight="1.1"
           >
@@ -105,7 +106,7 @@ const BlockEvent: React.FC = () => {
           <Text
             className="p"
             color={useColorModeValue("red", "red")}
-            fontSize="2.8rem"
+            fontSize={{ base: "2.2rem", lg: "2.8rem" }}
             // fontWeight="bold"
             marginBottom="6rem"
           >
@@ -210,7 +211,7 @@ const BlockEvent: React.FC = () => {
                       chancellor day hall
                     </Text>
                     <Text textTransform="capitalize">
-                      3644 Pell Street, Montréal, QC, H3A-1W9
+                      3644 Peel Street, Montréal, QC, H3A-1W9
                     </Text>
                   </VStack>
                 </Flex>
@@ -221,6 +222,8 @@ const BlockEvent: React.FC = () => {
                   marginTop="-2rem"
                   justifyContent="center"
                   alignItems="center"
+                  marginBottom={10}
+                  paddingBottom={0}
                 >
                   <VStack>
                     <Text fontSize="3rem" fontWeight="bold">

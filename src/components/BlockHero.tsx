@@ -193,6 +193,8 @@ const BlockHero: React.FC = () => {
       // paddingBottom="10rem"
       bg="#000"
       // color="#7b858b"
+      // width="100vw"
+      width="100vw"
     >
       <Flex width={"100%"} justifyContent="center">
         {/* <video

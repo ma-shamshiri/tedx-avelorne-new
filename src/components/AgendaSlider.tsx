@@ -116,11 +116,11 @@ export default function AgendaSlider() {
     <Accordion
       allowMultiple
       width="100%"
-      minWidth="50rem"
+      // minWidth="50rem"
       //   maxW={{ base: "100%", lg: "70rem" }} // Adjust the max width based on screen size
       bg={sliderBackgroundColor}
       //   rounded="lg"
-      //   borderRadius={10}
+      borderRadius={10}
     >
       <AccordionSection
         title="Registration | 10:00 - 10:30"
