@@ -160,7 +160,7 @@ const BlockSpeakers: React.FC = () => {
 
   return (
     <Box
-      className="block block--dark block--skewed-right block-showcase"
+      className="block block--dark block--skewed-right block-showcase aos-animate"
       padding="6rem 2rem"
       paddingBottom="10rem"
       // bg={useColorModeValue("gray.800", "#16F8B6")}
@@ -173,7 +173,7 @@ const BlockSpeakers: React.FC = () => {
       overflow={"hidden"}
     >
       <Box
-        className="block__header container"
+        className="block__header container aos-animate"
         textAlign="center"
         maxWidth="100rem"
         margin="0 auto"
@@ -205,6 +205,7 @@ const BlockSpeakers: React.FC = () => {
         <Center>
           <Box className="grid grid--3x3">
             <Grid
+              className="aos-animate"
               display="grid"
               templateColumns={["repeat(2, 1fr)", null, null, "repeat(3, 1fr)"]}
               templateRows={["repeat(4, 1fr)", null, null, "repeat(3, 1fr)"]}

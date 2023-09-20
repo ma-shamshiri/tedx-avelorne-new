@@ -127,7 +127,7 @@ const BlockShowcase: React.FC = () => {
 
   return (
     <Box
-      className="block block--dark block--skewed-right"
+      className="block block--dark block--skewed-right aos-animate"
       padding="6rem 2rem"
       paddingBottom="10rem"
       bg="#16F8B6"
@@ -136,7 +136,7 @@ const BlockShowcase: React.FC = () => {
       overflow={"hidden"}
     >
       <Box
-        className="block__header container"
+        className="block__header container aos-animate"
         textAlign="center"
         maxWidth={{ base: "100%", md: "85%", lg: "100rem" }}
         margin="0 auto"
@@ -170,6 +170,7 @@ const BlockShowcase: React.FC = () => {
 
         <Flex justifyContent="center">
           <Box
+            className="aos-animate"
             // justifyContent="center"
             // alignItems="center"
             borderWidth="3px"

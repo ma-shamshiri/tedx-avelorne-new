@@ -118,7 +118,7 @@ const BlockPlans: React.FC = () => {
 
   return (
     <Box
-      className="block block--dark block--skewed-right"
+      className="block block--dark block--skewed-right aos-animate"
       padding="6rem 2rem"
       paddingBottom="10rem"
       bg="#E6E3D3"
@@ -133,7 +133,7 @@ const BlockPlans: React.FC = () => {
         maxWidth="100rem"
         margin="0 auto"
       >
-        <Box data-aos="fade-up" data-aos-duration="500">
+        <Box className="aos-animate" data-aos="fade-up" data-aos-duration="500">
           <Text
             className="h2 block__heading"
             color={useColorModeValue("gray.700", "gray.700")}
@@ -159,6 +159,7 @@ const BlockPlans: React.FC = () => {
         </Box>
         <Box className="grid grid--1x3">
           <Grid
+            className="aos-animate"
             display="grid"
             templateColumns={["1fr", null, null, "repeat(3, 1fr)"]}
             gap="8rem 4rem"
@@ -171,7 +172,7 @@ const BlockPlans: React.FC = () => {
               transition="transform 0.2s ease-out"
             >
               <Box
-                className="card card--secondary"
+                className="card card--secondary aos-animate"
                 borderRadius="7px"
                 boxShadow="0 0 20px 10px gray"
                 overflow="hidden"
@@ -255,7 +256,7 @@ const BlockPlans: React.FC = () => {
             </Box>
 
             <Box
-              className="plan plan--popular"
+              className="plan plan--popular aos-animate"
               transform="scale(1.1)"
               _hover={{ transform: "scale(1.15)" }}
               transition="transform 0.2s ease-out"
@@ -407,7 +408,7 @@ const BlockPlans: React.FC = () => {
                 </Box>
               </Box> */}
               <Box
-                className="card card--secondary"
+                className="card card--secondary aos-animate"
                 borderRadius="7px"
                 boxShadow="0 0 20px 10px gray"
                 overflow="hidden"
@@ -491,7 +492,7 @@ const BlockPlans: React.FC = () => {
             </Box>
 
             <Box
-              className="plan"
+              className="plan aos-animate"
               _hover={{ transform: "scale(1.05)" }}
               transition="transform 0.2s ease-out"
               // data-aos="fade-up"
@@ -630,7 +631,7 @@ const BlockPlans: React.FC = () => {
                 </Box>
               </Box> */}
               <Box
-                className="card card--secondary"
+                className="card card--secondary aos-animate"
                 borderRadius="7px"
                 boxShadow="0 0 20px 10px gray"
                 overflow="hidden"

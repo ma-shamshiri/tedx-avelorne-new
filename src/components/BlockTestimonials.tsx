@@ -291,7 +291,7 @@ const BlockTestimonials: React.FC = () => {
 
   return (
     <Box
-      className="block block--dark"
+      className="block block--dark aos-animate"
       padding="6rem 4rem"
       // paddingBottom="10rem"
       bg={useColorModeValue("gray.800", "gray.800")}
@@ -306,7 +306,7 @@ const BlockTestimonials: React.FC = () => {
         maxWidth="100rem"
         margin="0 auto"
       >
-        <Box data-aos="fade-up" data-aos-duration="500">
+        <Box className="aos-animate" data-aos="fade-up" data-aos-duration="500">
           <Text
             className="h2 block__heading"
             color="var(--color-white)"
@@ -342,9 +342,9 @@ const BlockTestimonials: React.FC = () => {
           spacing={{ base: 20, lg: 20 }}
         >
           <Box
+            className="card testimonial aos-animate"
             width="100%"
             height="99%"
-            className="card testimonial"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -616,9 +616,9 @@ const BlockTestimonials: React.FC = () => {
             </Grid>
           </Box>
           <Box
+            className="card testimonial aos-animate"
             width="100%"
             height="99%"
-            className="card testimonial"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -889,9 +889,9 @@ const BlockTestimonials: React.FC = () => {
             </Grid>
           </Box>
           <Box
+            className="card testimonial aos-animate"
             width="100%"
             height="99%"
-            className="card testimonial"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -1167,7 +1167,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -1443,7 +1443,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -1716,7 +1716,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -1987,7 +1987,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -2262,7 +2262,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -2538,7 +2538,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -2813,7 +2813,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -3085,7 +3085,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -3359,7 +3359,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -3634,7 +3634,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -3909,7 +3909,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -4181,7 +4181,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -4452,7 +4452,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -4723,7 +4723,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
@@ -4994,7 +4994,7 @@ const BlockTestimonials: React.FC = () => {
           <Box
             width="100%"
             height="99%"
-            className="card testimonial"
+            className="card testimonial aos-animate"
             padding="2.5rem 2rem 2rem 2rem"
             // marginBottom="4rem"
             borderRadius="7px"
