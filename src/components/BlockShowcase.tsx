@@ -133,6 +133,7 @@ const BlockShowcase: React.FC = () => {
       bg="#16F8B6"
       color="#7b858b"
       // clipPath="polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%)"
+      overflow={"hidden"}
     >
       <Box
         className="block__header container"
@@ -148,7 +149,7 @@ const BlockShowcase: React.FC = () => {
           color={useColorModeValue("gray.700", "gray.700")}
           marginBottom="1.5rem"
           marginTop="0"
-          fontSize={{ base: "5.5rem", lg: "7rem" }}
+          fontSize={{ base: "5.0rem", lg: "7rem" }}
           fontWeight="bold"
           lineHeight="1.1"
         >

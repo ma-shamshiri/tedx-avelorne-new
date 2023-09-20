@@ -700,6 +700,8 @@ const BlockFeatures: React.FC = () => {
     <Box
       className="block block--dark"
       bg={useColorModeValue("gray.800", "gray.800")}
+      width="100%"
+      overflow={"hidden"}
       // clipPath="polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%)"
     >
       <Box

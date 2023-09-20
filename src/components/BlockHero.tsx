@@ -166,14 +166,14 @@ const LowercaseSpan = chakra("span", {
 });
 
 const BlockHero: React.FC = () => {
-  const imageStyle = {
-    width: "50%",
-    // height: "100%",
-    // border: "4px solid transparent",
-    borderImage:
-      "linear-gradient(45deg, #000, transparent, transparent, #000) 1",
-    borderImageSlice: 1,
-  };
+  // const imageStyle = {
+  //   width: "50%",
+  //   // height: "100%",
+  //   // border: "4px solid transparent",
+  //   borderImage:
+  //     "linear-gradient(45deg, #000, transparent, transparent, #000) 1",
+  //   borderImageSlice: 1,
+  // };
 
   const handleLearnMoreButtonClick = () => {
     window.open(
@@ -193,29 +193,11 @@ const BlockHero: React.FC = () => {
       // paddingBottom="10rem"
       bg="#000"
       // color="#7b858b"
+      // width="100%"
       // width="100vw"
-      width="100vw"
+      // overflow={"hidden"}
     >
       <Flex width={"100%"} justifyContent="center">
-        {/* <video
-          autoPlay
-          loop
-          muted
-          width="100%"
-          style={
-            {
-              // objectFit: "contain",
-              // objectFit: "cover",
-              // objectFit: "fill",
-              // objectFit: "none",
-            }
-          }
-        >
-          <source src={homePageVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video> */}
-        {/* <Image src={heroimage} width="50%" /> */}
-
         <Image
           src={heroimage}
           width="100%"
@@ -227,13 +209,16 @@ const BlockHero: React.FC = () => {
         display="flex"
         position="absolute"
         width="100%"
-        height={{ base: "18rem", lg: "25rem" }}
-        top={{ base: "12rem", md: "20rem", lg: "35rem" }}
+        height={{ base: "15rem", lg: "25rem" }}
+        top={{ base: "10rem", md: "20rem", lg: "35rem" }}
         bgGradient="linear(to-r, gray.700, transparent)"
         // justifyContent="center"
         alignItems="center"
       >
-        <VStack spacing="4rem" marginLeft={{ base: "2rem", lg: "10rem" }}>
+        <VStack
+          spacing={{ base: "2rem", lg: "4rem" }}
+          marginLeft={{ base: "2rem", lg: "10rem" }}
+        >
           <Text
             color={"white"}
             fontWeight="bold"
@@ -248,8 +233,8 @@ const BlockHero: React.FC = () => {
           </Text>
           <HStack spacing="2rem">
             <Button
-              fontSize="1.5rem"
-              width="13rem"
+              fontSize={{ base: "1.3rem", lg: "1.5rem" }}
+              width={{ base: "10rem", lg: "13rem" }}
               height="4rem"
               background="blue.400"
               rounded="full"
@@ -260,8 +245,8 @@ const BlockHero: React.FC = () => {
               Learn More
             </Button>
             <Button
-              fontSize="1.5rem"
-              width="13rem"
+              fontSize={{ base: "1.2rem", lg: "1.5rem" }}
+              width={{ base: "10rem", lg: "13rem" }}
               height="4rem"
               background="whiteAlpha.300"
               rounded="full"

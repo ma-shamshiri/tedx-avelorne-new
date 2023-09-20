@@ -74,6 +74,7 @@ const BlockEvent: React.FC = () => {
       // color="#7b858b"
       // width="100vh"
       // minWidth="90rem"
+      overflow={"hidden"}
     >
       <Box
         className="block container block-domain"
@@ -119,9 +120,10 @@ const BlockEvent: React.FC = () => {
           width="100%"
           data-aos="fade-up"
           data-aos-duration="500"
+          // margin="0 1rem"
         >
           <Box
-            width={{ base: "60rem", lg: "100rem" }}
+            width={{ base: "100%", lg: "100rem" }}
             height={{ base: "40rem", lg: "20rem" }}
             border="0.2rem solid #3263a8"
             borderRadius={"3rem"}
@@ -130,15 +132,15 @@ const BlockEvent: React.FC = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <Box className="grid grid--1x3">
+            <Box className="grid grid--1x3" margin="10rem 15rem">
               <Grid
                 display="grid"
                 templateRows={["1fr", null, null, "repeat(2, 1fr)"]}
                 templateColumns={["1fr", null, null, "repeat(3, 1fr)"]}
                 rowGap={{ base: "10rem", lg: "3rem" }}
-                columnGap="4rem"
+                columnGap="7rem"
                 color="#3263a8"
-                marginLeft={{ lg: "3rem" }}
+                marginLeft={{ lg: "-3rem" }}
               >
                 <Flex
                   //   width="50px"
@@ -200,17 +202,21 @@ const BlockEvent: React.FC = () => {
                   marginTop="-2rem"
                   justifyContent="center"
                   alignItems="center"
+                  textAlign="center"
                 >
                   <VStack>
                     <Text
-                      fontSize="3.5rem"
+                      fontSize="3.4rem"
                       fontWeight="bold"
                       lineHeight="1.5"
                       textTransform="capitalize"
                     >
                       chancellor day hall
                     </Text>
-                    <Text textTransform="capitalize">
+                    <Text
+                      textTransform="capitalize"
+                      fontSize={{ base: "1.6rem" }}
+                    >
                       3644 Peel Street, Montréal, QC, H3A-1W9
                     </Text>
                   </VStack>

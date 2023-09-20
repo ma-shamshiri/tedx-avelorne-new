@@ -293,6 +293,7 @@ const BlockFooter = () => {
       paddingBottom="10rem"
       bg="#232323"
       color="#7b858b"
+      overflow={"hidden"}
     >
       <Box className="grid grid--1x2" maxWidth="1140px" margin="0 auto">
         <Grid

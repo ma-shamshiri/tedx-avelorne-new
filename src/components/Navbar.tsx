@@ -101,7 +101,7 @@ const Navbar = () => {
         display={{ lg: "none" }}
         onClick={handleToggle}
       />
-      <List
+      {/* <List
         className="list nav__list collapsible__content"
         width={{ base: "100%", lg: "auto" }}
         display={{ lg: "flex" }}
@@ -154,7 +154,7 @@ const Navbar = () => {
         >
           Item 3
         </ListItem>
-      </List>
+      </List> */}
     </Flex>
     // <Flex
     //   className={`nav collapsible ${expanded ? "collapsible--expanded" : ""}`}

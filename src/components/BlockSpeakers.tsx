@@ -170,6 +170,7 @@ const BlockSpeakers: React.FC = () => {
       color="#16F8B6"
       // data-aos="fade-up"
       // data-aos-duration="500"
+      overflow={"hidden"}
     >
       <Box
         className="block__header container"
@@ -612,10 +613,10 @@ const BlockSpeakers: React.FC = () => {
                   />
                 </Box>
                 <Text fontWeight="bold" color="#F8F0C6" fontSize="2.3rem">
-                  Pegy
+                  Peggy Bell
                 </Text>
                 <Text fontSize="1.4rem" color="#48F380">
-                  Animator and Children's Book Author
+                  Founder | Principal Consultant
                 </Text>
               </Flex>
             </Grid>

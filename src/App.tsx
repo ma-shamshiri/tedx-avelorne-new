@@ -34,7 +34,7 @@ import SimpleCard from "./components/SimpleCard";
 import BlockTestimonials from "./components/BlockTestimonials";
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   return (
     <>
@@ -53,7 +53,7 @@ function App() {
           Main
         </GridItem>
       </Grid> */}
-      {/* <Navbar /> */}
+      <Navbar />
       <BlockHero />
       <BlockFeatures />
       <BlockEvent />

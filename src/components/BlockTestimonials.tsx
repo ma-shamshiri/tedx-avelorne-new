@@ -60,6 +60,7 @@ import {
   Text,
   useColorModeValue,
   SimpleGrid,
+  useMediaQuery,
 } from "@chakra-ui/react";
 
 import { useState } from "react";
@@ -99,7 +100,7 @@ import {
 
 import { SiTed } from "react-icons/si";
 
-import { transform } from "framer-motion";
+import { motion, transform } from "framer-motion";
 
 import AOS from "aos"; // Import AOS library
 import "aos/dist/aos.css"; // Import AOS styles
@@ -107,6 +108,8 @@ import "aos/dist/aos.css"; // Import AOS styles
 // const BlockTestimonials = () => {
 
 const BlockTestimonials: React.FC = () => {
+  const [isLargerThanSm] = useMediaQuery("(min-width: 100rem)");
+
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
   const [isHovered3, setIsHovered3] = useState(false);
@@ -294,6 +297,7 @@ const BlockTestimonials: React.FC = () => {
       bg={useColorModeValue("gray.800", "gray.800")}
       justifyContent="center"
       alignItems="center"
+      overflow={"hidden"}
     >
       <Box
         className="block__header container"
@@ -334,7 +338,7 @@ const BlockTestimonials: React.FC = () => {
         margin="0 auto"
       >
         <SimpleGrid
-          columns={{ base: 1, md: 2, lg: 3 }}
+          columns={{ base: 1, md: 2, lg: 2, xl: 3 }}
           spacing={{ base: 20, lg: 20 }}
         >
           <Box
@@ -386,16 +390,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Samin}
@@ -489,6 +499,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -499,43 +510,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -547,7 +541,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        Ph.D. Student in Physics | McGill
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Samin Majidi
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         Ph.D. Student in Physics | McGill
@@ -555,16 +588,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -632,16 +664,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Fatemeh}
@@ -664,7 +702,7 @@ const BlockTestimonials: React.FC = () => {
                 >
                   <Box
                     as="a"
-                    href="https://ca.linkedin.com/in/fatemeh-tavanaei-sereshgi-394a7957"
+                    href="https://ca.linkedin.com/in/samin-majidi-05b77a250"
                     target="_blank"
                   >
                     <IconButton
@@ -735,6 +773,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -745,43 +784,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -793,7 +815,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        Ph.D. Student in Mining Engineering | McGill
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Fatemeh Tavanaei
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         Ph.D. Student in Mining Engineering | McGill
@@ -801,16 +862,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -877,16 +937,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Reihaneh}
@@ -909,7 +975,7 @@ const BlockTestimonials: React.FC = () => {
                 >
                   <Box
                     as="a"
-                    href="https://ca.linkedin.com/in/reihaneh-ghoroghchian-636661182"
+                    // href="https://ca.linkedin.com/in/samin-majidi-05b77a250"
                     target="_blank"
                   >
                     <IconButton
@@ -980,6 +1046,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -990,43 +1057,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -1038,7 +1088,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        M.Sc. Student in Electrical Engineering | McGill
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Reihaneh Ghoroghchian
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         M.Sc. Student in Electrical Engineering | McGill
@@ -1046,16 +1135,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -1125,16 +1213,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Erfan}
@@ -1157,7 +1251,7 @@ const BlockTestimonials: React.FC = () => {
                 >
                   <Box
                     as="a"
-                    // href="#"
+                    // href="https://ca.linkedin.com/in/samin-majidi-05b77a250"
                     target="_blank"
                   >
                     <IconButton
@@ -1175,7 +1269,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -1228,6 +1322,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -1238,43 +1333,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -1286,7 +1364,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "1.6rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        Ph.D. Student in Mining Engineering | McGill
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Mohammaderfan Mohit
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         Ph.D. Student in Mining Engineering | McGill
@@ -1294,16 +1411,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -1373,16 +1489,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Zahra}
@@ -1403,7 +1525,11 @@ const BlockTestimonials: React.FC = () => {
                   paddingTop="2rem"
                   //   marginBottom="1rem"
                 >
-                  <Box as="a" href="#" target="_blank">
+                  <Box
+                    as="a"
+                    href="https://ca.linkedin.com/in/zahra-1997"
+                    target="_blank"
+                  >
                     <IconButton
                       aria-label="linkedin"
                       variant="ghost"
@@ -1419,7 +1545,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -1472,6 +1598,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -1482,43 +1609,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -1530,7 +1640,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        Multimedia Editing Coordinator | Genetec Inc.
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Zahra Ahmadi
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         Multimedia Editing Coordinator | Genetec Inc.
@@ -1538,16 +1687,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -1614,16 +1762,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Fathima}
@@ -1644,7 +1798,11 @@ const BlockTestimonials: React.FC = () => {
                   paddingTop="2rem"
                   //   marginBottom="1rem"
                 >
-                  <Box as="a" href="#" target="_blank">
+                  <Box
+                    as="a"
+                    // href="https://ca.linkedin.com/in/samin-majidi-05b77a250"
+                    target="_blank"
+                  >
                     <IconButton
                       aria-label="linkedin"
                       variant="ghost"
@@ -1660,7 +1818,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -1713,6 +1871,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -1723,43 +1882,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -1771,7 +1913,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        ABC Position at University/Company
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Fathima Nihatha Lathiff
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         ABC Position at University/Company
@@ -1779,16 +1960,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -1853,16 +2033,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Hamidreza}
@@ -1885,7 +2071,7 @@ const BlockTestimonials: React.FC = () => {
                 >
                   <Box
                     as="a"
-                    // href="#"
+                    href="https://ca.linkedin.com/in/hrermagan"
                     target="_blank"
                   >
                     <IconButton
@@ -1903,7 +2089,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -1956,6 +2142,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -1966,43 +2153,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -2014,7 +2184,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        Ph.D. Student in Mining Engineering | McGill
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Hamidreza Ermagan
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         Ph.D. Student in Mining Engineering | McGill
@@ -2022,16 +2231,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -2100,16 +2308,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Baharan}
@@ -2130,7 +2344,11 @@ const BlockTestimonials: React.FC = () => {
                   paddingTop="2rem"
                   //   marginBottom="1rem"
                 >
-                  <Box as="a" href="#" target="_blank">
+                  <Box
+                    as="a"
+                    // href="https://ca.linkedin.com/in/samin-majidi-05b77a250"
+                    target="_blank"
+                  >
                     <IconButton
                       aria-label="linkedin"
                       variant="ghost"
@@ -2146,7 +2364,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -2199,6 +2417,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -2209,43 +2428,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -2257,26 +2459,64 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
                         fontStyle="normal"
                       >
                         M.Sc. Student in Computer Engineering | Polytechnique
                         Montreal
-                        {/* PolyMTL */}
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Baharan Nouriinanloo
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
+                        fontStyle="normal"
+                      >
+                        M.Sc. Student in Computer Engineering | Polytechnique
+                        Montreal
                       </Text>
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -2344,16 +2584,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Melika}
@@ -2374,7 +2620,11 @@ const BlockTestimonials: React.FC = () => {
                   paddingTop="2rem"
                   //   marginBottom="1rem"
                 >
-                  <Box as="a" href="#" target="_blank">
+                  <Box
+                    as="a"
+                    href="https://ca.linkedin.com/in/melika-seyedi-048416140"
+                    target="_blank"
+                  >
                     <IconButton
                       aria-label="linkedin"
                       variant="ghost"
@@ -2390,7 +2640,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -2443,6 +2693,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -2453,43 +2704,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -2501,7 +2735,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        Ph.D. Student in Computer Engineering | Concordia
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Melika Seyedi
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         Ph.D. Student in Computer Engineering | Concordia
@@ -2509,16 +2782,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -2587,16 +2859,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Mohammad}
@@ -2619,7 +2897,7 @@ const BlockTestimonials: React.FC = () => {
                 >
                   <Box
                     as="a"
-                    // href="#"
+                    // href="https://ca.linkedin.com/in/samin-majidi-05b77a250"
                     target="_blank"
                   >
                     <IconButton
@@ -2637,7 +2915,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -2690,6 +2968,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -2700,43 +2979,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -2748,7 +3010,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        ABC Position at University/Company
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Mohammad Zaid
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         ABC Position at University/Company
@@ -2756,16 +3057,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -2831,16 +3131,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Mina}
@@ -2863,7 +3169,7 @@ const BlockTestimonials: React.FC = () => {
                 >
                   <Box
                     as="a"
-                    // href="#"
+                    // href="https://ca.linkedin.com/in/samin-majidi-05b77a250"
                     target="_blank"
                   >
                     <IconButton
@@ -2881,7 +3187,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -2934,6 +3240,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -2944,43 +3251,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -2992,7 +3282,47 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        Ph.D. Student in Computer Engineering | Polytechnique
+                        Montreal
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Mina Taraghi
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         Ph.D. Student in Computer Engineering | Polytechnique
@@ -3001,16 +3331,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -3076,16 +3405,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Motahareh}
@@ -3108,7 +3443,7 @@ const BlockTestimonials: React.FC = () => {
                 >
                   <Box
                     as="a"
-                    // href="#"
+                    // href="https://ca.linkedin.com/in/samin-majidi-05b77a250"
                     target="_blank"
                   >
                     <IconButton
@@ -3126,7 +3461,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -3179,6 +3514,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -3189,43 +3525,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -3237,24 +3556,62 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
                         fontStyle="normal"
                       >
-                        Ph.D. Candidate in Neuroscience | McGill
+                        Ph.D. Student in Physics | McGill
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Motahareh Pourrahimi
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
+                        fontStyle="normal"
+                      >
+                        Ph.D. Student in Physics | McGill
                       </Text>
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -3323,16 +3680,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Aryana}
@@ -3355,7 +3718,7 @@ const BlockTestimonials: React.FC = () => {
                 >
                   <Box
                     as="a"
-                    // href="#"
+                    // href="https://ca.linkedin.com/in/samin-majidi-05b77a250"
                     target="_blank"
                   >
                     <IconButton
@@ -3373,7 +3736,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -3426,6 +3789,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -3436,43 +3800,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -3484,7 +3831,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        M.Sc. Student in Physics | McGill
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Aryana Haghjoo
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         M.Sc. Student in Physics | McGill
@@ -3492,16 +3878,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -3570,16 +3955,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Pegah}
@@ -3602,7 +3993,7 @@ const BlockTestimonials: React.FC = () => {
                 >
                   <Box
                     as="a"
-                    // href="#"
+                    // href="https://ca.linkedin.com/in/samin-majidi-05b77a250"
                     target="_blank"
                   >
                     <IconButton
@@ -3620,7 +4011,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -3673,6 +4064,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -3683,43 +4075,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -3731,7 +4106,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        Vocal Coach | Private
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Pegah Einakchi
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         Vocal Coach | Private
@@ -3739,16 +4153,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -3814,16 +4227,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Royan}
@@ -3846,7 +4265,7 @@ const BlockTestimonials: React.FC = () => {
                 >
                   <Box
                     as="a"
-                    // href="#"
+                    href="https://ca.linkedin.com/in/royan-jafari"
                     target="_blank"
                   >
                     <IconButton
@@ -3864,7 +4283,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -3917,6 +4336,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -3927,43 +4347,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -3975,7 +4378,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        M.Sc. Student in Biomedical Engineering | McGill
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Royan Jafari
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         M.Sc. Student in Biomedical Engineering | McGill
@@ -3983,16 +4425,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -4057,16 +4498,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Edwin}
@@ -4089,7 +4536,7 @@ const BlockTestimonials: React.FC = () => {
                 >
                   <Box
                     as="a"
-                    // href="#"
+                    // href="https://ca.linkedin.com/in/samin-majidi-05b77a250"
                     target="_blank"
                   >
                     <IconButton
@@ -4107,7 +4554,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -4160,6 +4607,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -4170,43 +4618,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -4218,7 +4649,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        M.Sc. Student in Electrical Engineering | McGill
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Edwin Meriaux
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         M.Sc. Student in Electrical Engineering | McGill
@@ -4226,16 +4696,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -4250,6 +4719,7 @@ const BlockTestimonials: React.FC = () => {
               </Box>
             </Grid>
           </Box>
+
           <Box
             width="100%"
             height="99%"
@@ -4299,16 +4769,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Gezal}
@@ -4331,7 +4807,7 @@ const BlockTestimonials: React.FC = () => {
                 >
                   <Box
                     as="a"
-                    // href="#"
+                    // href="https://ca.linkedin.com/in/samin-majidi-05b77a250"
                     target="_blank"
                   >
                     <IconButton
@@ -4349,7 +4825,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -4402,6 +4878,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -4412,43 +4889,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -4460,7 +4920,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        M.Sc. Student in Clinical Nutriotion | McGill
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Gezal Najafi
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         M.Sc. Student in Clinical Nutriotion | McGill
@@ -4468,16 +4967,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "120%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
@@ -4492,6 +4990,7 @@ const BlockTestimonials: React.FC = () => {
               </Box>
             </Grid>
           </Box>
+
           <Box
             width="100%"
             height="99%"
@@ -4541,16 +5040,22 @@ const BlockTestimonials: React.FC = () => {
             <Grid
               className="grid grid--1x2"
               display="grid"
-              templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
-              templateRows="auto 1fr" // Define two rows, the first is auto-sized
-              gap={4} // Adjust gap as needed
+              templateColumns={[
+                "1fr",
+                null,
+                null,
+                isLargerThanSm ? "repeat(2, 1fr)" : "1fr",
+              ]}
+              templateRows="auto 1fr"
+              gap={4}
             >
               {/* -------------------- First row with two columns -------------------- */}
+
               <Box
                 className="testimonial__image"
                 position="relative"
                 margin={{ base: "0 3rem", lg: "0" }}
-                gridColumn={["1", null, null, "span 1"]}
+                gridColumn="1"
               >
                 <Image
                   src={Amin}
@@ -4591,7 +5096,7 @@ const BlockTestimonials: React.FC = () => {
                   </Box>
                   <Box
                     as="a"
-                    // href="#"
+                    // href=""
                     target="_blank"
                   >
                     <IconButton
@@ -4644,6 +5149,7 @@ const BlockTestimonials: React.FC = () => {
                   top="3rem"
                   right="-32px"
                   backgroundColor="var(--color-accent)"
+                  marginRight={{ md: "2rem" }}
                 >
                   <Icon
                     className="icon icon--white"
@@ -4654,43 +5160,26 @@ const BlockTestimonials: React.FC = () => {
                   />
                 </Box>
               </Box>
-              <Flex
-                className="testimonial__title"
-                gridColumn={["2", null, null, "span 1"]}
-                alignItems="center" // Center vertically
-                justifyContent="center" // Center horizontally
-                flexDirection="column" // Stack items vertically
-              >
-                <Box
+              {isLargerThanSm ? (
+                <Flex
                   className="testimonial__title"
-                  gridColumn={["2", null, null, "span 1"]}
+                  gridColumn="2"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexDirection="column"
                 >
                   <Flex
                   // className="media"
                   // marginBottom="4rem"
                   >
-                    {/* <Box
-                      //   className="media__image"
-                      marginTop="1rem"
-                    >
-                      <Icon
-                        className="icon icon--primary quote__line"
-                        as={AiOutlineLine}
-                        width="40px"
-                        height="40px"
-                        color="var(--color-primary)"
-                        position="relative"
-                        bottom="10px"
-                      />
-                    </Box> */}
                     <Box
                       className="media__body"
                       margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
                     >
                       <Text
                         className="media__title quote__author"
-                        fontSize={{ base: "1.8rem", lg: "2.4rem" }}
-                        fontWeight="500"
+                        fontSize={{ base: "3rem", lg: "2.8rem" }}
+                        fontWeight="bold"
                         fontStyle="normal"
                         marginTop="0"
                         marginBottom="1rem"
@@ -4702,7 +5191,46 @@ const BlockTestimonials: React.FC = () => {
                         className="quote__organization"
                         color="#48F380"
                         // opacity="0.4"
-                        fontSize={{ base: "2rem", lg: "1.6rem" }}
+                        fontSize={{ base: "2rem", lg: "1.8rem" }}
+                        fontStyle="normal"
+                      >
+                        Software Engineer | EnerZam Inc.
+                      </Text>
+                    </Box>
+                  </Flex>
+                </Flex>
+              ) : (
+                <Box className="testimonial__title" gridColumn="1">
+                  <Flex
+                    // className="media"
+                    // marginBottom="4rem"
+                    marginTop="1.5rem"
+                    // justifyContent="center"
+                  >
+                    <Box
+                      className="media__body"
+                      // margin={{ base: "0 2rem 0 0", lg: "0 1rem 0 2rem" }}
+                    >
+                      <Text
+                        className="media__title quote__author"
+                        fontSize={{ base: "3rem", md: "2.5rem", lg: "3rem" }}
+                        fontWeight="bold"
+                        fontStyle="normal"
+                        marginTop="0"
+                        marginBottom="1rem"
+                        color="white"
+                      >
+                        Mohammad Amin Shamshiri
+                      </Text>
+                      <Text
+                        className="quote__organization"
+                        color="#48F380"
+                        // opacity="0.4"
+                        fontSize={{
+                          base: "2rem",
+                          md: "1.7rem",
+                          lg: "2rem",
+                        }}
                         fontStyle="normal"
                       >
                         Software Engineer | EnerZam Inc.
@@ -4710,16 +5238,15 @@ const BlockTestimonials: React.FC = () => {
                     </Box>
                   </Flex>
                 </Box>
-              </Flex>
+              )}
               {/* -------------------- Second row with one column -------------------- */}
               <Box
                 className="quote"
                 as="blockquote"
-                fontSize={{ base: "110%", lg: "110%" }}
+                fontSize={{ base: "110%", lg: "130%" }}
                 fontStyle="italic"
                 color="var(--color-body-darker)"
-                lineHeight={{ base: "1.3", lg: "1.5" }}
-                gridColumn={["span 2", null, null, "span 2"]}
+                gridColumn={isLargerThanSm ? "span 2" : "span 1"}
                 margin={{ base: "2rem 0", lg: "1.5rem 0 0 1rem" }}
               >
                 <Text
