@@ -77,7 +77,7 @@ const BlockEvent: React.FC = () => {
       overflow={"hidden"}
     >
       <Box
-        className="block container block-domain"
+        className="block container block-domain aos-animate"
         padding="6rem 2rem"
         // maxWidth="1140px"
         margin="0 auto"
@@ -87,7 +87,7 @@ const BlockEvent: React.FC = () => {
         data-aos-duration="500"
       >
         <Box
-          className="block__header"
+          className="block__header aos-animate"
           textAlign="center"
           width="100%"
           data-aos="fade-up"
@@ -115,7 +115,7 @@ const BlockEvent: React.FC = () => {
           </Text>
         </Box>
         <Flex
-          className="block__body"
+          className="block__body aos-animate"
           justifyContent="center"
           width="100%"
           data-aos="fade-up"
@@ -245,7 +245,7 @@ const BlockEvent: React.FC = () => {
           </Box>
         </Flex>
         <Flex
-          className="block__button"
+          className="block__button aos-animate"
           justifyContent="center"
           width="100%"
           data-aos="fade-up"
@@ -299,6 +299,7 @@ const BlockEvent: React.FC = () => {
               rowGap={{ base: "5rem" }}
             >
               <Box
+                className="aos-animate"
                 background="white"
                 borderRadius="5%"
                 position="relative"
@@ -348,6 +349,7 @@ const BlockEvent: React.FC = () => {
                 />
               </Box>
               <Box
+                className="aos-animate"
                 background="white"
                 borderRadius="5%"
                 position="relative"
@@ -395,6 +397,7 @@ const BlockEvent: React.FC = () => {
                 />
               </Box>
               <Box
+                className="aos-animate"
                 background="white"
                 borderRadius="5%"
                 position="relative"

@@ -720,7 +720,7 @@ const BlockFeatures: React.FC = () => {
         margin="0 auto"
       >
         <Box
-          className="block__header"
+          className="block__header aos-animate"
           textAlign="center"
           // marginBottom="-4rem"
           data-aos="fade-up"
@@ -766,22 +766,38 @@ const BlockFeatures: React.FC = () => {
             >
               {index % 2 === 0 ? (
                 <>
-                  <Box data-aos="fade-right" data-aos-duration="500">
+                  <Box
+                    className="aos-animate"
+                    data-aos="fade-right"
+                    data-aos-duration="500"
+                  >
                     <Feature {...feature} size={feature.size} />
                   </Box>
-                  <Box data-aos="fade-left" data-aos-duration="500">
+                  <Box
+                    className="aos-animate"
+                    data-aos="fade-left"
+                    data-aos-duration="500"
+                  >
                     <FeatureImage image={feature.image} />
                   </Box>
                 </>
               ) : (
                 <>
-                  <Box data-aos="fade-right" data-aos-duration="500">
+                  <Box
+                    className="aos-animate"
+                    data-aos="fade-right"
+                    data-aos-duration="500"
+                  >
                     <FeatureImage
                       image={feature.image}
                       data-aos-duration="500"
                     />
                   </Box>
-                  <Box data-aos="fade-left" data-aos-duration="500">
+                  <Box
+                    className="aos-animate"
+                    data-aos="fade-left"
+                    data-aos-duration="500"
+                  >
                     <Feature {...feature} size={feature.size} />
                   </Box>
                 </>
