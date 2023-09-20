@@ -696,9 +696,18 @@ const BlockFeatures: React.FC = () => {
     };
   }, []);
 
+  // useEffect(() => {
+  //   if (window.innerWidth >= 500) {
+  //     AOS.init({
+  //       duration: 800,
+  //       easing: "ease-in-out",
+  //     });
+  //   }
+  // }, []);
+
   return (
     <Box
-      className="block block--dark"
+      className="block block--dark aos-animate"
       bg={useColorModeValue("gray.800", "gray.800")}
       width="100%"
       overflow={"hidden"}
