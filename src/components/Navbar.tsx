@@ -91,7 +91,7 @@ const Navbar = () => {
           <Image src={tedxWhite} width="27rem" alt="tedxavelorne" />
         </HStack>
       </Link>
-      <Icon
+      {/* <Icon
         className="icon icon--white nav__toggler"
         as={AiOutlineMenu}
         width="30px"
@@ -104,7 +104,7 @@ const Navbar = () => {
         cursor="pointer"
         display={{ lg: "none" }}
         onClick={handleToggle}
-      />
+      /> */}
       {/* <List
         className="list nav__list collapsible__content"
         width={{ base: "100%", lg: "auto" }}
