@@ -30,7 +30,6 @@ import BorderBox from "./components/BorderBox";
 import BlockSpeakers from "./components/BlockSpeakers";
 import BlockEvent from "./components/BlockEvent";
 import Navigationbar from "./components/Navigationbar";
-import SimpleCard from "./components/SimpleCard";
 import BlockTestimonials from "./components/BlockTestimonials";
 
 function App() {
@@ -60,9 +59,7 @@ function App() {
       <BlockSpeakers />
       <BlockShowcase />
       <BlockPlans />
-      {/* <SimpleCard /> */}
       <BlockTestimonials />
-      {/* <BlockTestimonials1 /> */}
       <BlockFooter />
     </>
   );

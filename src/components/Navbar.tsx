@@ -57,11 +57,13 @@ import {
   Image,
   Icon,
   useMediaQuery,
+  HStack,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { TfiLayoutMenuV } from "react-icons/tfi";
 
 import logo from "../assets/images/logo.png";
+import tedxWhite from "../assets/images/tedxWhite.png";
 import { all } from "axios";
 import testimonial from "../assets/images/testimonial.jpg";
 
@@ -84,9 +86,11 @@ const Navbar = () => {
       // width="200vw"
     >
       <Link>
-        <Image src={logo} width="6.5rem" alt="logo" />
+        <HStack spacing={{ base: 16, lg: 7 }}>
+          <Image src={logo} width="6.5rem" alt="logo" />
+          <Image src={tedxWhite} width="27rem" alt="tedxavelorne" />
+        </HStack>
       </Link>
-
       <Icon
         className="icon icon--white nav__toggler"
         as={AiOutlineMenu}
