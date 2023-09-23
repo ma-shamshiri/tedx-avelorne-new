@@ -478,8 +478,8 @@ const BlockTestimonials: React.FC = () => {
             borderColor="linear-gradient(to left, transparent, #F226AA, #6322BF, transparent)"
             badgeText="Content Creator"
             badgeColor="linear-gradient(to left, #6322BF, #6322BF, #F226AA, #F226AA)"
-            badgeTextSize="15rem"
-            badgePaddingRight="8"
+            badgeTextSize="1.5rem"
+            badgePaddingRight="4"
           />
 
           {/* ======================== Edwin Meriaux ======================== */}
