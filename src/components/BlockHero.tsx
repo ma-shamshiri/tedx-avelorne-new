@@ -210,7 +210,7 @@ const BlockHero: React.FC = () => {
         position="absolute"
         width="100%"
         height={{ base: "15rem", lg: "25rem" }}
-        top={{ base: "10rem", md: "20rem", lg: "35rem" }}
+        top={{ base: "11rem", md: "20rem", lg: "35rem" }}
         bgGradient="linear(to-r, gray.700, transparent)"
         // justifyContent="center"
         alignItems="center"

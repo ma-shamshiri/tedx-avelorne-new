@@ -274,7 +274,7 @@ const BlockTestimonials: React.FC = () => {
             tedHref="https://www.ted.com/"
             author="Fathima Nihatha Lathiff"
             organization="M.Sc. Student in Computer Science | Concordia"
-            quoteText="To meet, greet, explore and engage!"
+            quoteText="Each individual is like a knowledge silo. A combination of silos has created and will create great wonders. If not for meeting new people, converse and share ideas with them it would have been difficult for me to complete my NLP research during my Master's program at Concordia University and be in a position today as a Machine Learning Engineer. Knowledge is never a waste no matter what the domain is. Therefore, I joined TEDxAveLorne to meet, and greet knowledgeable people, while sharing and exploring new ideas to make a better me!"
             borderColor="linear-gradient(to left, transparent, #7560F9, #4BFD85, transparent)"
             badgeText="Operation"
             badgeColor="linear-gradient(to left, rgba(214, 20, 91, 1.0), rgba(251, 176, 59, 0.99))"
@@ -426,8 +426,8 @@ const BlockTestimonials: React.FC = () => {
             handleUnhover={() => handleUnhover(13)}
             src={Aryana}
             linkedinHref="https://ca.linkedin.com/"
-            twitterHref="https://twitter.com/"
-            tedHref="https://www.ted.com/"
+            twitterHref="https://twitter.com/AryanaHaghjoo"
+            tedHref="https://www.ted.com/profiles/44809246"
             author="Aryana Haghjoo"
             organization="M.Sc. Student in Physics | McGill"
             quoteText="As a scientist, I am always eager to hear different ideas in
@@ -473,7 +473,7 @@ const BlockTestimonials: React.FC = () => {
             twitterHref="https://twitter.com/"
             tedHref="https://www.ted.com/"
             author="Royan Jafari"
-            organization="M.Sc. Student in Physics | McGill"
+            organization="M.Eng. Biological & Biomedical Engineering | McGill"
             quoteText="Coming soon.. Stay tuned for an intriguing biography!"
             borderColor="linear-gradient(to left, transparent, #F226AA, #6322BF, transparent)"
             badgeText="Content Creator"

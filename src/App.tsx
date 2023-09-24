@@ -52,7 +52,8 @@ function App() {
           Main
         </GridItem>
       </Grid> */}
-      <Navbar />
+      <Navigationbar />
+      {/* <Navbar /> */}
       <BlockHero />
       <BlockFeatures />
       <BlockEvent />

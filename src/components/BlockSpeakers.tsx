@@ -1,24 +1,17 @@
-import React, { useEffect } from "react";
-import {
-  Box,
-  Center,
-  Flex,
-  Grid,
-  Image,
-  Text,
-  VStack,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { Box, Center, Grid, Text, useColorModeValue } from "@chakra-ui/react";
 
-import vincent from "../assets/images/Vincent.webp";
-import myra from "../assets/images/Myra.webp";
-import kira from "../assets/images/Kira.webp";
-import miriam from "../assets/images/Miriam.webp";
-import flore from "../assets/images/Flore.webp";
-import leila from "../assets/images/Leila.webp";
+import alina from "../assets/images/Alina.webp";
 import andrew from "../assets/images/Andrew.webp";
+import flore from "../assets/images/Flore.webp";
 import janet from "../assets/images/Janet.webp";
+import kira from "../assets/images/Kira.webp";
+import leila from "../assets/images/Leila.webp";
+import miriam from "../assets/images/Miriam.webp";
+import myra from "../assets/images/Myra.webp";
 import peggy from "../assets/images/Peggy.webp";
+import vincent from "../assets/images/Vincent.webp";
+import SpeakerCard from "./SpeakerCard";
 
 import AOS from "aos"; // Import AOS library
 import "aos/dist/aos.css"; // Import AOS styles
@@ -149,6 +142,28 @@ import "aos/dist/aos.css"; // Import AOS styles
 //   }, []);
 
 const BlockSpeakers: React.FC = () => {
+  const numElements = 8;
+
+  const [isHoveredArray, setIsHoveredArray] = useState(
+    Array(numElements).fill(false)
+  );
+
+  const handleHover = (index: number) => {
+    setIsHoveredArray((prevArray) => {
+      const newArray = [...prevArray];
+      newArray[index] = true;
+      return newArray;
+    });
+  };
+
+  const handleUnhover = (index: number) => {
+    setIsHoveredArray((prevArray) => {
+      const newArray = [...prevArray];
+      newArray[index] = false;
+      return newArray;
+    });
+  };
+
   useEffect(() => {
     window.onload = () => {
       AOS.init({
@@ -207,8 +222,8 @@ const BlockSpeakers: React.FC = () => {
             <Grid
               className="aos-animate"
               display="grid"
-              templateColumns={["repeat(2, 1fr)", null, null, "repeat(3, 1fr)"]}
-              templateRows={["repeat(4, 1fr)", null, null, "repeat(3, 1fr)"]}
+              templateColumns={["repeat(2, 1fr)", null, null, "repeat(4, 1fr)"]}
+              templateRows={["repeat(4, 1fr)", null, null, "repeat(2, 1fr)"]}
               rowGap={"10rem"}
               columnGap={{ base: "5rem", lg: "13rem" }}
               padding="10rem 0"
@@ -216,410 +231,104 @@ const BlockSpeakers: React.FC = () => {
               data-aos="fade-up"
               data-aos-duration="500"
             >
-              <Flex
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                marginTop="5rem"
-              >
-                <Box
-                  position="relative"
-                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  bg="white"
-                  borderRadius="100%"
-                  marginBottom="2rem"
-                  overflow="hidden"
-                  border="2px solid transparent"
-                  transition="border-color 0.2s ease-out"
-                  _hover={{
-                    borderColor: "#16F8B6",
-                  }}
-                >
-                  <Box
-                    position="absolute"
-                    width="100%"
-                    height="100%"
-                    bg="black"
-                    opacity="0"
-                    zIndex="1"
-                    _hover={{
-                      opacity: "0.2",
-                    }}
-                    transition="opacity 0.2s ease-out"
-                  ></Box>
-                  <Image
-                    src={vincent}
-                    boxShadow="0 0 30px 1px black"
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text fontWeight="bold" color="#F8F0C6" fontSize="2.3rem">
-                  Vincent Lariviere
-                </Text>
-                <Text fontSize="1.4rem" color="#48F380">
-                  Professor, Faculty of Arts & Science, Université de Montréal
-                </Text>
-              </Flex>
-              <Flex
-                flexDirection={"column"}
-                justifyContent="center"
-                alignItems="center"
-              >
-                <Box
-                  position="relative"
-                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  bg="white"
-                  borderRadius="100%"
-                  marginBottom="0rem"
-                  overflow="hidden"
-                  border="2px solid transparent"
-                  transition="border-color 0.2s ease-out"
-                  _hover={{
-                    borderColor: "#16F8B6",
-                  }}
-                >
-                  <Box
-                    position="absolute"
-                    width="100%"
-                    height="100%"
-                    bg="black"
-                    opacity="0"
-                    zIndex="1"
-                    _hover={{
-                      opacity: "0.2",
-                    }}
-                    transition="opacity 0.2s ease-out"
-                  ></Box>
-                  <Image
-                    src={myra}
-                    boxShadow="0 0 30px 1px black"
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text
-                  fontWeight="bold"
-                  color="#F8F0C6"
-                  fontSize="2.3rem"
-                  marginTop="2rem"
-                >
-                  Myra Virgil
-                </Text>
-                <Text fontSize="1.4rem" color="#48F380" marginBottom="-2rem">
-                  Philanthropy Executive | Strategist | Storyteller
-                </Text>
-              </Flex>
-              <Flex
-                flexDirection={"column"}
-                justifyContent="center"
-                alignItems="center"
-              >
-                <Box
-                  position="relative"
-                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  bg="white"
-                  borderRadius="100%"
-                  marginBottom="2rem"
-                  overflow="hidden"
-                  border="2px solid transparent"
-                  transition="border-color 0.2s ease-out"
-                  _hover={{
-                    borderColor: "#16F8B6",
-                  }}
-                >
-                  <Box
-                    position="absolute"
-                    width="100%"
-                    height="100%"
-                    bg="black"
-                    opacity="0"
-                    zIndex="1"
-                    _hover={{
-                      opacity: "0.2",
-                    }}
-                    transition="opacity 0.2s ease-out"
-                  ></Box>
-                  <Image
-                    src={kira}
-                    boxShadow="0 0 30px 1px black"
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text fontWeight="bold" color="#F8F0C6" fontSize="2.3rem">
-                  Kira Dolhan
-                </Text>
-                <Text fontSize="1.4rem" color="#48F380">
-                  Search and Rescue Volunteer
-                </Text>
-              </Flex>
-              <Flex
-                flexDirection={"column"}
-                justifyContent="center"
-                alignItems="center"
-              >
-                <Box
-                  position="relative"
-                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  bg="white"
-                  borderRadius="100%"
-                  marginBottom="2rem"
-                  overflow="hidden"
-                  border="2px solid transparent"
-                  transition="border-color 0.2s ease-out"
-                  _hover={{
-                    borderColor: "#16F8B6",
-                  }}
-                >
-                  <Box
-                    position="absolute"
-                    width="100%"
-                    height="100%"
-                    bg="black"
-                    opacity="0"
-                    zIndex="1"
-                    _hover={{
-                      opacity: "0.2",
-                    }}
-                    transition="opacity 0.2s ease-out"
-                  ></Box>
-                  <Image
-                    src={miriam}
-                    boxShadow="0 0 30px 1px black"
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text fontWeight="bold" color="#F8F0C6" fontSize="2.3rem">
-                  Miriam Han
-                </Text>
-                <Text fontSize="1.4rem" color="#48F380">
-                  M.Sc Neuroscience Candidate, McGill University
-                </Text>
-              </Flex>
-              <Flex
-                flexDirection={"column"}
-                justifyContent="center"
-                alignItems="center"
-                marginTop="-5rem"
-              >
-                <Box
-                  position="relative"
-                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  bg="white"
-                  borderRadius="100%"
-                  marginBottom="2rem"
-                  overflow="hidden"
-                  border="2px solid transparent"
-                  transition="border-color 0.2s ease-out"
-                  _hover={{
-                    borderColor: "#16F8B6",
-                  }}
-                >
-                  <Box
-                    position="absolute"
-                    width="100%"
-                    height="100%"
-                    bg="black"
-                    opacity="0"
-                    zIndex="1"
-                    _hover={{
-                      opacity: "0.2",
-                    }}
-                    transition="opacity 0.2s ease-out"
-                  ></Box>
-                  <Image
-                    src={flore}
-                    boxShadow="0 0 30px 1px black"
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text fontWeight="bold" color="#F8F0C6" fontSize="2.3rem">
-                  Flore Deshayes
-                </Text>
-                <Text fontSize="1.4rem" color="#48F380">
-                  Social worker
-                </Text>
-              </Flex>
-              <Flex
-                flexDirection={"column"}
-                justifyContent="center"
-                alignItems="center"
-              >
-                <Box
-                  position="relative"
-                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  bg="white"
-                  borderRadius="100%"
-                  marginBottom="2rem"
-                  overflow="hidden"
-                  border="2px solid transparent"
-                  transition="border-color 0.2s ease-out"
-                  _hover={{
-                    borderColor: "#16F8B6",
-                  }}
-                >
-                  <Box
-                    position="absolute"
-                    width="100%"
-                    height="100%"
-                    bg="black"
-                    opacity="0"
-                    zIndex="1"
-                    _hover={{
-                      opacity: "0.2",
-                    }}
-                    transition="opacity 0.2s ease-out"
-                  ></Box>
-                  <Image
-                    src={leila}
-                    boxShadow="0 0 30px 1px black"
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text fontSize="2.3rem" fontWeight="bold" color="#F8F0C6">
-                  Leila Kosseim
-                </Text>
-                <Text fontSize="1.4rem" color="#48F380">
-                  Professor, Computer Science & Software Engineering Dept,
-                  Concordia University
-                </Text>
-              </Flex>
-              <Flex
-                flexDirection={"column"}
-                justifyContent="center"
-                alignItems="center"
-              >
-                <Box
-                  position="relative"
-                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  bg="white"
-                  borderRadius="100%"
-                  marginBottom="2rem"
-                  overflow="hidden"
-                  border="2px solid transparent"
-                  transition="border-color 0.2s ease-out"
-                  _hover={{
-                    borderColor: "#16F8B6",
-                  }}
-                >
-                  <Box
-                    position="absolute"
-                    width="100%"
-                    height="100%"
-                    bg="black"
-                    opacity="0"
-                    zIndex="1"
-                    _hover={{
-                      opacity: "0.2",
-                    }}
-                    transition="opacity 0.2s ease-out"
-                  ></Box>
-                  <Image
-                    src={andrew}
-                    boxShadow="0 0 30px 1px black"
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text fontSize="2.3rem" fontWeight="bold" color="#F8F0C6">
-                  Andrew Churchil
-                </Text>
-                <Text fontSize="1.4rem" color="#48F380">
-                  Carolyn Jack MD | Professor | Start-Up Entrepreneur
-                </Text>
-              </Flex>
-              <Flex
-                flexDirection={"column"}
-                justifyContent="center"
-                alignItems="center"
-              >
-                <Box
-                  position="relative"
-                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  bg="white"
-                  borderRadius="100%"
-                  marginBottom="2rem"
-                  overflow="hidden"
-                  border="2px solid transparent"
-                  transition="border-color 0.2s ease-out"
-                  _hover={{
-                    borderColor: "#16F8B6",
-                  }}
-                >
-                  <Box
-                    position="absolute"
-                    width="100%"
-                    height="100%"
-                    bg="black"
-                    opacity="0"
-                    zIndex="1"
-                    _hover={{
-                      opacity: "0.2",
-                    }}
-                    transition="opacity 0.2s ease-out"
-                  ></Box>
-                  <Image
-                    src={janet}
-                    boxShadow="0 0 30px 1px black"
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text fontWeight="bold" color="#F8F0C6" fontSize="2.3rem">
-                  Janet Perlman
-                </Text>
-                <Text fontSize="1.4rem" color="#48F380">
-                  Animator and Children's Book Author
-                </Text>
-              </Flex>
-              <Flex
-                flexDirection={"column"}
-                justifyContent="center"
-                alignItems="center"
-              >
-                <Box
-                  position="relative"
-                  width={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  height={{ base: "15rem", md: "18rem", lg: "18rem" }}
-                  bg="white"
-                  borderRadius="100%"
-                  marginBottom="2rem"
-                  overflow="hidden"
-                  border="2px solid transparent"
-                  transition="border-color 0.2s ease-out"
-                  _hover={{
-                    borderColor: "#16F8B6",
-                  }}
-                >
-                  <Box
-                    position="absolute"
-                    width="100%"
-                    height="100%"
-                    bg="black"
-                    opacity="0"
-                    zIndex="1"
-                    _hover={{
-                      opacity: "0.2",
-                    }}
-                    transition="opacity 0.2s ease-out"
-                  ></Box>
-                  <Image
-                    src={peggy}
-                    boxShadow="0 0 30px 1px black"
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text fontWeight="bold" color="#F8F0C6" fontSize="2.3rem">
-                  Peggy Bell
-                </Text>
-                <Text fontSize="1.4rem" color="#48F380">
-                  Founder | Principal Consultant
-                </Text>
-              </Flex>
+              {/* ======================== Vincent Lariviere ======================== */}
+              {/* <SpeakerCard
+                src={vincent}
+                name="Vincent Lariviere"
+                title="Professor, Faculty of Arts & Science, Université de Montréal"
+                imageMarginTop="5rem"
+              /> */}
+
+              {/* ======================== Myra Virgil ======================== */}
+              <SpeakerCard
+                isHovered={isHoveredArray[1]}
+                handleHover={() => handleHover(1)}
+                handleUnhover={() => handleUnhover(1)}
+                src={myra}
+                name="Myra Virgil"
+                title="Philanthropy Executive | Strategist | Storyteller"
+                imageMarginBottom="0rem"
+                nameMarginTop="2rem"
+                titleMarginBottom="-2rem"
+              />
+
+              {/* ======================== Kira Dolhan ======================== */}
+              <SpeakerCard
+                isHovered={isHoveredArray[2]}
+                handleHover={() => handleHover(2)}
+                handleUnhover={() => handleUnhover(2)}
+                src={kira}
+                name="Kira Dolhan"
+                title="Search and Rescue Volunteer"
+              />
+
+              {/* ======================== Miriam Han ======================== */}
+              {/* <SpeakerCard
+                src={miriam}
+                name="Miriam Han"
+                title="M.Sc Neuroscience Candidate, McGill University"
+              /> */}
+
+              {/* ======================== Flore Deshayes ======================== */}
+              <SpeakerCard
+                isHovered={isHoveredArray[3]}
+                handleHover={() => handleHover(3)}
+                handleUnhover={() => handleUnhover(3)}
+                src={flore}
+                name="Flore Deshayes"
+                title="Social worker"
+                // imageMarginTop="-5rem"
+              />
+
+              {/* ======================== Leila Kosseim ======================== */}
+              <SpeakerCard
+                isHovered={isHoveredArray[4]}
+                handleHover={() => handleHover(4)}
+                handleUnhover={() => handleUnhover(4)}
+                src={leila}
+                name="Leila Kosseim"
+                title="Professor in Computer Science | Concordia University"
+              />
+
+              {/* ======================== Andrew Churchil ======================== */}
+              <SpeakerCard
+                isHovered={isHoveredArray[5]}
+                handleHover={() => handleHover(5)}
+                handleUnhover={() => handleUnhover(5)}
+                src={andrew}
+                name="Andrew Churchil"
+                title="Carolyn Jack MD | Professor | Start-Up Entrepreneur"
+              />
+
+              {/* ======================== Janet Perlman ======================== */}
+              <SpeakerCard
+                isHovered={isHoveredArray[6]}
+                handleHover={() => handleHover(6)}
+                handleUnhover={() => handleUnhover(6)}
+                src={janet}
+                name="Janet Perlman"
+                title="Animator and Children's Book Author"
+              />
+
+              {/* ======================== Peggy Bell ======================== */}
+              <SpeakerCard
+                isHovered={isHoveredArray[7]}
+                handleHover={() => handleHover(7)}
+                handleUnhover={() => handleUnhover(7)}
+                src={peggy}
+                name="Peggy Bell"
+                title="Founder | Principal Consultant"
+              />
+
+              {/* ======================== Alina Gutierrez Mejia ======================== */}
+              <SpeakerCard
+                isHovered={isHoveredArray[8]}
+                handleHover={() => handleHover(8)}
+                handleUnhover={() => handleUnhover(8)}
+                src={alina}
+                name="Alina Gutierrez Mejia"
+                title="Graphic Facilitator | Creative Consultant"
+              />
             </Grid>
           </Box>
         </Center>
