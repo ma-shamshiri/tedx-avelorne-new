@@ -511,7 +511,7 @@ const BlockTestimonials: React.FC = () => {
             linkedinHref="https://ca.linkedin.com/"
             twitterHref="https://twitter.com/"
             tedHref="https://www.ted.com/"
-            author="Royan Jafari"
+            author="Gezal Najafi"
             organization="M.Sc. Student in Clinical Nutriotion | McGill"
             quoteText="Coming soon.. Stay tuned for an intriguing biography!"
             borderColor="linear-gradient(to left, transparent, #F226AA, #6322BF, transparent)"

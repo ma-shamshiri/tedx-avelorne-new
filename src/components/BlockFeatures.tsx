@@ -611,7 +611,7 @@ const Feature: React.FC<FeatureProps> = ({
     <Text
       className="h3 feature__heading"
       // color="var(--color-white)"
-      color="white"
+      color={useColorModeValue("gray.800", "white")}
       fontSize={{ base: "2.8rem", lg: "2.5rem" }}
       fontWeight="bold"
       lineHeight="1.3"
@@ -623,7 +623,7 @@ const Feature: React.FC<FeatureProps> = ({
       className="p"
       marginTop="0"
       marginBottom="1.5rem"
-      color={useColorModeValue("gray.400", "gray.400")}
+      color={useColorModeValue("gray.700", "gray.400")}
       // textAlign={"justify"}
     >
       {description}
@@ -633,7 +633,7 @@ const Feature: React.FC<FeatureProps> = ({
       href={linkUrl}
       fontSize={{ base: "2rem", lg: "1.7rem" }}
       fontWeight="bold"
-      color="tomato"
+      color={useColorModeValue("#fc2d03", "tomato")}
       textTransform="uppercase"
       target="_blank"
       _hover={{
@@ -708,7 +708,7 @@ const BlockFeatures: React.FC = () => {
   return (
     <Box
       className="block block--dark aos-animate"
-      bg={useColorModeValue("gray.800", "gray.800")}
+      bg={useColorModeValue("#F5DEB3	", "gray.800")}
       width="100%"
       overflow={"hidden"}
       // clipPath="polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%)"
@@ -728,7 +728,7 @@ const BlockFeatures: React.FC = () => {
         >
           <Text
             className="h2 block__heading"
-            color="#E1DCA9"
+            color={useColorModeValue("gray.600", "#E1DCA9")}
             marginBottom="1rem"
             marginTop="0"
             fontSize={{ base: "5.5rem", lg: "7rem" }}
@@ -739,7 +739,7 @@ const BlockFeatures: React.FC = () => {
           </Text>
           <Text
             className="p"
-            color="silver"
+            color={useColorModeValue("gray.600", "silver")}
             fontSize={{ base: "2.0rem", lg: "2.8rem" }}
             // fontWeight="bold"
             marginBottom="11rem"
