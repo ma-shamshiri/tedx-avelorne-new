@@ -120,7 +120,7 @@ const BlockPlans: React.FC = () => {
     <Box
       className="block block--dark block--skewed-right aos-animate"
       padding="6rem 2rem"
-      paddingBottom="10rem"
+      paddingBottom={{ base: "13rem", lg: "17rem" }}
       bg="#E6E3D3"
       color="#7b858b"
       // clipPath="polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%)"

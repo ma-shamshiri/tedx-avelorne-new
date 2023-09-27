@@ -181,7 +181,7 @@ const BlockSpeakers: React.FC = () => {
       // bg={useColorModeValue("gray.800", "#16F8B6")}
       // bg={useColorModeValue("gray.800", "#0B0E37")}
       // bg={useColorModeValue("gray.800", "#374550")}
-      bg={useColorModeValue("#0D1224", "#0D1224")}
+      bg={useColorModeValue("#ACD1B4", "#0D1224")}
       color="#16F8B6"
       // data-aos="fade-up"
       // data-aos-duration="500"
@@ -197,7 +197,7 @@ const BlockSpeakers: React.FC = () => {
       >
         <Text
           className="h2"
-          color={useColorModeValue("#16F8B6", "#16F8B6")}
+          color={useColorModeValue("gray.700", "#16F8B6")}
           marginBottom="2rem"
           marginTop="0"
           fontSize={{ base: "5.5rem", lg: "7rem" }}
@@ -209,7 +209,7 @@ const BlockSpeakers: React.FC = () => {
 
         <Text
           className="p"
-          color={useColorModeValue("white", "white")}
+          color={useColorModeValue("gray.600", "white")}
           marginBottom="1rem"
           marginTop="0"
           fontSize={{ base: "2.0rem", lg: "2.8rem" }}

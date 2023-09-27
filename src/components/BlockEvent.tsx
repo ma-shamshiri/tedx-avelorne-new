@@ -71,6 +71,7 @@ const BlockEvent: React.FC = () => {
     <Box
       className="block block--white"
       bg={useColorModeValue("#EFE8D6", "#EFE8D6")}
+      // bg={useColorModeValue("#EFE8D6", "#9DAF89")}
       // color="#7b858b"
       // width="100vh"
       // minWidth="90rem"
@@ -79,6 +80,7 @@ const BlockEvent: React.FC = () => {
       <Box
         className="block container block-domain aos-animate"
         padding="6rem 2rem"
+        paddingBottom={{ base: "13rem", lg: "17rem" }}
         // maxWidth="1140px"
         margin="0 auto"
         width="100%"
@@ -96,6 +98,7 @@ const BlockEvent: React.FC = () => {
           <Text
             className="h2"
             color={useColorModeValue("#f04e2d", "#f04e2d")}
+            // color={useColorModeValue("#f04e2d", "#354E41")}
             marginBottom="1rem"
             marginTop="0"
             fontSize={{ base: "5.5rem", lg: "7rem" }}
@@ -107,6 +110,7 @@ const BlockEvent: React.FC = () => {
           <Text
             className="p"
             color={useColorModeValue("red", "red")}
+            // color={useColorModeValue("red", "#3B5B40")}
             fontSize={{ base: "2.2rem", lg: "2.8rem" }}
             // fontWeight="bold"
             marginBottom="6rem"
@@ -126,8 +130,10 @@ const BlockEvent: React.FC = () => {
             width={{ base: "100%", lg: "100rem" }}
             height={{ base: "40rem", lg: "20rem" }}
             border="0.2rem solid #3263a8"
+            _dark={{ border: "0.2rem solid #3263a8" }}
             borderRadius={"3rem"}
-            bg="#EFE8D6"
+            bg={useColorModeValue("#EFE8D6", "#EFE8D6")}
+            // bg={useColorModeValue("#EFE8D6", "#CCD6C0")}
             display="flex"
             justifyContent="center"
             alignItems="center"
@@ -273,7 +279,8 @@ const BlockEvent: React.FC = () => {
               width="25rem"
               _hover={{
                 border: "0.2rem solid #f75540",
-                bg: "rgba(247, 85, 64, 0)",
+                bg: "#EFE8D6",
+                // bg: "#CCD6C0",
                 color: "#f04e2d",
                 boxShadow:
                   "0px 8px 14px rgba(0, 0, 0, 0.3), 0px -8px 14px rgba(0, 0, 0, 0.3)",

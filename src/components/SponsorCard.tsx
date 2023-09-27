@@ -6,8 +6,9 @@ interface SpeakerCardProps {
   handleHover?: () => void;
   handleUnhover?: () => void;
   src: string;
-  name: string;
-  title: string;
+  name?: string;
+  brandName?: string;
+  title?: string;
   talkTitle?: string;
   imageMarginTop?: string;
   imageMarginBottom?: string;
@@ -15,12 +16,13 @@ interface SpeakerCardProps {
   titleMarginBottom?: string;
 }
 
-const SpeakerCard: React.FC<SpeakerCardProps> = ({
+const SponsorCard: React.FC<SpeakerCardProps> = ({
   isHovered,
   handleHover,
   handleUnhover,
   src,
   name,
+  brandName,
   title,
   talkTitle,
   imageMarginTop = "0",
@@ -41,28 +43,28 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
         opacity={isHovered ? 1 : 0}
         transition="opacity 0.3s ease-in-out"
       >
-        <Text
+        {/* <Text
           fontSize="1.7rem"
           color="rgb(241,241,241)"
           fontStyle="italic"
           //   fontWeight="bold"
         >
           Talk Topic
-        </Text>
+        </Text> */}
         <Text
           fontSize="2.3rem"
           color="#F8F0C6"
           //   fontWeight="bold"
         >
-          Coming Soon..
+          {brandName}
         </Text>
       </Box>
       <Box
         onMouseEnter={handleHover}
         onMouseLeave={handleUnhover}
         position="relative"
-        width={{ base: "15rem", md: "18rem", lg: "18rem" }}
-        height={{ base: "15rem", md: "18rem", lg: "18rem" }}
+        width={{ base: "22rem", md: "20rem", lg: "22rem" }}
+        height={{ base: "22rem", md: "20rem", lg: "22rem" }}
         bg="white"
         borderRadius="100%"
         marginBottom={imageMarginBottom}
@@ -107,4 +109,4 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
   );
 };
 
-export default SpeakerCard;
+export default SponsorCard;

@@ -31,6 +31,7 @@ import BlockSpeakers from "./components/BlockSpeakers";
 import BlockEvent from "./components/BlockEvent";
 import Navigationbar from "./components/Navigationbar";
 import BlockTestimonials from "./components/BlockTestimonials";
+import BlockSponsors from "./components/BlockSponsors";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -60,6 +61,7 @@ function App() {
       <BlockSpeakers />
       <BlockShowcase />
       <BlockPlans />
+      <BlockSponsors />
       <BlockTestimonials />
       <BlockFooter />
     </>
