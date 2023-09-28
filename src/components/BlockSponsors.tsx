@@ -13,7 +13,12 @@ import cafe from "../assets/images/Cafe.webp";
 import medad from "../assets/images/Medad.webp";
 import poulet from "../assets/images/Poulet.webp";
 import dental from "../assets/images/Dental.webp";
+import ark from "../assets/images/ARK.webp";
+import shaygraphy from "../assets/images/Shaygraphy.webp";
+import zproduction from "../assets/images/ZProduction.webp";
+
 // import SpeakerCard from "./SpeakerCard";
+
 import SponsorCard from "./SponsorCard";
 
 import AOS from "aos"; // Import AOS library
@@ -97,9 +102,9 @@ const BlockSponsors: React.FC = () => {
           Honoring the Outstanding Contributions of Our Event's Valued Sponsors
         </Text>
         <Center>
-          <Box className="grid grid--3x3" marginTop="6rem">
+          <Box className="grid grid--2x4" marginTop="6rem">
             <SimpleGrid
-              columns={{ base: 1, md: 2, lg: 3, xl: 5 }}
+              columns={{ base: 2, md: 2, lg: 2, xl: 4 }}
               //   spacing={{ base: 20, lg: 30 }}
               spacingX={{ base: "5rem", md: "18rem", lg: "15rem", xl: "22rem" }}
               spacingY={{ base: "1rem", md: "1rem", lg: "5rem" }}
@@ -150,12 +155,45 @@ const BlockSponsors: React.FC = () => {
                 // brandName="POULET ROUGE"
               />
 
-              {/* ======================== Janet Perlman ======================== */}
+              {/* ======================== Dental Clinique ======================== */}
               <SponsorCard
                 isHovered={isHoveredArray[5]}
                 handleHover={() => handleHover(5)}
                 handleUnhover={() => handleUnhover(5)}
                 src={dental}
+                // name="Janet Perlman"
+                // title="Animator and Children's Book Author"
+                // brandName="POULET ROUGE"
+              />
+
+              {/* ======================== Shaygraphy ======================== */}
+              <SponsorCard
+                isHovered={isHoveredArray[5]}
+                handleHover={() => handleHover(5)}
+                handleUnhover={() => handleUnhover(5)}
+                src={shaygraphy}
+                // name="Janet Perlman"
+                // title="Animator and Children's Book Author"
+                // brandName="POULET ROUGE"
+              />
+
+              {/* ======================== Z Production ======================== */}
+              <SponsorCard
+                isHovered={isHoveredArray[5]}
+                handleHover={() => handleHover(5)}
+                handleUnhover={() => handleUnhover(5)}
+                src={zproduction}
+                // name="Janet Perlman"
+                // title="Animator and Children's Book Author"
+                // brandName="POULET ROUGE"
+              />
+
+              {/* ======================== ARK ======================== */}
+              <SponsorCard
+                isHovered={isHoveredArray[5]}
+                handleHover={() => handleHover(5)}
+                handleUnhover={() => handleUnhover(5)}
+                src={ark}
                 // name="Janet Perlman"
                 // title="Animator and Children's Book Author"
                 // brandName="POULET ROUGE"
