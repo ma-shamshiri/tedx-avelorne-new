@@ -405,7 +405,7 @@ const BlockTestimonials: React.FC = () => {
             twitterHref="https://twitter.com/"
             tedHref="https://www.ted.com/"
             author="Motahareh Pourrahimi"
-            organization="Ph.D. Student in Physics | McGill"
+            organization="Ph.D. Student in Neuroscience | McGill"
             quoteText="TED greatly affected my career trajectory. Watching a TED talk
             on expanding human senses turned my interest from the galaxies
             of stars above my head to the galaxies of neurons inside it.
