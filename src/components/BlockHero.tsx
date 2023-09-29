@@ -57,6 +57,9 @@ import {
 } from "@chakra-ui/react";
 
 import heroimage from "../assets/images/heroimage.jpg";
+
+import CountdownTimer from "./CountdownTimer";
+
 // import homePageImage from "../assets/images/homepage.jpg";
 // import homePageVideo from "../assets/images/homepagevideo.mp4";
 
@@ -186,6 +189,8 @@ const BlockHero: React.FC = () => {
     window.open("https://www.ted.com/tedx/events/53037", "_blank");
   };
 
+  const eventStartTime = new Date("2023-09-30T09:00:00-05:00");
+
   return (
     <Box
       className="block block--dark"
@@ -210,7 +215,7 @@ const BlockHero: React.FC = () => {
         position="absolute"
         width="100%"
         height={{ base: "15rem", lg: "25rem" }}
-        top={{ base: "11rem", md: "20rem", lg: "35rem" }}
+        top={{ base: "14.5rem", md: "25rem", lg: "26rem" }}
         bgGradient="linear(to-r, gray.700, transparent)"
         // justifyContent="center"
         alignItems="center"
@@ -261,6 +266,16 @@ const BlockHero: React.FC = () => {
           </HStack>
         </VStack>
       </Box>
+      <Flex
+        display="flex"
+        position="absolute"
+        width="100%"
+        top={{ base: "7rem", md: "10rem", lg: "53rem" }}
+        alignItems="center"
+        justifyContent="center"
+      >
+        <CountdownTimer eventStartTime={eventStartTime} />
+      </Flex>
     </Box>
   );
 };
