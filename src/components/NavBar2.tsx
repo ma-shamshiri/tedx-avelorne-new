@@ -5,7 +5,6 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
@@ -13,9 +12,7 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
-  Heading,
   HStack,
   Image,
   useColorMode,
@@ -27,8 +24,6 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-
-// import { Link as RouterLink, useLocation } from "react-router-dom";
 
 import ColorModeSwitch from "./ColorModeSwitch";
 import logo from "../assets/images/logo.png";
@@ -44,8 +39,6 @@ interface NavItem {
   children?: Array<NavItem>;
   href?: string;
 }
-
-// const { t } = useTranslation();
 
 const NAV_ITEMS: Array<NavItem> = [
   {
