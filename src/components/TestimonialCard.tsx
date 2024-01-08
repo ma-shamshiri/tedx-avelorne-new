@@ -103,7 +103,6 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         transform={{ base: "rotate(90deg)", xl: "rotate(0deg)" }}
         opacity={isHovered ? 1 : 0.6}
         transition="opacity 0.3s ease-in-out"
-        boxShadow="0px 5px 15px rgba(0, 0, 0, 0.2)"
       >
         <Text
           paddingTop={{ base: "0", xl: "1" }}

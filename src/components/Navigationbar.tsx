@@ -9,6 +9,7 @@ import {
   useColorMode,
   useColorModeValue,
   Link,
+  Text,
 } from "@chakra-ui/react";
 // import { Link as RouterLink, useLocation } from "react-router-dom";
 
@@ -17,7 +18,12 @@ import logo from "../assets/images/logo.png";
 import tedxWhite from "../assets/images/tedxWhite.png";
 import tedxBlack from "../assets/images/tedxBlack.png";
 
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
+
 const Navigationbar = () => {
+  const { t } = useTranslation();
+
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -65,9 +71,10 @@ const Navigationbar = () => {
           </HStack>
         </Link>
       </Flex>
-      {/* <Flex justifyContent="center" alignItems="center">
+      <Flex justifyContent="center" alignItems="center" gap={5}>
+        <LanguageSwitcher />
         <ColorModeSwitch />
-      </Flex> */}
+      </Flex>
     </Flex>
   );
 };

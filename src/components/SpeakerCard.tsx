@@ -68,7 +68,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
         marginBottom={imageMarginBottom}
         overflow="hidden"
         border="2px solid transparent"
-        transition="border-color 0.2s ease-out"
+        transition="border-color 0.3s ease-out"
         _hover={{
           borderColor: "#16F8B6",
         }}
@@ -83,7 +83,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
           _hover={{
             opacity: "0.2",
           }}
-          transition="opacity 0.2s ease-out"
+          transition="opacity 0.3s ease-out"
         ></Box>
 
         <Image src={src} boxShadow="0 0 30px 1px black" objectFit="cover" />

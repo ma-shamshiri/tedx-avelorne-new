@@ -20,6 +20,7 @@ import { GoLocation } from "react-icons/go";
 import hallBuilding from "../assets/images/hallbuilding.jpg";
 import hallSalon from "../assets/images/hallsalon.png";
 import mcgill from "../assets/images/mcgill.jpeg";
+import { useTranslation } from "react-i18next";
 
 // const BlockEvent: React.FC = () => {
 //   useEffect(() => {
@@ -67,10 +68,12 @@ const BlockEvent: React.FC = () => {
     setIsHovered3(false);
   };
 
+  const { t } = useTranslation();
+
   return (
     <Box
       className="block block--white"
-      bg={useColorModeValue("#EFE8D6", "#EFE8D6")}
+      bg={useColorModeValue("#EFE8D6", "#23214A")}
       // bg={useColorModeValue("#EFE8D6", "#9DAF89")}
       // color="#7b858b"
       // width="100vh"
@@ -97,7 +100,7 @@ const BlockEvent: React.FC = () => {
         >
           <Text
             className="h2"
-            color={useColorModeValue("#f04e2d", "#f04e2d")}
+            color={useColorModeValue("#f04e2d", "gray.100")}
             // color={useColorModeValue("#f04e2d", "#354E41")}
             marginBottom="1rem"
             marginTop="0"
@@ -105,17 +108,17 @@ const BlockEvent: React.FC = () => {
             fontWeight="bold"
             lineHeight="1.1"
           >
-            Upcoming Event
+            {t("eventPageTitle")}
           </Text>
           <Text
             className="p"
-            color={useColorModeValue("red", "red")}
+            color={useColorModeValue("red", "gray.200")}
             // color={useColorModeValue("red", "#3B5B40")}
             fontSize={{ base: "2.2rem", lg: "2.8rem" }}
             // fontWeight="bold"
             marginBottom="6rem"
           >
-            Mark Your Calendar and Prepare for an Exciting Day!
+            {t("eventPageSubTitle")}
           </Text>
         </Box>
         <Flex
@@ -291,7 +294,7 @@ const BlockEvent: React.FC = () => {
                 <Box position="absolute" top="0.5rem" left="0.5rem">
                   <CgEventbrite size="25px" color="white" opacity="1" />
                 </Box>
-                <Text marginLeft="1rem">Get Ticket</Text>
+                <Text marginLeft="1rem">{t("getTicket")}</Text>
               </HStack>
             </Link>
           </HStack>

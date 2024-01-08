@@ -1,18 +1,24 @@
-// const Badges = () => {
-//   return (
-//     <>
-//       <span className="badge badge--primary">10% Off</span>
-//       <span className="badge badge--secondary">10% Off</span>
-//       <span className="badge badge--primary badge-small">10% Off</span>
-//     </>
-//   );
-// };
+import { Badge, Box, ResponsiveValue } from "@chakra-ui/react";
 
-// export default Badges;
+interface BadgesProps {
+  borderRadius?: string;
+  textSize?: ResponsiveValue<string>;
+  fontWeight?: string;
+  padding?: string;
+  whiteSpace?: string;
+  backgroundColor?: string;
+  textColor?: string;
+}
 
-import { Badge, Box } from "@chakra-ui/react";
-
-const Badges = () => {
+const Badges: React.FC<BadgesProps> = ({
+  borderRadius = "2rem",
+  textSize = { base: "2rem", lg: "1.5rem" },
+  fontWeight = "600",
+  padding = "0.5rem 2rem",
+  whiteSpace = "nowrap",
+  backgroundColor = "#2584ff",
+  textColor = "#fff",
+}) => {
   return (
     <>
       {/* ************* badge--primary ************* */}
@@ -59,6 +65,21 @@ const Badges = () => {
         //     fontSize: "1.2rem",
         //   },
         // }}
+      >
+        10% Off
+      </Badge>
+
+      {/* ************* badge--custom ************* */}
+      <Badge
+        className="badge_custom"
+        as={Box}
+        borderRadius={borderRadius}
+        fontSize={textSize}
+        fontWeight={fontWeight}
+        padding={padding}
+        whiteSpace={whiteSpace}
+        bg={backgroundColor}
+        color="#fff"
       >
         10% Off
       </Badge>

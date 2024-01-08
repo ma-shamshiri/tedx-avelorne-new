@@ -1,158 +1,26 @@
-// import bannerWebp from "../assets/images/banner.webp";
-// import bannerWebp2x from "../assets/images/banner@2x.webp";
-// import bannerPng from "../assets/images/banner.png";
-// import bannerPng2x from "../assets/images/banner@2x.png";
-
-// import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
-
-// const BlockHero = () => {
-//   return (
-//     <section className="block block--dark block--skewed-left hero">
-//       <div className="container grid grid--1x2">
-//         <header className="block__header hero__content">
-//           <h1 className="block__heading">
-//             TED Talks: Inspire, Engage, and Discover
-//           </h1>
-//           <p className="hero__tagline">
-//             Deploy your websites in less than 60 seconds.
-//           </p>
-//           <a className="btn btn--accent btn--stretched">Get Started</a>
-//         </header>
-//         <picture>
-//           <source
-//             type="image/webp"
-//             srcSet={`${bannerWebp} 1x, ${bannerWebp2x} 2x`}
-//           />
-//           <source
-//             type="image/png"
-//             srcSet={`${bannerPng} 1x, ${bannerPng2x} 2x`}
-//           />
-//           <img className="hero__image" src={bannerPng} alt="" />
-//         </picture>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default BlockHero;
-
-// import bannerPng from "../assets/images/banner.png";
-// import bannerWebp from "../assets/images/banner.webp";
-// import bannerPng2x from "../assets/images/banner@2x.png";
-// import bannerWebp2x from "../assets/images/banner@2x.webp";
-
-// import posterPng from "../assets/images/poster.png";
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Button,
   Flex,
   HStack,
   Image,
+  Skeleton,
   Text,
   VStack,
   chakra,
+  Link,
+  List,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 import heroimage from "../assets/images/heroimage.jpg";
+import event2024 from "../assets/images/event2024.jpg";
 
+import Samin from "../assets/images/Samin.webp";
+import { useTranslation } from "react-i18next";
 import CountdownTimer from "./CountdownTimer";
-
-// import homePageImage from "../assets/images/homepage.jpg";
-// import homePageVideo from "../assets/images/homepagevideo.mp4";
-
-// const BlockHero = () => {
-//   return (
-//     <Box
-//       className="block block--dark block--skewed-left hero"
-//       // padding="6rem 2rem"
-//       // paddingBottom="10rem"
-//       // paddingTop={{ lg: "0" }}
-//       bg="#000"
-//       color="#7b858b"
-//       clipPath="polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%)"
-//     >
-//       <Box
-//         className="container grid grid--1x2"
-//         textAlign="center"
-//         maxWidth="1140px"
-//         // margin="0 auto"
-//       >
-//         <Grid display="grid" templateColumns={["1fr", null, null, "1fr"]}>
-//           <Box as="picture">
-//             {/* <source
-//               type="image/webp"
-//               srcSet={`${bannerWebp} 1x, ${bannerWebp2x} 2x`}
-//             />
-//             <source
-//               type="image/png"
-//               srcSet={`${bannerPng} 1x, ${bannerPng2x} 2x`}
-//             /> */}
-//             <Image
-//               className="hero__image"
-//               src={posterPng}
-//               alt="logo"
-//               width="50%"
-//               opacity={"0.1"}
-//             />
-//           </Box>
-//           <Box
-//             className="block__header hero__content"
-//             textAlign={{ lg: "left" }}
-//             alignSelf={{ lg: "center" }}
-//           >
-//             <Text
-//               className="h1 block__heading"
-//               color="#fff"
-//               marginBottom="1rem"
-//               marginTop="0"
-//               fontSize={{ base: "6rem", lg: "4.5rem" }}
-//               fontWeight="bold"
-//               lineHeight="1.1"
-//             >
-//               TED Talks: Inspire, Engage, and Discover
-//             </Text>
-//             <Text
-//               className="p hero__tagline"
-//               marginTop="0"
-//               fontSize="2rem"
-//               color="b9c3cf"
-//               letterSpacing="1px"
-//               margin="2rem 0 5rem"
-//             >
-//               Deploy your websites in less than 60 seconds.
-//             </Text>
-//             <Button
-//               className="btn btn--accent"
-//               border="0"
-//               borderRadius="40px"
-//               cursor="pointer"
-//               fontSize={{ base: "1.8rem", lg: "1.5rem" }}
-//               fontWeight="600"
-//               margin="1rem 0"
-//               outline="0"
-//               padding="3rem 4vw"
-//               textAlign="center"
-//               textTransform="uppercase"
-//               whiteSpace="nowrap"
-//               bg="var(--color-accent)"
-//               paddingLeft="6rem"
-//               paddingRight="6rem"
-//               color="#fff"
-//               _hover={{ bg: "#ec3000" }}
-//             >
-//               Buy Now
-//             </Button>
-//           </Box>
-//         </Grid>
-//       </Box>
-//     </Box>
-//   );
-// };
-
-// export default BlockHero;
 
 const SuperscriptX = chakra("sup", {
   baseStyle: {
@@ -169,6 +37,25 @@ const LowercaseSpan = chakra("span", {
 });
 
 const BlockHero: React.FC = () => {
+  const { t } = useTranslation();
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [boxLoaded, setBoxLoaded] = useState(false);
+
+  // const handleImageLoad = () => {
+  //   setImageLoaded(true);
+  // };
+
+  const handleImageLoad = () => {
+    setTimeout(() => {
+      setImageLoaded(true);
+    }, 0);
+  };
+
+  const handleBoxLoad = () => {
+    setBoxLoaded(true);
+  };
+
   // const imageStyle = {
   //   width: "50%",
   //   // height: "100%",
@@ -191,92 +78,295 @@ const BlockHero: React.FC = () => {
 
   const eventStartTime = new Date("2023-09-30T09:00:00-05:00");
 
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
+
+  // useEffect(() => {
+  //   // You can add additional logic here if needed
+  //   // This effect runs when boxLoaded state changes
+  // }, [boxLoaded]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <Box
-      className="block block--dark"
-      // padding="6rem 30rem"
-      // paddingBottom="10rem"
-      bg="#000"
-      // color="#7b858b"
-      // width="100%"
-      // width="100vw"
-      // overflow={"hidden"}
-    >
-      <Flex width={"100%"} justifyContent="center">
-        <Image
-          src={heroimage}
-          width="100%"
-          // objectFit="cover"
-          opacity="0.99"
-        />
-      </Flex>
+    <>
       <Box
-        display="flex"
-        position="absolute"
-        width="100%"
-        height={{ base: "15rem", lg: "25rem" }}
-        top={{ base: "14.5rem", md: "25rem", lg: "26rem" }}
-        bgGradient="linear(to-r, gray.700, transparent)"
-        // justifyContent="center"
-        alignItems="center"
+        className="block block--dark"
+        // padding="6rem 30rem"
+        // paddingBottom="10rem"
+        bg="#000"
+        // color="#7b858b"
+        // width="100%"
+        // width="100vw"
+        // overflow={"hidden"}
       >
-        <VStack
-          spacing={{ base: "2rem", lg: "4rem" }}
-          marginLeft={{ base: "2rem", lg: "10rem" }}
-        >
-          <Text
-            color={"white"}
-            fontWeight="bold"
-            fontSize={useBreakpointValue({
-              base: "2rem",
-              md: "2rem",
-              lg: "4rem",
-            })}
-            // marginLeft="10rem"
+        <Flex width={"100%"} justifyContent="center">
+          {/* <div
+            style={{
+              paddingTop: "56.25%", // Assuming 16:9 aspect ratio, adjust as needed
+              position: "relative",
+              width: "100%",
+            }}
+          > */}
+          <Skeleton
+            isLoaded={imageLoaded}
+            style={{
+              // position: "absolute",
+              // top: 0,
+              // left: 0,
+              width: "100%",
+              height: "100%",
+            }}
           >
-            TED Talks: Inspire, Engage, and Discover
-          </Text>
-          <HStack spacing="2rem">
-            <Button
-              fontSize={{ base: "1.3rem", lg: "1.5rem" }}
-              width={{ base: "10rem", lg: "13rem" }}
-              height="4rem"
-              background="blue.400"
-              rounded="full"
-              color={"white"}
-              _hover={{ bg: "blue.500" }}
-              onClick={handleLearnMoreButtonClick}
+            <Image
+              src={heroimage}
+              width="100%"
+              // objectFit="cover"
+              opacity="0"
+              style={{ transition: "opacity 1s ease-in-out" }}
+              onLoad={(e) => {
+                e.currentTarget.style.opacity = "0.9";
+                handleImageLoad();
+              }}
+            />
+          </Skeleton>
+          {/* </div> */}
+        </Flex>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          onAnimationComplete={handleBoxLoad}
+        >
+          <Box
+            display="flex"
+            position="absolute"
+            width="100%"
+            height={{ base: "15rem", lg: "25rem" }}
+            top={{ base: "14.5rem", md: "25rem", lg: "26rem" }}
+            bgGradient={{ base: "", xl: "linear(to-r, gray.700, transparent)" }}
+            // justifyContent="center"
+            alignItems="center"
+            // opacity="0"
+          >
+            <VStack
+              spacing={{ base: "2rem", lg: "4rem" }}
+              marginLeft={{ base: "2rem", lg: "10rem" }}
             >
-              Learn More
-            </Button>
-            <Button
-              fontSize={{ base: "1.2rem", lg: "1.5rem" }}
-              width={{ base: "10rem", lg: "13rem" }}
-              height="4rem"
-              background="whiteAlpha.300"
-              rounded="full"
-              color="white"
-              _hover={{ bg: "whiteAlpha.500" }}
-              onClick={handleAveLorneButtonClick}
+              <Text
+                display={{ base: "none", xl: "block" }}
+                color={"white"}
+                fontWeight="bold"
+                fontSize={useBreakpointValue({
+                  base: "2rem",
+                  md: "2rem",
+                  lg: "4rem",
+                })}
+                // marginLeft="10rem"
+              >
+                {t("heroTitle")}
+              </Text>
+              <HStack spacing="2rem">
+                <Button
+                  display={{ base: "none", xl: "block" }}
+                  fontSize={{ base: "1.3rem", lg: "1.5rem" }}
+                  width={{ base: "10rem", lg: "13rem" }}
+                  height="4rem"
+                  background="blue.400"
+                  rounded="full"
+                  color={"white"}
+                  _hover={{ bg: "blue.500" }}
+                  onClick={handleLearnMoreButtonClick}
+                >
+                  {t("learnMore")}
+                </Button>
+
+                <Button
+                  display={{ base: "none", xl: "block" }}
+                  fontSize={{ base: "1.2rem", lg: "1.5rem" }}
+                  width={{ base: "10rem", lg: "13rem" }}
+                  height="4rem"
+                  background="whiteAlpha.300"
+                  rounded="full"
+                  color="white"
+                  _hover={{ bg: "whiteAlpha.500" }}
+                  onClick={handleAveLorneButtonClick}
+                >
+                  TED<SuperscriptX>x</SuperscriptX>A
+                  <LowercaseSpan>ve</LowercaseSpan>L
+                  <LowercaseSpan>orne</LowercaseSpan>
+                </Button>
+              </HStack>
+            </VStack>
+          </Box>
+          {/* <Flex justifyContent={"center"}>
+            <Box
+              className="card card--secondary aos-animate"
+              borderRadius="7px"
+              // boxShadow="0 0 20px 10px gray"
+              overflow="hidden"
+              justifyContent="center"
+              alignItems="center"
+              // maxWidth="350px"
+              width={"300px"}
+              // height={"300px"}
+              margin="0 auto"
+              // data-aos="fade-right"
+              // data-aos-duration="500"
+              position="absolute"
+              top={{ base: "14.5rem", md: "25rem", lg: "56rem" }}
+              left={{ base: "14.5rem", md: "25rem", lg: "32%" }}
             >
-              TED<SuperscriptX>x</SuperscriptX>A
-              <LowercaseSpan>ve</LowercaseSpan>L
-              <LowercaseSpan>orne</LowercaseSpan>
-            </Button>
-          </HStack>
-        </VStack>
+              <Image
+                src={Samin}
+                width="100%"
+                height={"200px"}
+                objectFit="cover"
+                opacity="0.99"
+                // p="0.1rem 0.5%"
+                // borderRadius="7px"
+                borderTopRadius="7px"
+              />
+              <Box
+                className="card__header"
+                bg="linear-gradient(to bottom, #6322BF, #F226AA)"
+                color="#fff"
+                p="1rem 7%"
+                borderBottomRadius="7px"
+              >
+                <Text
+                  className="plan__name"
+                  color="#fff"
+                  margin="0"
+                  fontSize={{ base: "6rem", lg: "2.6rem" }}
+                  fontWeight="bold"
+                  textAlign="center"
+                >
+                  TedxAveLorne
+                </Text>
+                <Text
+                  className="plan__name"
+                  color="#fff"
+                  margin="0"
+                  fontSize={{ base: "4rem", lg: "2.6rem" }}
+                  fontWeight="bold"
+                  textAlign="center"
+                >
+                  2023
+                </Text>
+              </Box>
+              <Box className="card__body" p="2rem 7%">
+                <List
+                  className="list list--tick"
+                  color="var(--color-headings)"
+                  padding={0}
+                  // paddingLeft={"3rem"}
+                  // style={{
+                  //   listStyleImage: `url(${tickImage})`,
+                  // }}
+                ></List>
+              </Box>
+            </Box>
+
+            <Box
+              className="card card--secondary aos-animate"
+              borderRadius="7px"
+              // boxShadow="0 0 20px 10px gray"
+              overflow="hidden"
+              justifyContent="center"
+              alignItems="center"
+              // maxWidth="350px"
+              width={"300px"}
+              // height={"300px"}
+              margin="0 auto"
+              // data-aos="fade-right"
+              // data-aos-duration="500"
+              position="absolute"
+              top={{ base: "14.5rem", md: "25rem", lg: "56rem" }}
+              right={{ base: "14.5rem", md: "25rem", lg: "32%" }}
+            >
+              <Image
+                src={Samin}
+                width="100%"
+                height={"200px"}
+                objectFit="cover"
+                opacity="0.99"
+                // p="0.1rem 0.5%"
+                // borderRadius="7px"
+                borderTopRadius="7px"
+              />
+              <Box
+                className="card__header"
+                bg="linear-gradient(to bottom, #6322BF, #F226AA)"
+                color="#fff"
+                p="1rem 7%"
+                borderBottomRadius="7px"
+              >
+                <Text
+                  className="plan__name"
+                  color="#fff"
+                  margin="0"
+                  fontSize={{ base: "6rem", lg: "2.6rem" }}
+                  fontWeight="bold"
+                  textAlign="center"
+                >
+                  TedxAveLorne
+                </Text>
+                <Text
+                  className="plan__name"
+                  color="#fff"
+                  margin="0"
+                  fontSize={{ base: "4rem", lg: "2.6rem" }}
+                  fontWeight="bold"
+                  textAlign="center"
+                >
+                  2023
+                </Text>
+              </Box>
+              <Box className="card__body" p="2rem 7%">
+                <List
+                  className="list list--tick"
+                  color="var(--color-headings)"
+                  padding={0}
+                  // paddingLeft={"3rem"}
+                  // style={{
+                  //   listStyleImage: `url(${tickImage})`,
+                  // }}
+                ></List>
+              </Box>
+            </Box>
+          </Flex> */}
+        </motion.div>
+
+        <Box
+          className="plan"
+          // _hover={{ transform: "scale(1.05)" }}
+          // transition="transform 0.2s ease-out"
+        ></Box>
+
+        {/* <Flex
+          display="flex"
+          position="absolute"
+          width="100%"
+          top={{ base: "7rem", md: "10rem", lg: "53rem" }}
+          alignItems="center"
+          justifyContent="center"
+        >
+          <CountdownTimer eventStartTime={eventStartTime} />
+        </Flex> */}
       </Box>
-      <Flex
-        display="flex"
-        position="absolute"
-        width="100%"
-        top={{ base: "7rem", md: "10rem", lg: "53rem" }}
-        alignItems="center"
-        justifyContent="center"
-      >
-        <CountdownTimer eventStartTime={eventStartTime} />
-      </Flex>
-    </Box>
+    </>
   );
 };
 

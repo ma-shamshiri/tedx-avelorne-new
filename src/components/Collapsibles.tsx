@@ -1,34 +1,3 @@
-// import React, { useState } from "react";
-
-// import { BsChevronDown } from "react-icons/bs";
-
-// const Collapsibles = () => {
-//   const [expanded, setExpanded] = useState(false);
-
-//   const handleToggle = () => {
-//     setExpanded(!expanded);
-//   };
-
-//   return (
-//     <div className={`collapsible ${expanded ? "collapsible--expanded" : ""}`}>
-//       <header className="collapsible__header" onClick={handleToggle}>
-//         <h2 className="collapsible__heading">Item 1</h2>
-//         <BsChevronDown
-//           className={`icon icon--white collapsible__chevron ${
-//             expanded ? "collapsible--expanded" : ""
-//           }`}
-//         />
-//       </header>
-//       <div className="collapsible__content">
-//         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
-//         accusamus.
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Collapsibles;
-
 import { Box, Icon, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";

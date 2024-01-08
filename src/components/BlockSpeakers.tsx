@@ -13,125 +13,8 @@ import peggy from "../assets/images/Peggy.webp";
 import vincent from "../assets/images/Vincent.webp";
 import SpeakerCard from "./SpeakerCard";
 
-import AOS from "aos"; // Import AOS library
-import "aos/dist/aos.css"; // Import AOS styles
-
-// const Speakers = () => {
-//   return (
-//     <Box
-//       className="block block--dark block--skewed-right block-showcase"
-//       padding="6rem 2rem"
-//       paddingBottom="10rem"
-//       bg={useColorModeValue("gray.800", "#edebdd")}
-//       color="#7b858b"
-//       //   clipPath="polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
-//     >
-//       <Box
-//         className="block__header container"
-//         textAlign="center"
-//         maxWidth="750px"
-//         margin="0 auto"
-//       >
-//         <Text
-//           className="h2"
-//           color={useColorModeValue("black", "gray.700")}
-//           marginBottom="2rem"
-//           marginTop="0"
-//           fontSize="4rem"
-//           fontWeight="bold"
-//           lineHeight="1.1"
-//         >
-//           Our Speakers
-//         </Text>
-
-//         <Text
-//           className="h3"
-//           color={useColorModeValue("red", "gray.600")}
-//           marginBottom="1rem"
-//           marginTop="0"
-//           fontSize="2.5rem"
-//           lineHeight="1.1"
-//         >
-//           Elevate Your Thinking: Get to Know Our TEDxAveLorne Speakers
-//         </Text>
-//         <Center>
-//           <Box className="grid grid--2x8">
-//             <Grid
-//               display="grid"
-//               templateColumns={["repeat(2, 1fr)", null, null, "repeat(4, 1fr)"]}
-//               templateRows={["repeat(4, 1fr)", null, null, "repeat(2, 1fr)"]}
-//               rowGap={"20rem"}
-//               columnGap={"17rem"}
-//               padding="10rem 0"
-//             >
-//               {/* <Box width="15rem" height="15rem" borderRadius="100%">
-//                 <Image src={mcgillImage} width={"100%"} height={"100%"} />
-//               </Box> */}
-//               <Box
-//                 width="15rem"
-//                 height="15rem"
-//                 backgroundImage={mcgillImage}
-//                 backgroundSize={"cover"}
-//                 borderRadius={"100%"}
-//               ></Box>
-//               <Box
-//                 width="15rem"
-//                 height="15rem"
-//                 backgroundImage={mcgillImage}
-//                 backgroundSize={"cover"}
-//                 borderRadius={"100%"}
-//               ></Box>
-//               <Box
-//                 width="15rem"
-//                 height="15rem"
-//                 backgroundImage={mcgillImage}
-//                 backgroundSize={"cover"}
-//                 borderRadius={"100%"}
-//               ></Box>
-//               <Box
-//                 width="15rem"
-//                 height="15rem"
-//                 backgroundImage={mcgillImage}
-//                 backgroundSize={"cover"}
-//                 borderRadius={"100%"}
-//               ></Box>
-//               <Box
-//                 width="15rem"
-//                 height="15rem"
-//                 backgroundImage={mcgillImage}
-//                 backgroundSize={"cover"}
-//                 borderRadius={"100%"}
-//               ></Box>
-//               <Box
-//                 width="15rem"
-//                 height="15rem"
-//                 backgroundImage={mcgillImage}
-//                 backgroundSize={"cover"}
-//                 borderRadius={"100%"}
-//               ></Box>
-//               <Box
-//                 width="15rem"
-//                 height="15rem"
-//                 backgroundImage={mcgillImage}
-//                 backgroundSize={"cover"}
-//                 borderRadius={"100%"}
-//               ></Box>
-//               <Box
-//                 width="15rem"
-//                 height="15rem"
-//                 backgroundImage={mcgillImage}
-//                 backgroundSize={"cover"}
-//                 borderRadius={"100%"}
-//               ></Box>
-//             </Grid>
-//           </Box>
-//         </Center>
-//       </Box>
-//     </Box>
-//   );
-// };
-
-// export default Speakers;
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // const BlockSpeakers: React.FC = () => {
 //   useEffect(() => {
@@ -181,7 +64,7 @@ const BlockSpeakers: React.FC = () => {
       // bg={useColorModeValue("gray.800", "#16F8B6")}
       // bg={useColorModeValue("gray.800", "#0B0E37")}
       // bg={useColorModeValue("gray.800", "#374550")}
-      bg={useColorModeValue("#ACD1B4", "#0D1224")}
+      bg={useColorModeValue("#ACD1B4", "#1E2142")}
       color="#16F8B6"
       // data-aos="fade-up"
       // data-aos-duration="500"

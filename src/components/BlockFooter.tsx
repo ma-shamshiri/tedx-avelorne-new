@@ -1,232 +1,3 @@
-// import { useState } from "react";
-// import { BsChevronDown } from "react-icons/bs";
-
-// import logo from "../assets/images/logo.svg";
-
-// const BlockFooter = () => {
-//   const [column1Expanded, setColumn1Expanded] = useState(true);
-//   const [column2Expanded, setColumn2Expanded] = useState(false);
-//   const [column3Expanded, setColumn3Expanded] = useState(false);
-//   const [column4Expanded, setColumn4Expanded] = useState(false);
-
-//   const handleColumn1Toggle = () => {
-//     setColumn1Expanded(!column1Expanded);
-//   };
-
-//   const handleColumn2Toggle = () => {
-//     setColumn2Expanded(!column2Expanded);
-//   };
-
-//   const handleColumn3Toggle = () => {
-//     setColumn3Expanded(!column3Expanded);
-//   };
-
-//   const handleColumn4Toggle = () => {
-//     setColumn4Expanded(!column4Expanded);
-//   };
-
-//   return (
-//     <footer className="block block--dark footer">
-//       <div className="container grid footer__sections">
-//         <section
-//           className={`collapsible footer__section ${
-//             column1Expanded ? "collapsible--expanded" : ""
-//           }`}
-//         >
-//           <header className="collapsible__header" onClick={handleColumn1Toggle}>
-//             <h2 className="collapsible__heading footer__heading">Products</h2>
-//             <BsChevronDown
-//               className={`icon icon--white collapsible__chevron ${
-//                 column1Expanded ? "collapsible--expanded" : ""
-//               }`}
-//             />
-//           </header>
-//           <div className="collapsible__content">
-//             <ul className="list">
-//               <li>
-//                 <a href="#">Website Hosting</a>
-//               </li>
-//               <li>
-//                 <a href="#">Free Automated Wordpress</a>
-//               </li>
-//               <li>
-//                 <a href="#">Migrations</a>
-//               </li>
-//             </ul>
-//           </div>
-//         </section>
-
-//         <section
-//           className={`collapsible footer__section ${
-//             column2Expanded ? "collapsible--expanded" : ""
-//           }`}
-//         >
-//           <header className="collapsible__header" onClick={handleColumn2Toggle}>
-//             <h2 className="collapsible__heading footer__heading">Company</h2>
-//             <BsChevronDown
-//               className={`icon icon--white collapsible__chevron ${
-//                 column2Expanded ? "collapsible--expanded" : ""
-//               }`}
-//             />
-//           </header>
-//           <div className="collapsible__content">
-//             <ul className="list">
-//               <li>
-//                 <a href="#">About</a>
-//               </li>
-//               <li>
-//                 <a href="#">Affiliates</a>
-//               </li>
-//               <li>
-//                 <a href="#">Blog</a>
-//               </li>
-//             </ul>
-//           </div>
-//         </section>
-
-//         <section
-//           className={`collapsible footer__section ${
-//             column3Expanded ? "collapsible--expanded" : ""
-//           }`}
-//         >
-//           <header className="collapsible__header" onClick={handleColumn3Toggle}>
-//             <h2 className="collapsible__heading footer__heading">Support</h2>
-//             <BsChevronDown
-//               className={`icon icon--white collapsible__chevron ${
-//                 column3Expanded ? "collapsible--expanded" : ""
-//               }`}
-//             />
-//           </header>
-//           <div className="collapsible__content">
-//             <ul className="list">
-//               <li>
-//                 <a href="#">Contact</a>
-//               </li>
-//               <li>
-//                 <a href="#">Knowledge Base</a>
-//               </li>
-//               <li>
-//                 <a href="#">FAQ</a>
-//               </li>
-//             </ul>
-//           </div>
-//         </section>
-
-//         <section
-//           className={`collapsible footer__section ${
-//             column4Expanded ? "collapsible--expanded" : ""
-//           }`}
-//         >
-//           <header className="collapsible__header" onClick={handleColumn4Toggle}>
-//             <h2 className="collapsible__heading footer__heading">Domains</h2>
-//             <BsChevronDown
-//               className={`icon icon--white collapsible__chevron ${
-//                 column4Expanded ? "collapsible--expanded" : ""
-//               }`}
-//             />
-//           </header>
-//           <div className="collapsible__content">
-//             <ul className="list">
-//               <li>
-//                 <a href="#">Domain Checker</a>
-//               </li>
-//               <li>
-//                 <a href="#">Domain Transfer</a>
-//               </li>
-//               <li>
-//                 <a href="#">Free Domain</a>
-//               </li>
-//             </ul>
-//           </div>
-//         </section>
-//         <section className="footer__brand">
-//           <img src={logo} alt="" />
-//           <p className="footer__copyright">Copyright 2020 Mosh Hamedani</p>
-//         </section>
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default BlockFooter;
-
-// import { useState } from "react";
-// import { BsChevronDown } from "react-icons/bs";
-
-// import logo from "../assets/images/logo.svg";
-
-// const columnsData = [
-//   {
-//     title: "Products",
-//     items: ["Website Hosting", "Free Automated Wordpress", "Migrations"],
-//   },
-//   { title: "Company", items: ["About", "Affiliates", "Blog"] },
-//   { title: "Support", items: ["Contact", "Knowledge Base", "FAQ"] },
-//   {
-//     title: "Domains",
-//     items: ["Domain Checker", "Domain Transfer", "Free Domain"],
-//   },
-// ];
-
-// const BlockFooter = () => {
-//   const [expandedColumns, setExpandedColumns] = useState([
-//     true,
-//     false,
-//     false,
-//     false,
-//   ]);
-
-//   const handleToggle = (index: number) => {
-//     const updatedColumns = [...expandedColumns];
-//     updatedColumns[index] = !updatedColumns[index];
-//     setExpandedColumns(updatedColumns);
-//   };
-
-//   return (
-//     <footer className="block block--dark footer">
-//       <div className="container grid footer__sections">
-//         {columnsData.map((column, index) => (
-//           <section
-//             key={column.title}
-//             className={`collapsible footer__section ${
-//               expandedColumns[index] ? "collapsible--expanded" : ""
-//             }`}
-//           >
-//             <div
-//               className="collapsible__header"
-//               onClick={() => handleToggle(index)}
-//             >
-//               <h2 className="collapsible__heading footer__heading">
-//                 {column.title}
-//               </h2>
-//               <BsChevronDown
-//                 className={`icon icon--white collapsible__chevron ${
-//                   expandedColumns[index] ? "collapsible--expanded" : ""
-//                 }`}
-//               />
-//             </div>
-//             <div className="collapsible__content">
-//               <ul className="list">
-//                 {column.items.map((item, itemIndex) => (
-//                   <li key={itemIndex}>
-//                     <a href="#">{item}</a>
-//                   </li>
-//                 ))}
-//               </ul>
-//             </div>
-//           </section>
-//         ))}
-//         <div className="footer__brand">
-//           <img src={logo} alt="" />
-//           <p className="footer__copyright">Copyright 2020 Mosh Hamedani</p>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default BlockFooter;
-
 import { BsChevronDown } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import {
@@ -240,17 +11,24 @@ import {
   HStack,
   ListItem,
   Link as ChakraLink,
+  useColorMode,
 } from "@chakra-ui/react";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
-// import logo from "../assets/images/logo.svg";
-import logo from "../assets/images/logo.png";
 import tedxWhite from "../assets/images/tedxWhite.png";
 import tedxBlack from "../assets/images/tedxBlack.png";
 
 import { IconButton, Stack, useColorModeValue } from "@chakra-ui/react";
 import { BsInstagram, BsLinkedin, BsTwitter, BsFacebook } from "react-icons/bs";
 
+import { useTranslation } from "react-i18next";
+
 const BlockFooter = () => {
+  const { t } = useTranslation();
+
+  const { colorMode } = useColorMode();
+
+  const tedxImg = colorMode === "dark" ? tedxWhite : tedxBlack;
+
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024); // Set your large screen breakpoint
 
   const [column1Expanded, setColumn1Expanded] = useState(true);
@@ -289,11 +67,35 @@ const BlockFooter = () => {
   return (
     <Box
       className="block block--dark footer"
+      color="#7b858b"
       padding="6rem 2rem"
       paddingBottom="10rem"
-      bg="#232323"
-      color="#7b858b"
       overflow={"hidden"}
+      // ------------------------------------------------------------------------------------------
+      // bg="#232323"
+      // bg="#333333"
+      // bg="#849494"
+      // bg="#429E9D"
+      // bg="#3E848D"
+      // bg="#347576"
+      // bg="#285D5E"
+      // bg="#57BCBE"
+      // bg="#BE1984"
+      // bg="#CC2364"
+      // bg="#D7264E"
+      // bg="#DD2D43"
+      // bg="#E04140"
+      // bg="#E4593E"
+      bg={useColorModeValue("#B0C9C5", "#232323")}
+      // bg={useColorModeValue(
+      //   "linear-gradient(45deg, #685ACD, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)",
+      //   "black"
+      // )}
+      // bg={useColorModeValue(
+      //   "linear-gradient(45deg, #EE8B35, #E4593E, #E04140, #DD2D43, #D7264E, #CC2364, #BE1984)",
+      //   "black"
+      // )}
+      // ------------------------------------------------------------------------------------------
     >
       <Box className="grid grid--1x2" maxWidth="1140px" margin="0 auto">
         <Grid
@@ -309,12 +111,15 @@ const BlockFooter = () => {
             <Box
               className={`footer__section`}
               padding="2rem"
-              borderBottom={{ base: "1px solid #393939", lg: "0" }}
+              borderBottom={{
+                base: `1px solid ${useColorModeValue("#999", "#393939")}`,
+                lg: "0",
+              }}
               marginLeft={{ lg: "6rem" }}
             >
               <Text
                 className="h2 collapsible__heading footer__heading"
-                color="#ddd"
+                color={useColorModeValue("gray.800", "#ddd")}
                 marginBottom="1rem"
                 fontSize="1.6rem"
                 fontWeight="bold"
@@ -322,7 +127,7 @@ const BlockFooter = () => {
                 marginTop="0"
                 textTransform="uppercase"
               >
-                PROGRAMS
+                {t("programs")}
               </Text>
               <Box className="collapsible__content">
                 <List
@@ -333,10 +138,10 @@ const BlockFooter = () => {
                   <ListItem className="list__item" paddingBottom="0.5rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.900", "#777")}
                       // textTransform="uppercase"
                       _hover={{ color: "#fff" }}
                     >
@@ -346,12 +151,12 @@ const BlockFooter = () => {
                   <ListItem className="list__item" paddingBottom="0.5rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       TEDx
                     </ChakraLink>
@@ -359,12 +164,12 @@ const BlockFooter = () => {
                   <ListItem className="list__item" paddingBottom="0.5rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       TEDxAveLorne
                     </ChakraLink>
@@ -378,7 +183,10 @@ const BlockFooter = () => {
                 column1Expanded ? "collapsible--expanded" : ""
               }`}
               padding="2rem"
-              borderBottom={{ base: "1px solid #393939", lg: "0" }}
+              borderBottom={{
+                base: `1px solid ${useColorModeValue("#999", "#393939")}`,
+                lg: "0",
+              }}
             >
               <Box
                 className="collapsible__header"
@@ -388,7 +196,7 @@ const BlockFooter = () => {
               >
                 <Text
                   className="h2 collapsible__heading footer__heading"
-                  color="#ddd"
+                  color={useColorModeValue("gray.800", "#ddd")}
                   marginBottom="1rem"
                   fontSize="2.5rem"
                   fontWeight="bold"
@@ -396,7 +204,7 @@ const BlockFooter = () => {
                   marginTop="0"
                   textTransform="uppercase"
                 >
-                  PROGRAMS
+                  {t("programs")}
                 </Text>
                 <Icon
                   className={`icon icon--white collapsible__chevron ${
@@ -429,12 +237,12 @@ const BlockFooter = () => {
                   <ListItem className="list__item" paddingBottom="1rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
                       textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      color={useColorModeValue("gray.800", "#777")}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       TED
                     </ChakraLink>
@@ -442,12 +250,12 @@ const BlockFooter = () => {
                   <ListItem className="list__item" paddingBottom="1rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
                       textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      color={useColorModeValue("gray.800", "#777")}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       TEDx
                     </ChakraLink>
@@ -455,12 +263,12 @@ const BlockFooter = () => {
                   <ListItem className="list__item">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
                       textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      color={useColorModeValue("gray.800", "#777")}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       TEDxAveLorne
                     </ChakraLink>
@@ -473,12 +281,15 @@ const BlockFooter = () => {
             <Box
               className={`footer__section`}
               padding="2rem"
-              borderBottom={{ base: "1px solid #393939", lg: "0" }}
+              borderBottom={{
+                base: `1px solid ${useColorModeValue("#999", "#393939")}`,
+                lg: "0",
+              }}
               marginLeft={{ lg: "6rem" }}
             >
               <Text
                 className="h2 collapsible__heading footer__heading"
-                color="#ddd"
+                color={useColorModeValue("gray.800", "#ddd")}
                 marginBottom="1rem"
                 fontSize="1.6rem"
                 fontWeight="bold"
@@ -497,40 +308,40 @@ const BlockFooter = () => {
                   <ListItem className="list__item" paddingBottom="0.5rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/media/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
-                      Item1
+                      {t("media")}
                     </ChakraLink>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="0.5rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/team/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
-                      Item2
+                      {t("team")}
                     </ChakraLink>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="0.5rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/event/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
-                      Item3
+                      {t("event")}
                     </ChakraLink>
                   </ListItem>
                 </List>
@@ -542,7 +353,10 @@ const BlockFooter = () => {
                 column2Expanded ? "collapsible--expanded" : ""
               }`}
               padding="2rem"
-              borderBottom={{ base: "1px solid #393939", lg: "0" }}
+              borderBottom={{
+                base: `1px solid ${useColorModeValue("#999", "#393939")}`,
+                lg: "0",
+              }}
             >
               <Box
                 className="collapsible__header"
@@ -552,7 +366,7 @@ const BlockFooter = () => {
               >
                 <Text
                   className="h2 collapsible__heading footer__heading"
-                  color="#ddd"
+                  color={useColorModeValue("gray.800", "#ddd")}
                   marginBottom="1rem"
                   fontSize="2.5rem"
                   fontWeight="bold"
@@ -596,37 +410,40 @@ const BlockFooter = () => {
                       href="#"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
-                      Item1
+                      {t("media")}
                     </ChakraLink>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="1rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/team/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
-                      Item2
+                      {t("team")}
                     </ChakraLink>
                   </ListItem>
                   <ListItem className="list__item">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/event/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
-                      Item3
+                      {t("event")}
                     </ChakraLink>
                   </ListItem>
                 </List>
@@ -637,12 +454,15 @@ const BlockFooter = () => {
             <Box
               className={`footer__section`}
               padding="2rem"
-              borderBottom={{ base: "1px solid #393939", lg: "0" }}
+              borderBottom={{
+                base: `1px solid ${useColorModeValue("#999", "#393939")}`,
+                lg: "0",
+              }}
               marginLeft={{ lg: "4rem" }}
             >
               <Text
                 className="h2 collapsible__heading footer__heading"
-                color="#ddd"
+                color={useColorModeValue("gray.800", "#ddd")}
                 marginBottom="1rem"
                 fontSize="1.6rem"
                 fontWeight="bold"
@@ -650,7 +470,7 @@ const BlockFooter = () => {
                 marginTop="0"
                 textTransform="uppercase"
               >
-                OUR COMMUNITY
+                {t("ourCommunity")}
               </Text>
               <Box className="collapsible__content">
                 <List
@@ -661,42 +481,42 @@ const BlockFooter = () => {
                   <ListItem className="list__item" paddingBottom="0.5rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSc0UPKkrAe914FpkjrmzyIRu0WEwJlS23JAEAx8KC8A3Vv4Tg/viewform"
-                      target="_blank"
+                      href="/joinus/team/"
+                      // target="_blank"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
-                      Organizers
+                      {t("organizers")}
                     </ChakraLink>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="0.5rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/joinus/speaker/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
-                      Speakers
+                      {t("speakers")}
                     </ChakraLink>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="0.5rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSfkWbg1-z8OWOk6cJEPULsA8dPKrqdZVDUO6k36biPD1ydkQQ/viewform"
-                      target="_blank"
+                      href="/joinus/sponsor/"
+                      // target="_blank"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
-                      Sponsors
+                      {t("sponsors")}
                     </ChakraLink>
                   </ListItem>
                 </List>
@@ -708,7 +528,10 @@ const BlockFooter = () => {
                 column3Expanded ? "collapsible--expanded" : ""
               }`}
               padding="2rem"
-              borderBottom={{ base: "1px solid #393939", lg: "0" }}
+              borderBottom={{
+                base: `1px solid ${useColorModeValue("#999", "#393939")}`,
+                lg: "0",
+              }}
             >
               <Box
                 className="collapsible__header"
@@ -718,7 +541,7 @@ const BlockFooter = () => {
               >
                 <Text
                   className="h2 collapsible__heading footer__heading"
-                  color="#ddd"
+                  color={useColorModeValue("gray.800", "#ddd")}
                   marginBottom="1rem"
                   fontSize="2.5rem"
                   fontWeight="bold"
@@ -726,7 +549,7 @@ const BlockFooter = () => {
                   marginTop="0"
                   textTransform="uppercase"
                 >
-                  OUR COMMUNITY
+                  {t("ourCommunity")}
                 </Text>
                 <Icon
                   className={`icon icon--white collapsible__chevron ${
@@ -759,41 +582,41 @@ const BlockFooter = () => {
                   <ListItem className="list__item" paddingBottom="1rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/joinus/team/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
-                      Organizers
+                      {t("organizers")}
                     </ChakraLink>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="1rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSc54Ba2B975pYmKBXZVaXN0xdQ97e18fE8NmGb-WfT27KXJyw/viewform"
-                      target="_blank"
+                      href="/joinus/speaker/"
+                      // target="_blank"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
-                      Speakers
+                      {t("speakers")}
                     </ChakraLink>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="1rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/joinus/sponsor/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
-                      Sponsors
+                      {t("sponsors")}
                     </ChakraLink>
                   </ListItem>
                 </List>
@@ -804,12 +627,15 @@ const BlockFooter = () => {
             <Box
               className={`footer__section`}
               padding="2rem"
-              borderBottom={{ base: "1px solid #393939", lg: "0" }}
+              borderBottom={{
+                base: `1px solid ${useColorModeValue("#999", "#393939")}`,
+                lg: "0",
+              }}
               marginLeft={{ lg: "6rem" }}
             >
               <Text
                 className="h2 collapsible__heading footer__heading"
-                color="#ddd"
+                color={useColorModeValue("gray.800", "#ddd")}
                 marginBottom="1rem"
                 fontSize="1.6rem"
                 fontWeight="bold"
@@ -817,7 +643,7 @@ const BlockFooter = () => {
                 marginTop="0"
                 textTransform="uppercase"
               >
-                FOLLOW US
+                {t("followUs")}
               </Text>
               <Box className="collapsible__content">
                 <List
@@ -832,9 +658,9 @@ const BlockFooter = () => {
                       target="_blank"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       LinkedIn
                     </ChakraLink>
@@ -846,9 +672,9 @@ const BlockFooter = () => {
                       target="_blank"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       Instagram
                     </ChakraLink>
@@ -860,9 +686,9 @@ const BlockFooter = () => {
                       target="_blank"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       Twitter
                     </ChakraLink>
@@ -873,9 +699,9 @@ const BlockFooter = () => {
                       // href="#"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       Facebook
                     </ChakraLink>
@@ -889,7 +715,10 @@ const BlockFooter = () => {
                 column4Expanded ? "collapsible--expanded" : ""
               }`}
               padding="2rem"
-              borderBottom={{ base: "1px solid #393939", lg: "0" }}
+              borderBottom={{
+                base: `1px solid ${useColorModeValue("#999", "#393939")}`,
+                lg: "0",
+              }}
             >
               <Box
                 className="collapsible__header"
@@ -899,7 +728,7 @@ const BlockFooter = () => {
               >
                 <Text
                   className="h2 collapsible__heading footer__heading"
-                  color="#ddd"
+                  color={useColorModeValue("black", "#ddd")}
                   marginBottom="1rem"
                   fontSize="2.5rem"
                   fontWeight="bold"
@@ -907,7 +736,7 @@ const BlockFooter = () => {
                   marginTop="0"
                   textTransform="uppercase"
                 >
-                  FOLLOW US
+                  {t("followUs")}
                 </Text>
                 <Icon
                   className={`icon icon--white collapsible__chevron ${
@@ -944,9 +773,10 @@ const BlockFooter = () => {
                       target="_blank"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       LinkedIn
                     </ChakraLink>
@@ -958,9 +788,10 @@ const BlockFooter = () => {
                       target="_blank"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       Instagram
                     </ChakraLink>
@@ -972,9 +803,10 @@ const BlockFooter = () => {
                       target="_blank"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       Twitter
                     </ChakraLink>
@@ -985,9 +817,9 @@ const BlockFooter = () => {
                       // href="#"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-                      color="#777"
+                      color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
-                      _hover={{ color: "#fff" }}
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       Facebook
                     </ChakraLink>
@@ -1018,7 +850,7 @@ const BlockFooter = () => {
                 /> */}
               <Image
                 className="hero__image"
-                src={tedxWhite}
+                src={tedxImg}
                 width={{ lg: "50rem" }}
                 marginBottom="1rem"
               />
@@ -1027,10 +859,11 @@ const BlockFooter = () => {
               className="p footer__copyright"
               marginTop="0"
               fontSize={{ base: "2.1rem", lg: "1.7rem" }}
-              color="#fff"
-              opacity="0.3"
+              color={useColorModeValue("black", "#fff")}
+              opacity="0.5"
+              _dark={{ opacity: "0.3" }}
             >
-              Copyright 2023 TEDxAveLorne
+              Copyright 2024 TEDxAveLorne
             </Text>
           </Flex>
         </Grid>
@@ -1053,8 +886,8 @@ const BlockFooter = () => {
             size="xl"
             icon={<BsLinkedin size="20px" />}
             _hover={{
-              bg: useColorModeValue("gray.200", "gray.200"),
-              color: useColorModeValue("gray.700", "gray.700"),
+              bg: useColorModeValue("gray.700", "gray.200"),
+              color: useColorModeValue("gray.200", "gray.700"),
             }}
             isRound
             boxSize="4rem"
@@ -1071,8 +904,8 @@ const BlockFooter = () => {
             size="xl"
             icon={<BsTwitter size="20px" />}
             _hover={{
-              bg: useColorModeValue("gray.200", "gray.200"),
-              color: useColorModeValue("gray.700", "gray.700"),
+              bg: useColorModeValue("gray.700", "gray.200"),
+              color: useColorModeValue("gray.200", "gray.700"),
             }}
             isRound
             boxSize="4rem"
@@ -1089,8 +922,8 @@ const BlockFooter = () => {
             size="xl"
             icon={<BsInstagram size="20px" />}
             _hover={{
-              bg: useColorModeValue("gray.200", "gray.200"),
-              color: useColorModeValue("gray.700", "gray.700"),
+              bg: useColorModeValue("gray.700", "gray.200"),
+              color: useColorModeValue("gray.200", "gray.700"),
             }}
             isRound
             boxSize="4rem"
@@ -1107,8 +940,8 @@ const BlockFooter = () => {
             size="xl"
             icon={<BsFacebook size="20px" />}
             _hover={{
-              bg: useColorModeValue("gray.200", "gray.200"),
-              color: useColorModeValue("gray.700", "gray.700"),
+              bg: useColorModeValue("gray.700", "gray.200"),
+              color: useColorModeValue("gray.200", "gray.700"),
             }}
             isRound
             boxSize="4rem"

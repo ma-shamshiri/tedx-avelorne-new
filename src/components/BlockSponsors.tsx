@@ -23,8 +23,11 @@ import SponsorCard from "./SponsorCard";
 
 import AOS from "aos"; // Import AOS library
 import "aos/dist/aos.css"; // Import AOS styles
+import { useTranslation } from "react-i18next";
 
 const BlockSponsors: React.FC = () => {
+  const { t } = useTranslation();
+
   const numElements = 6;
 
   const [isHoveredArray, setIsHoveredArray] = useState(
@@ -65,7 +68,7 @@ const BlockSponsors: React.FC = () => {
       // bg={useColorModeValue("gray.800", "#16F8B6")}
       // bg={useColorModeValue("gray.800", "#0B0E37")}
       // bg={useColorModeValue("gray.800", "#374550")}
-      bg={useColorModeValue("#ACD1B4", "#0D1224")}
+      bg={useColorModeValue("#EFE8D6", "#0D1224")}
       color="#16F8B6"
       // data-aos="fade-up"
       // data-aos-duration="500"
@@ -88,7 +91,7 @@ const BlockSponsors: React.FC = () => {
           fontWeight="bold"
           lineHeight="1.1"
         >
-          Our Generous Sponsors
+          {t("sponsorPageTitle")}
         </Text>
 
         <Text
@@ -99,7 +102,7 @@ const BlockSponsors: React.FC = () => {
           fontSize={{ base: "2.0rem", lg: "2.8rem" }}
           lineHeight="1.5"
         >
-          Honoring the Outstanding Contributions of Our Event's Valued Sponsors
+          {t("sponsorPageSubTitle")}
         </Text>
         <Center>
           <Box className="grid grid--2x4" marginTop="6rem">
