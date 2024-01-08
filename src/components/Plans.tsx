@@ -1,42 +1,4 @@
-// const Plans = () => {
-//   return (
-//     <div className="plan plan--popular">
-//       <div className="card card--secondary">
-//         <header className="card__header">
-//           <h3 className="plan__name">Entry</h3>
-//           <span className="plan__price">$14</span>
-//           <span className="plan__billing-cycle">/month</span>
-//           <span className="badge badge--secondary badge--small">10% OFF</span>
-//           <span className="plan__description">East start on the cloud</span>
-//         </header>
-//         <div className="card__body">
-//           <ul className="list list--tick">
-//             <li className="list__item">Unlimited Websites</li>
-//             <li className="list__item">Unlimited Bandwidth</li>
-//             <li className="list__item">100 GB SSD Sotrage</li>
-//             <li className="list__item">3 GB RAM</li>
-//           </ul>
-//           <button className="btn btn--outline btn--block">Buy Now</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Plans;
-
-import {
-  Badge,
-  Box,
-  Flex,
-  Image,
-  Link,
-  List,
-  ListItem,
-  Text,
-} from "@chakra-ui/react";
-import { transform } from "framer-motion";
-import popular from "../assets/images/popular.svg";
+import { Badge, Box, Flex, Link, List, ListItem, Text } from "@chakra-ui/react";
 import tickImage from "../assets/images/tick.svg";
 
 // ************* plan *************

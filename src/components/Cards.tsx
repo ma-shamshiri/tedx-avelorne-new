@@ -1,24 +1,3 @@
-// const Cards = () => {
-//   return (
-//     <div
-//       style={{
-//         width: "30%",
-//         padding: "4rem",
-//       }}
-//     >
-//       <div className="card card--primary">
-//         <header className="card__header">Card Title</header>
-//         <div className="card__body">
-//           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum,
-//           assumenda?
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Cards;
-
 import { Box, Grid } from "@chakra-ui/react";
 
 const Cards = () => {

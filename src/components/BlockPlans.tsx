@@ -1,35 +1,20 @@
+import React, { useEffect } from "react";
 import {
-  Badge,
   Box,
-  Flex,
   Grid,
   Image,
   Link,
   List,
-  ListItem,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import AOS from "aos"; // Import AOS library
 import "aos/dist/aos.css"; // Import AOS styles
-import React, { useEffect } from "react";
-import popular from "../assets/images/popular.svg";
-import sponsor from "../assets/images/sponsor.jpg";
-// import teamMember from "../assets/images/teamMember.jpg";
-// import teamMember2 from "../assets/images/teamMember2.jpg";
-// import teamMember3 from "../assets/images/teamMember3.jpg";
-import teamMember4 from "../assets/images/teamMember4.jpg";
+import sponsor from "../assets/images/sponsor.webp";
+import teamMember from "../assets/images/teamMember.webp";
 import tickImage from "../assets/images/tick.svg";
 
 import speaker from "../assets/images/speaker.jpg";
-
-// const BlockPlans: React.FC = () => {
-//   useEffect(() => {
-//     AOS.init({
-//       duration: 800,
-//       easing: "ease-in-out",
-//     });
-//   }, []);
 
 const BlockPlans: React.FC = () => {
   useEffect(() => {
@@ -201,7 +186,7 @@ const BlockPlans: React.FC = () => {
                 // data-aos-duration="500"
               >
                 <Image
-                  src={teamMember4}
+                  src={teamMember}
                   width="100%"
                   // height="100%"
                   // objectFit="fill"

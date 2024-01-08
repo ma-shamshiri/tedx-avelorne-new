@@ -10,25 +10,17 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import AOS from "aos"; // Import AOS library
-import "aos/dist/aos.css"; // Import AOS styles
-
+import { useTranslation } from "react-i18next";
 import { BsClockFill, BsFillCalendarCheckFill } from "react-icons/bs";
 import { CgEventbrite } from "react-icons/cg";
 import { GoLocation } from "react-icons/go";
 
-import hallBuilding from "../assets/images/hallbuilding.jpg";
-import hallSalon from "../assets/images/hallsalon.png";
-import mcgill from "../assets/images/mcgill.jpeg";
-import { useTranslation } from "react-i18next";
+import AOS from "aos"; // Import AOS library
+import "aos/dist/aos.css"; // Import AOS styles
 
-// const BlockEvent: React.FC = () => {
-//   useEffect(() => {
-//     AOS.init({
-//       duration: 800,
-//       easing: "ease-in-out",
-//     });
-//   }, []);
+import hallBuilding from "../assets/images/hallbuilding.webp";
+import hallSalon from "../assets/images/hallsalon.webp";
+import mcgill from "../assets/images/mcgill.webp";
 
 const BlockEvent: React.FC = () => {
   useEffect(() => {

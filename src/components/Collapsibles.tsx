@@ -1,6 +1,5 @@
 import { Box, Icon, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { BsChevronDown } from "react-icons/bs";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 
 const Collapsibles = () => {

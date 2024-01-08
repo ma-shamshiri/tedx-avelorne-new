@@ -1,16 +1,3 @@
-// const Buttons = () => {
-//   return (
-//     <div>
-//       <button className="btn btn--primary">Buy Now</button>
-//       <a href="#" className="btn btn--secondary btn--block">
-//         Buy Now
-//       </a>
-//     </div>
-//   );
-// };
-
-// export default Buttons;
-
 import { Button, Link } from "@chakra-ui/react"; // Import Chakra UI components
 
 const Buttons = () => {

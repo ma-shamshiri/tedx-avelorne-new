@@ -45,18 +45,18 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "aboutUs",
     children: [
       {
-        label: "TED",
-        subLabel: "Find your dream design job",
+        label: "ted",
+        subLabel: "tedSubLabel",
         href: "/",
       },
       {
-        label: "TEDx",
-        subLabel: "An exclusive list for contract work",
+        label: "tedx",
+        subLabel: "tedxSubLabel",
         href: "/",
       },
       {
-        label: "TEDxAveLorne",
-        subLabel: "An exclusive list for contract work",
+        label: "tedxavelorne",
+        subLabel: "tedxavelorneSubLabel",
         href: "/",
       },
     ],
@@ -65,8 +65,8 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "event",
     children: [
       {
-        label: "Date & Time",
-        subLabel: "Trending Design to inspire you",
+        label: "dateAndTime",
+        subLabel: "dateAndTimeSubLabel",
         href: "/event/",
       },
       // {
@@ -75,8 +75,8 @@ const NAV_ITEMS: Array<NavItem> = [
       //   href: "#",
       // },
       {
-        label: "Agenda",
-        subLabel: "Up-and-coming Designers",
+        label: "agenda",
+        subLabel: "agendaSubLabel",
         href: "/event/",
       },
       // {
@@ -106,18 +106,18 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "joinUs",
     children: [
       {
-        label: "Members",
-        subLabel: "Trending Design to inspire you",
+        label: "members",
+        subLabel: "membersSubLabel",
         href: "/joinus/team/",
       },
       {
-        label: "Speakers",
-        subLabel: "Trending Design to inspire you",
+        label: "speakers",
+        subLabel: "speakersSubLabel",
         href: "/joinus/speaker/",
       },
       {
-        label: "Sponsors",
-        subLabel: "Up-and-coming Designers",
+        label: "sponsors",
+        subLabel: "sponsorsSubLabel",
         href: "/joinus/sponsor/",
       },
     ],
@@ -129,6 +129,8 @@ const DesktopSubNav: React.FC<NavItem> = ({
   href,
   subLabel,
 }: NavItem) => {
+  const { t } = useTranslation();
+
   return (
     <Box
       as="a"
@@ -150,7 +152,7 @@ const DesktopSubNav: React.FC<NavItem> = ({
             }}
             fontWeight={"500"}
           >
-            {label}
+            {t(label)}
           </Text>
           <Text
             fontSize={"xl"}
@@ -159,7 +161,7 @@ const DesktopSubNav: React.FC<NavItem> = ({
               color: `${useColorModeValue("black", "white")}`,
             }}
           >
-            {subLabel}
+            {subLabel && t(subLabel)}
           </Text>
         </Box>
         <Flex
@@ -239,6 +241,7 @@ const MobileNavItem: React.FC<NavItem> = ({
   href,
 }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure();
+  const { t } = useTranslation();
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
@@ -256,7 +259,7 @@ const MobileNavItem: React.FC<NavItem> = ({
           fontWeight={600}
           color={useColorModeValue("gray.600", "gray.200")}
         >
-          {label}
+          {t(label)}
         </Text>
         {children && (
           <Icon
@@ -281,7 +284,7 @@ const MobileNavItem: React.FC<NavItem> = ({
           {children &&
             children.map((child) => (
               <Box as="a" key={child.label} py={2} href={child.href}>
-                {child.label}
+                {t(child.label)}
               </Box>
             ))}
         </Stack>
@@ -306,8 +309,6 @@ const MobileNav: React.FC = () => {
 
 const NavBar2: React.FC = () => {
   const { isOpen, onToggle } = useDisclosure();
-
-  const { t } = useTranslation();
 
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);

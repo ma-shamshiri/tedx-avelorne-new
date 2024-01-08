@@ -4,7 +4,7 @@ import NavBar2 from "../NavBar2";
 import BlockTeamProfiles from "../BlockTeamProfiles";
 
 import imageSrc from "../../assets/images/Pegah.webp";
-import badgeSrc from "../../assets/images/badge-creativity.png";
+import badgeSrc from "../../assets/images/badge-creativity.webp";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 

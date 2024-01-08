@@ -3,26 +3,18 @@ import {
   Box,
   Link as ChakraLink,
   Grid,
-  Icon,
   Image,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { GiTalk } from "react-icons/gi";
+import { useTranslation } from "react-i18next";
 import AOS from "aos"; // Import AOS library
 import "aos/dist/aos.css"; // Import AOS styles
 
-import { BsClockHistory, BsWordpress } from "react-icons/bs";
-import { GiTalk } from "react-icons/gi";
-import { RiComputerFill } from "react-icons/ri";
-
-import { useTranslation } from "react-i18next";
-
-import img1 from "../assets/images/1.jpg";
-import img2 from "../assets/images/2.jpg";
-import img3 from "../assets/images/3.jpg";
-// import img4 from "../assets/images/4.jpg";
-// import img5 from "../assets/images/5.webp";
-// import img6 from "../assets/images/6.webp";
+import ted from "../assets/images/ted.webp";
+import tedx from "../assets/images/tedx.webp";
+import tedxavelorne from "../assets/images/tedxavelorne.webp";
 
 const featuresData = [
   {
@@ -33,7 +25,7 @@ const featuresData = [
     linkText: "exploreMore",
     linkUrl: "https://www.ted.com/about/our-organization",
     image: {
-      src: img1,
+      src: ted,
       alt: "easy",
     },
     size: "40px",
@@ -47,7 +39,7 @@ const featuresData = [
     linkUrl:
       "https://www.ted.com/participate/organize-a-local-tedx-event/before-you-start/what-is-a-tedx-event",
     image: {
-      src: img3,
+      src: tedx,
       alt: "easy",
       // srcSetWebp: `${fastWebp} 1x, ${fastWebp2x} 2x`,
       // srcSetPng: `${fastJpg} 1x, ${fastJpg2x} 2x`,
@@ -63,7 +55,7 @@ const featuresData = [
     linkText: "exploreMore",
     linkUrl: "https://www.ted.com/tedx/events/53037",
     image: {
-      src: img2,
+      src: tedxavelorne,
       alt: "easy",
       // srcSetWebp: `${wordpressWebp} 1x, ${wordpressWebp2x} 2x`,
       // srcSetPng: `${wordpressJpg} 1x, ${wordpressJpg2x} 2x`,
@@ -194,14 +186,6 @@ const FeatureImage: React.FC<FeatureImageProps> = ({ image }) => (
   </Box>
 );
 
-// const BlockFeatures: React.FC = () => {
-//   useEffect(() => {
-//     AOS.init({
-//       duration: 800,
-//       easing: "ease-in-out",
-//     });
-//   }, []);
-
 const BlockFeatures: React.FC = () => {
   useEffect(() => {
     window.onload = () => {
@@ -211,15 +195,6 @@ const BlockFeatures: React.FC = () => {
       });
     };
   }, []);
-
-  // useEffect(() => {
-  //   if (window.innerWidth >= 500) {
-  //     AOS.init({
-  //       duration: 800,
-  //       easing: "ease-in-out",
-  //     });
-  //   }
-  // }, []);
 
   const { t } = useTranslation();
 

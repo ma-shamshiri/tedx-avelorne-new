@@ -4,7 +4,7 @@ import NavBar2 from "../NavBar2";
 import BlockTeamProfiles from "../BlockTeamProfiles";
 
 import imageSrc from "../../assets/images/Melika.webp";
-import badgeSrc from "../../assets/images/badge-sponsorship.png";
+import badgeSrc from "../../assets/images/badge-sponsorship.webp";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 

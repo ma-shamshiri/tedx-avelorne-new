@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   AccordionItem,
   AccordionButton,
@@ -6,9 +6,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-
 import { ChevronDownIcon } from "@chakra-ui/icons";
-// import { BsChevronDown } from "react-icons/bs";
 
 function AgendaAccordionSection({
   title,

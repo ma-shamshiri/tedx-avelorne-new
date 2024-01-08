@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Stack,
@@ -6,24 +5,18 @@ import {
   Text,
   useColorModeValue,
   VStack,
-  HStack,
   FormControl,
   FormLabel,
   Input as ChakraInput,
   Flex,
-  CheckboxGroup,
-  Checkbox,
   Textarea,
-  Select,
-  SimpleGrid,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import { FieldValues, useForm } from "react-hook-form";
-import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import MultiSelect from "multiselect-react-dropdown";
-import { useTranslation } from "react-i18next";
+import z from "zod";
 
 const schema = z.object({
   companyName: z

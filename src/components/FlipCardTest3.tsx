@@ -1,19 +1,12 @@
 import {
   Box,
-  Button,
   Icon,
   Image,
   ResponsiveValue,
   Text,
   VStack,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import event2023 from "../assets/images/event2023.png";
-import { MdOutlinePhotoSizeSelectLarge } from "react-icons/md";
-import { SlSizeFullscreen } from "react-icons/sl";
-import { GiGraduateCap, GiResize } from "react-icons/gi";
-import Typed from "react-typed";
 import { IconType } from "react-icons";
 
 interface FlipCardTest3Props {
@@ -24,9 +17,6 @@ interface FlipCardTest3Props {
   titleColor?: ResponsiveValue<string>;
   iconColor?: ResponsiveValue<string>;
   imageBackgroundColor?: ResponsiveValue<string>;
-  // isHovered: boolean;
-  // handleHover: () => void;
-  // handleUnhover: () => void;
   frontImageHref: string;
   backImageHref: string;
   objectFit?: ResponsiveValue<
@@ -48,10 +38,6 @@ const FlipCardTest3: React.FC<FlipCardTest3Props> = ({
 }) => {
   const [isFrontFlipped, setIsFrontFlipped] = useState(false);
   const [isBackFlipped, setIsBackFlipped] = useState(false);
-
-  const handleCardClick = () => {
-    setIsFrontFlipped(!isFrontFlipped);
-  };
 
   const handleFrontCardHover = () => {
     setIsFrontFlipped(!isFrontFlipped);
@@ -173,7 +159,6 @@ const FlipCardTest3: React.FC<FlipCardTest3Props> = ({
                   transition: "opacity 0.5s ease-in-out 1s",
                 }}
               >
-                {/* <GiGraduateCap size={{ base: "1.6rem", md: "2.3rem", lg: "2.5rem" }} /> */}
                 <Icon as={IconComponent} boxSize={iconSize} color={iconColor} />
               </Box>
               <Text

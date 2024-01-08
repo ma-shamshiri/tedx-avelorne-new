@@ -1,15 +1,3 @@
-// import { BsWordpress } from "react-icons/bs";
-
-// const Icons = () => {
-//   return (
-//     <span className="icon-container">
-//       <BsWordpress className="icon icon--primary" />
-//     </span>
-//   );
-// };
-
-// export default Icons;
-
 import { Box, Icon } from "@chakra-ui/react"; // Import Chakra UI components
 import { BsWordpress } from "react-icons/bs"; // Import the Wordpress icon
 

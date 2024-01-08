@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+
 import NavBar2 from "../NavBar2";
 import BlockSpeakerProfiles from "../BlockSpeakerProfiles";
 import BlockFooter from "../BlockFooter";
+
 import imageSrc from "../../assets/images/Janet.webp";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
 
 const JanetPerlman: React.FC = () => {
   const { t } = useTranslation();
@@ -27,7 +29,7 @@ const JanetPerlman: React.FC = () => {
           name="Janet Perlman"
           position="Animator and Children's Book Author"
           imageSrc={imageSrc}
-          talkTopic="Coming Soon ..."
+          talkTopic={t("comingSoon")}
         />
         <BlockFooter />
       </motion.div>

@@ -7,14 +7,11 @@ import {
   Text,
   chakra,
   useColorModeValue,
-  useColorMode,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Typed from "react-typed";
 
-import heroimage7 from "../assets/images/heroImage7.jpg";
-import heroimage10 from "../assets/images/heroimage10.jpg";
-import event2023 from "../assets/images/event2023.png";
+import event2023 from "../assets/images/event2023.webp";
 import { useTranslation } from "react-i18next";
 
 const SuperscriptX = chakra("sup", {
@@ -33,11 +30,6 @@ const LowercaseSpan = chakra("span", {
 
 const BlockHero5: React.FC = () => {
   const { t } = useTranslation();
-
-  const { colorMode } = useColorMode();
-  const [heroImg, setHeroImg] = useState(
-    colorMode === "dark" ? heroimage7 : heroimage10
-  );
 
   const [imageLoaded, setImageLoaded] = useState(false);
   const [boxLoaded, setBoxLoaded] = useState(false);

@@ -1,11 +1,4 @@
-import {
-  Box,
-  Flex,
-  Grid,
-  IconButton,
-  Stack,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, IconButton, Stack, useColorModeValue } from "@chakra-ui/react";
 import { BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 
 const SocialMediaIcons = () => {

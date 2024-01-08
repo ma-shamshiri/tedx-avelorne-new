@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Box, Center, Grid, Text, useColorModeValue } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
+import SpeakerGridCard from "./SpeakerGridCard";
 
 import alina from "../assets/images/Alina.webp";
 import andrew from "../assets/images/Andrew.webp";
@@ -10,19 +12,9 @@ import leila from "../assets/images/Leila.webp";
 import myra from "../assets/images/Myra.webp";
 import peggy from "../assets/images/Peggy.webp";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-import SpeakerGridCard from "./SpeakerGridCard";
-
-// const BlockSpeakers: React.FC = () => {
-//   useEffect(() => {
-//     AOS.init({
-//       duration: 800,
-//       easing: "ease-in-out",
-//     });
-//   }, []);
-
 const BlockSpeakerGrid: React.FC = () => {
+  const { t } = useTranslation();
+
   const numElements = 8;
 
   const [isHoveredArray, setIsHoveredArray] = useState(
@@ -45,18 +37,9 @@ const BlockSpeakerGrid: React.FC = () => {
     });
   };
 
-  useEffect(() => {
-    window.onload = () => {
-      AOS.init({
-        duration: 800,
-        easing: "ease-in-out",
-      });
-    };
-  }, []);
-
   return (
     <Box
-      className="block block--dark block--skewed-right block-showcase aos-animate"
+      className="block block--dark block--skewed-right block-showcase"
       padding="6rem 2rem"
       paddingBottom="10rem"
       // bg={useColorModeValue("gray.800", "#16F8B6")}
@@ -68,17 +51,13 @@ const BlockSpeakerGrid: React.FC = () => {
         "#1E2142"
       )}
       color="#16F8B6"
-      // data-aos="fade-up"
-      // data-aos-duration="500"
       overflow={"hidden"}
     >
       <Box
-        className="block__header container aos-animate"
+        className="block__header container"
         textAlign="center"
         maxWidth="100rem"
         margin="0 auto"
-        data-aos="fade-up"
-        data-aos-duration="500"
       >
         <Text
           className="h2"
@@ -89,7 +68,7 @@ const BlockSpeakerGrid: React.FC = () => {
           fontWeight="bold"
           lineHeight="1.1"
         >
-          Our Speakers
+          {t("speakerPageTitle")}
         </Text>
 
         <Text
@@ -100,12 +79,11 @@ const BlockSpeakerGrid: React.FC = () => {
           fontSize={{ base: "2.0rem", lg: "2.8rem" }}
           lineHeight="1.1"
         >
-          Elevate Your Thinking: Get to Know Our TEDxAveLorne Speakers
+          {t("speakerPageSubTitle")}
         </Text>
         <Center>
           <Box className="grid grid--3x3">
             <Grid
-              className="aos-animate"
               display="grid"
               templateColumns={["repeat(2, 1fr)", null, null, "repeat(4, 1fr)"]}
               templateRows={["repeat(4, 1fr)", null, null, "repeat(2, 1fr)"]}
@@ -113,8 +91,6 @@ const BlockSpeakerGrid: React.FC = () => {
               columnGap={{ base: "5rem", lg: "13rem" }}
               padding="10rem 0"
               alignItems="center"
-              data-aos="fade-up"
-              data-aos-duration="500"
             >
               {/* ======================== Myra Virgil ======================== */}
               <SpeakerGridCard
@@ -123,10 +99,6 @@ const BlockSpeakerGrid: React.FC = () => {
                 handleUnhover={() => handleUnhover(1)}
                 src={myra}
                 name="Myra Virgil"
-                title="Philanthropy Executive | Strategist | Storyteller"
-                // imageMarginBottom="0rem"
-                // nameMarginTop="2rem"
-                // titleMarginBottom="-2rem"
                 buttonSrc="/speakers/myra-virgil/"
               />
 
@@ -137,7 +109,6 @@ const BlockSpeakerGrid: React.FC = () => {
                 handleUnhover={() => handleUnhover(2)}
                 src={kira}
                 name="Kira Dolhan"
-                title="Search and Rescue Volunteer"
                 buttonSrc="/speakers/kira-dolhan/"
               />
 
@@ -148,8 +119,6 @@ const BlockSpeakerGrid: React.FC = () => {
                 handleUnhover={() => handleUnhover(3)}
                 src={flore}
                 name="Flore Deshayes"
-                title="Social worker"
-                // imageMarginTop="-5rem"
                 buttonSrc="/speakers/flore-deshayes/"
               />
 
@@ -160,7 +129,6 @@ const BlockSpeakerGrid: React.FC = () => {
                 handleUnhover={() => handleUnhover(4)}
                 src={leila}
                 name="Leila Kosseim"
-                title="Professor in Computer Science | Concordia University"
                 buttonSrc="/speakers/leila-kosseim/"
               />
 
@@ -171,7 +139,6 @@ const BlockSpeakerGrid: React.FC = () => {
                 handleUnhover={() => handleUnhover(5)}
                 src={andrew}
                 name="Andrew Churchil"
-                title="Carolyn Jack MD | Professor | Start-Up Entrepreneur"
                 buttonSrc="/speakers/andrew-churchil/"
               />
 
@@ -182,7 +149,6 @@ const BlockSpeakerGrid: React.FC = () => {
                 handleUnhover={() => handleUnhover(6)}
                 src={janet}
                 name="Janet Perlman"
-                title="Animator and Children's Book Author"
                 buttonSrc="/speakers/janet-perlman/"
               />
 
@@ -193,7 +159,6 @@ const BlockSpeakerGrid: React.FC = () => {
                 handleUnhover={() => handleUnhover(7)}
                 src={peggy}
                 name="Peggy Bell"
-                title="Founder | Principal Consultant"
                 buttonSrc="/speakers/peggy-bell/"
               />
 
@@ -204,7 +169,6 @@ const BlockSpeakerGrid: React.FC = () => {
                 handleUnhover={() => handleUnhover(8)}
                 src={alina}
                 name="Alina Gutierrez Mejia"
-                title="Graphic Facilitator | Creative Consultant"
                 buttonSrc="/speakers/alina-gutierrez-mejia/"
               />
             </Grid>

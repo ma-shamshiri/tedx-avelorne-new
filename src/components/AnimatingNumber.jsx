@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Box, Flex, HStack, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import { Box, HStack, Text } from "@chakra-ui/react";
+import { useInView } from "react-intersection-observer";
 import ScrollTrigger from "react-scroll-trigger";
 import CountUp from "react-countup";
-import { useInView } from "react-intersection-observer";
 
 const AnimatingNumber = ({
   value,

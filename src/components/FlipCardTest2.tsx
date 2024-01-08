@@ -1,14 +1,8 @@
-import { Box, Button, Image, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
-import event2023 from "../assets/images/event2023.png";
-import { MdOutlinePhotoSizeSelectLarge } from "react-icons/md";
-import { SlSizeFullscreen } from "react-icons/sl";
+import { Box, Image } from "@chakra-ui/react";
 import { GiResize } from "react-icons/gi";
 
 interface FlipCardTest2Props {
-  // isHovered: boolean;
-  // handleHover: () => void;
-  // handleUnhover: () => void;
   frontImageHref: string;
   backImageHref: string;
 }

@@ -1,33 +1,5 @@
-// import { AiOutlineLine } from "react-icons/ai";
-
-// const Quotes = () => {
-//   return (
-//     <blockquote className="quote">
-//       <p className="quote__text">
-//         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt optio
-//         officiis dolore earum error eaque perferendis laudantium sed praesentium
-//         dolorum.
-//       </p>
-//       <footer>
-//         <div className="media">
-//           <div className="media__image">
-//             <AiOutlineLine className="icon icon--primary quote__line" />
-//           </div>
-//           <div className="media__body">
-//             <h3 className="media__title quote__author">John Smith</h3>
-//             <p className="quote__organization">ABC Company</p>
-//           </div>
-//         </div>
-//       </footer>
-//     </blockquote>
-//   );
-// };
-
-// export default Quotes;
-
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { AiOutlineLine } from "react-icons/ai";
-import { BsWordpress } from "react-icons/bs"; // Import the Wordpress icon
 
 const Quotes = () => {
   return (

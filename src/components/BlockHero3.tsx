@@ -1,36 +1,22 @@
 import React, { useEffect, useState } from "react";
 import {
   Box,
-  Button,
   Flex,
-  HStack,
   Image,
   Skeleton,
   Text,
-  VStack,
   chakra,
-  Link,
-  List,
-  useBreakpointValue,
   useColorModeValue,
   useColorMode,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Typed from "react-typed";
 
-import heroimage from "../assets/images/heroimage.jpg";
-import heroimage2 from "../assets/images/heroimage2.jpg";
-import heroimage5 from "../assets/images/heroImage5.png";
-import heroimage6 from "../assets/images/heroImage6.png";
-import heroimage7 from "../assets/images/heroImage7.jpg";
-import heroimage8 from "../assets/images/heroImage8.jpg";
-import heroimage9 from "../assets/images/heroimage9.jpg";
-import heroimage10 from "../assets/images/heroimage10.jpg";
-import Samin from "../assets/images/Samin.webp";
-import event2023 from "../assets/images/event2023.png";
+import heroimage from "../assets/images/heroimage.webp";
+import heroimage7 from "../assets/images/heroImage7.webp";
+import heroimage10 from "../assets/images/heroImage7.webp";
 import event2024 from "../assets/images/event2024.jpg";
 import { useTranslation } from "react-i18next";
-import CountdownTimer from "./CountdownTimer";
 import HeroEventCard from "./HeroEventCard";
 
 const SuperscriptX = chakra("sup", {

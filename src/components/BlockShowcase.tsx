@@ -1,9 +1,9 @@
-import { Box, Text, Flex, useColorModeValue } from "@chakra-ui/react";
 import React, { useEffect } from "react";
+import { Box, Text, Flex, useColorModeValue } from "@chakra-ui/react";
 import AgendaSlider from "./AgendaSlider";
-import AOS from "aos"; // Import AOS library
-import "aos/dist/aos.css"; // Import AOS styles
 import { useTranslation } from "react-i18next";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const BlockShowcase: React.FC = () => {
   const { t } = useTranslation();

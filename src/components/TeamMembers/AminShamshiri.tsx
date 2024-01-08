@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+
+import imageSrc from "../../assets/images/Amin.webp";
+import badgeSrc from "../../assets/images/badge-webmaster.webp";
+
 import BlockFooter from "..//BlockFooter";
 import NavBar2 from "../NavBar2";
 import BlockTeamProfiles from "../BlockTeamProfiles";
-
-import imageSrc from "../../assets/images/Amin.webp";
-import badgeSrc from "../../assets/images/badge-webmaster.png";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
 
 const AminShamshiri: React.FC = () => {
   const { t } = useTranslation();

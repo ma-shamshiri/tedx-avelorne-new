@@ -46,26 +46,9 @@
 // export default Navbar;
 
 import { useState } from "react";
-import {
-  Box,
-  Flex,
-  IconButton,
-  List,
-  ListItem,
-  Collapse,
-  Link,
-  Image,
-  Icon,
-  useMediaQuery,
-  HStack,
-} from "@chakra-ui/react";
-import { AiOutlineMenu } from "react-icons/ai";
-import { TfiLayoutMenuV } from "react-icons/tfi";
-
+import { Flex, Link, Image, useMediaQuery, HStack } from "@chakra-ui/react";
 import logo from "../assets/images/logo.png";
 import tedxWhite from "../assets/images/tedxWhite.png";
-import { all } from "axios";
-import testimonial from "../assets/images/testimonial.jpg";
 
 const Navbar = () => {
   const [expanded, setExpanded] = useState(false);

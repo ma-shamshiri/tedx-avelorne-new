@@ -3,41 +3,18 @@ import {
   Box,
   Center,
   Flex,
-  Grid,
   SimpleGrid,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-
+import { useTranslation } from "react-i18next";
 import AOS from "aos"; // Import AOS library
 import "aos/dist/aos.css"; // Import AOS styles
+
 import NumberCard from "./NumberCard";
-import { useTranslation } from "react-i18next";
 
 const BlockStatistics: React.FC = () => {
   const { t } = useTranslation();
-
-  const numElements = 8;
-
-  const [isHoveredArray, setIsHoveredArray] = useState(
-    Array(numElements).fill(false)
-  );
-
-  const handleHover = (index: number) => {
-    setIsHoveredArray((prevArray) => {
-      const newArray = [...prevArray];
-      newArray[index] = true;
-      return newArray;
-    });
-  };
-
-  const handleUnhover = (index: number) => {
-    setIsHoveredArray((prevArray) => {
-      const newArray = [...prevArray];
-      newArray[index] = false;
-      return newArray;
-    });
-  };
 
   useEffect(() => {
     window.onload = () => {

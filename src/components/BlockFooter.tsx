@@ -1,4 +1,3 @@
-import { BsChevronDown } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import {
   Box,
@@ -8,19 +7,17 @@ import {
   Flex,
   Image,
   List,
-  HStack,
   ListItem,
   Link as ChakraLink,
   useColorMode,
 } from "@chakra-ui/react";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
-import tedxWhite from "../assets/images/tedxWhite.png";
-import tedxBlack from "../assets/images/tedxBlack.png";
-
 import { IconButton, Stack, useColorModeValue } from "@chakra-ui/react";
 import { BsInstagram, BsLinkedin, BsTwitter, BsFacebook } from "react-icons/bs";
-
 import { useTranslation } from "react-i18next";
+
+import tedxWhite from "../assets/images/tedxWhite.png";
+import tedxBlack from "../assets/images/tedxBlack.png";
 
 const BlockFooter = () => {
   const { t } = useTranslation();
@@ -374,7 +371,7 @@ const BlockFooter = () => {
                   marginTop="0"
                   textTransform="uppercase"
                 >
-                  TITLE
+                  SECTION
                 </Text>
                 <Icon
                   className={`icon icon--white collapsible__chevron ${
@@ -407,7 +404,7 @@ const BlockFooter = () => {
                   <ListItem className="list__item" paddingBottom="1rem">
                     <ChakraLink
                       className="link-arrow"
-                      href="#"
+                      href="/media/"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
 

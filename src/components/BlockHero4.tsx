@@ -1,43 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {
-  Box,
-  Button,
-  Flex,
-  HStack,
-  Image,
-  Skeleton,
-  Text,
-  VStack,
-  chakra,
-  Link,
-  List,
-  useBreakpointValue,
-  useColorModeValue,
-  useColorMode,
-} from "@chakra-ui/react";
+import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import Typed from "react-typed";
 
-import heroimage from "../assets/images/heroimage.jpg";
-import heroimage2 from "../assets/images/heroimage2.jpg";
-import heroimage5 from "../assets/images/heroImage5.png";
-import heroimage6 from "../assets/images/heroImage6.png";
-import heroimage7 from "../assets/images/heroImage7.jpg";
-import heroimage8 from "../assets/images/heroImage8.jpg";
-import heroimage9 from "../assets/images/heroimage9.jpg";
-import heroimage10 from "../assets/images/heroimage10.jpg";
-import heroimage11 from "../assets/images/heroimage11.png";
-import v1 from "../assets/images/v1.mp4";
-import v2 from "../assets/images/v2.mp4";
-import v3 from "../assets/images/v3.mp4";
-import v4 from "../assets/images/v4.mp4";
-import v5 from "../assets/images/v5.mp4";
-import v6 from "../assets/images/v6.mp4";
-import v7 from "../assets/images/v7.mp4";
-import v8 from "../assets/images/v8.mp4";
-import v9 from "../assets/images/v9.mp4";
-import v10 from "../assets/images/v10.mp4";
-import event2023 from "../assets/images/event2023.png";
+import heroimage from "../assets/images/heroimage.webp";
+import heroimage7 from "../assets/images/heroImage7.webp";
 import event2024 from "../assets/images/event2024.jpg";
 import { useTranslation } from "react-i18next";
 import HeroEventCard from "./HeroEventCard";
@@ -45,36 +11,10 @@ import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
-const SuperscriptX = chakra("sup", {
-  baseStyle: {
-    fontSize: "0.6em",
-    top: "-0.5em",
-    position: "relative",
-  },
-});
-
-const LowercaseSpan = chakra("span", {
-  baseStyle: {
-    textTransform: "lowercase",
-  },
-});
-
 const BlockHero4: React.FC = () => {
   const { t } = useTranslation();
 
-  const { colorMode } = useColorMode();
-  const [heroImg, setHeroImg] = useState(
-    colorMode === "dark" ? heroimage7 : heroimage10
-  );
-
-  const [imageLoaded, setImageLoaded] = useState(false);
   const [boxLoaded, setBoxLoaded] = useState(false);
-
-  const handleImageLoad = () => {
-    setTimeout(() => {
-      setImageLoaded(true);
-    }, 0);
-  };
 
   const handleBoxLoad = () => {
     setBoxLoaded(true);

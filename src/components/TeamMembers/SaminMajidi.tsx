@@ -4,7 +4,7 @@ import NavBar2 from "../NavBar2";
 import BlockTeamProfiles from "../BlockTeamProfiles";
 
 import imageSrc from "../../assets/images/Samin.webp";
-import badgeSrc from "../../assets/images/badge-organizer.png";
+import badgeSrc from "../../assets/images/badge-organizer.webp";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 

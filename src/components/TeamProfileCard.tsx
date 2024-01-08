@@ -8,13 +8,14 @@ import {
   useBreakpointValue,
   VStack,
 } from "@chakra-ui/react";
-import container from "../assets/images/ReactContainer.jpg";
-import FlipCardTest3 from "./FlipCardTest3";
 import { useState } from "react";
 import { BsLinkedin, BsTwitter } from "react-icons/bs";
 import { GiGraduateCap, GiResize } from "react-icons/gi";
 import { SiTed } from "react-icons/si";
 import Typed from "react-typed";
+
+import FlipCardTest3 from "./FlipCardTest3";
+import container from "../assets/images/ReactContainer.webp";
 
 interface TeamProfileCardProps {
   name: string;
@@ -25,9 +26,6 @@ interface TeamProfileCardProps {
   linkedinHref: string;
   twitterHref: string;
   tedHref: string;
-  isHovered?: boolean;
-  handleHover?: () => void;
-  handleUnhover?: () => void;
 }
 
 const TeamProfileCard: React.FC<TeamProfileCardProps> = ({
@@ -39,16 +37,9 @@ const TeamProfileCard: React.FC<TeamProfileCardProps> = ({
   linkedinHref,
   twitterHref,
   tedHref,
-  isHovered,
-  handleHover,
-  handleUnhover,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isBadgeHovered, setIsBadgeHovered] = useState(false);
-
-  const handleCardClick = () => {
-    setIsFlipped(!isFlipped);
-  };
 
   const handleCardHover = () => {
     setIsFlipped(!isFlipped);

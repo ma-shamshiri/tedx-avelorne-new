@@ -14,12 +14,8 @@ interface SpeakerGridCardProps {
   handleUnhover?: () => void;
   src: string;
   name: string;
-  title: string;
-  talkTitle?: string;
   imageMarginTop?: string;
   imageMarginBottom?: string;
-  nameMarginTop?: string;
-  titleMarginBottom?: string;
   buttonSrc?: string;
 }
 
@@ -29,12 +25,8 @@ const SpeakerGridCard: React.FC<SpeakerGridCardProps> = ({
   handleUnhover,
   src,
   name,
-  title,
-  talkTitle,
   imageMarginTop = "0",
   imageMarginBottom = "2rem",
-  nameMarginTop,
-  titleMarginBottom,
   buttonSrc = "#",
 }) => {
   return (

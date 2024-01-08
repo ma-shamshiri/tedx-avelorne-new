@@ -5,7 +5,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { BsChatRightQuoteFill, BsFillChatQuoteFill } from "react-icons/bs";
+import { BsChatRightQuoteFill } from "react-icons/bs";
 
 interface QuoteCardProps {
   width?: ResponsiveValue<string>;

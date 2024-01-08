@@ -1,9 +1,7 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import {
   Flex,
-  Stack,
   Text,
-  Avatar,
   AvatarGroup,
   useColorModeValue,
   VStack,
@@ -18,7 +16,7 @@ import profile4 from "../assets/images/Reihaneh.webp";
 import profile5 from "../assets/images/Melika.webp";
 import profile6 from "../assets/images/Hamidreza.webp";
 import profile7 from "../assets/images/Baharan.webp";
-import unknownProfile from "../assets/images/unknown.jpeg";
+import unknownProfile from "../assets/images/unknown.webp";
 
 interface AvatarInfo {
   id: number;

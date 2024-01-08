@@ -1,4 +1,4 @@
-import { Box, Flex, SimpleGrid, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import SpeakerBadge from "./SpeakerBadge";
 

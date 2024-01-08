@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Center, Grid, Text, useColorModeValue } from "@chakra-ui/react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import alina from "../assets/images/Alina.webp";
 import andrew from "../assets/images/Andrew.webp";
@@ -7,22 +9,9 @@ import flore from "../assets/images/Flore.webp";
 import janet from "../assets/images/Janet.webp";
 import kira from "../assets/images/Kira.webp";
 import leila from "../assets/images/Leila.webp";
-import miriam from "../assets/images/Miriam.webp";
 import myra from "../assets/images/Myra.webp";
 import peggy from "../assets/images/Peggy.webp";
-import vincent from "../assets/images/Vincent.webp";
 import SpeakerCard from "./SpeakerCard";
-
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-// const BlockSpeakers: React.FC = () => {
-//   useEffect(() => {
-//     AOS.init({
-//       duration: 800,
-//       easing: "ease-in-out",
-//     });
-//   }, []);
 
 const BlockSpeakers: React.FC = () => {
   const numElements = 8;

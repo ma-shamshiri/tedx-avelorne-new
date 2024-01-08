@@ -1,35 +1,17 @@
-import { Box, Flex, VStack, Text } from "@chakra-ui/react";
 import React from "react";
+import { Box, Flex, VStack, Text, ResponsiveValue } from "@chakra-ui/react";
 import AnimatingNumber from "./AnimatingNumber";
 
 interface NumberCardProps {
   // ----------- ContainerProperties -----------
-  width?: {
-    sm?: string;
-    base?: string;
-    md?: string;
-    lg?: string;
-    xl?: string;
-  };
-  height?: {
-    sm?: string;
-    base?: string;
-    md?: string;
-    lg?: string;
-    xl?: string;
-  };
+  width?: ResponsiveValue<string>;
+  height?: ResponsiveValue<string>;
   backgroundColor?: string;
   borderColor?: string;
   // ----------- TextProperties -----------
   text?: string;
   textColor?: string;
-  textSize?: {
-    sm?: string;
-    base?: string;
-    md?: string;
-    lg?: string;
-    xl?: string;
-  };
+  textSize?: ResponsiveValue<string>;
   // ----------- NumberProperties -----------
   startNumber?: number;
   endNumber: number;

@@ -1,5 +1,5 @@
 import { Box, Flex, Grid, Icon, Image, Text } from "@chakra-ui/react";
-import { BsFillChatLeftQuoteFill, BsFillChatQuoteFill } from "react-icons/bs";
+import { BsFillChatQuoteFill } from "react-icons/bs";
 
 import { AiOutlineLine } from "react-icons/ai";
 

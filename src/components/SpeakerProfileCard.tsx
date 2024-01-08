@@ -1,25 +1,15 @@
-import {
-  Box,
-  useColorModeValue,
-  useBreakpointValue,
-  Text,
-} from "@chakra-ui/react";
-import FlipCardTest3 from "./FlipCardTest3";
+import { Box, useColorModeValue, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import Typed from "react-typed";
-import { SlSpeech } from "react-icons/sl";
 import { GiOldMicrophone } from "react-icons/gi";
-import { CiMicrophoneOn } from "react-icons/ci";
 import { useTranslation } from "react-i18next";
+
+import FlipCardTest3 from "./FlipCardTest3";
 
 interface SpeakerProfileCardProps {
   name: string;
   position: string;
   talkTopic: string;
   imageSrc: string;
-  isHovered?: boolean;
-  handleHover?: () => void;
-  handleUnhover?: () => void;
 }
 
 const SpeakerProfileCard: React.FC<SpeakerProfileCardProps> = ({
@@ -27,9 +17,6 @@ const SpeakerProfileCard: React.FC<SpeakerProfileCardProps> = ({
   position,
   talkTopic,
   imageSrc,
-  isHovered,
-  handleHover,
-  handleUnhover,
 }) => {
   const { t } = useTranslation();
 
@@ -38,9 +25,6 @@ const SpeakerProfileCard: React.FC<SpeakerProfileCardProps> = ({
   const handleCardHover = () => {
     setIsFlipped(!isFlipped);
   };
-
-  const iconSize = useBreakpointValue({ base: "1.7rem", lg: "2rem" });
-  const tedIconSize = useBreakpointValue({ base: "2.8rem", lg: "3.5rem" });
 
   return (
     <>

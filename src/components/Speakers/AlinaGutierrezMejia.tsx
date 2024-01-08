@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+
 import NavBar2 from "../NavBar2";
 import BlockSpeakerProfiles from "../BlockSpeakerProfiles";
 import BlockFooter from "../BlockFooter";
+
 import imageSrc from "../../assets/images/Alina.webp";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
 
 const AlinaGutierrezMejia: React.FC = () => {
   const { t } = useTranslation();

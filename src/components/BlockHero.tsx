@@ -9,16 +9,12 @@ import {
   Text,
   VStack,
   chakra,
-  Link,
-  List,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
-import heroimage from "../assets/images/heroimage.jpg";
-import event2024 from "../assets/images/event2024.jpg";
+import heroimage from "../assets/images/heroimage.webp";
 
-import Samin from "../assets/images/Samin.webp";
 import { useTranslation } from "react-i18next";
 import CountdownTimer from "./CountdownTimer";
 

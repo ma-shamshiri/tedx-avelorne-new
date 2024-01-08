@@ -1,6 +1,6 @@
 // import groupImage from "../assets/images/event2023.png";
 import Event2024 from "../assets/images/event2024.jpg";
-import Event2023 from "../assets/images/heroimage.jpg";
+import Event2023 from "../assets/images/heroimage.webp";
 import Amin from "../assets/images/Amin.webp";
 import Aryana from "../assets/images/Aryana.webp";
 import Baharan from "../assets/images/Baharan.webp";
@@ -20,12 +20,12 @@ import Gezal from "../assets/images/Gezal.webp";
 import Edwin from "../assets/images/Edwin.webp";
 import Zahra from "../assets/images/Zahra.webp";
 
-import Event2023Pic1 from "../assets/images/Event2023Pic01.jpg";
-import Event2023Pic2 from "../assets/images/Event2023Pic02.jpg";
-import Event2023Pic3 from "../assets/images/Event2023Pic03.jpg";
-import Event2023Pic4 from "../assets/images/Event2023Pic04.jpg";
-import Event2023Pic5 from "../assets/images/Event2023Pic05.jpg";
-import Event2023Pic6 from "../assets/images/Event2023Pic06.jpg";
+import Event2023Pic1 from "../assets/images/Event2023Pic01.webp";
+import Event2023Pic2 from "../assets/images/Event2023Pic02.webp";
+import Event2023Pic3 from "../assets/images/Event2023Pic03.webp";
+import Event2023Pic4 from "../assets/images/Event2023Pic04.webp";
+import Event2023Pic5 from "../assets/images/Event2023Pic05.webp";
+import Event2023Pic6 from "../assets/images/Event2023Pic06.webp";
 
 export const slides = [
   // {

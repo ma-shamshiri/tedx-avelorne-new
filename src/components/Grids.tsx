@@ -1,15 +1,3 @@
-// const Grids = () => {
-//   return (
-//     <div className="grid grid--1x3">
-//       <div style={{ height: "100px", background: "gold" }}></div>
-//       <div style={{ height: "100px", background: "dodgerblue" }}></div>
-//       <div style={{ height: "100px", background: "tomato" }}></div>
-//     </div>
-//   );
-// };
-
-// export default Grids;
-
 import { Box, Grid } from "@chakra-ui/react";
 
 // grid grid--1x2

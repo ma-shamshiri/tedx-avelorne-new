@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
-import { Box, Image, Text, Link, useColorModeValue } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-// import TypingEffect from "./TypingText";
-// import TypingText from "./TypingText";
+import React from "react";
+import { Link as RouterLink } from "react-router-dom";
+import {
+  Box,
+  Image,
+  Text,
+  Link,
+  useColorModeValue,
+  ResponsiveValue,
+} from "@chakra-ui/react";
 import Typed from "react-typed";
 
 interface HeroEventCardProps {
@@ -32,13 +34,7 @@ interface HeroEventCardProps {
   bottomBorderHeight: string;
   rightBorderHeight: string;
   leftBorderHeight: string;
-  marginRight?: {
-    sm?: string;
-    base?: string;
-    md?: string;
-    lg?: string;
-    xl?: string;
-  };
+  marginRight?: ResponsiveValue<string>;
 }
 
 const HeroEventCard: React.FC<HeroEventCardProps> = ({
@@ -67,15 +63,6 @@ const HeroEventCard: React.FC<HeroEventCardProps> = ({
   leftBorderHeight,
   marginRight,
 }) => {
-  const { t } = useTranslation();
-
-  const handleLearnMoreButtonClick = () => {
-    window.open(
-      "https://www.ted.com/participate/organize-a-local-tedx-event/before-you-start/what-is-a-tedx-event",
-      "_blank"
-    );
-  };
-
   return (
     <>
       <Link
