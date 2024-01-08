@@ -96,8 +96,8 @@ const BlockStatistics: React.FC = () => {
           <Center>
             <SimpleGrid
               className="aos-animate"
-              columns={{ sm: 1, base: 1, md: 2, lg: 2, xl: 4 }}
-              spacing={"10rem"}
+              columns={{ sm: 2, base: 2, md: 2, lg: 2, xl: 4 }}
+              spacing={{ base: "3rem", lg: "10rem" }}
               padding="5rem 0"
               alignItems="center"
               data-aos="fade-up"
@@ -108,7 +108,7 @@ const BlockStatistics: React.FC = () => {
               <NumberCard
                 width={{ base: "100%", md: "100%", lg: "100%", xl: "100%" }}
                 height={{
-                  base: "25rem",
+                  base: "20rem",
                   md: "20rem",
                   lg: "20rem",
                   xl: "17rem",
@@ -117,14 +117,14 @@ const BlockStatistics: React.FC = () => {
                 hasPlusSign={false}
                 text={t("coreTeam")}
                 textSize={{
-                  base: "3.5rem",
+                  base: "2rem",
                   md: "2.8rem",
                   lg: "2.8rem",
                   xl: "2.5rem",
                 }}
                 textColor="white"
                 numberFontSize={{
-                  base: "10rem",
+                  base: "4.5rem",
                   md: "4rem",
                   lg: "5rem",
                   xl: "4rem",
@@ -137,7 +137,7 @@ const BlockStatistics: React.FC = () => {
               <NumberCard
                 width={{ base: "100%", md: "100%", lg: "100%", xl: "100%" }}
                 height={{
-                  base: "25rem",
+                  base: "20rem",
                   md: "20rem",
                   lg: "20rem",
                   xl: "17rem",
@@ -145,14 +145,14 @@ const BlockStatistics: React.FC = () => {
                 endNumber={8}
                 text={t("speakers")}
                 textSize={{
-                  base: "3.5rem",
+                  base: "2rem",
                   md: "2.8rem",
                   lg: "2.8rem",
                   xl: "2.5rem",
                 }}
                 textColor="white"
                 numberFontSize={{
-                  base: "10rem",
+                  base: "4.5rem",
                   md: "4rem",
                   lg: "5rem",
                   xl: "4rem",
@@ -161,11 +161,10 @@ const BlockStatistics: React.FC = () => {
                 numberColor="#FF5FCC"
               />
 
-              {/* ======================== Myra Virgil ======================== */}
               <NumberCard
                 width={{ base: "100%", md: "100%", lg: "100%", xl: "100%" }}
                 height={{
-                  base: "25rem",
+                  base: "20rem",
                   md: "20rem",
                   lg: "20rem",
                   xl: "17rem",
@@ -174,14 +173,14 @@ const BlockStatistics: React.FC = () => {
                 hasPlusSign={true}
                 text={t("attendees")}
                 textSize={{
-                  base: "3.5rem",
+                  base: "2rem",
                   md: "2.8rem",
                   lg: "2.8rem",
                   xl: "2.5rem",
                 }}
                 textColor="white"
                 numberFontSize={{
-                  base: "10rem",
+                  base: "4.5rem",
                   md: "4rem",
                   lg: "5rem",
                   xl: "4rem",
@@ -197,7 +196,7 @@ const BlockStatistics: React.FC = () => {
               <NumberCard
                 width={{ base: "100%", md: "100%", lg: "100%", xl: "100%" }}
                 height={{
-                  base: "25rem",
+                  base: "20rem",
                   md: "20rem",
                   lg: "20rem",
                   xl: "17rem",
@@ -205,14 +204,14 @@ const BlockStatistics: React.FC = () => {
                 endNumber={8}
                 text={t("sponsors")}
                 textSize={{
-                  base: "3.5rem",
+                  base: "2.3rem",
                   md: "2.8rem",
                   lg: "2.8rem",
                   xl: "2.5rem",
                 }}
                 textColor="white"
                 numberFontSize={{
-                  base: "10rem",
+                  base: "5rem",
                   md: "4rem",
                   lg: "5rem",
                   xl: "4rem",
