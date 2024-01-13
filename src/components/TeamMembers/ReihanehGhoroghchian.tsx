@@ -3,7 +3,8 @@ import BlockFooter from "..//BlockFooter";
 import NavBar2 from "../NavBar2";
 import BlockTeamProfiles from "../BlockTeamProfiles";
 
-import imageSrc from "../../assets/images/Reihaneh.webp";
+// import imageSrc from "../../assets/images/Reihaneh.webp";
+import imageSrc from "../../assets/images/unknownGirlProfile.jpg";
 import badgeSrc from "../../assets/images/badge-creativity.webp";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";

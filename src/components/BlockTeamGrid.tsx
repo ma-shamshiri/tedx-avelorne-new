@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Box, Center, Grid, Text, useColorModeValue } from "@chakra-ui/react";
 
-import myra from "../assets/images/Myra.webp";
 import Amin from "../assets/images/Amin.webp";
 import Aryana from "../assets/images/Aryana.webp";
 import Baharan from "../assets/images/Baharan.webp";
@@ -15,6 +14,7 @@ import Mohammad from "../assets/images/Mohammad.webp";
 import Motahareh from "../assets/images/Motahareh.webp";
 import Pegah from "../assets/images/Pegah.webp";
 import Reihaneh from "../assets/images/Reihaneh.webp";
+import unkown from "../assets/images/unknownGirlProfile.jpg";
 import Samin from "../assets/images/Samin.webp";
 import Royan from "../assets/images/Royan.webp";
 import Gezal from "../assets/images/Gezal.webp";
@@ -26,6 +26,7 @@ import "aos/dist/aos.css";
 import SpeakerGridCard from "./SpeakerGridCard";
 import TeamGridCard from "./TeamGridCard";
 import { useTranslation } from "react-i18next";
+import AminShamshiri from "./TeamMembers/AminShamshiri";
 
 // const BlockSpeakers: React.FC = () => {
 //   useEffect(() => {
@@ -150,7 +151,7 @@ const BlockTeamGrid: React.FC = () => {
                 isHovered={isHoveredArray[3]}
                 handleHover={() => handleHover(3)}
                 handleUnhover={() => handleUnhover(3)}
-                src={Reihaneh}
+                src={unkown}
                 name="Reihaneh Ghoroghchian"
                 buttonSrc="/team/reihaneh-ghoroghchian/"
               />
