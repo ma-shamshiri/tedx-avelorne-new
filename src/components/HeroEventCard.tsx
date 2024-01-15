@@ -196,7 +196,8 @@ const HeroEventCard: React.FC<HeroEventCardProps> = ({
           <Box
             className="card__header"
             // bg="linear-gradient(to bottom, #6322BF, #F226AA)"
-            bg={useColorModeValue("#CCCC4D", "gray.800")}
+            // bg={useColorModeValue("#CCCC4D", "gray.800")}
+            bg={useColorModeValue("gray.800", "gray.800")}
             p={{
               sm: "0.8rem",
               base: "0.8rem",
@@ -211,7 +212,8 @@ const HeroEventCard: React.FC<HeroEventCardProps> = ({
           >
             <Text
               className="plan__name"
-              color={useColorModeValue("gray.700", "gray.200")}
+              // color={useColorModeValue("gray.700", "gray.200")}
+              color={useColorModeValue("gray.200", "gray.200")}
               margin="0"
               fontSize={{
                 sm: "1rem",
@@ -242,7 +244,8 @@ const HeroEventCard: React.FC<HeroEventCardProps> = ({
               {subtitleText}
             </Text> */}
             <Box
-              color={useColorModeValue("black", "#FF3A2D")}
+              // color={useColorModeValue("black", "#FF3A2D")}
+              color={useColorModeValue("#FF3A2D", "#FF3A2D")}
               margin="0"
               fontSize={{
                 sm: "1.3rem",
@@ -256,7 +259,7 @@ const HeroEventCard: React.FC<HeroEventCardProps> = ({
             >
               <Typed
                 strings={[subtitleText]}
-                typeSpeed={100}
+                typeSpeed={50}
                 backSpeed={20}
                 loop
                 backDelay={3000}
