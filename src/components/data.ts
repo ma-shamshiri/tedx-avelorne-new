@@ -95,12 +95,12 @@ export const slides = [
     title: "Fatemeh Tavanaei",
     description: "Fatemeh Tavanaei",
   },
-  {
-    id: "70",
-    src: Reihaneh,
-    title: "Reihaneh Ghoroghchian",
-    description: "Reihaneh Ghoroghchian",
-  },
+  // {
+  //   id: "70",
+  //   src: Reihaneh,
+  //   title: "Reihaneh Ghoroghchian",
+  //   description: "Reihaneh Ghoroghchian",
+  // },
   {
     id: "60",
     src: Erfan,
