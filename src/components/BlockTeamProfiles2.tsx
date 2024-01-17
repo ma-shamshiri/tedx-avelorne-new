@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import {
   Box,
   Flex,
@@ -109,9 +109,23 @@ const BlockTeamProfiles2: React.FC<BlockTeamProfiles2Props> = ({
     setBoxLoaded(true);
   };
 
+  // useEffect(() => {
+  //   setIsPageLoaded(true);
+  // }, []);
+
   useEffect(() => {
-    setIsPageLoaded(true);
-  }, []);
+    // Simulate a delay before setting isPageLoaded to true
+    const delay = setTimeout(() => {
+      setIsPageLoaded(true);
+    }, 0.2);
+
+    // Cleanup function to clear the timeout in case the component unmounts before the delay is complete
+    return () => clearTimeout(delay);
+  }, []); // Empty dependency array ensures this effect runs only onc
+
+  // useLayoutEffect(() => {
+  //   setIsPageLoaded(true);
+  // }, []);
 
   return (
     <Flex
