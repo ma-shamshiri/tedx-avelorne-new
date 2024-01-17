@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import BlockFooter from "..//BlockFooter";
-import NavBar2 from "../NavBar2";
-import BlockTeamProfiles from "../BlockTeamProfiles";
-
-import imageSrc from "../../assets/images/Fathima.webp";
-import badgeSrc from "../../assets/images/badge-operation.webp";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { FaComputer } from "react-icons/fa6";
+import NavBar2 from "../NavBar2";
+import BlockTeamProfiles from "../BlockTeamProfiles";
+import BlockTeamProfiles2 from "../BlockTeamProfiles2";
+import BlockFooter from "../BlockFooter";
+
+// import imageSrc from "../../assets/images/Fathima.webp";
+import imageSrc from "../../assets/images/Fathima-removedBG.webp";
+import badgeSrc from "../../assets/images/badge-operation.webp";
 
 const FathimaNihathaLathiff: React.FC = () => {
   const { t } = useTranslation();
@@ -26,7 +29,7 @@ const FathimaNihathaLathiff: React.FC = () => {
         onAnimationComplete={handleBoxLoad}
       >
         <NavBar2 />
-        <BlockTeamProfiles
+        {/* <BlockTeamProfiles
           name="Fathima Nihatha Lathiff"
           title="M.Sc. Student in Computer Science | Concordia"
           role="Operation"
@@ -36,7 +39,22 @@ const FathimaNihathaLathiff: React.FC = () => {
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/"
           quoteText={t("fathimaQuote")}
+        /> */}
+        <BlockTeamProfiles2
+          firstName="Fathima Nihatha"
+          lastName="Lathiff"
+          fullName="Fathima Nihatha Lathiff"
+          title="M.Sc. Student in Computer Science | Concordia"
+          role="Operation"
+          imageSrc={imageSrc}
+          badgeSrc={badgeSrc}
+          linkedinHref="https://ca.linkedin.com/in/nihatha"
+          twitterHref="https://twitter.com/"
+          tedHref="https://www.ted.com/"
+          quoteText={t("fathimaQuote")}
+          icon={FaComputer}
         />
+
         <BlockFooter />
       </motion.div>
     </>

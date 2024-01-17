@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  MotionValue,
+  useAnimation,
+} from "framer-motion";
 import { useTranslation } from "react-i18next";
 import {
   Box,
@@ -15,9 +21,14 @@ import heroimage from "../assets/images/heroimage.webp";
 import event2024 from "../assets/images/event2024.jpg";
 import mountainsImage from "../assets/images/mountains.webp";
 import planetsImage from "../assets/images/planets.webp";
+import sunImage from "../assets/images/sun.webp";
 import starsImage from "../assets/images/stars.webp";
 
 const BlockHero6: React.FC = () => {
+  const { colorMode } = useColorMode();
+  const isDarkMode = colorMode === "dark";
+  const planetImg = isDarkMode ? planetsImage : sunImage;
+
   const ref = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -104,7 +115,10 @@ const BlockHero6: React.FC = () => {
           className="block block--dark"
           padding="6rem 2rem 6rem 2rem"
           //   bg={useColorModeValue("#F1F1F1", "#000")}
-          bg={useColorModeValue("#6868F7", "#0E0E29")}
+          bg={useColorModeValue(
+            "#6868F7",
+            "linear-gradient(180deg, #000, #0E0E29)"
+          )}
 
           //   display={{ base: "none", xl: "block" }}
         >
@@ -272,15 +286,16 @@ const BlockHero6: React.FC = () => {
               y: yBg,
             }}
             backgroundImage={planetsImage}
+            // backgroundImage={planetImg}
             backgroundSize={{ base: "contain", lg: "cover" }}
             backgroundPosition="bottom"
             backgroundRepeat={{ base: "no-repeat", lg: "initial" }}
+            opacity={1}
             width="125%"
             height="100%"
             position="absolute"
             zIndex="2"
           ></Box>
-
           <Box
             // className="stars"
             as={motion.div}

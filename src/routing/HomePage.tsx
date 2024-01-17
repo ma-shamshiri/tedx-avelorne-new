@@ -3,10 +3,12 @@ import BlockFeatures from "../components/BlockFeatures";
 import BlockFooter from "../components/BlockFooter";
 import NavBar2 from "../components/NavBar2";
 import BlockStatistics from "../components/BlockStatistics";
-import BlockHero3 from "../components/BlockHero3";
 import BlockHero6 from "../components/BlockHero6";
+import { useTranslation } from "react-i18next";
 
 const HomePage: React.FC = () => {
+  const { t } = useTranslation();
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

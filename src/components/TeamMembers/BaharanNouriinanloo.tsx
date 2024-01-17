@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import BlockFooter from "..//BlockFooter";
-import NavBar2 from "../NavBar2";
-import BlockTeamProfiles from "../BlockTeamProfiles";
-
-import imageSrc from "../../assets/images/Baharan.webp";
-import badgeSrc from "../../assets/images/badge-marketing.webp";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+// import { GiElectricalResistance } from "react-icons/gi";
+import { GiLaptop } from "react-icons/gi";
+import NavBar2 from "../NavBar2";
+// import BlockTeamProfiles from "../BlockTeamProfiles";
+import BlockTeamProfiles2 from "../BlockTeamProfiles2";
+import BlockFooter from "../BlockFooter";
+
+// import imageSrc from "../../assets/images/Baharan.webp";
+import imageSrc from "../../assets/images/Baharan-removedBG.webp";
+import badgeSrc from "../../assets/images/badge-marketing.webp";
 
 const BaharanNouriinanloo: React.FC = () => {
   const { t } = useTranslation();
@@ -26,16 +30,30 @@ const BaharanNouriinanloo: React.FC = () => {
         onAnimationComplete={handleBoxLoad}
       >
         <NavBar2 />
-        <BlockTeamProfiles
+        {/* <BlockTeamProfiles
           name="Baharan Nouriinanloo"
           title="M.Sc. Student in Computer Engineering | Polytechnique Montreal"
-          role="Webmaster"
+          role="Marketing"
           imageSrc={imageSrc}
           badgeSrc={badgeSrc}
           linkedinHref="https://ca.linkedin.com/in/baharan-nouriv"
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/"
           quoteText={t("baharanQuote")}
+        /> */}
+        <BlockTeamProfiles2
+          firstName="Baharan"
+          lastName="Nouriinanloo"
+          fullName="Baharan Nouriinanloo"
+          title="M.Sc. Student in Computer Engineering | Polytechnique Montreal"
+          role="Marketing"
+          imageSrc={imageSrc}
+          badgeSrc={badgeSrc}
+          linkedinHref="https://ca.linkedin.com/in/baharan-nouriv"
+          twitterHref="https://twitter.com/"
+          tedHref="https://www.ted.com/"
+          quoteText={t("baharanQuote")}
+          icon={GiLaptop}
         />
         <BlockFooter />
       </motion.div>

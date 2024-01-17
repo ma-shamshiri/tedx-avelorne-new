@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import BlockFooter from "..//BlockFooter";
-import NavBar2 from "../NavBar2";
-import BlockTeamProfiles from "../BlockTeamProfiles";
-
-import imageSrc from "../../assets/images/Mina.webp";
-import badgeSrc from "../../assets/images/badge-marketing.webp";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { GiLaptop } from "react-icons/gi";
+import NavBar2 from "../NavBar2";
+// import BlockTeamProfiles from "../BlockTeamProfiles";
+import BlockTeamProfiles2 from "../BlockTeamProfiles2";
+import BlockFooter from "../BlockFooter";
+
+// import imageSrc from "../../assets/images/Mina.webp";
+import imageSrc from "../../assets/images/Mina-removedBG.webp";
+import badgeSrc from "../../assets/images/badge-marketing.webp";
 
 const MinaTaraghi: React.FC = () => {
   const { t } = useTranslation();
@@ -26,7 +29,7 @@ const MinaTaraghi: React.FC = () => {
         onAnimationComplete={handleBoxLoad}
       >
         <NavBar2 />
-        <BlockTeamProfiles
+        {/* <BlockTeamProfiles
           name="Mina Taraghi"
           title="Ph.D. Student in Computer Engineering | Polytechnique Montreal"
           role="Webmaster"
@@ -36,6 +39,20 @@ const MinaTaraghi: React.FC = () => {
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/profiles/44654445"
           quoteText={t("minaQuote")}
+        /> */}
+        <BlockTeamProfiles2
+          firstName="Mina"
+          lastName="Taraghi"
+          fullName="Mina Taraghi"
+          title="Ph.D. Student in Computer Engineering | Polytechnique Montreal"
+          role="Webmaster"
+          imageSrc={imageSrc}
+          badgeSrc={badgeSrc}
+          linkedinHref="https://ca.linkedin.com/in/minataraghi?trk=people-guest_people_search-card"
+          twitterHref="https://twitter.com/"
+          tedHref="https://www.ted.com/profiles/44654445"
+          quoteText={t("minaQuote")}
+          icon={GiLaptop}
         />
         <BlockFooter />
       </motion.div>

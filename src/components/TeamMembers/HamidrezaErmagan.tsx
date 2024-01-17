@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import BlockFooter from "..//BlockFooter";
-import NavBar2 from "../NavBar2";
-import BlockTeamProfiles from "../BlockTeamProfiles";
-
-import imageSrc from "../../assets/images/Hamidreza.webp";
-import badgeSrc from "../../assets/images/badge-curation.webp";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { GiMining } from "react-icons/gi";
+
+import NavBar2 from "../NavBar2";
+import BlockTeamProfiles from "../BlockTeamProfiles";
+import BlockTeamProfiles2 from "../BlockTeamProfiles2";
+import BlockFooter from "../BlockFooter";
+
+// import imageSrc from "../../assets/images/Hamidreza.webp";
+import imageSrc from "../../assets/images/Hamidreza-removedBG.webp";
+import badgeSrc from "../../assets/images/badge-curation.webp";
 
 const HamidrezaErmagan: React.FC = () => {
   const { t } = useTranslation();
@@ -26,7 +30,7 @@ const HamidrezaErmagan: React.FC = () => {
         onAnimationComplete={handleBoxLoad}
       >
         <NavBar2 />
-        <BlockTeamProfiles
+        {/* <BlockTeamProfiles
           name="Hamidreza Ermagan"
           title="Ph.D. Student in Mining Engineering | McGill"
           role="Curation"
@@ -36,6 +40,20 @@ const HamidrezaErmagan: React.FC = () => {
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/profiles/44509018"
           quoteText={t("hamidrezaQuote")}
+        /> */}
+        <BlockTeamProfiles2
+          firstName="Hamidreza"
+          lastName="Ermagan"
+          fullName="Hamidreza Ermagan"
+          title="Ph.D. Student in Mining Engineering | McGill"
+          role="Curation"
+          imageSrc={imageSrc}
+          badgeSrc={badgeSrc}
+          linkedinHref="https://ca.linkedin.com/in/hrermagan"
+          twitterHref="https://twitter.com/"
+          tedHref="https://www.ted.com/profiles/44509018"
+          quoteText={t("hamidrezaQuote")}
+          icon={GiMining}
         />
         <BlockFooter />
       </motion.div>

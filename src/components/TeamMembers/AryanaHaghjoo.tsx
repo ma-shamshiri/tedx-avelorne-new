@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import BlockFooter from "..//BlockFooter";
-import NavBar2 from "../NavBar2";
-import BlockTeamProfiles from "../BlockTeamProfiles";
-
-import imageSrc from "../../assets/images/Aryana.webp";
-import badgeSrc from "../../assets/images/badge-curation.webp";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { GiGraduateCap } from "react-icons/gi";
+import { IoLogoElectron } from "react-icons/io5";
+import NavBar2 from "../NavBar2";
+import BlockTeamProfiles from "../BlockTeamProfiles";
+import BlockTeamProfiles2 from "../BlockTeamProfiles2";
+import BlockFooter from "../BlockFooter";
+
+// import imageSrc from "../../assets/images/Aryana.webp";
+import imageSrc from "../../assets/images/Aryana-removedBG.webp";
+import badgeSrc from "../../assets/images/badge-curation.webp";
 
 const AryanaHaghjoo: React.FC = () => {
   const { t } = useTranslation();
@@ -26,7 +30,7 @@ const AryanaHaghjoo: React.FC = () => {
         onAnimationComplete={handleBoxLoad}
       >
         <NavBar2 />
-        <BlockTeamProfiles
+        {/* <BlockTeamProfiles
           name="Aryana Haghjoo"
           title="M.Sc. Student in Physics | McGill"
           role="Curation"
@@ -36,6 +40,20 @@ const AryanaHaghjoo: React.FC = () => {
           twitterHref="https://twitter.com/AryanaHaghjoo"
           tedHref="https://www.ted.com/profiles/44809246"
           quoteText={t("aryanaQuote")}
+        /> */}
+        <BlockTeamProfiles2
+          firstName="Aryana"
+          lastName="Haghjoo"
+          fullName="Aryana Haghjoo"
+          title="M.Sc. Student in Physics | McGill"
+          role="Curation"
+          imageSrc={imageSrc}
+          badgeSrc={badgeSrc}
+          linkedinHref="https://ca.linkedin.com/"
+          twitterHref="https://twitter.com/AryanaHaghjoo"
+          tedHref="https://www.ted.com/profiles/44809246"
+          quoteText={t("aryanaQuote")}
+          icon={IoLogoElectron}
         />
         <BlockFooter />
       </motion.div>

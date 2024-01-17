@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import BlockFooter from "..//BlockFooter";
-import NavBar2 from "../NavBar2";
-import BlockTeamProfiles from "../BlockTeamProfiles";
-
-import imageSrc from "../../assets/images/Fatemeh.webp";
-import badgeSrc from "../../assets/images/badge-coorganizer.webp";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { GiMining } from "react-icons/gi";
+import NavBar2 from "../NavBar2";
+import BlockTeamProfiles from "../BlockTeamProfiles";
+import BlockTeamProfiles2 from "../BlockTeamProfiles2";
+import BlockFooter from "../BlockFooter";
+
+// import imageSrc from "../../assets/images/Fatemeh.webp";
+import imageSrc from "../../assets/images/Fatemeh-removedBG.webp";
+import badgeSrc from "../../assets/images/badge-coorganizer.webp";
 
 const FatemehTavanaei: React.FC = () => {
   const { t } = useTranslation();
@@ -26,7 +29,7 @@ const FatemehTavanaei: React.FC = () => {
         onAnimationComplete={handleBoxLoad}
       >
         <NavBar2 />
-        <BlockTeamProfiles
+        {/* <BlockTeamProfiles
           name="Fatemeh Tavanaei"
           title="Ph.D. Student in Mining Engineering | McGill"
           role="Co-organizer"
@@ -36,6 +39,20 @@ const FatemehTavanaei: React.FC = () => {
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/profiles/38189071/about"
           quoteText={t("fatemehQuote")}
+        /> */}
+        <BlockTeamProfiles2
+          firstName="Fatemeh"
+          lastName="Tavanaei"
+          fullName="Fatemeh Tavanaei"
+          title="Ph.D. Student in Mining Engineering | McGill"
+          role="Co-organizer"
+          imageSrc={imageSrc}
+          badgeSrc={badgeSrc}
+          linkedinHref="https://ca.linkedin.com/in/fatemeh-tavanaei-sereshgi-394a7957"
+          twitterHref="https://twitter.com/"
+          tedHref="https://www.ted.com/profiles/38189071/about"
+          quoteText={t("fatemehQuote")}
+          icon={GiMining}
         />
         <BlockFooter />
       </motion.div>

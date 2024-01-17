@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import BlockFooter from "..//BlockFooter";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { FcBiotech } from "react-icons/fc";
 import NavBar2 from "../NavBar2";
-import BlockTeamProfiles from "../BlockTeamProfiles";
+// import BlockTeamProfiles from "../BlockTeamProfiles";
+import BlockTeamProfiles2 from "../BlockTeamProfiles2";
+import BlockFooter from "../BlockFooter";
 
 import imageSrc from "../../assets/images/Royan.webp";
 import badgeSrc from "../../assets/images/badge-content-creator.webp";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
 
 const RoyanJafari: React.FC = () => {
   const { t } = useTranslation();
@@ -26,7 +28,7 @@ const RoyanJafari: React.FC = () => {
         onAnimationComplete={handleBoxLoad}
       >
         <NavBar2 />
-        <BlockTeamProfiles
+        {/* <BlockTeamProfiles
           name="Royan Jafari"
           title="M.Eng. Biological & Biomedical Engineering | McGill"
           role="Content Creator"
@@ -36,6 +38,20 @@ const RoyanJafari: React.FC = () => {
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/"
           quoteText={t("royanQuote")}
+        /> */}
+        <BlockTeamProfiles2
+          firstName="Royan"
+          lastName="Jafari"
+          fullName="Royan Jafari"
+          title="M.Eng. Biological & Biomedical Engineering | McGill"
+          role="Content Creator"
+          imageSrc={imageSrc}
+          badgeSrc={badgeSrc}
+          linkedinHref="https://ca.linkedin.com/in/royan-jafari"
+          twitterHref="https://twitter.com/"
+          tedHref="https://www.ted.com/"
+          quoteText={t("royanQuote")}
+          icon={FcBiotech}
         />
         <BlockFooter />
       </motion.div>

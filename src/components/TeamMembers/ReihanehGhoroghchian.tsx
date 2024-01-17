@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import BlockFooter from "..//BlockFooter";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { GiElectricalResistance } from "react-icons/gi";
 import NavBar2 from "../NavBar2";
-import BlockTeamProfiles from "../BlockTeamProfiles";
+// import BlockTeamProfiles from "../BlockTeamProfiles";
+import BlockTeamProfiles2 from "../BlockTeamProfiles2";
+import BlockFooter from "../BlockFooter";
 
 // import imageSrc from "../../assets/images/Reihaneh.webp";
 import imageSrc from "../../assets/images/unknownGirlProfile.jpg";
 import badgeSrc from "../../assets/images/badge-creativity.webp";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
 
 const ReihanehGhoroghchian: React.FC = () => {
   const { t } = useTranslation();
@@ -27,7 +29,7 @@ const ReihanehGhoroghchian: React.FC = () => {
         onAnimationComplete={handleBoxLoad}
       >
         <NavBar2 />
-        <BlockTeamProfiles
+        {/* <BlockTeamProfiles
           name="Reihaneh Ghoroghchian"
           title="M.Sc. Student in Electrical Engineering | McGill"
           role="Creativity"
@@ -37,6 +39,20 @@ const ReihanehGhoroghchian: React.FC = () => {
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/"
           quoteText={t("reihanehQuote")}
+        /> */}
+        <BlockTeamProfiles2
+          firstName="Reihaneh"
+          lastName="Ghoroghchian"
+          fullName="Reihaneh Ghoroghchian"
+          title="M.Sc. Student in Electrical Engineering | McGill"
+          role="Creativity"
+          // imageSrc={imageSrc}
+          badgeSrc={badgeSrc}
+          linkedinHref="https://ca.linkedin.com/in/reihaneh-ghoroghchian-636661182"
+          twitterHref="https://twitter.com/"
+          tedHref="https://www.ted.com/"
+          quoteText={t("reihanehQuote")}
+          icon={GiElectricalResistance}
         />
         <BlockFooter />
       </motion.div>
