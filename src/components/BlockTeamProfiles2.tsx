@@ -109,10 +109,6 @@ const BlockTeamProfiles2: React.FC<BlockTeamProfiles2Props> = ({
     setBoxLoaded(true);
   };
 
-  // useEffect(() => {
-  //   setIsPageLoaded(true);
-  // }, []);
-
   useEffect(() => {
     // Simulate a delay before setting isPageLoaded to true
     const delay = setTimeout(() => {
@@ -121,11 +117,7 @@ const BlockTeamProfiles2: React.FC<BlockTeamProfiles2Props> = ({
 
     // Cleanup function to clear the timeout in case the component unmounts before the delay is complete
     return () => clearTimeout(delay);
-  }, []); // Empty dependency array ensures this effect runs only onc
-
-  // useLayoutEffect(() => {
-  //   setIsPageLoaded(true);
-  // }, []);
+  }, []);
 
   return (
     <Flex
@@ -135,11 +127,16 @@ const BlockTeamProfiles2: React.FC<BlockTeamProfiles2Props> = ({
       width="100%"
       overflow="hidden"
       position="relative"
-      background={useColorModeValue(
-        "linear-gradient(90deg, #7854FE, #4BFD83)",
-        // "white",
-        "linear-gradient(180deg, #000000, #0D1224, #271C4B)"
-      )}
+      background={{
+        base: useColorModeValue(
+          "linear-gradient(180deg, #7854FE, #4BFD83)",
+          "linear-gradient(180deg, #000000, #0D1224, #271C4B)"
+        ),
+        lg: useColorModeValue(
+          "linear-gradient(90deg, #7854FE, #4BFD83)",
+          "linear-gradient(180deg, #000000, #0D1224, #271C4B)"
+        ),
+      }}
       zIndex={0}
     >
       <Box

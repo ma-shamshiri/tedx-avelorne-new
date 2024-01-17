@@ -7,7 +7,8 @@ import NavBar2 from "../NavBar2";
 import BlockTeamProfiles2 from "../BlockTeamProfiles2";
 import BlockFooter from "../BlockFooter";
 
-import imageSrc from "../../assets/images/Royan.webp";
+// import imageSrc from "../../assets/images/Royan.webp";
+import imageSrc from "../../assets/images/Royan-removedBG.webp";
 import badgeSrc from "../../assets/images/badge-content-creator.webp";
 
 const RoyanJafari: React.FC = () => {

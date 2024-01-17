@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { GiGraduateCap } from "react-icons/gi";
+import { SiNeutralinojs } from "react-icons/si";
 import { IoLogoElectron } from "react-icons/io5";
 import NavBar2 from "../NavBar2";
 import BlockTeamProfiles from "../BlockTeamProfiles";
@@ -53,7 +53,7 @@ const AryanaHaghjoo: React.FC = () => {
           twitterHref="https://twitter.com/AryanaHaghjoo"
           tedHref="https://www.ted.com/profiles/44809246"
           quoteText={t("aryanaQuote")}
-          icon={IoLogoElectron}
+          icon={SiNeutralinojs}
         />
         <BlockFooter />
       </motion.div>
