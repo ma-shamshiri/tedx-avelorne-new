@@ -51,7 +51,7 @@ const MelikaSeyedi: React.FC = () => {
           badgeSrc={badgeSrc}
           linkedinHref="https://ca.linkedin.com/in/melika-seyedi-048416140"
           twitterHref="https://twitter.com/"
-          tedHref="https://www.ted.com/profiles/44509018"
+          tedHref="https://www.ted.com/"
           quoteText={t("melikaQuote")}
           icon={GiLaptop}
         />

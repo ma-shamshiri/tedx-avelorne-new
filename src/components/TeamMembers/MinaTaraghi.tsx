@@ -32,7 +32,7 @@ const MinaTaraghi: React.FC = () => {
         {/* <BlockTeamProfiles
           name="Mina Taraghi"
           title="Ph.D. Student in Computer Engineering | Polytechnique Montreal"
-          role="Webmaster"
+          role="Content Creator"
           imageSrc={imageSrc}
           badgeSrc={badgeSrc}
           linkedinHref="https://ca.linkedin.com/in/minataraghi?trk=people-guest_people_search-card"
@@ -45,7 +45,7 @@ const MinaTaraghi: React.FC = () => {
           lastName="Taraghi"
           fullName="Mina Taraghi"
           title="Ph.D. Student in Computer Engineering | Polytechnique Montreal"
-          role="Webmaster"
+          role="Content Creator"
           imageSrc={imageSrc}
           badgeSrc={badgeSrc}
           linkedinHref="https://ca.linkedin.com/in/minataraghi?trk=people-guest_people_search-card"
