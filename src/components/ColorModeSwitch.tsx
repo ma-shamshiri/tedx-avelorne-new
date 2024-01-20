@@ -1,4 +1,4 @@
-import { useColorMode, Button } from "@chakra-ui/react";
+import { useColorMode, Button, useBreakpointValue } from "@chakra-ui/react";
 import { SunIcon } from "@chakra-ui/icons";
 import { LuMoonStar } from "react-icons/lu";
 
@@ -6,6 +6,9 @@ const ColorModeSwitch = () => {
   const { toggleColorMode, colorMode } = useColorMode();
 
   const isLightMode = colorMode === "light";
+
+  const iconSize = useBreakpointValue({ base: "2rem", lg: "2rem" });
+  const iconContainerSize = useBreakpointValue({ base: "6rem", lg: "6rem" });
 
   return (
     <Button
@@ -19,12 +22,12 @@ const ColorModeSwitch = () => {
       }}
       bg={isLightMode ? "gray.300" : "gray.600"}
       color={isLightMode ? "black" : "white"}
-      boxSize="4rem"
+      boxSize={iconContainerSize}
     >
       {isLightMode ? (
-        <LuMoonStar size="1.5rem" />
+        <LuMoonStar size={iconSize} />
       ) : (
-        <SunIcon boxSize="1.5rem" />
+        <SunIcon boxSize={iconSize} />
       )}
     </Button>
   );
