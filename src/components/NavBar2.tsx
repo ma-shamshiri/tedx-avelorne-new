@@ -91,8 +91,14 @@ const NavBar2: React.FC = () => {
             >
               <Flex justifyContent={"center"} alignItems={"center"}>
                 <HStack>
-                  <Image src={logo} boxSize={{ base: "35px", lg: "70px" }} />
-                  <Image src={tedxImg} width={{ base: 160, lg: 300 }} />
+                  <Image
+                    src={logo}
+                    boxSize={{ base: "35px", md: "60px", lg: "70px" }}
+                  />
+                  <Image
+                    src={tedxImg}
+                    width={{ base: 160, md: 280, lg: 300 }}
+                  />
                 </HStack>
               </Flex>
             </Link>
