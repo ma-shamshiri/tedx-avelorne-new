@@ -40,7 +40,7 @@ const NavBar2: React.FC = () => {
 
   const tedxImg = colorMode === "dark" ? tedxWhite : tedxBlack;
 
-  const isLargeScreen = useBreakpointValue({ base: false, lg: true });
+  const isLargeScreen = useBreakpointValue({ base: false, md: true });
 
   return (
     <>
