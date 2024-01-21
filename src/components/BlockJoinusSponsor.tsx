@@ -40,9 +40,14 @@ const BlockJoinusSponsor: React.FC = () => {
             //     "linear-gradient(45deg, #44000B, #E0455F, #44000B, #E0455F, #44000B, #44000B)"
             //   )}
 
+            // bg={useColorModeValue(
+            //   "linear-gradient(45deg, #685ACD, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)",
+            //   "linear-gradient(80deg, #000C14, #F8002F)"
+            // )}
+
             bg={useColorModeValue(
-              "linear-gradient(45deg, #685ACD, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)",
-              "linear-gradient(80deg, #000C14, #F8002F)"
+              "linear-gradient(180deg, #F1F1F1, #FFFFFF)",
+              "linear-gradient(180deg, #000000, #171923)"
             )}
 
             //   display={{ base: "none", xl: "block" }}
@@ -57,7 +62,8 @@ const BlockJoinusSponsor: React.FC = () => {
             >
               <Text
                 className="h2 block__heading"
-                color={useColorModeValue("#F1F1F1", "#fff")}
+                // color={useColorModeValue("#F1F1F1", "#fff")}
+                color={useColorModeValue("gray.800", "#fff")}
                 fontSize="4rem"
                 fontWeight="bold"
                 lineHeight="1.1"
@@ -67,7 +73,8 @@ const BlockJoinusSponsor: React.FC = () => {
               <Text
                 className="p"
                 marginTop={10}
-                color={useColorModeValue("gray.100", "gray.100")}
+                // color={useColorModeValue("gray.100", "gray.100")}
+                color={useColorModeValue("gray.600", "#fff")}
                 fontSize={{ lg: "2.3rem" }}
               >
                 {t("joinUsSponsorPageSubTitle")}
