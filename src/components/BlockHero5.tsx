@@ -98,7 +98,7 @@ const BlockHero5: React.FC = () => {
             padding="6rem 2rem 6rem 2rem"
             bg={useColorModeValue("#F1F1F1", "#000")}
             color="#7b858b"
-            display={{ base: "none", xl: "block" }}
+            // display={{ base: "none", xl: "block" }}
             // _hover={{ bg: "red" }}
             // transition="background 0.3s ease-in-out" // Adjust the duration and easing function as needed
           >
@@ -125,9 +125,11 @@ const BlockHero5: React.FC = () => {
                 color={useColorModeValue("#FF3A2D", "#fff")}
                 marginBottom="1rem"
                 marginTop="0"
-                fontSize="4rem"
+                fontSize={{ base: "4rem", lg: "5.1rem" }}
                 fontWeight="bold"
-                lineHeight="1.1"
+                lineHeight="1.2"
+                textAlign={{ base: "center", lg: "left" }}
+                height={{ base: "18rem", lg: "initial" }}
               >
                 <Typed
                   strings={[t("hero2024Title")]}
@@ -142,7 +144,8 @@ const BlockHero5: React.FC = () => {
                 className="p"
                 marginTop={10}
                 color={useColorModeValue("gray.800", "#FF3A2D")}
-                fontSize={{ lg: "2.54rem" }}
+                fontSize={{ base: "2rem", lg: "2.5rem" }}
+                textAlign={{ base: "center", lg: "left" }}
               >
                 {t("hero2024SubTitle")}
               </Text>
