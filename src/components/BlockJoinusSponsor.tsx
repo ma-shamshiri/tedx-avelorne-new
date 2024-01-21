@@ -14,9 +14,6 @@ import SponsorForm from "./Forms/SponsorForm";
 import sponsorBackgroundImage from "../assets/images/sponsor-page-bg.webp";
 
 const BlockJoinusSponsor: React.FC = () => {
-  // const { colorMode } = useColorMode();
-  // const displayValue = useBreakpointValue({ base: "none", xl: "block" });
-
   const { t } = useTranslation();
   const { colorMode } = useColorMode();
 
@@ -25,34 +22,20 @@ const BlockJoinusSponsor: React.FC = () => {
       <Box position={"relative"}>
         <Box
           className="block block--dark block--skewed-right block-showcase aos-animate"
-          //   bg={useColorModeValue("gray.800", "#16F8B6")}
-          //   bg={useColorModeValue("#ACD1B4", "#23214A")}
           bg={useColorModeValue("gray.100", "#1A202C")}
           overflow={"hidden"}
         >
           <Box
             className="block block--dark"
             padding="6rem 2rem 6rem 2rem"
-            //   marginBottom={{ base: "5rem", lg: "10rem" }}
-            // paddingBottom="10rem"
-            //   bg={useColorModeValue(
-            //     "linear-gradient(45deg, #685ACD, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)",
-            //     "linear-gradient(45deg, #44000B, #E0455F, #44000B, #E0455F, #44000B, #44000B)"
-            //   )}
-
             // bg={useColorModeValue(
             //   "linear-gradient(45deg, #685ACD, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)",
             //   "linear-gradient(80deg, #000C14, #F8002F)"
             // )}
-
             bg={useColorModeValue(
               "linear-gradient(180deg, #F1F1F1, #FFFFFF)",
               "linear-gradient(180deg, #000000, #171923)"
             )}
-
-            //   display={{ base: "none", xl: "block" }}
-            // _hover={{ bg: "red" }}
-            // transition="background 0.3s ease-in-out"
           >
             <Box
               className="block__header container"
@@ -62,9 +45,8 @@ const BlockJoinusSponsor: React.FC = () => {
             >
               <Text
                 className="h2 block__heading"
-                // color={useColorModeValue("#F1F1F1", "#fff")}
                 color={useColorModeValue("gray.800", "#fff")}
-                fontSize="4rem"
+                fontSize={{ base: "4rem", lg: "6rem" }}
                 fontWeight="bold"
                 lineHeight="1.1"
               >
@@ -73,9 +55,8 @@ const BlockJoinusSponsor: React.FC = () => {
               <Text
                 className="p"
                 marginTop={10}
-                // color={useColorModeValue("gray.100", "gray.100")}
                 color={useColorModeValue("gray.600", "#fff")}
-                fontSize={{ lg: "2.3rem" }}
+                fontSize={{ base: "2rem", lg: "2.5rem" }}
               >
                 {t("joinUsSponsorPageSubTitle")}
               </Text>

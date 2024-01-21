@@ -31,9 +31,9 @@ const BlockJoinusSpeaker: React.FC = () => {
           <Text
             className="h2 block__heading"
             color={useColorModeValue("#F1F1F1", "#fff")}
-            fontSize="4rem"
+            fontSize={{ base: "4rem", lg: "6rem" }}
             fontWeight="bold"
-            lineHeight="1.1"
+            lineHeight="1.2"
           >
             {t("joinUsSpeakerPageTitle")}
           </Text>
@@ -41,7 +41,7 @@ const BlockJoinusSpeaker: React.FC = () => {
             className="p"
             marginTop={10}
             color={useColorModeValue("gray.100", "gray.100")}
-            fontSize={{ lg: "2.3rem" }}
+            fontSize={{ base: "2rem", lg: "2.5rem" }}
           >
             {t("joinUsSpeakerPageSubTitle")}
           </Text>
