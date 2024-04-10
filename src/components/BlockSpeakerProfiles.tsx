@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Flex,
@@ -19,6 +19,7 @@ interface BlockSpeakerProfilesProps {
   position: string;
   talkTopic: string;
   imageSrc: string;
+  videoSrc: string;
 }
 
 const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
@@ -26,8 +27,10 @@ const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
   position,
   talkTopic,
   imageSrc,
+  videoSrc,
 }) => {
   const { t } = useTranslation();
+  const [showVideo, setShowVideo] = useState(true);
 
   return (
     <Flex
@@ -94,13 +97,61 @@ const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
             height="100%"
             position="relative"
           >
-            <Image
+            {/* <Image
               className="vide_thumbnail"
               src={videoThumbnail}
               alt="Video Thumbnail Image"
               objectFit="cover"
               opacity="0.5"
-            />
+            /> */}
+
+            {!showVideo ? (
+              // Display thumbnail if showVideo is false
+              <Box
+                className="video_embed_container"
+                position="relative"
+                width="100%"
+                overflow="hidden"
+                borderRadius="2rem"
+                cursor="pointer"
+                onClick={() => setShowVideo(true)}
+                opacity={"0.1"}
+              >
+                <Image
+                  src={videoThumbnail}
+                  alt="Video Thumbnail Image"
+                  objectFit="cover"
+                  opacity="0.5"
+                  width="100%"
+                  height="100%"
+                />
+              </Box>
+            ) : (
+              <Box
+                className="video_embed_container"
+                position="relative"
+                width="100%"
+                paddingBottom="56.25%" // 16:9 aspect ratio
+                overflow="hidden"
+                borderRadius="2rem"
+              >
+                <iframe
+                  style={{
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                    width: "100%",
+                    height: "100%",
+                    border: "none",
+                  }}
+                  src={videoSrc}
+                  title="Dailymotion Video Player"
+                  allowFullScreen
+                />
+              </Box>
+            )}
+
+            {/* The title is not shown as the zIndex={-1} */}
             <Box
               className="title_container"
               display="flex"
@@ -113,6 +164,7 @@ const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
               opacity="0.6"
               justifyContent="center"
               alignItems="center"
+              zIndex={-1}
             >
               <VStack>
                 <Text

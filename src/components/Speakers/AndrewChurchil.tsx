@@ -31,6 +31,7 @@ const AndrewChurchil: React.FC = () => {
           position="Carolyn Jack MD | Professor | Start-Up Entrepreneur"
           imageSrc={imageSrc}
           talkTopic={t("comingSoon")}
+          videoSrc="https://www.dailymotion.com/embed/video/x8wkyzu"
         />
         <BlockFooter />
       </motion.div>

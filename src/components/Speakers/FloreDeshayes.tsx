@@ -31,6 +31,7 @@ const FloreDeshayes: React.FC = () => {
           position="Social worker"
           imageSrc={imageSrc}
           talkTopic={t("comingSoon")}
+          videoSrc="https://www.dailymotion.com/embed/video/x8wkz00"
         />
         <BlockFooter />
       </motion.div>

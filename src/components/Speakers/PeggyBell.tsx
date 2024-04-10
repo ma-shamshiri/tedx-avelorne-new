@@ -31,6 +31,7 @@ const PeggyBell: React.FC = () => {
           position="Founder | Principal Consultant"
           imageSrc={imageSrc}
           talkTopic={t("comingSoon")}
+          videoSrc="https://www.dailymotion.com/embed/video/x8wkyzw"
         />
         <BlockFooter />
       </motion.div>

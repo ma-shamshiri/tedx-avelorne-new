@@ -31,6 +31,7 @@ const MyraVirgil: React.FC = () => {
           position="Philanthropy Executive | Strategist | Storyteller"
           imageSrc={imageSrc}
           talkTopic={t("comingSoon")}
+          videoSrc="https://www.dailymotion.com/embed/video/x8wkz02"
         />
         <BlockFooter />
       </motion.div>
