@@ -97,15 +97,15 @@ const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
             height="100%"
             position="relative"
           >
-            {/* <Image
+            <Image
               className="vide_thumbnail"
               src={videoThumbnail}
               alt="Video Thumbnail Image"
               objectFit="cover"
               opacity="0.5"
-            /> */}
+            />
 
-            {!showVideo ? (
+            {/* {!showVideo ? (
               // Display thumbnail if showVideo is false
               <Box
                 className="video_embed_container"
@@ -149,7 +149,7 @@ const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
                   allowFullScreen
                 />
               </Box>
-            )}
+            )} */}
 
             {/* The title is not shown as the zIndex={-1} */}
             <Box
@@ -164,7 +164,7 @@ const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
               opacity="0.6"
               justifyContent="center"
               alignItems="center"
-              zIndex={-1}
+              // zIndex={-1}
             >
               <VStack>
                 <Text

@@ -30,7 +30,8 @@ const JanetPerlman: React.FC = () => {
           position="Animator and Children's Book Author"
           imageSrc={imageSrc}
           talkTopic={t("comingSoon")}
-          videoSrc="https://www.dailymotion.com/embed/video/x8wkz04"
+          videoSrc=""
+          // videoSrc="https://www.dailymotion.com/embed/video/x8wkz04"
         />
         <BlockFooter />
       </motion.div>
