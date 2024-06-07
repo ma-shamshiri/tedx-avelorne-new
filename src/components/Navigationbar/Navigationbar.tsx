@@ -18,8 +18,8 @@ import { Sidebar } from "./Sidebar";
 import { youChooseLogo, tedxWhite, tedxBlack } from "../../assets";
 import { MenuLinks } from "../MenuLinks";
 import { navigationLinks } from "../layout/navigation-links";
-import { HamburgerButton } from "../HamburgerButton";
-import { MobileMenu } from "../MobileMenu";
+// import { HamburgerButton } from "../HamburgerButton";
+// import { MobileMenu } from "../MobileMenu";
 
 
 export const Navigationbar: React.FC = () => {
@@ -34,7 +34,7 @@ export const Navigationbar: React.FC = () => {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleScroll = () => {
     const currentPosition = window.pageYOffset;
@@ -49,9 +49,9 @@ export const Navigationbar: React.FC = () => {
     };
   }, [scrollPosition]);
 
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [location]);
+  // useEffect(() => {
+  //   setIsMobileMenuOpen(false);
+  // }, [location]);
 
   return (
     <>
