@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { BlockFooter } from "../BlockFooter";
+import { BlockSpeakerProfiles } from "../BlockSpeakerProfiles";
+import { flore } from "../../assets";
 import { motion } from "framer-motion";
-
-import NavBar2 from "../NavBar2";
-import BlockSpeakerProfiles from "../BlockSpeakerProfiles";
-import BlockFooter from "../BlockFooter";
-
-import imageSrc from "../../assets/images/Flore.webp";
+import { Navigationbar } from "../Navigationbar";
+import { useTranslation } from "react-i18next";
 
 const FloreDeshayes: React.FC = () => {
   const { t } = useTranslation();
@@ -25,14 +23,14 @@ const FloreDeshayes: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         <BlockSpeakerProfiles
           name="Flore Deshayes"
           position="Social worker"
-          imageSrc={imageSrc}
+          imageSrc={flore}
           talkTopic={t("comingSoon")}
           videoSrc=""
-          // videoSrc="https://www.dailymotion.com/embed/video/x8wkz00"
+        // videoSrc="https://www.dailymotion.com/embed/video/x8wkz00"
         />
         <BlockFooter />
       </motion.div>

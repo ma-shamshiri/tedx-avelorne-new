@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-// import { SiProtondb } from "react-icons/si";
 // import { IoLogoElectron } from "react-icons/io5";
-import { SiNeutralinojs } from "react-icons/si";
-import NavBar2 from "../NavBar2";
+// import { SiProtondb } from "react-icons/si";
 // import BlockTeamProfiles from "../BlockTeamProfiles";
-import BlockTeamProfiles2 from "../BlockTeamProfiles2";
-import BlockFooter from "..//BlockFooter";
-
-// import imageSrc from "../../assets/images/Samin.webp";
-import imageSrc from "../../assets/images/Samin-removedBG.webp";
-import badgeSrc from "../../assets/images/badge-organizer.webp";
+import { BlockFooter } from "../BlockFooter";
+import { BlockTeamProfiles } from "../BlockTeamProfiles";
+import { motion } from "framer-motion";
+import { Navigationbar } from "../Navigationbar";
+import { samin, saminBadge } from "../../assets";
+import { SiNeutralinojs } from "react-icons/si";
+import { useTranslation } from "react-i18next";
 
 const SaminMajidi: React.FC = () => {
   const { t } = useTranslation();
@@ -30,7 +27,7 @@ const SaminMajidi: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         {/* <BlockTeamProfiles
           name="Samin Majidi"
           title="Ph.D. Student in Physics | McGill"
@@ -42,14 +39,14 @@ const SaminMajidi: React.FC = () => {
           tedHref="https://www.ted.com/profiles/19449036/about"
           quoteText={t("saminQuote")}
         /> */}
-        <BlockTeamProfiles2
+        <BlockTeamProfiles
           firstName="Samin"
           lastName="Majidi"
           fullName="Samin Majidi"
           title="Ph.D. Student in Physics | McGill"
           role="Organizer"
-          imageSrc={imageSrc}
-          badgeSrc={badgeSrc}
+          imageSrc={samin}
+          badgeSrc={saminBadge}
           linkedinHref="https://ca.linkedin.com/in/samin-majidi-05b77a250"
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/profiles/19449036/about"

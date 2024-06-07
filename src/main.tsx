@@ -13,14 +13,17 @@ import "./normalize.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./routing/routes";
 import i18n from "../i18n";
+import { KBarWrapper } from "./components/command-bar";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
       <ChakraProvider theme={theme}>
-        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-        {/* <App /> */}
-        <RouterProvider router={router} />
+        <KBarWrapper>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          {/* <App /> */}
+          <RouterProvider router={router} />
+        </KBarWrapper>
       </ChakraProvider>
     </I18nextProvider>
   </React.StrictMode>

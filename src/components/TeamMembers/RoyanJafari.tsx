@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { FcBiotech } from "react-icons/fc";
-import NavBar2 from "../NavBar2";
 // import BlockTeamProfiles from "../BlockTeamProfiles";
-import BlockTeamProfiles2 from "../BlockTeamProfiles2";
-import BlockFooter from "../BlockFooter";
-
-// import imageSrc from "../../assets/images/Royan.webp";
-import imageSrc from "../../assets/images/Royan-removedBG.webp";
-import badgeSrc from "../../assets/images/badge-content-creator.webp";
+import { BlockFooter } from "../BlockFooter";
+import { BlockTeamProfiles } from "../BlockTeamProfiles";
+import { FcBiotech } from "react-icons/fc";
+import { motion } from "framer-motion";
+import { Navigationbar } from "../Navigationbar";
+import { royan, royanBadgeSrc } from "../../assets";
+import { useTranslation } from "react-i18next";
 
 const RoyanJafari: React.FC = () => {
   const { t } = useTranslation();
@@ -28,7 +25,7 @@ const RoyanJafari: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         {/* <BlockTeamProfiles
           name="Royan Jafari"
           title="M.Eng. Biological & Biomedical Engineering | McGill"
@@ -40,14 +37,14 @@ const RoyanJafari: React.FC = () => {
           tedHref="https://www.ted.com/"
           quoteText={t("royanQuote")}
         /> */}
-        <BlockTeamProfiles2
+        <BlockTeamProfiles
           firstName="Royan"
           lastName="Jafari"
           fullName="Royan Jafari"
           title="M.Eng. Biological & Biomedical Engineering | McGill"
           role="Content Creator"
-          imageSrc={imageSrc}
-          badgeSrc={badgeSrc}
+          imageSrc={royan}
+          badgeSrc={royanBadgeSrc}
           linkedinHref="https://ca.linkedin.com/in/royan-jafari"
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/"

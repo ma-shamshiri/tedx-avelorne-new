@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+// import BlockTeamProfiles from "../BlockTeamProfiles";
+import { BlockFooter } from "../BlockFooter";
+import { BlockTeamProfiles } from "../BlockTeamProfiles";
 import { FaComputer } from "react-icons/fa6";
-import NavBar2 from "../NavBar2";
-import BlockTeamProfiles from "../BlockTeamProfiles";
-import BlockTeamProfiles2 from "../BlockTeamProfiles2";
-import BlockFooter from "../BlockFooter";
-
-// import imageSrc from "../../assets/images/Fathima.webp";
-import imageSrc from "../../assets/images/Fathima-removedBG.webp";
-import badgeSrc from "../../assets/images/badge-operation.webp";
+import { fathima, fathimaBadge } from "../../assets";
+import { motion } from "framer-motion";
+import { Navigationbar } from "../Navigationbar";
+import { useTranslation } from "react-i18next";
 
 const FathimaNihathaLathiff: React.FC = () => {
   const { t } = useTranslation();
@@ -28,7 +25,7 @@ const FathimaNihathaLathiff: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         {/* <BlockTeamProfiles
           name="Fathima Nihatha Lathiff"
           title="M.Sc. Student in Computer Science | Concordia"
@@ -40,14 +37,14 @@ const FathimaNihathaLathiff: React.FC = () => {
           tedHref="https://www.ted.com/"
           quoteText={t("fathimaQuote")}
         /> */}
-        <BlockTeamProfiles2
+        <BlockTeamProfiles
           firstName="Fathima Nihatha"
           lastName="Lathiff"
           fullName="Fathima Nihatha Lathiff"
           title="M.Sc. Student in Computer Science | Concordia"
           role="Operation"
-          imageSrc={imageSrc}
-          badgeSrc={badgeSrc}
+          imageSrc={fathima}
+          badgeSrc={fathimaBadge}
           linkedinHref="https://ca.linkedin.com/in/nihatha"
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/"

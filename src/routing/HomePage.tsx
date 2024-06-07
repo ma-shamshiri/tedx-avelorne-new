@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import BlockFeatures from "../components/BlockFeatures";
-import BlockFooter from "../components/BlockFooter";
-import NavBar2 from "../components/NavBar2";
-import BlockStatistics from "../components/BlockStatistics";
-import BlockHero6 from "../components/BlockHero6";
+import { BlockFeatures } from "../components/BlockFeatures";
+import { BlockFooter } from "../components/BlockFooter"
+import { BlockHeroHome } from "../components/BlockHeroHome";
+import { BlockStatistics } from "../components/BlockStatistics";
+import { Navigationbar } from "../components/Navigationbar";
+import { Container } from "../components/layout";
 
 const HomePage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,8 +19,9 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <NavBar2 />
-      <BlockHero6 />
+      {/* <Container /> */}
+      <Navigationbar />
+      <BlockHeroHome />
       <BlockStatistics />
       <BlockFeatures />
       <BlockFooter />

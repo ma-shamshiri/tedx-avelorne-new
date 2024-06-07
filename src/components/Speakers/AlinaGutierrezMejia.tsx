@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { alina } from "../../assets";
+import { BlockFooter } from "../BlockFooter";
+import { BlockSpeakerProfiles } from "../BlockSpeakerProfiles";
 import { motion } from "framer-motion";
-
-import NavBar2 from "../NavBar2";
-import BlockSpeakerProfiles from "../BlockSpeakerProfiles";
-import BlockFooter from "../BlockFooter";
-
-import imageSrc from "../../assets/images/Alina.webp";
+import { Navigationbar } from "../Navigationbar";
+import { useTranslation } from "react-i18next";
 
 const AlinaGutierrezMejia: React.FC = () => {
   const { t } = useTranslation();
@@ -25,14 +23,14 @@ const AlinaGutierrezMejia: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         <BlockSpeakerProfiles
           name="Alina Gutierrez Mejia"
           position="Graphic Facilitator | Creative Consultant"
-          imageSrc={imageSrc}
+          imageSrc={alina}
           talkTopic={t("comingSoon")}
           videoSrc=""
-          // videoSrc="https://www.dailymotion.com/embed/video/x8wkz06"
+        // videoSrc="https://www.dailymotion.com/embed/video/x8wkz06"
         />
         <BlockFooter />
       </motion.div>

@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
 // import { GiElectricalResistance } from "react-icons/gi";
+import { baharan, baharanBadge } from "../../assets";
+import { BlockFooter } from "../BlockFooter";
+import { BlockTeamProfiles } from "../BlockTeamProfiles";
 import { GiLaptop } from "react-icons/gi";
-import NavBar2 from "../NavBar2";
-// import BlockTeamProfiles from "../BlockTeamProfiles";
-import BlockTeamProfiles2 from "../BlockTeamProfiles2";
-import BlockFooter from "../BlockFooter";
-
-// import imageSrc from "../../assets/images/Baharan.webp";
-import imageSrc from "../../assets/images/Baharan-removedBG.webp";
-import badgeSrc from "../../assets/images/badge-marketing.webp";
+import { motion } from "framer-motion";
+import { Navigationbar } from "../Navigationbar";
+import { useTranslation } from "react-i18next";
 
 const BaharanNouriinanloo: React.FC = () => {
   const { t } = useTranslation();
@@ -29,7 +25,7 @@ const BaharanNouriinanloo: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         {/* <BlockTeamProfiles
           name="Baharan Nouriinanloo"
           title="M.Sc. Student in Computer Engineering | Polytechnique Montreal"
@@ -41,14 +37,14 @@ const BaharanNouriinanloo: React.FC = () => {
           tedHref="https://www.ted.com/"
           quoteText={t("baharanQuote")}
         /> */}
-        <BlockTeamProfiles2
+        <BlockTeamProfiles
           firstName="Baharan"
           lastName="Nouriinanloo"
           fullName="Baharan Nouriinanloo"
           title="M.Sc. Student in Computer Engineering | Polytechnique Montreal"
           role="Marketing"
-          imageSrc={imageSrc}
-          badgeSrc={badgeSrc}
+          imageSrc={baharan}
+          badgeSrc={baharanBadge}
           linkedinHref="https://ca.linkedin.com/in/baharan-nouriv"
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/"

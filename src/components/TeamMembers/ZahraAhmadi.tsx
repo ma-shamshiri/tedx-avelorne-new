@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { ImFilm } from "react-icons/im";
-import NavBar2 from "../NavBar2";
 // import BlockTeamProfiles from "../BlockTeamProfiles";
-import BlockTeamProfiles2 from "../BlockTeamProfiles2";
-import BlockFooter from "..//BlockFooter";
-
-// import imageSrc from "../../assets/images/Zahra.webp";
-import imageSrc from "../../assets/images/Zahra-removedBG.webp";
-import badgeSrc from "../../assets/images/badge-content-creator.webp";
+import { BlockFooter } from "../BlockFooter";
+import { BlockTeamProfiles } from "../BlockTeamProfiles";
+import { ImFilm } from "react-icons/im";
+import { motion } from "framer-motion";
+import { Navigationbar } from "../Navigationbar";
+import { useTranslation } from "react-i18next";
+import { zahra, zahraBadge } from "../../assets";
 
 const ZahraAhmadi: React.FC = () => {
   const { t } = useTranslation();
@@ -28,7 +25,7 @@ const ZahraAhmadi: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         {/* <BlockTeamProfiles
           name="Zahra Ahmadi"
           title="Multimedia Editing Coordinator | Genetec Inc."
@@ -40,14 +37,14 @@ const ZahraAhmadi: React.FC = () => {
           tedHref="https://www.ted.com/"
           quoteText={t("zahraQuote")}
         /> */}
-        <BlockTeamProfiles2
+        <BlockTeamProfiles
           firstName="Zahra"
           lastName="Ahmadi"
           fullName="Zahra Ahmadi"
           title="Multimedia Editing Coordinator | Genetec Inc."
           role="Content Creator"
-          imageSrc={imageSrc}
-          badgeSrc={badgeSrc}
+          imageSrc={zahra}
+          badgeSrc={zahraBadge}
           linkedinHref="https://ca.linkedin.com/in/zahra-1997"
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/"

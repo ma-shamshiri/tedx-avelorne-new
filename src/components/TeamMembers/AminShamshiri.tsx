@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { FaComputer } from "react-icons/fa6";
-import NavBar2 from "../NavBar2";
 // import BlockTeamProfiles from "../BlockTeamProfiles";
-import BlockTeamProfiles2 from "../BlockTeamProfiles2";
-import BlockFooter from "../BlockFooter";
-
-// import imageSrc from "../../assets/images/Amin.webp";
-import imageSrc from "../../assets/images/Amin-removedBG.webp";
-import badgeSrc from "../../assets/images/badge-webmaster.webp";
+import { amin, aminBadge } from "../../assets";
+import { BlockFooter } from "../BlockFooter";
+import { BlockTeamProfiles } from "../BlockTeamProfiles";
+import { FaComputer } from "react-icons/fa6";
+import { motion } from "framer-motion";
+import { Navigationbar } from "../Navigationbar";
+import { useTranslation } from "react-i18next";
 
 const AminShamshiri: React.FC = () => {
   const { t } = useTranslation();
@@ -28,7 +25,7 @@ const AminShamshiri: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         {/* <BlockTeamProfiles
           name="Amin Shamshiri"
           title="Software Engineer | EnerZam Inc."
@@ -42,14 +39,14 @@ const AminShamshiri: React.FC = () => {
           quoteText={t("aminQuote")}
         /> */}
 
-        <BlockTeamProfiles2
+        <BlockTeamProfiles
           firstName="Mohammad Amin"
           lastName="Shamshiri"
           fullName="Mohammad Amin Shamshiri"
           title="Software Engineer | EnerZam Inc."
           role="Webmaster"
-          imageSrc={imageSrc}
-          badgeSrc={badgeSrc}
+          imageSrc={amin}
+          badgeSrc={aminBadge}
           linkedinHref="https://ca.linkedin.com/in/ma-shamshiri"
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/profiles/11850053"

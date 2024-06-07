@@ -1,0 +1,156 @@
+import { createAction } from "kbar";
+import {
+  ClockIcon,
+  PaperAirplaneIcon,
+  ReceiptRefundIcon,
+  HomeIcon,
+} from "@heroicons/react/24/outline";
+import { useLocation } from "react-router-dom";
+
+export const initialActions = [
+  // -------------------HOME---------------------
+  {
+    id: "aboutUsAction",
+    name: "About Us",
+    shortcut: ["a"],
+    keywords: "back home main dashboard",
+    section: "Home",
+    perform: () => (window.location.href = "/"),
+    // icon: ClockIcon,
+    subtitle: "Subtitles can help add more context.",
+  },
+  {
+    id: "tedAction",
+    name: "TED",
+    shortcut: ["t"],
+    keywords: "back home main dashboard",
+    section: "Home",
+    perform: () => (window.location.href = "/"),
+    //icon: // ClockIcon,
+    subtitle: "Subtitles can help add more context.",
+  },
+  {
+    id: "tedxAction",
+    name: "TEDx",
+    shortcut: ["t"],
+    keywords: "back home main dashboard",
+    section: "Home",
+    perform: () => (window.location.href = "/"),
+    //icon: // ClockIcon,
+    subtitle: "Subtitles can help add more context.",
+  },
+  {
+    id: "tedxAvelorneAction",
+    name: "TEDxAveLorne",
+    shortcut: ["t", "e"],
+    keywords: "back home main dashboard",
+    section: "Home",
+    perform: () => (window.location.href = "/"),
+    //icon: // ClockIcon,
+    subtitle: "Subtitles can help add more context.",
+  },
+
+  // -------------------EVENT-------------------
+  {
+    id: "eventAction",
+    name: "Event",
+    shortcut: ["e", "v"],
+    keywords: "back event dashboard",
+    section: "Event",
+    subtitle: "Log and manage your work time.",
+    perform: () => window.open("https://tedxavelorne/event"),
+  },
+  {
+    id: "dateAction",
+    name: "Date & Time",
+    shortcut: ["d", "a"],
+    keywords: "back event dashboard",
+    section: "Event",
+    subtitle: "Log and manage your work time.",
+    perform: () => window.open("https://tedxavelorne/event"),
+  },
+  {
+    id: "agendaAction",
+    name: "Agenda",
+    shortcut: ["a", "g"],
+    keywords: "back event dashboard",
+    section: "Event",
+    subtitle: "Log and manage your work time.",
+    perform: () => window.open("https://tedxavelorne/event"),
+  },
+  // -------------------TEAM---------------------
+  {
+    id: "teamAction",
+    name: "Team",
+    shortcut: ["t", "e"],
+    keywords: "back team dashboard",
+    section: "Team",
+    subtitle: "Create new project.",
+    perform: () => window.open("https://tedxavelorne/team"),
+  },
+  // -----------------SPEAKERS-----------------------
+  {
+    id: "speakersAction",
+    name: "Speakers",
+    shortcut: ["s", "p"],
+    keywords: "back speakers dashboard",
+    section: "Speakers",
+    subtitle: "Create new project.",
+    perform: () => window.open("https://tedxavelorne/speakers"),
+  },
+  // ------------------MEDIA-------------------------
+  {
+    id: "mediaAction",
+    name: "Media",
+    shortcut: ["m", "e"],
+    keywords: "back media dashboard",
+    section: "Media",
+    subtitle: "Create new project.",
+    perform: () => window.open("https://tedxavelorne/media"),
+  },
+  // ---------------JOINUS-------------------------
+  {
+    id: "joinUsAction",
+    name: "Join Us",
+    shortcut: ["j", "o"],
+    keywords: "back joinus dashboard",
+    section: "Joinus",
+    subtitle: "Create new employee.",
+    perform: () => window.open("https://tedxavelorne/joinus"),
+  },
+  {
+    id: "joinUsMemebersAction",
+    name: "Join Us Members",
+    shortcut: ["j", "o"],
+    keywords: "back joinus member dashboard",
+    section: "Join Us",
+    subtitle: "Create new employee.",
+    perform: () => window.open("https://tedxavelorne/joinus/team"),
+  },
+  {
+    id: "joinUsSpeakersAction",
+    name: "Join Us Speakers",
+    shortcut: ["j", "o"],
+    keywords: "back joinus speaker dashboard",
+    section: "Joinus",
+    subtitle: "Create new employee.",
+    perform: () => window.open("https://tedxavelorne/joinus/speaker"),
+  },
+  {
+    id: "joinUsSponsorsAction",
+    name: "Join Us Sponsors",
+    shortcut: ["j", "o"],
+    keywords: "back joinus sponsor dashboard",
+    section: "Joinus",
+    subtitle: "Create new employee.",
+    perform: () => window.open("https://tedxavelorne/joinus/sponsor"),
+  },
+
+  createAction({
+    name: "This repo on GitHub",
+    shortcut: ["g", "h"],
+    keywords: "github repo source code",
+    section: "Links",
+    perform: () => window.open("https://github.com/ma-shamshiri", "_blank"),
+  }),
+];

@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
 // import { FcElectronics } from "react-icons/fc";
-import { GiLaptop } from "react-icons/gi";
-import NavBar2 from "../NavBar2";
 // import BlockTeamProfiles from "../BlockTeamProfiles";
-import BlockTeamProfiles2 from "../BlockTeamProfiles2";
-import BlockFooter from "../BlockFooter";
-
-// import imageSrc from "../../assets/images/Melika.webp";
-import imageSrc from "../../assets/images/Melika-removedBG.webp";
-import badgeSrc from "../../assets/images/badge-sponsorship.webp";
+import { BlockFooter } from "../BlockFooter";
+import { BlockTeamProfiles } from "../BlockTeamProfiles";
+import { GiLaptop } from "react-icons/gi";
+import { melika, melikaBadge } from "../../assets";
+import { motion } from "framer-motion";
+import { Navigationbar } from "../Navigationbar";
+import { useTranslation } from "react-i18next";
 
 const MelikaSeyedi: React.FC = () => {
   const { t } = useTranslation();
@@ -29,7 +26,7 @@ const MelikaSeyedi: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         {/* <BlockTeamProfiles
           name="Melika Seyedi"
           title="Ph.D. Student in Computer Engineering | Concordia"
@@ -41,14 +38,14 @@ const MelikaSeyedi: React.FC = () => {
           tedHref="https://www.ted.com/profiles/44509018"
           quoteText={t("melikaQuote")}
         /> */}
-        <BlockTeamProfiles2
+        <BlockTeamProfiles
           firstName="Melika"
           lastName="Seyedi"
           fullName="Melika Seyedi"
           title="Ph.D. Student in Computer Engineering | Concordia"
           role="Sponsorship"
-          imageSrc={imageSrc}
-          badgeSrc={badgeSrc}
+          imageSrc={melika}
+          badgeSrc={melikaBadge}
           linkedinHref="https://ca.linkedin.com/in/melika-seyedi-048416140"
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/"

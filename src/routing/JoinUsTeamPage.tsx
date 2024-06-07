@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import BlockJoinusTeam from "../components/BlockJoinusTeam";
-import NavBar2 from "../components/NavBar2";
-import BlockFooter from "../components/BlockFooter";
+import { BlockFooter } from "../components/BlockFooter";
+import { BlockJoinusTeam } from "../components/BlockJoinusTeam";
 import { motion } from "framer-motion";
+import { Navigationbar } from "../components/Navigationbar";
 
 const JoinUsTeamPage: React.FC = () => {
   const [boxLoaded, setBoxLoaded] = useState(false);
@@ -19,7 +19,7 @@ const JoinUsTeamPage: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         <BlockJoinusTeam />
         <BlockFooter />
       </motion.div>

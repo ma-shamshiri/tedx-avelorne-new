@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+// import BlockTeamProfiles from "../BlockTeamProfiles";
+import { BlockFooter } from "../BlockFooter";
+import { BlockTeamProfiles } from "../BlockTeamProfiles";
+import { gezal, gezalBadge } from "../../assets";
 import { IoNutritionSharp } from "react-icons/io5";
-import NavBar2 from "../NavBar2";
-import BlockTeamProfiles from "../BlockTeamProfiles";
-import BlockTeamProfiles2 from "../BlockTeamProfiles2";
-import BlockFooter from "../BlockFooter";
-
-// import imageSrc from "../../assets/images/Gezal.webp";
-import imageSrc from "../../assets/images/Gezal-removedBG.webp";
-import badgeSrc from "../../assets/images/badge-operation.webp";
+import { motion } from "framer-motion";
+import { Navigationbar } from "../Navigationbar";
+import { useTranslation } from "react-i18next";
 
 const GezalNajafi: React.FC = () => {
   const { t } = useTranslation();
@@ -28,7 +25,7 @@ const GezalNajafi: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         {/* <BlockTeamProfiles
           name="Gezal Najafi"
           title="M.Sc. Student in Clinical Nutrition | McGill"
@@ -40,14 +37,14 @@ const GezalNajafi: React.FC = () => {
           tedHref="https://www.ted.com/"
           quoteText={t("gezalQuote")}
         /> */}
-        <BlockTeamProfiles2
+        <BlockTeamProfiles
           firstName="Gezal"
           lastName="Najafi"
           fullName="Gezal Najafi"
           title="M.Sc. Student in Clinical Nutrition | McGill"
           role="Operation"
-          imageSrc={imageSrc}
-          badgeSrc={badgeSrc}
+          imageSrc={gezal}
+          badgeSrc={gezalBadge}
           linkedinHref="https://ca.linkedin.com/"
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/"

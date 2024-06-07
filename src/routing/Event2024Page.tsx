@@ -1,30 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { chakra } from "@chakra-ui/react";
-import BlockFooter from "../components/BlockFooter";
-import NavBar2 from "../components/NavBar2";
-import BlockHero5 from "../components/BlockHero5";
-
-const LoadingContainer = chakra("div", {
-  baseStyle: {
-    position: "fixed",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    zIndex: "1000",
-  },
-});
+import React, { useEffect } from "react";
+import { BlockFooter } from "../components/BlockFooter";
+import { BlockHero2024 } from "../components/BlockHero2024";
+import { Navigationbar } from "../components/Navigationbar";
 
 const Event2024Page: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
-      <NavBar2 />
-      <BlockHero5 />
+      <Navigationbar />
+      <BlockHero2024 />
       <BlockFooter />
     </>
   );

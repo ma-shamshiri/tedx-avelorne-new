@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { andrew } from "../../assets";
+import { BlockFooter } from "../BlockFooter";
+import { BlockSpeakerProfiles } from "../BlockSpeakerProfiles";
 import { motion } from "framer-motion";
-
-import NavBar2 from "../NavBar2";
-import BlockSpeakerProfiles from "../BlockSpeakerProfiles";
-import BlockFooter from "../BlockFooter";
-
-import imageSrc from "../../assets/images/Andrew.webp";
+import { Navigationbar } from "../Navigationbar";
+import { useTranslation } from "react-i18next";
 
 const AndrewChurchil: React.FC = () => {
   const { t } = useTranslation();
@@ -25,14 +23,14 @@ const AndrewChurchil: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         <BlockSpeakerProfiles
           name="Andrew Churchil"
           position="Carolyn Jack MD | Professor | Start-Up Entrepreneur"
-          imageSrc={imageSrc}
+          imageSrc={andrew}
           talkTopic={t("comingSoon")}
           videoSrc=""
-          // videoSrc="https://www.dailymotion.com/embed/video/x8wkyzu"
+        // videoSrc="https://www.dailymotion.com/embed/video/x8wkyzu"
         />
         <BlockFooter />
       </motion.div>

@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { BlockFooter } from "../BlockFooter";
+import { BlockSpeakerProfiles } from "../BlockSpeakerProfiles";
+import { leila } from "../../assets";
 import { motion } from "framer-motion";
-
-import NavBar2 from "../NavBar2";
-import BlockSpeakerProfiles from "../BlockSpeakerProfiles";
-import BlockFooter from "../BlockFooter";
-
-import imageSrc from "../../assets/images/Leila.webp";
+import { Navigationbar } from "../Navigationbar";
+import { useTranslation } from "react-i18next";
 
 const LeilaKosseim: React.FC = () => {
   const { t } = useTranslation();
@@ -25,14 +23,14 @@ const LeilaKosseim: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         <BlockSpeakerProfiles
           name="Leila Kosseim"
           position="Professor in Computer Science | Concordia University"
-          imageSrc={imageSrc}
+          imageSrc={leila}
           talkTopic={t("comingSoon")}
           videoSrc=""
-          // videoSrc="https://www.dailymotion.com/embed/video/x8wkyzy"
+        // videoSrc="https://www.dailymotion.com/embed/video/x8wkyzy"
         />
         <BlockFooter />
       </motion.div>

@@ -1,16 +1,14 @@
 import React from "react";
-import BlockHero from "../components/BlockHero";
-import BlockFooter from "../components/BlockFooter";
-import NavBar2 from "../components/NavBar2";
-import BlockSponsors from "../components/BlockSponsors";
-import BlockStatistics from "../components/BlockStatistics";
+import { BlockFooter } from "../components/BlockFooter";
+import { BlockHero2023 } from "../components/BlockHero2023";
+import { BlockSponsors } from "../components/BlockSponsors";
+import { Navigationbar } from "../components/Navigationbar";
 
 const Event2023Page: React.FC = () => {
   return (
     <>
-      <NavBar2 />
-      <BlockHero />
-      {/* <BlockStatistics /> */}
+      <Navigationbar />
+      <BlockHero2023 />
       <BlockSponsors />
       <BlockFooter />
     </>

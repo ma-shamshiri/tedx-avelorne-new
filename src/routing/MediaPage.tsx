@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import NavBar2 from "../components/NavBar2";
-import BlockGallery from "../components/BlockGallery";
-import BlockFooter from "../components/BlockFooter";
+import { BlockFooter } from "../components/BlockFooter";
+import { BlockGallery } from "../components/BlockGallery";
 import { motion } from "framer-motion";
+import { Navigationbar } from "../components/Navigationbar";
 
 const MediaPage: React.FC = () => {
   const [boxLoaded, setBoxLoaded] = useState(false);
@@ -19,7 +19,7 @@ const MediaPage: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         <BlockGallery />
         <BlockFooter />
       </motion.div>

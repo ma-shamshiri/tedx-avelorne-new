@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { BlockFooter } from "../components/BlockFooter";
+import { BlockTeamGrid } from "../components/BlockTeamGrid";
 import { motion } from "framer-motion";
-
-import NavBar2 from "../components/NavBar2";
-import BlockTeamGrid from "../components/BlockTeamGrid";
-import BlockFooter from "../components/BlockFooter";
+import { Navigationbar } from "../components/Navigationbar";
+import { useTranslation } from "react-i18next";
 
 const TeamPage: React.FC = () => {
   const { t } = useTranslation();
@@ -23,7 +22,7 @@ const TeamPage: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         <BlockTeamGrid />
         <BlockFooter />
       </motion.div>

@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "./HomePage";
-import BlockPlans from "../components/BlockPlans";
+import { BlockJoinUs } from "../components/BlockJoinUs";
 import Event2023Page from "./Event2023Page";
 import JoinUsTeamPage from "./JoinUsTeamPage";
 import JoinUsSponsorPage from "./JoinUsSponsorPage";
@@ -40,7 +40,7 @@ import Event2024Page from "./Event2024Page";
 
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
-  { path: "/plans/", element: <BlockPlans /> },
+  { path: "/plans/", element: <BlockJoinUs /> },
   { path: "/tedx-2023/", element: <Event2023Page /> },
   { path: "/tedx-2024/", element: <Event2024Page /> },
   { path: "/media/", element: <MediaPage /> },

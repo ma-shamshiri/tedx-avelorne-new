@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { BlockFooter } from "../BlockFooter";
+import { BlockSpeakerProfiles } from "../BlockSpeakerProfiles";
+import { janet } from "../../assets";
 import { motion } from "framer-motion";
-
-import NavBar2 from "../NavBar2";
-import BlockSpeakerProfiles from "../BlockSpeakerProfiles";
-import BlockFooter from "../BlockFooter";
-
-import imageSrc from "../../assets/images/Janet.webp";
+import { Navigationbar } from "../Navigationbar";
+import { useTranslation } from "react-i18next";
 
 const JanetPerlman: React.FC = () => {
   const { t } = useTranslation();
@@ -24,14 +22,14 @@ const JanetPerlman: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         <BlockSpeakerProfiles
           name="Janet Perlman"
           position="Animator and Children's Book Author"
-          imageSrc={imageSrc}
+          imageSrc={janet}
           talkTopic={t("comingSoon")}
           videoSrc=""
-          // videoSrc="https://www.dailymotion.com/embed/video/x8wkz04"
+        // videoSrc="https://www.dailymotion.com/embed/video/x8wkz04"
         />
         <BlockFooter />
       </motion.div>

@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+// import BlockTeamProfiles from "../BlockTeamProfiles";
+import { BlockFooter } from "../BlockFooter";
+import { BlockTeamProfiles } from "../BlockTeamProfiles";
+import { edwin, edwinBadge } from "../../assets";
 import { GiElectricalResistance } from "react-icons/gi";
-import NavBar2 from "../NavBar2";
-import BlockTeamProfiles from "../BlockTeamProfiles";
-import BlockTeamProfiles2 from "../BlockTeamProfiles2";
-import BlockFooter from "../BlockFooter";
-
-// import imageSrc from "../../assets/images/Edwin.webp";
-import imageSrc from "../../assets/images/Edwin-removedBG.webp";
-import badgeSrc from "../../assets/images/badge-curation.webp";
+import { motion } from "framer-motion";
+import { Navigationbar } from "../Navigationbar";
+import { useTranslation } from "react-i18next";
 
 const EdwinMeriaux: React.FC = () => {
   const { t } = useTranslation();
@@ -28,7 +25,7 @@ const EdwinMeriaux: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         {/* <BlockTeamProfiles
           name="Edwin Meriaux"
           title="M.Sc. Student in Electrical Engineering | McGill"
@@ -40,14 +37,14 @@ const EdwinMeriaux: React.FC = () => {
           tedHref="https://www.ted.com/"
           quoteText={t("edwinQuote")}
         /> */}
-        <BlockTeamProfiles2
+        <BlockTeamProfiles
           firstName="Edwin"
           lastName="Meriaux"
           fullName=" Meriaux"
           title="M.Sc. Student in Electrical Engineering | McGill"
           role="Curation"
-          imageSrc={imageSrc}
-          badgeSrc={badgeSrc}
+          imageSrc={edwin}
+          badgeSrc={edwinBadge}
           linkedinHref="https://ca.linkedin.com/"
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/"

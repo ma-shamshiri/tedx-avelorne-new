@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import NavBar2 from "../components/NavBar2";
-import BlockSpeakerGrid from "../components/BlockSpeakerGrid";
-import BlockFooter from "../components/BlockFooter";
-import { useTranslation } from "react-i18next";
+import { BlockFooter } from "../components/BlockFooter";
+import { BlockSpeakerGrid } from "../components/BlockSpeakerGrid";
 import { motion } from "framer-motion";
+import { Navigationbar } from "../components/Navigationbar";
+import { useTranslation } from "react-i18next";
 
 const SpeakersPage: React.FC = () => {
   const { t } = useTranslation();
@@ -22,7 +22,7 @@ const SpeakersPage: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         <BlockSpeakerGrid />
         <BlockFooter />
       </motion.div>

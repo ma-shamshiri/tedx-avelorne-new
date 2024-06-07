@@ -1,15 +1,12 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { GiMusicalNotes } from "react-icons/gi";
-import NavBar2 from "../NavBar2";
 // import BlockTeamProfiles from "../BlockTeamProfiles";
-import BlockTeamProfiles2 from "../BlockTeamProfiles2";
-import BlockFooter from "../BlockFooter";
-
-// import imageSrc from "../../assets/images/Pegah.webp";
-import imageSrc from "../../assets/images/Pegah-removedBG.webp";
-import badgeSrc from "../../assets/images/badge-creativity.webp";
+import { BlockFooter } from "../BlockFooter";
+import { BlockTeamProfiles } from "../BlockTeamProfiles";
+import { GiMusicalNotes } from "react-icons/gi";
+import { motion } from "framer-motion";
+import { Navigationbar } from "../Navigationbar";
+import { pegah, pegahBadge } from "../../assets";
+import { useTranslation } from "react-i18next";
 
 const PegahEinakchi: React.FC = () => {
   const { t } = useTranslation();
@@ -28,7 +25,7 @@ const PegahEinakchi: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         {/* <BlockTeamProfiles
           name="Pegah Einakchi"
           title="Vocal Coach | Private"
@@ -40,14 +37,14 @@ const PegahEinakchi: React.FC = () => {
           tedHref="https://www.ted.com/"
           quoteText={t("pegahQuote")}
         /> */}
-        <BlockTeamProfiles2
+        <BlockTeamProfiles
           firstName="Pegah"
           lastName="Einakchi"
           fullName="Pegah Einakchi"
           title="Vocal Coach | Private"
           role="Creativity"
-          imageSrc={imageSrc}
-          badgeSrc={badgeSrc}
+          imageSrc={pegah}
+          badgeSrc={pegahBadge}
           linkedinHref="https://ca.linkedin.com/"
           twitterHref="https://twitter.com/"
           tedHref="https://www.ted.com/"

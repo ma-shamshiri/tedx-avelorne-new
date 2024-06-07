@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import NavBar2 from "../components/NavBar2";
-import BlockEvent from "../components/BlockEvent";
-import BlockFooter from "../components/BlockFooter";
+import { BlockAgenda } from "../components/BlockAgenda";
+import { BlockEvent } from "../components/BlockEvent";
+import { BlockFooter } from "../components/BlockFooter";
 import { motion } from "framer-motion";
-import BlockShowcase from "../components/BlockShowcase";
+import { Navigationbar } from "../components/Navigationbar";
 
 const EventPage: React.FC = () => {
   const [boxLoaded, setBoxLoaded] = useState(false);
@@ -20,9 +20,9 @@ const EventPage: React.FC = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         onAnimationComplete={handleBoxLoad}
       >
-        <NavBar2 />
+        <Navigationbar />
         <BlockEvent />
-        <BlockShowcase />
+        <BlockAgenda />
         <BlockFooter />
       </motion.div>
     </>
