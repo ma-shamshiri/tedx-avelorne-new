@@ -49,7 +49,7 @@ export const BlockJoinusTeam: React.FC = () => {
               <Flex>
                 <Container
                   as={SimpleGrid}
-                  maxW={"7xl"}
+                  // maxW={"7xl"}
                   columns={{ base: 1, md: 2 }}
                   spacing={{ base: 10, lg: 32 }}
                   paddingY={{ base: 10, sm: 20, lg: 32 }}

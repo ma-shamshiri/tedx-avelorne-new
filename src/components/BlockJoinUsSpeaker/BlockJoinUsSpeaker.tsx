@@ -65,7 +65,7 @@ export const BlockJoinUsSpeaker: React.FC = () => {
             backgroundImage: `url(${speakerBackgroundImage})`,
             backgroundSize: "cover",
             backgroundPosition: "center center",
-            filter: "blur(5px)",
+            // filter: "blur(5px)",
             zIndex: -1,
           }}
         ></Box>

@@ -31,11 +31,11 @@ export const BlockGallery: React.FC = () => {
           "linear-gradient(45deg, #685ACD, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)",
           "#23214A"
         )}
+
         color="#16F8B6"
         overflow={"hidden"}
       >
         <Box
-          className="block__header container"
           textAlign="center"
           // maxWidth="100rem"
           marginBottom="10rem"
@@ -62,6 +62,7 @@ export const BlockGallery: React.FC = () => {
             {t("mediaPageSubTitle")}
           </Text>
         </Box>
+
         <Box display="flex" justifyContent="center" alignItems="center">
           <Box width="100%">
             <ImageGrid

@@ -187,7 +187,7 @@ export const BlockHeroHome: React.FC = () => {
               handleUnhover={() => handleUnhover(1)}
               eventPageHref={"/tedx-2023/"}
               eventImageHref={heroimage}
-              titleText={"Step Into the Past:"}
+              titleText={t("stepIntoThePast")}
               subtitleText={"2023 Edition!"}
               topBorderColor={
                 "linear-gradient(to left, transparent, #7560F9 ,#4BFD85)"
@@ -228,7 +228,7 @@ export const BlockHeroHome: React.FC = () => {
               handleUnhover={() => handleUnhover(2)}
               eventPageHref={"/tedx-2024/"}
               eventImageHref={event2024}
-              titleText={"Unlock the Future:"}
+              titleText={t("unlockTheFuture")}
               subtitleText={"2024 Edition!"}
               topBorderColor={
                 "linear-gradient(to left, transparent, #6322BF, #F226AA)"

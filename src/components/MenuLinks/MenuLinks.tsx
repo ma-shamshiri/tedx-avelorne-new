@@ -1,25 +1,29 @@
 import { Box, Text, useColorModeValue } from "@chakra-ui/react";
 import { MenuLinksProps } from "./interfaces";
 import { SubLinksBox } from "./LinkSubItems";
+import { useTranslation } from "react-i18next";
 
 export const MenuLinks = ({ menuLinks }: MenuLinksProps) => {
+  const { t } = useTranslation();
+
   return (
     <ul className="flex px-1 lg:px-4">
       {menuLinks.map((link) => (
         <div className="relative group" key={link.name}>
           <Box
             as="li"
-            paddingX="3rem"
+            paddingX={{ lg:"1.4rem", xl:"3rem" }}
             borderRadius="lg"
             cursor="pointer"
           >
             <Text
               color={useColorModeValue("gray.800", "gray.200")}
-              fontSize={{ md: "1rem", lg: "2.3rem" }}
+              fontSize={{ md: "1rem", lg:"2rem", xl: "2.3rem" }}
               fontFamily="'Acme', sans-serif"
               // fontFamily="'Englebert', cursive"
               // fontWeight="semibold"
-            >{link.name}
+            >
+              {t(link.name)}
             </Text>
           </Box>
 

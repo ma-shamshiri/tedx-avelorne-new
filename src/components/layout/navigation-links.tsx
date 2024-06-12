@@ -25,25 +25,25 @@
 
   export const navigationLinks = [
     {
-      name: "About Us",
+      name: "aboutUs",
       subLinks: [
         {
-          name: "TED",
-          description: "Ideas Worth Spreading",
+          name: "ted",
+          description: "tedSubLabel",
           link: "/",
           color: "red",
           icon: <SiTed size="25px" color="white" />,
         },
         {
-          name: "TEDx",
-          description: "Independent TED Events",
+          name: "tedx",
+          description: "tedxSubtitle",
           link: "/",
           color: "#c40253",
           icon: <FaUniversity size="25px" color="white"/>,
         },
         {
-          name: "TEDxAveLorne",
-          description: "Local TEDx Event",
+          name: "tedxavelorne",
+          description: "tedxavelorneSubtitle",
           link: "/",
           color: "#0a75f0",
           icon: <PiTelevision size="25px" color="white" />,
@@ -51,18 +51,18 @@
       ],
     },
     {
-      name: "Event",
+      name: "event",
       subLinks: [
         {
-          name: "Date & Time",
-          description: "Schedule & Location",
+          name: "dateAndTime",
+          description: "dateAndTimeSubtitle",
           link: "/event",
           color: "#be02cc",
           icon: <BsCalendarDate size="25px" color="white" />,
         },
         {
-          name: "Agenda",
-          description: "Program Details",
+          name: "agenda",
+          description: "agendaSubtitle",
           link: "/event",
           color: "#4a18f0",
           icon: <GrScheduleNew size="25px" color="white" />,
@@ -70,12 +70,12 @@
       ],
     },
     {
-      name: "Team",
+      name: "team",
       link: "/team",
       subLinks: [
         {
-          name: "Team",
-          description: "Our Community",
+          name: "team",
+          description: "teamSubtitle",
           link: "/team",
           color: "#f2b602",
           icon: <RiTeamFill size="25px" color="white" />,
@@ -83,12 +83,12 @@
       ],
     },
     {
-      name: "Speakers",
+      name: "speakers",
       link: "/speakers",
       subLinks: [
         {
-          name: "Speakers",
-          description: "Featured Presenters",
+          name: "speakers",
+          description: "speakersSubtitle",
           link: "/speakers",
           color: "#00b536",
           icon: <FaMicrophoneAlt size="25px" color="white" />,
@@ -96,12 +96,12 @@
       ],
     },
     {
-      name: "Media",
+      name: "media",
       link: "/media",
       subLinks: [
         {
-          name: "Media",
-          description: "Event Highlights",
+          name: "media",
+          description: "mediaSubtitle",
           link: "/media",
           color: "#d40083",
           icon: <MdLocalMovies size="25px" color="white" />,
@@ -109,26 +109,26 @@
       ],
     },
     {
-      name: "Join Us",
+      name: "joinUs",
       link: "/joinus",
       subLinks: [
         {
-          name: "Members",
-          description: "Our Community",
+          name: "members",
+          description: "membersSubtitle",
           link: "/joinus/team",
           color: "#26db02",
-          icon: <FaUsers size="25px" />,
+          icon: <FaUsers size="25px" color="white" />,
         },
         {
-          name: "Speakers",
-          description: "Featured Presenters",
+          name: "speakers",
+          description: "speakersSubtitle",
           link: "/joinus/speaker",
           color: "#3f5af2",
           icon: <PiMicrophoneStageFill size="25px" color="white" />,
         },
         {
-          name: "Sponsors",
-          description: "Event Supporters",
+          name: "sponsors",
+          description: "sponsorsSubtitle",
           link: "/joinus/sponsor",
           color: "#fa3e3e",
           icon: <FaHandshake size="25px" color="white" />,

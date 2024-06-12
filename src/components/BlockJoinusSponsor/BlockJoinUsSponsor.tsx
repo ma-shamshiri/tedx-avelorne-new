@@ -70,7 +70,8 @@ export const BlockJoinusSponsor: React.FC = () => {
             {/* Left Box */}
             <Box
               flex={{ base: "1", lg: "1.5" }}
-              //   backgroundColor={useColorModeValue("black", "gray.800")}
+                // backgroundColor={useColorModeValue("black", "gray.800")}
+                backgroundColor={useColorModeValue("white", "gray.900")}
               display="flex"
               justifyContent="center"
               alignItems="center"
@@ -78,16 +79,18 @@ export const BlockJoinusSponsor: React.FC = () => {
               <Box
                 display="flex"
                 justifyContent="center"
-                width="100%"
-                height="100%"
+                // width="100%"
+                // height="100%"
               >
                 <Image
                   src={sponsorBackgroundImage}
-                  width="100%"
-                  height="100%"
+                  width="80%"
+                  // height="50%"
                   objectFit="fill"
                   opacity={colorMode === "dark" ? 0.8 : 1}
-                  //   style={{ filter: "blur(1px)" }}
+                    // style={{ filter: "blur(1px)" }}
+                  borderRadius="6rem"
+                  boxShadow="0 0 30px 1px black"
                 />
               </Box>
             </Box>

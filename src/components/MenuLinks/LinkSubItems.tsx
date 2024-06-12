@@ -1,13 +1,17 @@
 import { Box, List, ListItem, Text, useColorModeValue } from "@chakra-ui/react";
 import { SubLinksBoxProps } from "./interfaces";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const SubLinksBox = (props: SubLinksBoxProps) => {
   const { subLinks, extraLinks } = props;
+
+  const { t } = useTranslation();
+
   return (
     <Box
       position="absolute"
-      top="3.5rem"
+      top="3.2rem"
       width="fit-content"
       boxShadow="0 0 30px 1px black"
       display={{ base: 'none', groupHover: 'flex' }}
@@ -59,13 +63,13 @@ export const SubLinksBox = (props: SubLinksBoxProps) => {
                   color={useColorModeValue("gray.600", "gray.200")}
                   marginBottom="1"
                 >
-                  {subLink.name}
+                  {t(subLink.name)}
                 </Text>
                 <Text
                   fontSize="1.5rem"
                   color={useColorModeValue("gray.500", "gray.500")}
                 >
-                  {subLink.description}
+                  {t(subLink.description)}
                 </Text>
               </Box>
             </Link>
