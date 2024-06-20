@@ -15,7 +15,7 @@ export const KbarInput = () => {
             width={{ lg: "13rem", xl: "20rem" }}
             height="4rem"
             borderWidth="2px"
-            borderColor={useColorModeValue("#F56565", "#38B4C1")}
+            borderColor={useColorModeValue("black", "#38B4C1")}
             bg={useColorModeValue("tranparent", "gray.800")}
             // opacity="0.2"
             rounded="lg"
