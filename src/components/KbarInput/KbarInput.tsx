@@ -1,5 +1,5 @@
+import React from "react";
 import { useKBar } from "kbar";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Button, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 
 export const KbarInput = () => {
@@ -35,15 +35,6 @@ export const KbarInput = () => {
             >
                 <Text fontSize="1.8rem">Search...</Text>
                 {/* <Text>⌘K</Text> */}
-            </Flex>
-            <Flex
-                justifyContent="center"
-                width="10"
-                height="10"
-                p="2"
-                display={{ base: "flex", lg: "none" }}
-            >
-                <MagnifyingGlassIcon />
             </Flex>
         </Button>
     );
