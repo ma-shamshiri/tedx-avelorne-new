@@ -130,9 +130,9 @@ export const Navigationbar: React.FC = () => {
           </Flex>
           {isLargeScreen ? (
             <HStack spacing={5} zIndex={999}>
-              <Flex display={{md:"none", lg:"block"}} paddingRight="5rem" >
+              {/* <Flex display={{md:"none", lg:"block"}} paddingRight="5rem" >
                 <KbarInput />
-              </Flex>
+              </Flex> */}
               <LanguageSwitcher />
               <ColorModeSwitch />
             </HStack>
