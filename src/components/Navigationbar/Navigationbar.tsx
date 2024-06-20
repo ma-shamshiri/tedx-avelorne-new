@@ -18,7 +18,7 @@ import { Sidebar } from "./Sidebar";
 import { youChooseLogo, tedxWhite, tedxBlack } from "../../assets";
 import { MenuLinks } from "../MenuLinks";
 import { navigationLinks } from "../layout/navigation-links";
-import { KbarInput } from "../KbarInput";
+// import { KbarInput } from "../KbarInput";
 // import { HamburgerButton } from "../HamburgerButton";
 // import { MobileMenu } from "../MobileMenu";
 
