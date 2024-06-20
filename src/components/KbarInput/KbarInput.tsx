@@ -1,26 +1,50 @@
 import { useKBar } from "kbar";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { Button } from "@chakra-ui/react";
+import { Button, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 
 export const KbarInput = () => {
-  const { query } = useKBar();
+    const { query } = useKBar();
 
-  const onClick = () => {
-    query.toggle();
-  };
+    const onClick = () => {
+        query.toggle();
+    };
 
-  return (
-    <Button
-      onClick={onClick}
-      className="w-10 lg:w-36 h-10 border-[1px] bg-transparent rounded-lg font-medium border-slate-200 dark:border-slate-800 text-slate-500 hover:text-slate-700 dark:hover:text-slate-300  hover:bg-slate-200 dark:hover:bg-slate-800"
-    >
-      <div className="items-center justify-between hidden px-3 lg:flex">
-        Search...
-        <span>⌘K</span>
-      </div>
-      <div className="flex justify-center w-10 h-10 p-2 lg:hidden">
-        <MagnifyingGlassIcon />
-      </div>
-    </Button>
-  );
+    return (
+        <Button
+            onClick={onClick}
+            width={{ lg: "13rem", xl: "20rem" }}
+            height="4rem"
+            borderWidth="2px"
+            borderColor={useColorModeValue("#F56565", "#38B4C1")}
+            bg={useColorModeValue("tranparent", "gray.800")}
+            // opacity="0.2"
+            rounded="lg"
+            fontWeight="medium"
+            // color={{ base: "slate.500", hover: "slate.700", dark: "slate.300", darkHover: "slate.300" }}
+            _hover={{
+                color: useColorModeValue("white", "black"),
+                bg: useColorModeValue("black", "white"),
+                borderColor: useColorModeValue("black", "white")
+            }}
+        >
+            <Flex
+                alignItems="center"
+                justifyContent="space-between"
+                display={{ base: "none", lg: "flex" }}
+                px="3"
+            >
+                <Text fontSize="1.8rem">Search...</Text>
+                {/* <Text>⌘K</Text> */}
+            </Flex>
+            <Flex
+                justifyContent="center"
+                width="10"
+                height="10"
+                p="2"
+                display={{ base: "flex", lg: "none" }}
+            >
+                <MagnifyingGlassIcon />
+            </Flex>
+        </Button>
+    );
 };
