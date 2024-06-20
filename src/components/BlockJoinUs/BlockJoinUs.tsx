@@ -11,8 +11,11 @@ import {
 import AOS from "aos"; // Import AOS library
 import "aos/dist/aos.css"; // Import AOS styles
 import { speaker, sponsor, starsImage, teamMember, tickImage } from "../../assets";
+import { useTranslation } from "react-i18next";
 
 export const BlockJoinUs: React.FC = () => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     window.onload = () => {
       AOS.init({
@@ -61,7 +64,7 @@ export const BlockJoinUs: React.FC = () => {
               fontWeight="bold"
               lineHeight="1.1"
             >
-              Be a Part of Something Extraordinary
+              {t("joinUsPageTitle")}
             </Text>
             <Text
               className="p"
@@ -71,8 +74,7 @@ export const BlockJoinUs: React.FC = () => {
               fontSize={{ base: "2.0rem", lg: "2.5rem" }}
               lineHeight="1.5"
             >
-              Connect with Visionaries, Innovators, and Changemakers <br />{" "}
-              Speakers, Team Members, and Sponsors Welcome!
+              {t("joinUsPageSubTitle")}
             </Text>
           </Box>
           <Box className="grid grid--1x3">
@@ -98,8 +100,8 @@ export const BlockJoinUs: React.FC = () => {
                   alignItems="center"
                   maxWidth="500px"
                   margin="0 auto"
-                  // data-aos="fade-right"
-                  // data-aos-duration="500"
+                // data-aos="fade-right"
+                // data-aos-duration="500"
                 >
                   <Image
                     src={speaker}
@@ -120,10 +122,10 @@ export const BlockJoinUs: React.FC = () => {
                       className="plan__name"
                       color="#fff"
                       margin="0"
-                      fontSize={{ base: "6rem", lg: "3.6rem" }}
+                      fontSize={{ base: "4rem", lg: "2.5rem" }}
                       fontWeight="bold"
                     >
-                      Speaker
+                      {t("speaker")}
                     </Text>
                   </Box>
                   <Box className="card__body" p="2rem 7%" bg="#FFFFFF">
@@ -136,10 +138,8 @@ export const BlockJoinUs: React.FC = () => {
                         listStyleImage: `url(${tickImage})`,
                       }}
                     >
-                      <Text>
-                        Join us as a Speaker to share your expertise and passion
-                        on the TED Talks stage, where your ideas can inspire the
-                        world.
+                      <Text fontSize={{ base: "2rem", lg: "1.6rem" }}>
+                        {t("joinUsSpeakerDescription")}
                       </Text>
 
                       <Link
@@ -154,7 +154,7 @@ export const BlockJoinUs: React.FC = () => {
                         fontWeight="600"
                         margin="1rem 0"
                         outline="0"
-                        padding="2rem 4vw"
+                        padding="2rem 0vw"
                         textAlign="center"
                         textTransform="uppercase"
                         whiteSpace="nowrap"
@@ -167,7 +167,8 @@ export const BlockJoinUs: React.FC = () => {
                           color: "#fff",
                         }}
                       >
-                        Join Us
+                        {t("joinUs")}
+
                       </Link>
                     </List>
                   </Box>
@@ -179,8 +180,8 @@ export const BlockJoinUs: React.FC = () => {
                 transform="scale(1.1)"
                 _hover={{ transform: "scale(1.15)" }}
                 transition="transform 0.2s ease-out"
-                // data-aos="fade-up"
-                // data-aos-duration="500"
+              // data-aos="fade-up"
+              // data-aos-duration="500"
               >
                 <Box
                   className="card card--secondary aos-animate"
@@ -191,8 +192,8 @@ export const BlockJoinUs: React.FC = () => {
                   alignItems="center"
                   maxWidth="500px"
                   margin="0 auto"
-                  // data-aos="fade-right"
-                  // data-aos-duration="500"
+                // data-aos="fade-right"
+                // data-aos-duration="500"
                 >
                   <Image
                     src={teamMember}
@@ -214,10 +215,10 @@ export const BlockJoinUs: React.FC = () => {
                       className="plan__name"
                       color="#fff"
                       margin="0"
-                      fontSize={{ base: "6rem", lg: "3.6rem" }}
+                      fontSize={{ base: "4rem", lg: "2.5rem" }}
                       fontWeight="bold"
                     >
-                      Team Member
+                      {t("teamMember")}
                     </Text>
                   </Box>
                   <Box className="card__body" p="2rem 7%" bg="#FFFFFF">
@@ -230,9 +231,8 @@ export const BlockJoinUs: React.FC = () => {
                         listStyleImage: `url(${tickImage})`,
                       }}
                     >
-                      <Text>
-                        Are you passionate about our mission and want to be part
-                        of a dynamic team working towards a common goal?
+                      <Text fontSize={{ base: "r2em", lg: "1.6rem" }}>
+                        {t("joinUsTeamMemberDescription")}
                       </Text>
 
                       <Link
@@ -247,7 +247,7 @@ export const BlockJoinUs: React.FC = () => {
                         fontWeight="600"
                         margin="1rem 0"
                         outline="0"
-                        padding="2rem 4vw"
+                        padding="2rem 0vw"
                         textAlign="center"
                         textTransform="uppercase"
                         whiteSpace="nowrap"
@@ -260,7 +260,7 @@ export const BlockJoinUs: React.FC = () => {
                           color: "#fff",
                         }}
                       >
-                        Join Us
+                        {t("joinUs")}
                       </Link>
                     </List>
                   </Box>
@@ -284,8 +284,8 @@ export const BlockJoinUs: React.FC = () => {
                   alignItems="center"
                   maxWidth="500px"
                   margin="0 auto"
-                  // data-aos="fade-right"
-                  // data-aos-duration="500"
+                // data-aos="fade-right"
+                // data-aos-duration="500"
                 >
                   <Image
                     src={sponsor}
@@ -308,10 +308,10 @@ export const BlockJoinUs: React.FC = () => {
                       className="plan__name"
                       color="#fff"
                       margin="0"
-                      fontSize={{ base: "6rem", lg: "3.6rem" }}
+                      fontSize={{ base: "4rem", lg: "2.5rem" }}
                       fontWeight="bold"
                     >
-                      Sponsor
+                      {t("sponsor")}
                     </Text>
                   </Box>
                   <Box className="card__body" p="2rem 7%" bg="#FFFFFF">
@@ -324,9 +324,8 @@ export const BlockJoinUs: React.FC = () => {
                         listStyleImage: `url(${tickImage})`,
                       }}
                     >
-                      <Text>
-                        Support our mission, be a crucial part! Join us as a
-                        Sponsor and make a lasting impact with TED Talks.
+                      <Text fontSize={{ base: "2rem", lg: "1.6rem" }}>
+                        {t("joinUsSponsorDescription")}
                       </Text>
 
                       <Link
@@ -341,7 +340,7 @@ export const BlockJoinUs: React.FC = () => {
                         fontWeight="600"
                         margin="1rem 0"
                         outline="0"
-                        padding="2rem 4vw"
+                        padding="2rem 0vw"
                         textAlign="center"
                         textTransform="uppercase"
                         whiteSpace="nowrap"
@@ -354,7 +353,7 @@ export const BlockJoinUs: React.FC = () => {
                           color: "#fff",
                         }}
                       >
-                        Join Us
+                        {t("joinUs")}
                       </Link>
                     </List>
                   </Box>

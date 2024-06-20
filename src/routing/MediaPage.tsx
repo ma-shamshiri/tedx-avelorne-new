@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BlockFooter } from "../components/BlockFooter";
 import { BlockGallery } from "../components/BlockGallery";
 import { motion } from "framer-motion";
@@ -10,6 +10,10 @@ const MediaPage: React.FC = () => {
   const handleBoxLoad = () => {
     setBoxLoaded(true);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BlockFooter } from "../components/BlockFooter";
 import { BlockSpeakerGrid } from "../components/BlockSpeakerGrid";
 import { motion } from "framer-motion";
@@ -13,6 +13,10 @@ const SpeakersPage: React.FC = () => {
   const handleBoxLoad = () => {
     setBoxLoaded(true);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

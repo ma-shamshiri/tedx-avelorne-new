@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BlockAgenda } from "../components/BlockAgenda";
 import { BlockEvent } from "../components/BlockEvent";
 import { BlockFooter } from "../components/BlockFooter";
@@ -11,6 +11,10 @@ const EventPage: React.FC = () => {
   const handleBoxLoad = () => {
     setBoxLoaded(true);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

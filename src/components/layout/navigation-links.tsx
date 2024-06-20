@@ -22,6 +22,7 @@
   import { PiMicrophoneStageFill } from "react-icons/pi";
   import { FaHandshake } from "react-icons/fa";
   import { FaUsers } from "react-icons/fa";
+  import { IoDiamond } from "react-icons/io5";
 
   export const navigationLinks = [
     {
@@ -113,24 +114,31 @@
       link: "/joinus",
       subLinks: [
         {
+          name: "joinUs",
+          description: "joinUsSubtitle",
+          link: "/joinus",
+          color: "#fa3e3e",
+          icon: <IoDiamond size="25px" color="white" />,
+        },
+        {
           name: "members",
           description: "membersSubtitle",
           link: "/joinus/team",
-          color: "#26db02",
+          color: "#e60082",
           icon: <FaUsers size="25px" color="white" />,
         },
         {
           name: "speakers",
           description: "speakersSubtitle",
           link: "/joinus/speaker",
-          color: "#3f5af2",
+          color: "#9d00d6",
           icon: <PiMicrophoneStageFill size="25px" color="white" />,
         },
         {
           name: "sponsors",
           description: "sponsorsSubtitle",
           link: "/joinus/sponsor",
-          color: "#fa3e3e",
+          color: "#04c799",
           icon: <FaHandshake size="25px" color="white" />,
         },
       ],
