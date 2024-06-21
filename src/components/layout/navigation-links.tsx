@@ -23,6 +23,7 @@
   import { FaHandshake } from "react-icons/fa";
   import { FaUsers } from "react-icons/fa";
   import { IoDiamond } from "react-icons/io5";
+  import { IoIosPeople } from "react-icons/io";
 
   export const navigationLinks = [
     {
@@ -78,8 +79,8 @@
           name: "team",
           description: "teamSubtitle",
           link: "/team",
-          color: "#f2b602",
-          icon: <RiTeamFill size="25px" color="white" />,
+          color: "#01DAFE",
+          icon: <IoIosPeople size="25px" color="white" />,
         },
       ],
     },

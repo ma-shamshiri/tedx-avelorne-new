@@ -26,7 +26,7 @@ export const RenderResults = () => {
             <Text 
               fontSize="1.1rem" 
               color={textColor}
-              textTransform="uppercase"
+              // textTransform="uppercase"
             >
               {item}
             </Text>
