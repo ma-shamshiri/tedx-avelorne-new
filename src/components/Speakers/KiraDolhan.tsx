@@ -29,8 +29,8 @@ const KiraDolhan: React.FC = () => {
           position="Search and Rescue Volunteer"
           imageSrc={kira}
           talkTopic={t("comingSoon")}
-          videoSrc=""
-        // videoSrc="https://www.dailymotion.com/embed/video/x8wkz08"
+          // videoSrc=""
+          videoSrc="https://www.dailymotion.com/embed/video/x8wkz08"
         />
         <BlockFooter />
       </motion.div>

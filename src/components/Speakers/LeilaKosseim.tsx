@@ -29,8 +29,8 @@ const LeilaKosseim: React.FC = () => {
           position="Professor in Computer Science | Concordia University"
           imageSrc={leila}
           talkTopic={t("comingSoon")}
-          videoSrc=""
-        // videoSrc="https://www.dailymotion.com/embed/video/x8wkyzy"
+          // videoSrc=""
+          videoSrc="https://www.dailymotion.com/embed/video/x8wkyzy"
         />
         <BlockFooter />
       </motion.div>

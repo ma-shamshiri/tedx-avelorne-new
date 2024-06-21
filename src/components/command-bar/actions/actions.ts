@@ -111,7 +111,7 @@ export const initialActions = [
         id: "joinUsAction",
         name: "Join US",
         shortcut: ["a", "i"],
-        keywords: "joinus memebers speakers sponsors",
+        keywords: "joinus",
         section: "JOIN US",
         subtitle: "General information on how to get involved with TEDxAveLorne",
         perform: () => (window.location.href = "/joinus"),

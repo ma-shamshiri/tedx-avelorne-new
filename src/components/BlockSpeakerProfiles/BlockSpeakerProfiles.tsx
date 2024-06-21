@@ -83,7 +83,7 @@ export const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
           left="50%"
           transform="translate(-50%, -50%)"
           width={{ base: "90%", lg: "71rem" }}
-          zIndex="1"
+          // zIndex="1"
           overflow="hidden"
           borderRadius="2rem"
           boxShadow="0 0 30px 1px black"
@@ -100,9 +100,9 @@ export const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
               alt="Video Thumbnail Image"
               objectFit="cover"
               opacity="0.5"
+              display={videoSrc === "" ? "block" : "none"}
             />
-
-            {/* {!showVideo ? (
+            {!showVideo ? (
               // Display thumbnail if showVideo is false
               <Box
                 className="video_embed_container"
@@ -113,6 +113,7 @@ export const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
                 cursor="pointer"
                 onClick={() => setShowVideo(true)}
                 opacity={"0.1"}
+                display={videoSrc === "" ? "none" : "block"}
               >
                 <Image
                   src={videoThumbnail}
@@ -131,6 +132,7 @@ export const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
                 paddingBottom="56.25%" // 16:9 aspect ratio
                 overflow="hidden"
                 borderRadius="2rem"
+                display={videoSrc === "" ? "none" : "block"}
               >
                 <iframe
                   style={{
@@ -146,12 +148,12 @@ export const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
                   allowFullScreen
                 />
               </Box>
-            )} */}
+            )}
 
             {/* The title is not shown as the zIndex={-1} */}
             <Box
               className="title_container"
-              display="flex"
+              // display="flex"
               position="absolute"
               top={0}
               left={0}
@@ -161,6 +163,7 @@ export const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
               opacity="0.6"
               justifyContent="center"
               alignItems="center"
+              display={videoSrc === "" ? "flex" : "none"}
               // zIndex={-1}
             >
               <VStack>
