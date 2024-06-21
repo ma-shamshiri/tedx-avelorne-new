@@ -5,6 +5,7 @@ import { BlockHeroHome } from "../components/BlockHeroHome";
 import { BlockStatistics } from "../components/BlockStatistics";
 import { Navigationbar } from "../components/Navigationbar";
 import { Container } from "../components/layout";
+import { Box } from "@chakra-ui/react";
 
 const HomePage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);

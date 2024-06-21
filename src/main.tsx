@@ -5,6 +5,7 @@ import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import App from "./App";
 // import theme from "./chakra-ui/theme";
 import theme from "./theme";
+import { KBarWrapper } from "./components/command-bar"
 
 // import "bootstrap/dist/css/bootstrap.css";
 // import "./index.css";
@@ -19,11 +20,11 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
       <ChakraProvider theme={theme}>
-        {/* <KBarWrapper> */}
+        <KBarWrapper>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           {/* <App /> */}
           <RouterProvider router={router} />
-        {/* </KBarWrapper> */}
+        </KBarWrapper>
       </ChakraProvider>
     </I18nextProvider>
   </React.StrictMode>

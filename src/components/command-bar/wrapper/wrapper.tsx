@@ -6,20 +6,55 @@ import {
     KBarSearch,
 } from "kbar";
 import { initialActions } from "../actions";
-
 import { RenderResults } from "../results";
 import { KBarWrapperProps } from "./wrapper.interface";
+import { Box, useColorModeValue, Input } from "@chakra-ui/react";
 
 export const KBarWrapper = (props: KBarWrapperProps) => {
     const { children } = props;
+
+    const bg = useColorModeValue("gray.50", "gray.900");
+    const textColor = useColorModeValue("gray.800", "gray.100");
+    const shadowColor = useColorModeValue(
+        "rgba(0, 0, 0, 0.24) 0px 0px 40px",
+        "rgba(0, 0, 0, 0.24) 0px 0px 40px"
+    );
+    const shadowBg = useColorModeValue("slate.300", "slate.700");
+
     return (
         <KBarProvider actions={initialActions}>
             <KBarPortal>
-                <KBarPositioner className="backdrop-blur-sm ">
-                    <KBarAnimator className="max-w-[600px] w-full rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 shadow-[rgba(0,_0,_0,_0.24)_0px_0px_40px] shadow-slate-300 dark:shadow-slate-700">
-                        <KBarSearch className="py-3 px-4 text-base w-full box-border outline-none border-none bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200" />
+                <KBarPositioner style={{ backdropFilter: "blur(4px)" }}>
+                    <Box
+                        as={KBarAnimator}
+                        width="full"
+                        maxW="600px"
+                        maxH="500px"
+                        rounded="xl"
+                        overflow="hidden"
+                        bg={bg}
+                        color={textColor}
+                        shadow={shadowColor}
+                        boxShadow={`0 0 40px ${shadowBg}`}
+                        position="absolute"
+                        top="52"
+                    >
+                        <Input
+                            as={KBarSearch}
+                            paddingY="3rem"
+                            paddingX="2rem"
+                            fontSize="1.8rem"
+                            w="full"
+                            boxSizing="border-box"
+                            outline="none"
+                            border="1px solid blue"
+                            bg={bg}
+                            color={textColor}
+                            focusBorderColor="transparent"
+                            errorBorderColor="transparent"
+                        />
                         <RenderResults />
-                    </KBarAnimator>
+                    </Box>
                 </KBarPositioner>
             </KBarPortal>
             {children}

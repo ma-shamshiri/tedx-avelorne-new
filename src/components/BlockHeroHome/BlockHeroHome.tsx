@@ -16,7 +16,10 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import HeroEventCard from "./HeroEventCard";
+// import { useZIndexContext } from "../ZIndexContext";
 import { event2024, heroimage, mountainsImage, planetsImage, starsImage, sunImage } from "../../assets";
+
+
 
 export const BlockHeroHome: React.FC = () => {
   const { colorMode } = useColorMode();
@@ -43,6 +46,7 @@ export const BlockHeroHome: React.FC = () => {
   );
 
   const { t } = useTranslation();
+  // const { zIndexes } = useZIndexContext();
 
   const [imageLoaded, setImageLoaded] = useState(false);
   const [boxLoaded, setBoxLoaded] = useState(false);
@@ -175,11 +179,11 @@ export const BlockHeroHome: React.FC = () => {
               base: "35%",
               md: "40%",
               lg: "35%",
-              xl: "35%",
+              xl: "42%",
             }}
             transform="translateY(-50%)"
             width="100%"
-            zIndex={4}
+            zIndex={1}
           >
             <HeroEventCard
               isHovered={isHoveredArray[1]}
@@ -274,7 +278,7 @@ export const BlockHeroHome: React.FC = () => {
             width="100%"
             height="100%"
             position="absolute"
-            zIndex="3"
+            // zIndex={zIndexes[1]}
           ></Box>
           <Box
             // className="planets"
@@ -291,7 +295,7 @@ export const BlockHeroHome: React.FC = () => {
             width="125%"
             height="100%"
             position="absolute"
-            zIndex="2"
+            // zIndex={zIndexes[2]}
           ></Box>
           <Box
             // className="stars"
@@ -305,7 +309,7 @@ export const BlockHeroHome: React.FC = () => {
             width="100%"
             height="100%"
             position="absolute"
-            zIndex="1"
+            // zIndex={zIndexes[3]}
           ></Box>
         </Box>
       </motion.div>

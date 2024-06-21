@@ -1,5 +1,4 @@
 import React from "react";
-import { createAction } from "kbar";
 
 export const initialActions = [
     // ------------------- About Us ---------------------
@@ -10,7 +9,7 @@ export const initialActions = [
         keywords: "ted tedx tedxavelorne",
         section: "AboutUs",
         perform: () => (window.location.href = "/"),
-        //icon: // ClockIcon,
+        // icon: // ClockIcon,
         subtitle: "Back to Ted Section.",
     },
     {
@@ -98,7 +97,7 @@ export const initialActions = [
         perform: () => (window.location.href = "/joinus"),
     },
     {
-        id: "membersAction",
+        id: "joinUsMembersAction",
         name: "Join Us Members",
         shortcut: ["a", "i"],
         keywords: "joinus memebers speakers sponsors",
@@ -107,7 +106,7 @@ export const initialActions = [
         perform: () => (window.location.href = "/joinus/team"),
     },
     {
-        id: "speakersAction",
+        id: "joinUsSpeakersAction",
         name: "Join Us Speakers",
         shortcut: ["a", "i"],
         keywords: "joinus memebers speakers sponsors",
@@ -116,20 +115,12 @@ export const initialActions = [
         perform: () => (window.location.href = "/joinus/speaker"),
     },
     {
-        id: "sponsorsAction",
+        id: "joinUsSponsorsAction",
         name: "Join Us Sponsors",
         shortcut: ["a", "i"],
         keywords: "joinus memebers speakers sponsors",
         section: "JoinUs",
         subtitle: "Back to Join Us Sponsors section.",
         perform: () => (window.location.href = "/joinus/sponsor"),
-    },
-
-    createAction({
-        name: "This repo on GitHub",
-        shortcut: ["g", "h"],
-        keywords: "github repo source code",
-        section: "Links",
-        perform: () => window.open("https://github.com/timc1/kbar", "_blank"),
-    }),
+    }
 ];
