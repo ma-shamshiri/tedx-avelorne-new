@@ -29,8 +29,8 @@ const AlinaGutierrezMejia: React.FC = () => {
           position="Graphic Facilitator | Creative Consultant"
           imageSrc={alina}
           talkTopic={t("comingSoon")}
-          videoSrc=""
-        // videoSrc="https://www.dailymotion.com/embed/video/x8wkz06"
+          // videoSrc=""
+          videoSrc="https://www.dailymotion.com/embed/video/x90upjm"
         />
         <BlockFooter />
       </motion.div>
