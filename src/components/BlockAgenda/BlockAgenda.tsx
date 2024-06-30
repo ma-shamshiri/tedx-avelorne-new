@@ -41,7 +41,7 @@ export const BlockAgenda: React.FC = () => {
           color={useColorModeValue("gray.700", "gray.700")}
           marginBottom="1.5rem"
           marginTop="0"
-          fontSize={{ base: "5.0rem", lg: "7rem" }}
+          fontSize={{ base: "2.8rem", lg: "4rem" }}
           fontWeight="bold"
           lineHeight="1.1"
         >
@@ -53,7 +53,7 @@ export const BlockAgenda: React.FC = () => {
           color={useColorModeValue("gray.600", "gray.600")}
           marginBottom="6rem"
           marginTop="0"
-          fontSize={{ base: "2.0rem", lg: "2.6rem" }}
+          fontSize={{ base: "1.5rem", lg: "2.1rem" }}
           lineHeight="1.1"
         >
           {t("agendaPageSubTitle")}

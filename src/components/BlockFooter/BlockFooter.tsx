@@ -81,7 +81,7 @@ export const BlockFooter = () => {
       // bg="#DD2D43"
       // bg="#E04140"
       // bg="#E4593E"
-      bg={useColorModeValue("#B0C9C5", "#232323")}
+      bg={useColorModeValue("gray.300", "#232323")}
       // bg={useColorModeValue(
       //   "linear-gradient(45deg, #685ACD, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)",
       //   "black"

@@ -37,14 +37,14 @@ function AgendaAccordionSection({
         onClick={() => setIsOpen(!isOpen)}
       >
         <Text
-          fontSize={{ base: "1.8rem", md: "2.0rem", lg: "2.2rem" }}
+          fontSize={{ base: "1.4rem", md: "1.8rem", lg: "1.8rem" }}
           color={titleColor}
           flex="1"
         >
           {title}
         </Text>
         <ChevronDownIcon
-          fontSize="24px"
+          fontSize="22px"
           color={"gray.400"}
           style={{ transform: isOpen ? "rotate(180deg)" : "" }}
           transition="transform 0.3s ease-in-out"
@@ -60,7 +60,7 @@ function AgendaAccordionSection({
         <Text
           color={descriptionColor}
           textAlign="left"
-          fontSize={{ base: "1.7rem", md: "1.8rem", lg: "2.0rem" }}
+          fontSize={{ base: "1.4rem", md: "1.5rem", lg: "1.6rem" }}
         >
           {description}
         </Text>
