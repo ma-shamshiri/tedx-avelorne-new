@@ -12,8 +12,8 @@ export const KbarInput = () => {
     return (
         <Button
             onClick={onClick}
-            width={{ lg: "13rem", xl: "20rem" }}
-            height="4rem"
+            width={{ lg: "12rem", xl: "15rem" }}
+            height="3.4rem"
             borderWidth="2px"
             borderColor={useColorModeValue("black", "#38B4C1")}
             bg={useColorModeValue("tranparent", "gray.800")}
@@ -33,7 +33,7 @@ export const KbarInput = () => {
                 display={{ base: "none", lg: "flex" }}
                 px="3"
             >
-                <Text fontSize="1.8rem">Search...</Text>
+                <Text fontSize="1.5rem">Search...</Text>
                 {/* <Text>⌘K</Text> */}
             </Flex>
         </Button>

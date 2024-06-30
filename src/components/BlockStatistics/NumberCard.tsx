@@ -70,26 +70,36 @@ const NumberCard: React.FC<NumberCardProps> = ({
             opacity: 1,
           }}
         ></Box>
-        <VStack>
-          <AnimatingNumber
-            // fontSize={{ base: "10rem", md: "3rem", lg: "3rem", xl: "34rem" }}
-            fontSize={{
-              base: numberFontSize?.base || "2rem",
-              md: numberFontSize?.md || "2rem",
-              lg: numberFontSize?.lg || "2rem",
-              xl: numberFontSize?.xl || "2rem",
-            }}
-            color={numberColor}
-            value={endNumber}
-            start={startNumber}
-            duration={duration}
-            delay={delay}
-            hasPlusSign={hasPlusSign}
-          />
-          <Text fontSize={textSize} fontWeight={"bold"} color={textColor}>
-            {text}
-          </Text>
-        </VStack>
+        <Box
+          className="numberContainer"
+          padding={{ base: "0.5rem", md: "2rem", lg: "2rem", xl: "2rem" }}
+        >
+          <VStack>
+            <AnimatingNumber
+              // fontSize={{ base: "10rem", md: "3rem", lg: "3rem", xl: "34rem" }}
+              fontSize={{
+                base: numberFontSize?.base || "2rem",
+                md: numberFontSize?.md || "2rem",
+                lg: numberFontSize?.lg || "2rem",
+                xl: numberFontSize?.xl || "2rem",
+              }}
+              color={numberColor}
+              value={endNumber}
+              start={startNumber}
+              duration={duration}
+              delay={delay}
+              hasPlusSign={hasPlusSign}
+            />
+            <Text
+              fontSize={textSize}
+              fontWeight={"bold"}
+              color={textColor}
+              whiteSpace="nowrap"
+            >
+              {text}
+            </Text>
+          </VStack>
+        </Box>
       </Box>
     </Flex>
   );

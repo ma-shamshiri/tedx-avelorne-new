@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useColorMode } from '@chakra-ui/react';
 import {
     Box,
     Text,
@@ -39,6 +40,8 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
 }) => {
     const { t } = useTranslation();
 
+    const { colorMode } = useColorMode();
+
     const [isHoveredButton, setIsHoveredButton] = useState(false);
 
     const handleHoverButton = () => {
@@ -49,7 +52,13 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
         setIsHoveredButton(false);
     };
 
+    const isLargeScreen = useBreakpointValue({ base: false, lg: true });
+
     const iconSize = useBreakpointValue({ base: "20px", md: "20px", lg: "20px" });
+
+    const iconColor = isHoveredButton
+        ? (colorMode === 'dark' ? 'white' : '#7B4CF6')
+        : 'white';
 
     const cardBackgroundColor = useColorModeValue(
         "linear-gradient(to right bottom, #DDC887, #DDC887, #F0E2B6, #F0E2B6)",
@@ -58,90 +67,141 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
 
     const separatorColor = useColorModeValue(
         // "linear-gradient(to left, transparent, #7C42F3, transparent",
-        "linear-gradient(to left, transparent, #9E7CFF, transparent",
+        "linear-gradient(to left, transparent, #000, transparent",
         "linear-gradient(to left, transparent, #9E7CFF, transparent"
     );
 
     return (
         <Box
-            className='carouselCard'
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
             width="100%"
-            height="fit-content"
-            minH="37.5rem"
-            bg={cardBackgroundColor}
-            color="white"
-            padding="1.5rem"
-            borderRadius="7px"
-            boxShadow="0 0 10px 1px black"
+            position="relative"
         >
-            <VStack spacing={10} align="right">
-                <HStack spacing={4}>
-                    <Avatar name={name} src={avatarUrl} width="9rem" height="9rem" />
-
-                    <VStack align="start" spacing={7}>
-                        <Text className='name' fontSize="1.8rem" fontWeight="bold">{name}</Text>
-                        {/* <Text fontSize="1rem">{title}</Text> */}
-                        <Badges
-                            text={badgeText}
-                            textColor={{ light: badgeTextColor.light, dark: badgeTextColor.dark }}
-                            backgroundColor={{ light: badgeBackgroundColor.light, dark: badgeBackgroundColor.dark }}
-                            borderColor={{ light: badgeBorderColor.light, dark: badgeBorderColor.dark }}
-                        />
-                    </VStack>
-                </HStack>
-
-                <Flex className='separatorContainer' justifyContent="center" alignItems="center">
-                    <Box
-                        className="separator"
-                        width="30rem"
-                        height="1px"
-                        style={{
-                            background: separatorColor,
-                        }}
-                    />
-                </Flex>
-
-                <Text className='testimonial' fontSize="1.6rem">&ldquo;{testimonial}&rdquo;</Text>
-
-                <Box
-                    className="buttonContainer"
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="center"
-                >
-                    <Link
-                        className="button"
-                        position="relative"
-                        href={profileUrl}
-                        width={{ base: "90%", lg: "11rem" }}
-                        bg="#7B4CF6"
-                        color="#fff"
-                        fontSize={{ base: "2rem", lg: "1.5rem" }}
-                        padding="0.5rem"
-                        border="2px solid #7B4CF6"
-                        borderRadius="3px"
-                        cursor="pointer"
-                        _hover={{
-                            bg: "#272763",
-                            color: "white",
-                        }}
-                        transition="background-color 0.2s ease-out"
-                        onMouseEnter={handleHoverButton}
-                        onMouseLeave={handleUnHoverButton}
-                    >
-                        <HStack justifyContent="center" alignItems="center">
-                            <BsPersonLinesFill size={iconSize} color={isHoveredButton ? "white" : "white"} />
-
-                            <Text
-                                fontSize={{ base: "1rem", lg: "1.2rem" }}
-                                textAlign="center"
-                            >
-                                {t("seeProfile")}
-                            </Text>
+            <Box
+                className='carouselCard'
+                width="100%"
+                height="fit-content"
+                minW="30rem"
+                maxW="50rem"
+                minH="37.5rem"
+                bg={cardBackgroundColor}
+                color="white"
+                padding="1.5rem"
+                borderRadius="7px"
+                boxShadow={useColorModeValue(
+                    "0 0 20px 5px rgba(0, 0, 0, 0.1)",  // Light mode boxShadow
+                    "0 0 20px 5px rgba(0, 0, 0, 0.2)"  // Dark mode boxShadow
+                )}
+            >
+                <VStack spacing={10} align="right">
+                    {isLargeScreen ? (
+                        <HStack spacing={4}>
+                            <Avatar name={name} src={avatarUrl} width="9rem" height="9rem" />
+                            <VStack align="start" spacing={7}>
+                                <Text
+                                    className='name'
+                                    fontSize="1.8rem"
+                                    fontWeight="bold"
+                                    color={useColorModeValue("gray.900", "gray.50")}
+                                >
+                                    {name}
+                                </Text>
+                                <Badges
+                                    text={badgeText}
+                                    textColor={{ light: badgeTextColor.light, dark: badgeTextColor.dark }}
+                                    backgroundColor={{ light: badgeBackgroundColor.light, dark: badgeBackgroundColor.dark }}
+                                    borderColor={{ light: badgeBorderColor.light, dark: badgeBorderColor.dark }}
+                                />
+                            </VStack>
                         </HStack>
-                    </Link>
-                </Box>
-            </VStack>
+                    ) : (
+                        <VStack spacing={4} align="center">
+                            <Avatar name={name} src={avatarUrl} width="9rem" height="9rem" />
+
+                            <VStack align="start" spacing={7} width="70%">
+                                <Text
+                                    className='name'
+                                    fontSize="1.8rem"
+                                    fontWeight="bold"
+                                    color={useColorModeValue("gray.900", "gray.50")}
+                                >
+                                    {name}
+                                </Text>
+                                <Badges
+                                    text={badgeText}
+                                    textColor={{ light: badgeTextColor.light, dark: badgeTextColor.dark }}
+                                    backgroundColor={{ light: badgeBackgroundColor.light, dark: badgeBackgroundColor.dark }}
+                                    borderColor={{ light: badgeBorderColor.light, dark: badgeBorderColor.dark }}
+                                />
+                            </VStack>
+                        </VStack>
+                    )}
+
+                    <Flex className='separatorContainer' justifyContent="center" alignItems="center">
+                        <Box
+                            className="separator"
+                            width="30rem"
+                            height="1px"
+                            style={{
+                                background: separatorColor,
+                            }}
+                        />
+                    </Flex>
+
+                    <Text
+                        className='testimonial'
+                        fontSize={{ base: "1.5rem", lg: "1.6rem" }}
+                        color={useColorModeValue("gray.900", "gray.300")}
+                    >
+                        &ldquo;{testimonial}&rdquo;
+                    </Text>
+
+                    <Box
+                        className="buttonContainer"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                    >
+                        <Link
+                            className="button"
+                            position="relative"
+                            href={profileUrl}
+                            width={{ base: "50%", lg: "11rem" }}
+                            bg="#7B4CF6"
+                            color="#fff"
+                            fontSize={{ base: "2rem", lg: "1.5rem" }}
+                            padding="0.5rem"
+                            border="2px solid #7B4CF6"
+                            borderRadius="3px"
+                            cursor="pointer"
+                            _hover={{
+                                bg: "transparent",
+                                color: "#7B4CF6",
+                                _dark: {
+                                    color: "white"
+                                },
+                            }}
+                            transition="background-color 0.2s ease-out"
+                            onMouseEnter={handleHoverButton}
+                            onMouseLeave={handleUnHoverButton}
+                        >
+                            <HStack justifyContent="center" alignItems="center">
+                                <BsPersonLinesFill size={iconSize} color={iconColor} />
+
+                                <Text
+                                    fontSize={{ base: "1rem", lg: "1.2rem" }}
+                                    fontWeight="bold"
+                                    textAlign="center"
+                                >
+                                    {t("seeProfile")}
+                                </Text>
+                            </HStack>
+                        </Link>
+                    </Box>
+                </VStack>
+            </Box>
         </Box>
     );
 };

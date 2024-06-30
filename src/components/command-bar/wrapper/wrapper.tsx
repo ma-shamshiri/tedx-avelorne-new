@@ -13,8 +13,9 @@ import { Box, useColorModeValue, Input } from "@chakra-ui/react";
 export const KBarWrapper = (props: KBarWrapperProps) => {
     const { children } = props;
 
-    const bg = useColorModeValue("gray.50", "gray.900");
     const textColor = useColorModeValue("gray.800", "gray.100");
+    const backgroundColor = useColorModeValue("gray.50", "gray.900");
+    const borderColor = useColorModeValue("gray.900", "gray.50");
     const shadowColor = useColorModeValue(
         "rgba(0, 0, 0, 0.24) 0px 0px 40px",
         "rgba(0, 0, 0, 0.24) 0px 0px 40px"
@@ -27,28 +28,30 @@ export const KBarWrapper = (props: KBarWrapperProps) => {
                 <KBarPositioner style={{ backdropFilter: "blur(4px)" }}>
                     <Box
                         as={KBarAnimator}
+                        position="absolute"
+                        top="9rem"
                         width="full"
                         maxW="600px"
                         maxH="500px"
+                        bg={backgroundColor}
                         rounded="xl"
-                        overflow="hidden"
-                        bg={bg}
+                        borderWidth="1px"
+                        borderColor={borderColor}
                         color={textColor}
-                        shadow={shadowColor}
+                        shadow={"shadowColor"}
                         boxShadow={`0 0 40px ${shadowBg}`}
-                        position="absolute"
-                        top="52"
+                        overflow="hidden"
                     >
                         <Input
                             as={KBarSearch}
                             paddingY="3rem"
                             paddingX="2rem"
-                            fontSize="1.8rem"
+                            fontSize="1.5rem"
                             w="full"
                             boxSizing="border-box"
                             outline="none"
                             border="1px solid blue"
-                            bg={bg}
+                            bg={backgroundColor}
                             color={textColor}
                             focusBorderColor="transparent"
                             errorBorderColor="transparent"

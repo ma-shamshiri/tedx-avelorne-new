@@ -47,7 +47,7 @@ export const ResultItem = React.forwardRef(
         bg={active ? activeBgColor : bgColor}
         borderColor={active ? activeBorderColor : borderColor}
       >
-        <Flex gap={2} alignItems="center" fontSize="1.7rem" >
+        <Flex gap={2} alignItems="center" fontSize="1.5rem" >
           {action.icon}
           <Flex direction="column">
             <Box>
@@ -67,7 +67,7 @@ export const ResultItem = React.forwardRef(
               </Text>
             </Box>
             {action.subtitle && (
-              <Text as="span" fontSize="1.2rem" color={subtitleColor}>
+              <Text as="span" fontSize="1.15rem" color={subtitleColor}>
                 {action.subtitle}
               </Text>
             )}

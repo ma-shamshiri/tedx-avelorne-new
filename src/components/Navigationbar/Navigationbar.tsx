@@ -75,7 +75,7 @@ export const Navigationbar: React.FC = () => {
       </Box>
       <Box
         bg={useColorModeValue("rgb(241,241,241)", "black")}
-        py={{ base: "1.5rem" }}
+        py={{ base: "0.8rem" }}
         px={{ base: "1rem" }}
         position="sticky"
         zIndex="999"
@@ -112,11 +112,11 @@ export const Navigationbar: React.FC = () => {
                 <HStack>
                   <Image
                     src={youChooseLogo}
-                    boxSize={{ base: "35px", md: "60px", lg: "60px" }}
+                    boxSize={{ base: "35px", md: "45px", lg: "45px", xl: "50px" }}
                   />
                   <Image
                     src={tedxImg}
-                    width={{ base: 160, md: 280, lg: 250 }}
+                    width={{ base: 160, md: 220, lg: 170, xl: 220 }}
                   />
                 </HStack>
               </Flex>
@@ -130,7 +130,7 @@ export const Navigationbar: React.FC = () => {
           </Flex>
           {isLargeScreen ? (
             <HStack spacing={5} zIndex={999}>
-              <Flex display={{ md: "none", lg: "block" }} paddingRight="5rem" >
+              <Flex display={{ md: "none", lg: "block" }} paddingRight="1.5rem" >
                 <KbarInput />
               </Flex>
               <LanguageSwitcher />

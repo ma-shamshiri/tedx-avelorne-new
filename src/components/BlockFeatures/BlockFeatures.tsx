@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import {
   Box,
   Link as ChakraLink,
+  Flex,
   Grid,
   Image,
   Text,
@@ -93,8 +94,8 @@ const Feature: React.FC<FeatureProps> = ({
   return (
     <Box
       className="feature__content"
-      // border={"1px solid red"}
-      // padding="2rem"
+    // border={"1px solid red"}
+    // padding="2rem"
     >
       {/* <Box
       className="icon-container"
@@ -116,7 +117,7 @@ const Feature: React.FC<FeatureProps> = ({
         className="h3 feature__heading"
         // color="var(--color-white)"
         color={useColorModeValue("gray.800", "white")}
-        fontSize={{ base: "2.8rem", lg: "2.5rem" }}
+        fontSize={{ base: "2rem", lg: "2.2rem" }}
         fontWeight="bold"
         lineHeight="1.3"
         margin="1rem 0"
@@ -125,17 +126,18 @@ const Feature: React.FC<FeatureProps> = ({
       </Text>
       <Text
         className="p"
+        fontSize={{ base: "1.6rem", lg: "1.5rem" }}
         marginTop="0"
-        marginBottom="1.5rem"
+        marginBottom="1rem"
         color={useColorModeValue("gray.700", "gray.400")}
-        // textAlign={"justify"}
+      // textAlign={"justify"}
       >
         {t(description)}
       </Text>
       <ChakraLink
         className="link-arrow"
         href={linkUrl}
-        fontSize={{ base: "2rem", lg: "1.7rem" }}
+        fontSize={{ base: "1.4rem", lg: "1.4rem" }}
         fontWeight="bold"
         color={useColorModeValue("#fc2d03", "tomato")}
         textTransform="uppercase"
@@ -202,13 +204,15 @@ export const BlockFeatures: React.FC = () => {
       bg={useColorModeValue("#F0E2B6	", "gray.800")}
       width="100%"
       overflow={"hidden"}
-      // clipPath="polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%)"
+    // clipPath="polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%)"
     >
       <Box
         className="block container"
         padding="6rem 2rem"
-        maxWidth="114rem"
+        maxWidth={{ md:"70rem", lg: "100rem", xl: "105rem" }}
         margin="0 auto"
+        justifyContent="center"
+        alignItems="center"
       >
         <Box
           className="block__header aos-animate"
@@ -222,7 +226,7 @@ export const BlockFeatures: React.FC = () => {
             color={useColorModeValue("gray.600", "#E1DCA9")}
             marginBottom="1rem"
             marginTop="0"
-            fontSize={{ base: "5.5rem", lg: "7rem" }}
+            fontSize={{ base: "2.8rem", lg: "4rem" }}
             fontWeight="bold"
             lineHeight="1.1"
           >
@@ -231,9 +235,9 @@ export const BlockFeatures: React.FC = () => {
           <Text
             className="p"
             color={useColorModeValue("gray.600", "silver")}
-            fontSize={{ base: "2.0rem", lg: "2.8rem" }}
+            fontSize={{ base: "1.5rem", lg: "2.1rem" }}
             // fontWeight="bold"
-            marginBottom="11rem"
+            marginBottom={{ base: "3rem", lg: "6rem" }}
           >
             {t("featureSubTitle")}
           </Text>
@@ -241,15 +245,15 @@ export const BlockFeatures: React.FC = () => {
         {featuresData.map((feature, index) => (
           <Box
             key={index}
-            className={`grid grid--1x2 feature feature-${
-              index % 2 === 0 ? "even" : "odd"
-            }`}
+            className={`grid grid--1x2 feature feature-${index % 2 === 0 ? "even" : "odd"
+              }`}
+
           >
             <Grid
               display="grid"
               templateColumns={["1fr", null, null, "repeat(2, 1fr)"]}
               gap="4rem 2rem"
-              margin="10rem 0"
+              margin="4rem 0"
               sx={{
                 order: index % 2 === 0 ? 1 : 2,
                 // textAlign: index % 2 === 0 ? "right" : "left",

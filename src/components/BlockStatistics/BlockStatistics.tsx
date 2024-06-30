@@ -54,7 +54,7 @@ export const BlockStatistics: React.FC = () => {
               className="h2"
               color={useColorModeValue("white", "#16F8B6")}
               marginBottom="2rem"
-              fontSize={{ base: "4rem", lg: "6rem" }}
+              fontSize={{ base: "2.8rem", lg: "4rem" }}
               fontWeight="bold"
               lineHeight="1.1"
             >
@@ -66,8 +66,9 @@ export const BlockStatistics: React.FC = () => {
               color={useColorModeValue("gray.100", "white")}
               //   marginBottom="1rem"
               marginTop="0"
-              fontSize={{ base: "2.0rem", lg: "2.5rem" }}
+              fontSize={{ base: "1.5rem", lg: "2.1rem" }}
               lineHeight="1.1"
+              paddingBottom={{ lg: "2rem" }}
             >
               {t("statisticsSubTitle")}
             </Text>
@@ -86,109 +87,129 @@ export const BlockStatistics: React.FC = () => {
                   width="100%"
                 >
                   <NumberCard
-                    width={{ base: "100%", md: "100%", lg: "100%", xl: "100%" }}
+                    width={{
+                      base: "fit-content",
+                      md: "fit-content",
+                      lg: "fit-content",
+                      xl: "fit-content"
+                    }}
                     height={{
-                      base: "20rem",
-                      md: "20rem",
-                      lg: "20rem",
-                      xl: "17rem",
+                      base: "fit-content",
+                      md: "fit-content",
+                      lg: "fit-content",
+                      xl: "fit-content",
                     }}
                     endNumber={20}
                     hasPlusSign={false}
                     text={t("coreTeam")}
                     textSize={{
-                      base: "2rem",
-                      md: "2.8rem",
-                      lg: "2.8rem",
-                      xl: "2.5rem",
+                      base: "1.5rem",
+                      md: "1.8rem",
+                      lg: "1.8rem",
+                      xl: "1.8rem",
                     }}
                     textColor="white"
                     numberFontSize={{
-                      base: "4.5rem",
-                      md: "4rem",
-                      lg: "5rem",
-                      xl: "4rem",
+                      base: "3.2rem",
+                      md: "3.5rem",
+                      lg: "3.5rem",
+                      xl: "3.5rem",
                     }}
                     borderColor="linear-gradient(to left, transparent, #409F8F, transparent)"
                     numberColor="#4CCFAF"
                   />
 
                   <NumberCard
-                    width={{ base: "100%", md: "100%", lg: "100%", xl: "100%" }}
+                    width={{
+                      base: "fit-content",
+                      md: "fit-content",
+                      lg: "fit-content",
+                      xl: "fit-content"
+                    }}
                     height={{
-                      base: "20rem",
-                      md: "20rem",
-                      lg: "20rem",
-                      xl: "17rem",
+                      base: "fit-content",
+                      md: "fit-content",
+                      lg: "fit-content",
+                      xl: "fit-content",
                     }}
                     endNumber={8}
                     text={t("speakers")}
                     textSize={{
-                      base: "2rem",
-                      md: "2.8rem",
-                      lg: "2.8rem",
-                      xl: "2.5rem",
+                      base: "1.5rem",
+                      md: "1.8rem",
+                      lg: "1.8rem",
+                      xl: "1.8rem",
                     }}
                     textColor="white"
                     numberFontSize={{
-                      base: "4.5rem",
-                      md: "4rem",
-                      lg: "5rem",
-                      xl: "4rem",
+                      base: "3.2rem",
+                      md: "3.5rem",
+                      lg: "3.5rem",
+                      xl: "3.5rem",
                     }}
                     borderColor="linear-gradient(to left, transparent, #EF40BA, transparent)"
                     numberColor="#FF5FCC"
                   />
 
                   <NumberCard
-                    width={{ base: "100%", md: "100%", lg: "100%", xl: "100%" }}
+                    width={{
+                      base: "fit-content",
+                      md: "fit-content",
+                      lg: "fit-content",
+                      xl: "fit-content"
+                    }}
                     height={{
-                      base: "20rem",
-                      md: "20rem",
-                      lg: "20rem",
-                      xl: "17rem",
+                      base: "fit-content",
+                      md: "fit-content",
+                      lg: "fit-content",
+                      xl: "fit-content",
                     }}
                     endNumber={100}
                     hasPlusSign={true}
                     text={t("attendees")}
                     textSize={{
-                      base: "2rem",
-                      md: "2.8rem",
-                      lg: "2.8rem",
-                      xl: "2.5rem",
+                      base: "1.5rem",
+                      md: "1.8rem",
+                      lg: "1.8rem",
+                      xl: "1.8rem",
                     }}
                     textColor="white"
                     numberFontSize={{
-                      base: "4.5rem",
-                      md: "4rem",
-                      lg: "5rem",
-                      xl: "4rem",
+                      base: "3.2rem",
+                      md: "3.5rem",
+                      lg: "3.5rem",
+                      xl: "3.5rem",
                     }}
                     numberColor="#A679FF"
                   />
 
                   <NumberCard
-                    width={{ base: "100%", md: "100%", lg: "100%", xl: "100%" }}
+                    width={{
+                      base: "fit-content",
+                      md: "fit-content",
+                      lg: "fit-content",
+                      xl: "fit-content"
+                    }}
                     height={{
-                      base: "20rem",
-                      md: "20rem",
-                      lg: "20rem",
-                      xl: "17rem",
+                      base: "fit-content",
+                      md: "fit-content",
+                      lg: "fit-content",
+                      xl: "fit-content",
                     }}
                     endNumber={8}
                     text={t("sponsors")}
                     textSize={{
-                      base: "2.3rem",
-                      md: "2.8rem",
-                      lg: "2.8rem",
-                      xl: "2.5rem",
+                      base: "1.5rem",
+                      md: "1.8rem",
+                      lg: "1.8rem",
+                      xl: "1.8rem",
                     }}
                     textColor="white"
                     numberFontSize={{
-                      base: "5rem",
-                      md: "4rem",
-                      lg: "5rem",
-                      xl: "4rem",
+                      base: "3.2rem",
+                      md: "3.5rem",
+                      lg: "3.5rem",
+                      xl: "3.5rem",
                     }}
                     borderColor="linear-gradient(to left, transparent, #FF9F24, transparent)"
                     numberColor="#FF9F24"

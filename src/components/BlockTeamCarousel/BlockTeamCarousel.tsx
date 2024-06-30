@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box } from "@chakra-ui/react";
+import { Box, useBreakpointValue } from "@chakra-ui/react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,7 +14,6 @@ interface ArrowProps {
     style?: React.CSSProperties;
     onClick?: () => void;
 }
-
 const SampleNextArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => {
     return (
         <Box
@@ -30,12 +29,13 @@ const SampleNextArrow: React.FC<ArrowProps> = ({ className, style, onClick }) =>
                 svg: { color: "red" }
             }}
         >
-            <IoIosArrowDroprightCircle size={"45px"} color="#7B4CF6" />
+            <IoIosArrowDroprightCircle size={useBreakpointValue({ base: "30px", lg: "45px" })} color="#904ff7" />
         </Box>
     );
 };
 
 const SamplePrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => {
+
     return (
         <Box
             className="slick-arrow"
@@ -47,7 +47,7 @@ const SamplePrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) =>
             onClick={onClick}
             cursor="pointer"
         >
-            <IoIosArrowDropleftCircle size={"45px"} color="#7B4CF6" />
+            <IoIosArrowDropleftCircle size={useBreakpointValue({ base: "30px", lg: "45px" })} color="#904ff7" />
         </Box>
     );
 };
@@ -72,33 +72,63 @@ export const BlockTeamCarousel: React.FC = () => {
         afterChange: (current: number) => setCenterSlide(current),
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
+        appendDots: (dots: React.ReactNode) => (
+            <div
+              style={{
+                padding: '10px',
+              }}
+            >
+              <ul style={{ margin: '0px' }}>{dots}</ul>
+            </div>
+          ),
+          customPaging: (i: number) => (
+            <div
+              style={{
+                width: '30px',
+                height: '30px',
+                borderRadius: '50%',
+                backgroundColor: i === centerSlide ? 'black' : '#ccc',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <span
+                style={{
+                  width: '10px',
+                  height: '10px',
+                  borderRadius: '50%',
+                  backgroundColor: i === centerSlide ? 'white' : 'black',
+                }}
+              ></span>
+            </div>
+          ),
         responsive: [
 
             {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 800,
+                breakpoint: 1400,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    centerMode: false,
                 }
             }
         ],
     };
     return (
-        <Box w="75%" mx="auto">
+        <Box
+            width={{ base: "78%", md: "30%", lg: "60%", xl: "75%" }}
+            marginX="auto"
+            padding="2rem"
+            border="1px solid red"
+        >
             <Slider
                 {...settings}
             >
                 {data.map((d, index) => (
                     <Box
                         key={d.name}
-                        padding="1rem"
+                        padding={{ base: "0", lg: "1rem" }}
                         transition="opacity 0.6s ease"
                         opacity={centerSlide === index ? 1 : 0.2}
                     >

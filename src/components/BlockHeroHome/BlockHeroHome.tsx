@@ -132,7 +132,7 @@ export const BlockHeroHome: React.FC = () => {
               color={useColorModeValue("#fff", "#fff")}
               marginBottom="1rem"
               marginTop="0"
-              fontSize={{ base: "3rem", md: "4rem", lg: "4rem", xl: "4rem" }}
+              fontSize={{ base: "2.2rem", md: "2.5rem", lg: "2.6rem", xl: "3.2rem" }}
               fontWeight="bold"
               lineHeight="1.5"
               textAlign={{ base: "center", lg: "initial" }}
@@ -142,12 +142,12 @@ export const BlockHeroHome: React.FC = () => {
             </Text>
             <Text
               className="p"
-              fontSize={{ base: "1.8rem", md: "2.2rem", lg: "2.5rem" }}
+              fontSize={{ base: "1.5rem", md: "1.5rem", lg: "1.5rem", xl: "1.9rem" }}
               marginTop={10}
-              color={useColorModeValue("gray.300", "#FF3A2D")}
+              color={useColorModeValue("gray.200", "#04c97a")}
               textAlign={{ base: "center", lg: "initial" }}
               lineHeight="1.5"
-              fontFamily="'Acme', sans-serif"
+              // fontFamily="'Acme', sans-serif"
               // fontFamily="'Englebert', cursive"
             >
               {t("heroSubTitle")}
@@ -177,9 +177,9 @@ export const BlockHeroHome: React.FC = () => {
             top={{
               // sm: "1%",
               base: "35%",
-              md: "40%",
-              lg: "35%",
-              xl: "42%",
+              md: "50%",
+              lg: "54%",
+              xl: "47%",
             }}
             transform="translateY(-50%)"
             width="100%"

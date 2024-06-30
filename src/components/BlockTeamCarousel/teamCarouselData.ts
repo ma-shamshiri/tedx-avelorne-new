@@ -83,9 +83,7 @@ const data = [
         badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
         badgeBorderColor: { light: "blue", dark: "blue" },
         testimonial: `Each individual possesses unique knowledge, and when combined, these knowledge 
-        silos can create great wonders. Meeting and sharing ideas with new people was crucial for me 
-        to complete my NLP research during my Master's program at Concordia University and become a 
-        Machine Learning Engineer. Knowledge is valuable in any domain, which is why I joined TEDxAveLorne: 
+        silos can create great wonders. Knowledge is valuable in any domain, which is why I joined TEDxAveLorne: 
         to connect with knowledgeable people, share ideas, and continuously improve myself!`,
     },
 

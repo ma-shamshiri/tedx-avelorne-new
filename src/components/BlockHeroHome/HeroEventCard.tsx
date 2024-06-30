@@ -83,15 +83,15 @@ const HeroEventCard: React.FC<HeroEventCardProps> = ({
             sm: "15rem",
             base: "15rem",
             md: "26rem",
-            lg: "32rem",
-            xl: "35rem",
+            lg: "30rem",
+            xl: "30rem",
           }}
           height={{
             sm: "15rem",
             base: "15rem",
             md: "26rem",
-            lg: "32rem",
-            xl: "35rem",
+            lg: "30rem",
+            xl: "30rem",
           }}
           borderRadius="9px"
           overflow="hidden"
@@ -99,9 +99,9 @@ const HeroEventCard: React.FC<HeroEventCardProps> = ({
           onMouseEnter={handleHover}
           onMouseLeave={handleUnhover}
           marginRight={marginRight}
-          // transform="scale(1.1)"
-          //   _hover={{ transform: "scale(1.02)" }}
-          //   transition="transform 0.15s ease-out"
+        // transform="scale(1.1)"
+        //   _hover={{ transform: "scale(1.02)" }}
+        //   transition="transform 0.15s ease-out"
         >
           <Box
             className="topBorder"
@@ -116,11 +116,11 @@ const HeroEventCard: React.FC<HeroEventCardProps> = ({
               transformOrigin: "left",
               transition: "transform 0.5s ease-in-out",
             }}
-            // style={{
-            //   background: topBorderColor,
-            //   opacity: isHovered ? 1 : 0,
-            //   transition: "opacity 0.3s ease-in-out",
-            // }}
+          // style={{
+          //   background: topBorderColor,
+          //   opacity: isHovered ? 1 : 0,
+          //   transition: "opacity 0.3s ease-in-out",
+          // }}
           ></Box>
           <Box
             className="bottomBorder"
@@ -135,11 +135,11 @@ const HeroEventCard: React.FC<HeroEventCardProps> = ({
               transformOrigin: "right",
               transition: "transform 0.5s ease-in-out",
             }}
-            // style={{
-            //   background: bottomBorderColor,
-            //   opacity: isHovered ? 1 : 0,
-            //   transition: "opacity 0.3s ease-in-out",
-            // }}
+          // style={{
+          //   background: bottomBorderColor,
+          //   opacity: isHovered ? 1 : 0,
+          //   transition: "opacity 0.3s ease-in-out",
+          // }}
           ></Box>
           <Box
             className="leftBorder"
@@ -153,11 +153,11 @@ const HeroEventCard: React.FC<HeroEventCardProps> = ({
               transformOrigin: "top",
               transition: "transform 0.5s ease-in-out",
             }}
-            // style={{
-            //   background: leftBorderColor,
-            //   opacity: isHovered ? 1 : 0,
-            //   transition: "opacity 0.3s ease-in-out",
-            // }}
+          // style={{
+          //   background: leftBorderColor,
+          //   opacity: isHovered ? 1 : 0,
+          //   transition: "opacity 0.3s ease-in-out",
+          // }}
           ></Box>
           <Box
             className="rightBorder"
@@ -171,21 +171,21 @@ const HeroEventCard: React.FC<HeroEventCardProps> = ({
               transformOrigin: "bottom",
               transition: "transform 0.5s ease-in-out",
             }}
-            // height={isHovered ? rightBorderHeight : 0}
-            // style={{
-            //   background: rightBorderColor,
-            //   opacity: isHovered ? 1 : 0,
-            //   transition: "opacity 0.3s ease-in-out",
-            // }}
-            // style={{
-            //   background: rightBorderColor,
-            //   transition: "height 0.3s ease-in-out",
-            // }}
+          // height={isHovered ? rightBorderHeight : 0}
+          // style={{
+          //   background: rightBorderColor,
+          //   opacity: isHovered ? 1 : 0,
+          //   transition: "opacity 0.3s ease-in-out",
+          // }}
+          // style={{
+          //   background: rightBorderColor,
+          //   transition: "height 0.3s ease-in-out",
+          // }}
           ></Box>
           <Image
             src={eventImageHref}
             width="100%"
-            height={"60%"}
+            height={{ base:"60%", md: "60%", lg: "62%", xl: "57%" }}
             //   objectFit="inherit"
             //   borderTopRadius="7px"
             paddingTop={"1rem"}
@@ -218,9 +218,9 @@ const HeroEventCard: React.FC<HeroEventCardProps> = ({
               fontSize={{
                 sm: "1rem",
                 base: "1rem",
-                md: "1.6rem",
-                lg: "2.1rem",
-                xl: "2.1rem",
+                md: "1.5rem",
+                lg: "1.6rem",
+                xl: "1.8rem",
               }}
               fontWeight="bold"
               textAlign="center"
@@ -250,9 +250,9 @@ const HeroEventCard: React.FC<HeroEventCardProps> = ({
               fontSize={{
                 sm: "1.3rem",
                 base: "1.3rem",
-                md: "2rem",
-                lg: "2.6rem",
-                xl: "2.4rem",
+                md: "1.9rem",
+                lg: "2rem",
+                xl: "2rem",
               }}
               fontWeight="bold"
               textAlign="center"

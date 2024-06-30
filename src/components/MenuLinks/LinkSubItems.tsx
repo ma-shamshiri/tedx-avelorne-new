@@ -11,14 +11,14 @@ export const SubLinksBox = (props: SubLinksBoxProps) => {
   return (
     <Box
       position="absolute"
-      top="2.9rem"
+      top="2.4rem"
       width="fit-content"
       boxShadow="0 0 30px 1px black"
       display={{ base: 'none', groupHover: 'flex' }}
-      borderRadius="2rem"
+      borderRadius="7px"
     >
       <List
-        padding="2rem"
+        padding="1.3rem"
         width="35rem"
         height="fit-content"
         flexDirection="column"
@@ -30,7 +30,7 @@ export const SubLinksBox = (props: SubLinksBoxProps) => {
           "linear-gradient(to right bottom, #0e0e29, #0e0e29, #272763, #272763)"
           // "linear-gradient(to right top, #FF00CC, #333399)",
         )}
-        borderRadius="2rem"
+        borderRadius="7px"
       >
         {subLinks.map((subLink) => (
           <ListItem
@@ -43,7 +43,7 @@ export const SubLinksBox = (props: SubLinksBoxProps) => {
             fontWeight="bold"
             _hover={{ backgroundColor: useColorModeValue("gray.200", "gray.700") }}
             cursor="pointer"
-            paddingY="3.5rem"
+            paddingY="3rem"
           >
             <ChakraLink
               href={subLink.link}
@@ -52,8 +52,8 @@ export const SubLinksBox = (props: SubLinksBoxProps) => {
             >
               <Box
                 className="ml-5"
-                height="4rem"
-                width="4rem"
+                height="3.9rem"
+                width="3.9rem"
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
@@ -70,14 +70,14 @@ export const SubLinksBox = (props: SubLinksBoxProps) => {
               </Box>
               <Box display="flex" flexDirection="column" marginLeft="5">
                 <Text
-                  fontSize="1.8rem"
+                  fontSize="1.5rem"
                   color={useColorModeValue("gray.600", "gray.200")}
                   marginBottom="1"
                 >
                   {t(subLink.name)}
                 </Text>
                 <Text
-                  fontSize="1.5rem"
+                  fontSize="1.3rem"
                   color={useColorModeValue("gray.500", "gray.500")}
                 >
                   {t(subLink.description)}
