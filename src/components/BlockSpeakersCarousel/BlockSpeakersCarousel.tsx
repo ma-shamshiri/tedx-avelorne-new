@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import CarouselCard from "./CarouselCard";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
-import { teamData } from "./teamCarouselData";
+import { speakerData } from "./speakersCarouselData";
 import { useTranslation } from 'react-i18next';
 
 interface ArrowProps {
@@ -53,7 +53,7 @@ const SamplePrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) =>
 };
 
 
-export const BlockTeamCarousel: React.FC = () => {
+export const BlockSpeakersCarousel: React.FC = () => {
     const { t } = useTranslation();
 
     const [centerSlide, setCenterSlide] = useState<number>(0);
@@ -78,7 +78,7 @@ export const BlockTeamCarousel: React.FC = () => {
             <Box
                 padding="10px"
                 position="absolute"
-                bottom={{ base: "-100", lg: "-59" }}
+                bottom={{ base: "-61", lg: "-59" }}
             >
                 <Box margin="0">{dots}</Box>
             </Box>
@@ -125,7 +125,7 @@ export const BlockTeamCarousel: React.FC = () => {
             <Slider
                 {...settings}
             >
-                {teamData.map((d, index) => (
+                {speakerData.map((d, index) => (
                     <Box
                         key={d.name}
                         padding={{ base: "0", lg: "1rem" }}
@@ -151,5 +151,7 @@ export const BlockTeamCarousel: React.FC = () => {
         </Box>
     );
 }
+
+
 
 // export default App;

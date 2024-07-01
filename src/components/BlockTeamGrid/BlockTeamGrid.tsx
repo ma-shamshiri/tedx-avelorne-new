@@ -1,28 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Box, Center, Grid, Text, useColorModeValue } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, Text, useColorModeValue } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import TeamGridCard from "./TeamGridCard";
-import {
-    aminBG,
-    aryanaBG,
-    baharanBG,
-    erfanBG,
-    fatemehBG,
-    fathimaBG,
-    hamidrezaBG,
-    melikaBG,
-    minaBG,
-    mohammadBG,
-    motaharehBG,
-    pegahBG,
-    reihanehBG,
-    unkown,
-    saminBG,
-    royanBG,
-    gezalBG,
-    edwinBG,
-    zahraBG
-} from "../../assets";
 
 import { BlockTeamCarousel } from "../BlockTeamCarousel";
 
@@ -33,22 +11,6 @@ export const BlockTeamGrid: React.FC = () => {
     const [isHoveredArray, setIsHoveredArray] = useState(
         Array(numElements).fill(false)
     );
-
-    const handleHover = (index: number) => {
-        setIsHoveredArray((prevArray) => {
-            const newArray = [...prevArray];
-            newArray[index] = true;
-            return newArray;
-        });
-    };
-
-    const handleUnhover = (index: number) => {
-        setIsHoveredArray((prevArray) => {
-            const newArray = [...prevArray];
-            newArray[index] = false;
-            return newArray;
-        });
-    };
 
     return (
         <Box

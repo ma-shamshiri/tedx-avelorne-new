@@ -20,7 +20,7 @@ import {
     edwinBG,
 } from "../../assets";
 
-const data = [
+export const teamData = [
     /* ======================== Samin Majidi ======================== */
     {
         name: `Samin Majidi`,
@@ -274,4 +274,4 @@ const data = [
     },
 ];
 
-export default data;
+export default teamData;
