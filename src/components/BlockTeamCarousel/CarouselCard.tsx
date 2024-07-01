@@ -14,6 +14,7 @@ import {
 import Badges from './Badges';
 import { BsPersonLinesFill } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
+import { IoMdStar } from 'react-icons/io';
 
 interface CarouselCardProps {
     name?: string;
@@ -24,6 +25,7 @@ interface CarouselCardProps {
     badgeTextColor?: { light: string; dark: string };
     badgeBackgroundColor?: { light: string; dark: string };
     badgeBorderColor?: { light: string; dark: string };
+    starColor?: { light: string; dark: string };
     testimonial?: string;
 }
 
@@ -36,6 +38,7 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
     badgeTextColor = { light: 'black', dark: 'white' },
     badgeBackgroundColor = { light: 'dodgerblue', dark: 'dodgerblue' },
     badgeBorderColor = { light: 'blue', dark: 'blue' },
+    starColor = { light: 'white', dark: 'white' },
     testimonial,
 }) => {
     const { t } = useTranslation();
@@ -55,13 +58,16 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
     const isLargeScreen = useBreakpointValue({ base: false, lg: true });
 
     const iconSize = useBreakpointValue({ base: "20px", md: "20px", lg: "20px" });
+    const starSize = useBreakpointValue({ base: "20px", lg: "24px" });
 
     const iconColor = isHoveredButton
         ? (colorMode === 'dark' ? 'white' : '#7B4CF6')
         : 'white';
 
+    // const starIconColor = useColorModeValue(starColor.light, starColor.dark);
+
     const cardBackgroundColor = useColorModeValue(
-        "linear-gradient(to right bottom, #DDC887, #DDC887, #F0E2B6, #F0E2B6)",
+        "linear-gradient(to right bottom, silver, silver, #ededed, #ededed)",
         "linear-gradient(to right bottom, #0e0e29, #0e0e29, #272763, #272763)"
     );
 
@@ -98,43 +104,85 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
                 <VStack spacing={10} align="right">
                     {isLargeScreen ? (
                         <HStack spacing={4}>
-                            <Avatar name={name} src={avatarUrl} width="9rem" height="9rem" />
-                            <VStack align="start" spacing={7}>
+                            <Avatar
+                                name={name}
+                                src={avatarUrl}
+                                width="9rem"
+                                height="9rem"
+                                transition="0.2s ease-in-out"
+                                _hover={{
+                                    transform: "scale(1.08)",
+                                }}
+                            />
+                            <VStack
+                                align="start"
+                                spacing={7}
+                            >
                                 <Text
                                     className='name'
                                     fontSize="1.8rem"
                                     fontWeight="bold"
                                     color={useColorModeValue("gray.900", "gray.50")}
+                                    textAlign="center"
                                 >
                                     {name}
                                 </Text>
-                                <Badges
-                                    text={badgeText}
-                                    textColor={{ light: badgeTextColor.light, dark: badgeTextColor.dark }}
-                                    backgroundColor={{ light: badgeBackgroundColor.light, dark: badgeBackgroundColor.dark }}
-                                    borderColor={{ light: badgeBorderColor.light, dark: badgeBorderColor.dark }}
-                                />
+
+                                <HStack>
+                                    <IoMdStar
+                                        size={starSize}
+                                        color={useColorModeValue(starColor.light, starColor.dark)}
+                                    />
+                                    <Badges
+                                        text={badgeText}
+                                        textColor={{ light: badgeTextColor.light, dark: badgeTextColor.dark }}
+                                        backgroundColor={{ light: badgeBackgroundColor.light, dark: badgeBackgroundColor.dark }}
+                                        borderColor={{ light: badgeBorderColor.light, dark: badgeBorderColor.dark }}
+                                    />
+                                </HStack>
                             </VStack>
                         </HStack>
                     ) : (
                         <VStack spacing={4} align="center">
-                            <Avatar name={name} src={avatarUrl} width="9rem" height="9rem" />
+                            <Avatar
+                                name={name}
+                                src={avatarUrl}
+                                width="10rem"
+                                height="10rem"
+                            />
 
-                            <VStack align="start" spacing={7} width="70%">
+                            <VStack
+                                align="center"
+                                spacing="2rem"
+                                paddingTop="1rem"
+                                // width="70%"
+                                maxWidth="10rem"
+                            >
                                 <Text
                                     className='name'
-                                    fontSize="1.8rem"
+                                    fontSize="1.4rem"
                                     fontWeight="bold"
                                     color={useColorModeValue("gray.900", "gray.50")}
+                                    textAlign="center"
                                 >
                                     {name}
                                 </Text>
-                                <Badges
-                                    text={badgeText}
-                                    textColor={{ light: badgeTextColor.light, dark: badgeTextColor.dark }}
-                                    backgroundColor={{ light: badgeBackgroundColor.light, dark: badgeBackgroundColor.dark }}
-                                    borderColor={{ light: badgeBorderColor.light, dark: badgeBorderColor.dark }}
-                                />
+                                <HStack>
+                                    <IoMdStar
+                                        size={starSize}
+                                        color={useColorModeValue(starColor.light, starColor.dark)}
+                                    />
+                                    <Badges
+                                        text={badgeText}
+                                        textColor={{ light: badgeTextColor.light, dark: badgeTextColor.dark }}
+                                        backgroundColor={{ light: badgeBackgroundColor.light, dark: badgeBackgroundColor.dark }}
+                                        borderColor={{ light: badgeBorderColor.light, dark: badgeBorderColor.dark }}
+                                    />
+                                    <IoMdStar
+                                        size={starSize}
+                                        color={useColorModeValue(starColor.light, starColor.dark)}
+                                    />
+                                </HStack>
                             </VStack>
                         </VStack>
                     )}
@@ -152,8 +200,10 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
 
                     <Text
                         className='testimonial'
-                        fontSize={{ base: "1.5rem", lg: "1.6rem" }}
+                        fontSize={{ base: "1.3rem", lg: "1.6rem" }}
                         color={useColorModeValue("gray.900", "gray.300")}
+                        textAlign="left"
+                        paddingX={{ base: "3rem" }}
                     >
                         &ldquo;{testimonial}&rdquo;
                     </Text>

@@ -16,7 +16,7 @@ interface BadgesProps {
 const Badges: React.FC<BadgesProps> = ({
   text,
   textColor = { light: "#fff", dark: "#000" },
-  textSize = { base: "1rem", lg: "1.2rem" },
+  textSize = { base: "1.2rem", lg: "1.2rem" },
   backgroundColor = { light: "#000", dark: "#fff" },
   fontWeight = "600",
   borderColor = { light: "#fff", dark: "#000" },

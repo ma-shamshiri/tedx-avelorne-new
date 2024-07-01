@@ -28,14 +28,11 @@ const data = [
         avatarUrl: `${saminBG}`,
         profileUrl: `/team/samin-majidi`,
         badgeText: `Organizer`,
-        badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `I'm a physics student who enjoys discovering new, interesting
-                    things. I became the organizer of TEDxAveLorne to share and
-                    learn from others. After being a team member at TEDxZanjan, I
-                    took on the role of leading the team, valuing teamwork and new
-                    opportunities.`,
+        badgeTextColor: { light: "black", dark: "black" },
+        badgeBackgroundColor: { light: "gold", dark: "gold" },
+        badgeBorderColor: { light: "#b38300", dark: "#b38300" },
+        starColor: { light: "gold", dark: "gold" },
+        testimonial: `saminQuote`,
     },
 
     /* ======================== Fatemeh Tavanaei ======================== */
@@ -48,10 +45,8 @@ const data = [
         badgeTextColor: { light: "white", dark: "white" },
         badgeBackgroundColor: { light: "tomato", dark: "tomato" },
         badgeBorderColor: { light: "red", dark: "red" },
-        testimonial: `Studying mining engineering might help me to find the
-            treasures I am always looking for in people's words. I am here
-            to experience and enjoy working in a non-profit organization
-            and let unwritten books get read.`,
+        starColor: { light: "#fc3512", dark: "#fc3512" },
+        testimonial: `fatemehQuote`,
     },
 
     /* ======================== Reihaneh Ghoroghchian ======================== */
@@ -62,14 +57,10 @@ const data = [
         profileUrl: `/team/reihaneh-ghoroghchian`,
         badgeText: `Creativity`,
         badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `As an enthusiastic electrical engineering master's student at
-            McGill University, I bring a unique blend of technical
-            expertise and a profound passion for storytelling.
-            Volunteering at TEDx AveLorne is my platform for empowering
-            normal people to share their unique stories, bringing about
-            positive changes through the magic of ideas.`,
+        badgeBackgroundColor: { light: "#f558bd", dark: "#f558bd" },
+        badgeBorderColor: { light: "#d10287", dark: "#d10287" },
+        starColor: { light: "#db028e", dark: "#db028e" },
+        testimonial: `reihanehQuote`,
     },
 
     /* ======================== Fathima Nihatha Lathiff ======================== */
@@ -80,11 +71,10 @@ const data = [
         profileUrl: `/team/fathima-nihatha-lathiff`,
         badgeText: `Operation`,
         badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `Each individual possesses unique knowledge, and when combined, these knowledge 
-        silos can create great wonders. Knowledge is valuable in any domain, which is why I joined TEDxAveLorne: 
-        to connect with knowledgeable people, share ideas, and continuously improve myself!`,
+        badgeBackgroundColor: { light: "#02bdaf", dark: "#02bdaf" },
+        badgeBorderColor: { light: "#01877d", dark: "#01877d" },
+        starColor: { light: "#00ab9e", dark: "#00ab9e" },
+        testimonial: `fathimaQuote`,
     },
 
     /* ======================== Hamidreza Ermagan ======================== */
@@ -97,11 +87,8 @@ const data = [
         badgeTextColor: { light: "white", dark: "white" },
         badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
         badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `So excited to be part of the TEDxAveLorne team! I'm passionate
-            about both communicating science to a broad audience and being
-            part of the committees and clubs that promotes it. Look
-            forward to sharing innovative ideas for a more sustainable
-            world.`,
+        starColor: { light: "#0471db", dark: "#0471db" },
+        testimonial: `hamidrezaQuote`,
     },
 
     /* ======================== Baharan Nouriinanloo ======================== */
@@ -112,12 +99,10 @@ const data = [
         profileUrl: `/team/baharan-nouriinanloo/`,
         badgeText: `Marketing`,
         badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `I am a Deep Learning-focused Software Engineer on a quest for
-            innovative patterns and ideas. I enjoy sharing knowledge and
-            am eager to inspire at TEDx events. Let's embark on this
-            journey of ideas together.`,
+        badgeBackgroundColor: { light: "#904FF7", dark: "#904FF7" },
+        badgeBorderColor: { light: "#4d02c4", dark: "#4d02c4" },
+        starColor: { light: "#7611d4", dark: "#7611d4" },
+        testimonial: `baharanQuote`,
     },
 
     /* ======================== Melika Seyedi ======================== */
@@ -127,14 +112,11 @@ const data = [
         avatarUrl: `${melikaBG}`,
         profileUrl: `/team/melika-seyedi/`,
         badgeText: `Sponsorship`,
-        badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `As a Colincordia University PhD student in Computer Engineering,
-            I'm excited to lead TEDxAvelorne's marketing for sponsorships,
-            merging tech passion with networking skills to enhance
-            partnerships and create memorable experiences for our audience
-            and sponsors.`,
+        badgeTextColor: { light: "black", dark: "black" },
+        badgeBackgroundColor: { light: "#05ff26", dark: "#05ff26" },
+        badgeBorderColor: { light: "#00b318", dark: "#00b318" },
+        starColor: { light: "#05ab1b", dark: "#21bf36" },
+        testimonial: `melikaQuote`,
     },
 
     /* ======================== Mohammad Zaid ======================== */
@@ -144,11 +126,11 @@ const data = [
         avatarUrl: `${mohammadBG}`,
         profileUrl: `/team/mohammad-zaid`,
         badgeText: `Content Creator`,
-        badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `To share my skills and help friends in creating something
-            meaningful.`,
+        badgeTextColor: { light: "black", dark: "black" },
+        badgeBackgroundColor: { light: "#02fafa", dark: "#02fafa" },
+        badgeBorderColor: { light: "#02b3b3", dark: "#02b3b3" },
+        starColor: { light: "#00cddb", dark: "#00cddb" },
+        testimonial: `mohammadQuote`,
     },
 
     /* ======================== Mina Taraghi ======================== */
@@ -159,10 +141,10 @@ const data = [
         profileUrl: `/team/mina-taraghi`,
         badgeText: `Marketing`,
         badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `To meet new people, new ideas, new opportunities and
-            contribute to my community in Montreal!`,
+        badgeBackgroundColor: { light: "#f04f4f", dark: "#f04f4f" },
+        badgeBorderColor: { light: "#de0000", dark: "#de0000" },
+        starColor: { light: "#de0000", dark: "#de0000" },
+        testimonial: `minaQuote`,
     },
 
     /* ======================== Motahareh Pourrahimi ======================== */
@@ -175,11 +157,8 @@ const data = [
         badgeTextColor: { light: "white", dark: "white" },
         badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
         badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `TED greatly affected my career trajectory. Watching a TED talk
-            on expanding human senses turned my interest from the galaxies
-            of stars above my head to the galaxies of neurons inside it.
-            So, I joined TEDxAveLorne as a curator to help craft talks
-            that could similarly inspire and impact others.`,
+        starColor: { light: "#0471db", dark: "#0471db" },
+        testimonial: `motaharehQuote`,
     },
 
     /* ======================== Aryana Haghjoo ======================== */
@@ -190,13 +169,10 @@ const data = [
         profileUrl: `/team/aryana-haghjoo`,
         badgeText: `Curation`,
         badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `As a scientist, I am always eager to hear different ideas in
-            diverse fields. Moreover, I am interested in learning how to
-            give effective talks and keep my audience engaged. Therefore,
-            I joined the TEDxAveLorne curation team to help the speakers
-            on their journey to prepare their talks!`,
+        badgeBackgroundColor: { light: "#f520c0", dark: "#f520c0" },
+        badgeBorderColor: { light: "#c40093", dark: "#c40093" },
+        starColor: { light: "#d91caa", dark: "#d91caa" },
+        testimonial: `aryanaQuote`,
     },
 
     /* ======================== Pegah Einakchi ======================== */
@@ -206,11 +182,11 @@ const data = [
         avatarUrl: `${pegahBG}`,
         profileUrl: `/team/pegah-einakchi`,
         badgeText: `Creativity`,
-        badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `To be part of a group of people interested in spreading ideas
-            despite all the difficulties.`,
+        badgeTextColor: { light: "black", dark: "black" },
+        badgeBackgroundColor: { light: "#14faa9", dark: "#14faa9" },
+        badgeBorderColor: { light: "#24c98f", dark: "#24c98f" },
+        starColor: { light: "#20b37f", dark: "#12c989" },
+        testimonial: `pegahQuote`,
     },
 
     /* ======================== Royan Jafari ======================== */
@@ -221,9 +197,10 @@ const data = [
         profileUrl: `/team/royan-jafari`,
         badgeText: `Content Creator`,
         badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `Coming soon.. Stay tuned for an intriguing biography!`,
+        badgeBackgroundColor: { light: "#ff9500", dark: "#ff9500" },
+        badgeBorderColor: { light: "#db6002", dark: "#db6002" },
+        starColor: { light: "#db6002", dark: "#db6002" },
+        testimonial: `royanQuote`,
     },
 
     /* ======================== Zahra Ahmadi ======================== */
@@ -234,11 +211,10 @@ const data = [
         profileUrl: `/team/zahra-ahmadi`,
         badgeText: `Content Creator`,
         badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `I always believe in the power of words. I think a TED talk is
-                a great place to let powerful words incline people's minds to
-                move, act, or make a new life-saving decision!`,
+        badgeBackgroundColor: { light: "#cf6bfa", dark: "#cf6bfa" },
+        badgeBorderColor: { light: "#9502d4", dark: "#9502d4" },
+        starColor: { light: "#a619e3", dark: "#a619e3" },
+        testimonial: `zahraQuote`,
     },
 
     /* ======================== Edwin Meriaux ======================== */
@@ -248,10 +224,11 @@ const data = [
         avatarUrl: `${edwinBG}`,
         profileUrl: `/team/edwin-meriaux`,
         badgeText: `Curation`,
-        badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `Coming soon.. Stay tuned for an intriguing biography!`,
+        badgeTextColor: { light: "black", dark: "black" },
+        badgeBackgroundColor: { light: "#d6ed3b", dark: "#d6ed3b" },
+        badgeBorderColor: { light: "#a8bf08", dark: "#a8bf08" },
+        starColor: { light: "#9cb302", dark: "#9cb302" },
+        testimonial: `edwinQuote`,
     },
 
     /* ======================== Gezal Najafi ======================== */
@@ -262,9 +239,10 @@ const data = [
         profileUrl: `/team/gezal-najafi`,
         badgeText: `Operation`,
         badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `Coming soon.. Stay tuned for an intriguing biography!`,
+        badgeBackgroundColor: { light: "#e80589", dark: "#e80589" },
+        badgeBorderColor: { light: "#b30068", dark: "#b30068" },
+        starColor: { light: "#b30068", dark: "#b30068" },
+        testimonial: `gezalQuote`,
     },
 
     /* ======================== Mohammad Amin Shamshiri ======================== */
@@ -274,13 +252,11 @@ const data = [
         avatarUrl: `${aminBG}`,
         profileUrl: `/team/amin-shamshiri`,
         badgeText: `Webmaster`,
-        badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `I'm here at TEDxAvelorne to spark groundbreaking ideas. As a Concordia University 
-        master's grad in computer science, being part of this team allows me to channel my passion into 
-        creating a digital platform that mirrors TEDxAvelorne's spirit of innovation. Let's craft an 
-        unforgettable experience for our audience and speakers!`,
+        badgeTextColor: { light: "black", dark: "black" },
+        badgeBackgroundColor: { light: "#16F8B6", dark: "#16F8B6" },
+        badgeBorderColor: { light: "#02c28a", dark: "#02c28a" },
+        starColor: { light: "#02c48a", dark: "#02c48a" },
+        testimonial: `aminQuote`,
     },
 
     /* ======================== Mohammaderfan Mohit ======================== */
@@ -291,14 +267,10 @@ const data = [
         profileUrl: `/team/mohammaderfan-mohit`,
         badgeText: `Operation`,
         badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "dodgerblue", dark: "dodgerblue" },
-        badgeBorderColor: { light: "blue", dark: "blue" },
-        testimonial: `Being a student for a long time, I have always been excited to
-                hear novel ideas. Working with the TEDxAveLorne team has been
-                an incredible opportunity to not only absorb fresh
-                perspectives but also contribute to the spread of
-                groundbreaking ideas. It has been a rewarding journey of
-                growth, learning, and inspiration!`,
+        badgeBackgroundColor: { light: "#cd04db", dark: "#cd04db" },
+        badgeBorderColor: { light: "#7d0296", dark: "#9902a3" },
+        starColor: { light: "#cf02c3", dark: "#cf02c3" },
+        testimonial: `erfanQuote`,
     },
 ];
 

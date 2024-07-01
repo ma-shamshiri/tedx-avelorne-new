@@ -8,6 +8,7 @@ import { saminBG, fatemehBG, aminBG } from "../../assets";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import data from "./teamCarouselData";
+import { useTranslation } from 'react-i18next';
 
 interface ArrowProps {
     className?: string;
@@ -19,7 +20,7 @@ const SampleNextArrow: React.FC<ArrowProps> = ({ className, style, onClick }) =>
         <Box
             className="slick-arrow"
             position="absolute"
-            right="-70px"
+            right={{ base: "-37px", lg: "-70px" }}
             top="50%"
             transform="translateY(-50%)"
             display="block"
@@ -40,7 +41,7 @@ const SamplePrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) =>
         <Box
             className="slick-arrow"
             position="absolute"
-            left="-70px"
+            left={{ base: "-37px", lg: "-70px" }}
             top="50%"
             transform="translateY(-50%)"
             display="block"
@@ -54,6 +55,8 @@ const SamplePrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) =>
 
 
 export const BlockTeamCarousel: React.FC = () => {
+    const { t } = useTranslation();
+
     const [centerSlide, setCenterSlide] = useState<number>(0);
 
     const settings = {
@@ -73,38 +76,37 @@ export const BlockTeamCarousel: React.FC = () => {
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
         appendDots: (dots: React.ReactNode) => (
-            <div
-              style={{
-                padding: '10px',
-              }}
+            <Box
+                padding="10px"
+                position="absolute"
+                bottom={{ base: "-100", lg: "-59" }}
             >
-              <ul style={{ margin: '0px' }}>{dots}</ul>
-            </div>
-          ),
-          customPaging: (i: number) => (
+                <Box margin="0">{dots}</Box>
+            </Box>
+        ),
+        customPaging: (i: number) => (
             <div
-              style={{
-                width: '30px',
-                height: '30px',
-                borderRadius: '50%',
-                backgroundColor: i === centerSlide ? 'black' : '#ccc',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <span
                 style={{
-                  width: '10px',
-                  height: '10px',
-                  borderRadius: '50%',
-                  backgroundColor: i === centerSlide ? 'white' : 'black',
+                    width: '15px',
+                    height: '15px',
+                    borderRadius: '100%',
+                    backgroundColor: i === centerSlide ? 'gold' : '#904FF7',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                 }}
-              ></span>
+            >
+                <span
+                    style={{
+                        width: '7px',
+                        height: '7px',
+                        borderRadius: '50%',
+                        backgroundColor: i === centerSlide ? 'black' : '#0E0E29',
+                    }}
+                ></span>
             </div>
-          ),
+        ),
         responsive: [
-
             {
                 breakpoint: 1400,
                 settings: {
@@ -117,10 +119,9 @@ export const BlockTeamCarousel: React.FC = () => {
     };
     return (
         <Box
-            width={{ base: "78%", md: "30%", lg: "60%", xl: "75%" }}
+            width={{ base: "95%", md: "50%", lg: "60%", xl: "85%" }}
             marginX="auto"
             padding="2rem"
-            border="1px solid red"
         >
             <Slider
                 {...settings}
@@ -131,6 +132,7 @@ export const BlockTeamCarousel: React.FC = () => {
                         padding={{ base: "0", lg: "1rem" }}
                         transition="opacity 0.6s ease"
                         opacity={centerSlide === index ? 1 : 0.2}
+                        width="100%"
                     >
                         <CarouselCard
                             name={d.name}
@@ -141,7 +143,8 @@ export const BlockTeamCarousel: React.FC = () => {
                             badgeTextColor={d.badgeTextColor}
                             badgeBackgroundColor={d.badgeBackgroundColor}
                             badgeBorderColor={d.badgeBorderColor}
-                            testimonial={d.testimonial}
+                            starColor={d.starColor}
+                            testimonial={t(d.testimonial)}
                         />
                     </Box>
                 ))}
