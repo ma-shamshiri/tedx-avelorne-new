@@ -25,7 +25,7 @@ export const KBarWrapper = (props: KBarWrapperProps) => {
     return (
         <KBarProvider actions={initialActions}>
             <KBarPortal>
-                <KBarPositioner style={{ backdropFilter: "blur(4px)" }}>
+                <KBarPositioner style={{ backdropFilter: "blur(4px)", zIndex: 9999 }}>
                     <Box
                         as={KBarAnimator}
                         position="absolute"

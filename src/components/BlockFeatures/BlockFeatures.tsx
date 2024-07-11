@@ -199,6 +199,7 @@ export const BlockFeatures: React.FC = () => {
 
   return (
     <Box
+      id="more-info-section"
       className="block block--dark aos-animate"
       // bg={useColorModeValue("#F5DEB3	", "gray.800")}
       bg={useColorModeValue("#F0E2B6	", "gray.800")}
@@ -209,7 +210,7 @@ export const BlockFeatures: React.FC = () => {
       <Box
         className="block container"
         padding="6rem 2rem"
-        maxWidth={{ md:"70rem", lg: "100rem", xl: "105rem" }}
+        maxWidth={{ md: "70rem", lg: "100rem", xl: "105rem" }}
         margin="0 auto"
         justifyContent="center"
         alignItems="center"

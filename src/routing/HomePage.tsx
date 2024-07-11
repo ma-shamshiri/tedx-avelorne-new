@@ -4,8 +4,7 @@ import { BlockFooter } from "../components/BlockFooter"
 import { BlockHeroHome } from "../components/BlockHeroHome";
 import { BlockStatistics } from "../components/BlockStatistics";
 import { Navigationbar } from "../components/Navigationbar";
-import { Container } from "../components/layout";
-import { Box } from "@chakra-ui/react";
+import { BlockScrollingText } from "../components/BlockScrollingText";
 
 const HomePage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,10 +19,10 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      {/* <Container /> */}
       <Navigationbar />
       <BlockHeroHome />
       <BlockStatistics />
+      <BlockScrollingText />
       <BlockFeatures />
       <BlockFooter />
     </>
