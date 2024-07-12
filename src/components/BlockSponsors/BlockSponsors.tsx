@@ -49,14 +49,11 @@ export const BlockSponsors: React.FC = () => {
 
   return (
     <Box
-      className="block block--dark block--skewed-right block-showcase aos-animate"
+      // className="block block--dark block--skewed-right block-showcase aos-animate"
       padding="6rem 2rem"
       paddingTop={{ base: "5rem", lg: "10rem" }}
       paddingBottom={{ base: "5rem", lg: "10rem" }}
       bg={useColorModeValue("#EFE8D6", "#0D1224")}
-      color="#16F8B6"
-      // data-aos="fade-up"
-      // data-aos-duration="500"
       overflow={"hidden"}
     >
       <Box
@@ -89,8 +86,16 @@ export const BlockSponsors: React.FC = () => {
           {t("sponsorPageSubTitle")}
         </Text>
 
-        <BlockSponsorsCarousel />
 
+      </Box>
+      <Box
+        className="block__header container aos-animate"
+        textAlign="center"
+        margin="0 auto"
+        data-aos="fade-up"
+        data-aos-duration="600"
+      >
+        <BlockSponsorsCarousel />
       </Box>
     </Box>
   );

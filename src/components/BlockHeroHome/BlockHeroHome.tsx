@@ -19,7 +19,7 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import HeroEventCard from "./HeroEventCard";
-import { event2024, heroimage, mountainsImage, planetsImage, starsImage, sunImage } from "../../assets";
+import { event2024, heroimage, mountainsImage, planetsImage, starsImage, sunImage, sliderImage1 } from "../../assets";
 import { Link as ScrollLink } from 'react-scroll';
 import { CgEventbrite } from "react-icons/cg";
 import { SiTed } from "react-icons/si";
@@ -239,7 +239,7 @@ export const BlockHeroHome: React.FC = () => {
               handleHover={() => handleHover(1)}
               handleUnhover={() => handleUnhover(1)}
               eventPageHref={"/tedx-2023/"}
-              eventImageHref={heroimage}
+              eventImageHref={sliderImage1}
               titleText={t("stepIntoThePast")}
               subtitleText={"2023 Edition!"}
               topBorderColor={

@@ -31,7 +31,7 @@ const SampleNextArrow: React.FC<ArrowProps> = ({ className, style, onClick }) =>
         >
             <MdKeyboardArrowRight
                 size={useBreakpointValue({ base: "30px", lg: "65px" })}
-                color={useColorModeValue("red", "white")}
+                color={useColorModeValue("black", "white")}
             />
         </Box>
     );
@@ -52,7 +52,7 @@ const SamplePrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) =>
         >
             <MdKeyboardArrowLeft
                 size={useBreakpointValue({ base: "30px", lg: "65px" })}
-                color={useColorModeValue("red", "white")}
+                color={useColorModeValue("black", "white")}
             />
         </Box>
     );
@@ -75,7 +75,7 @@ export const BlockSponsorsCarousel: React.FC = () => {
         // speed: 2000,
         // autoplaySpeed: 2000,
         speed: 800,
-        // pauseOnHover: false,
+        pauseOnHover: false,
         // focusOnSelect: true,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
@@ -120,7 +120,7 @@ export const BlockSponsorsCarousel: React.FC = () => {
                         width: '7px',
                         height: '7px',
                         borderRadius: '50%',
-                        backgroundColor: i === centerSlide ? 'black' : '#0E0E29',
+                        backgroundColor: i === centerSlide ? 'black' : '#5e5e5e',
                     }}
                 ></span>
             </div>

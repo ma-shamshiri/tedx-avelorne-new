@@ -1,3 +1,4 @@
+// import testimonial from "./assets/images/testimonial.jpg";
 import alina from "./assets/images/Alina.webp";
 import amin from "./assets/images/Amin-removedBG.webp";
 import aminBadge from "./assets/images/badge-webmaster.webp";
@@ -79,6 +80,16 @@ import samin from "./assets/images/Samin-removedBG.webp";
 import saminBadge from "./assets/images/badge-organizer.webp";
 import saminBG from "./assets/images/Samin.webp";
 import shaygraphy from "./assets/images/Shaygraphy.webp";
+import sliderImage1 from "./assets/images/sliderImage1.webp";
+import sliderImage10 from "./assets/images/sliderImage10.webp";
+import sliderImage2 from "./assets/images/sliderImage2.webp";
+import sliderImage3 from "./assets/images/sliderImage3.webp";
+import sliderImage4 from "./assets/images/sliderImage4.webp";
+import sliderImage5 from "./assets/images/sliderImage5.webp";
+import sliderImage6 from "./assets/images/sliderImage6.webp";
+import sliderImage7 from "./assets/images/sliderImage7.webp";
+import sliderImage8 from "./assets/images/sliderImage8.webp";
+import sliderImage9 from "./assets/images/sliderImage9.webp";
 import speaker from "./assets/images/speaker.jpg";
 import speakerBackgroundImage from "./assets/images/woman-at-stage1.webp";
 import sponsor from "./assets/images/sponsor.webp";
@@ -91,7 +102,6 @@ import tedx from "./assets/images/tedx.webp";
 import tedxavelorne from "./assets/images/tedxavelorne.webp";
 import tedxBlack from "./assets/images/tedxBlack.png";
 import tedxWhite from "./assets/images/tedxWhite.png";
-// import testimonial from "./assets/images/testimonial.jpg";
 import tickImage from "./assets/images/tick.svg";
 import unknownGirlProfile from "./assets/images/unknownGirlProfile.jpg";
 import unknownProfile from "./assets/images/unknown.webp";
@@ -186,6 +196,16 @@ export {
     saminBadge,
     saminBG,
     shaygraphy,
+    sliderImage1,
+    sliderImage10,
+    sliderImage2,
+    sliderImage3,
+    sliderImage4,
+    sliderImage5,
+    sliderImage6,
+    sliderImage7,
+    sliderImage8,
+    sliderImage9,
     speaker,
     speakerBackgroundImage,
     sponsor,
