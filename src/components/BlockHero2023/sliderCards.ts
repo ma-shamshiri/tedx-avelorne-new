@@ -37,47 +37,47 @@ export const sliderCards: SliderCard[] = [
     },
     {
         title: 'Alina Gutierrez Mejia',
-        text: "Let Me Draw What I Mean | Alina Gutierrez Mejia | TEDxAveLorne",
+        text: "Let Me Draw What I Mean",
         image: sliderImage2,
     },
     {
         title: 'Alina Gutierrez Mejia',
-        text: "Let Me Draw What I Mean | Alina Gutierrez Mejia | TEDxAveLorne",
+        text: "Let Me Draw What I Mean",
         image: sliderImage3,
     },
     {
         title: 'Flore Deshayes',
-        text: "La pouvoir du silence dans nos interactions humaines | Flore Deshayes | TEDxAveLorne",
+        text: "La pouvoir du silence dans nos interactions humaines",
         image: sliderImage4,
     },
     {
         title: 'Flore Deshayes',
-        text: "La pouvoir du silence dans nos interactions humaines | Flore Deshayes | TEDxAveLorne",
+        text: "La pouvoir du silence dans nos interactions humaines",
         image: sliderImage5,
     },
     {
         title: 'Kira Dolhan',
-        text: "Personal strength is not always so personal | Kira Dolhan | TEDxAveLorne",
+        text: "Personal strength is not always so personal",
         image: sliderImage6,
     },
     {
         title: 'Kira Dolhan',
-        text: "Personal strength is not always so personal | Kira Dolhan | TEDxAveLorne",
+        text: "Personal strength is not always so personal",
         image: sliderImage7,
     },
     {
         title: 'Leila Kosseim',
-        text: "How can we make computers understand natural language? | Leila Kosseim | TEDxAveLorne",
+        text: "How can we make computers understand natural language?",
         image: sliderImage8,
     },
     {
         title: 'Peggy Bell',
-        text: "Revolutionizing Mining: From Challenges to Empowerment | Peggy Bell | TEDxAveLorne",
+        text: "Revolutionizing Mining: From Challenges to Empowerment",
         image: sliderImage9,
     },
     {
         title: 'Peggy Bell',
-        text: "Revolutionizing Mining: From Challenges to Empowerment | Peggy Bell | TEDxAveLorne",
+        text: "Revolutionizing Mining: From Challenges to Empowerment",
         image: sliderImage10,
     },
 ];

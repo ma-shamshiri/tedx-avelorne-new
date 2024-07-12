@@ -32,7 +32,7 @@ const settings = {
 const EventSlider: React.FC = () => {
   const sliderRef = useRef<Slider | null>(null);
 
-  const arrowIconSize = useBreakpointValue({ lg: '55px' });
+  const arrowIconSize = useBreakpointValue({ base: "45px", lg: '55px' });
   const arrowIconColor = useColorModeValue('black', 'white');
   const hoverArrowIconColor = useColorModeValue('white', 'black');
 
@@ -106,10 +106,9 @@ const EventSlider: React.FC = () => {
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
-            backgroundSize="cover"
+            backgroundSize={{ base: "contain", lg: "cover" }}
             backgroundImage={`url(${card.image})`}
           >
-            {/* <Container size="container.lg" height="600px" position="relative"> */}
             <Stack
               // spacing={6}
               position="absolute"
@@ -135,7 +134,6 @@ const EventSlider: React.FC = () => {
                 {card.text}
               </Text>
             </Stack>
-            {/* </Container> */}
           </Box>
         ))}
       </Slider>
