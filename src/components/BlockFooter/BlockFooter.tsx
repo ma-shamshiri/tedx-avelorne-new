@@ -651,6 +651,7 @@ export const BlockFooter = () => {
                       className="link-arrow"
                       href="https://www.linkedin.com/company/tedxavelorne/"
                       target="_blank"
+                      rel="noopener noreferrer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
@@ -665,6 +666,7 @@ export const BlockFooter = () => {
                       className="link-arrow"
                       href="https://instagram.com/tedxavelorne?igshid=MzRIODBiNWFIZA=="
                       target="_blank"
+                      rel="noopener noreferrer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
@@ -679,6 +681,7 @@ export const BlockFooter = () => {
                       className="link-arrow"
                       href="https://twitter.com/tedxavelorne?=gQ5JPPcDU0I54uaHmdPlew&s=35"
                       target="_blank"
+                      rel="noopener noreferrer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
@@ -766,6 +769,7 @@ export const BlockFooter = () => {
                       className="link-arrow"
                       href="https://www.linkedin.com/company/tedxavelorne/"
                       target="_blank"
+                      rel="noopener noreferrer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
 
@@ -781,6 +785,7 @@ export const BlockFooter = () => {
                       className="link-arrow"
                       href="https://instagram.com/tedxavelorne?igshid=MzRIODBiNWFIZA=="
                       target="_blank"
+                      rel="noopener noreferrer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
 
@@ -796,6 +801,7 @@ export const BlockFooter = () => {
                       className="link-arrow"
                       href="https://twitter.com/tedxavelorne?=gQ5JPPcDU0I54uaHmdPlew&s=35"
                       target="_blank"
+                      rel="noopener noreferrer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
 
@@ -874,6 +880,7 @@ export const BlockFooter = () => {
           as="a"
           href="https://www.linkedin.com/company/tedxavelorne/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <IconButton
             aria-label="linkedin"
@@ -892,6 +899,7 @@ export const BlockFooter = () => {
           as="a"
           href="https://twitter.com/tedxavelorne?=gQ5JPPcDU0I54uaHmdPlew&s=35"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <IconButton
             aria-label="twitter"
@@ -910,6 +918,7 @@ export const BlockFooter = () => {
           as="a"
           href="https://instagram.com/tedxavelorne?igshid=MzRIODBiNWFIZA=="
           target="_blank"
+          rel="noopener noreferrer"
         >
           <IconButton
             aria-label="instagram"
@@ -928,6 +937,7 @@ export const BlockFooter = () => {
           as="a"
           // href="#"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <IconButton
             aria-label="facebook"

@@ -266,7 +266,7 @@ export const BlockTeamProfiles: React.FC<BlockTeamProfilesProps> = ({
                 spacing={{ base: "6", lg: "6" }}
                 justifyContent={"center"}
               >
-                <Box as="a" href={linkedinHref} target="_blank">
+                <Box as="a" href={linkedinHref} target="_blank" rel="noopener noreferrer">
                   <IconButton
                     aria-label="linkedin"
                     variant="ghost"
@@ -282,7 +282,7 @@ export const BlockTeamProfiles: React.FC<BlockTeamProfilesProps> = ({
                     opacity="1"
                   />
                 </Box>
-                <Box as="a" href={twitterHref} target="_blank">
+                <Box as="a" href={twitterHref} target="_blank" rel="noopener noreferrer">
                   <IconButton
                     aria-label="twitter"
                     variant="ghost"
@@ -298,7 +298,7 @@ export const BlockTeamProfiles: React.FC<BlockTeamProfilesProps> = ({
                     opacity="1"
                   />
                 </Box>
-                <Box as="a" href={tedHref} target="_blank">
+                <Box as="a" href={tedHref} target="_blank" rel="noopener noreferrer">
                   <IconButton
                     aria-label="ted"
                     variant="ghost"

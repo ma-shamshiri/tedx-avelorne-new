@@ -142,6 +142,7 @@ const Feature: React.FC<FeatureProps> = ({
         color={useColorModeValue("#fc2d03", "tomato")}
         textTransform="uppercase"
         target="_blank"
+        rel="noopener noreferrer"
         _hover={{
           "::after": {
             marginLeft: "10px",

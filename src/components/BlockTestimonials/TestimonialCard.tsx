@@ -201,7 +201,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                         paddingTop="2rem"
                     //   marginBottom="1rem"
                     >
-                        <Box as="a" href={linkedinHref} target="_blank">
+                        <Box as="a" href={linkedinHref} target="_blank" rel="noopener noreferrer">
                             <IconButton
                                 aria-label="linkedin"
                                 variant="ghost"
@@ -219,6 +219,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                             as="a"
                             //   href={twitterHref}
                             target="_blank"
+                            rel="noopener noreferrer"
                         >
                             <IconButton
                                 aria-label="linkedin"
@@ -235,7 +236,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                                 opacity="1"
                             />
                         </Box>
-                        <Box as="a" href={tedHref} target="_blank">
+                        <Box as="a" href={tedHref} target="_blank" rel="noopener noreferrer">
                             <IconButton
                                 aria-label="linkedin"
                                 variant="ghost"

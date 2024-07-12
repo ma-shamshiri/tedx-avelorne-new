@@ -4,7 +4,7 @@ import { BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 const SocialMediaIcons = () => {
   return (
     <Stack display="flex" flexDirection="row" spacing={6}>
-      <Box as="a" href="#" target="_blank">
+      <Box as="a" href="#" target="_blank" rel="noopener noreferrer">
         <IconButton
           aria-label="linkedin"
           variant="ghost"
@@ -18,7 +18,7 @@ const SocialMediaIcons = () => {
           boxSize="4rem"
         />
       </Box>
-      <Box as="a" href="#" target="_blank">
+      <Box as="a" href="#" target="_blank" rel="noopener noreferrer">
         <IconButton
           aria-label="linkedin"
           variant="ghost"
@@ -32,7 +32,7 @@ const SocialMediaIcons = () => {
           boxSize="4rem"
         />
       </Box>
-      <Box as="a" href="#" target="_blank">
+      <Box as="a" href="#" target="_blank" rel="noopener noreferrer">
         <IconButton
           aria-label="linkedin"
           variant="ghost"

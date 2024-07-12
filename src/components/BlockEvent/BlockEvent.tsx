@@ -272,6 +272,7 @@ export const BlockEvent: React.FC = () => {
                                     className="btn btn--secondary btn--block"
                                     href="https://www.eventbrite.ca/e/tedxavelorne-you-choose-tickets-690380846697?aff=oddtdtcreator"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     border="2px solid #F04E2D"
                                     borderRadius="15px"
                                     cursor="pointer"

@@ -5,6 +5,7 @@ import { BlockHeroHome } from "../components/BlockHeroHome";
 import { BlockStatistics } from "../components/BlockStatistics";
 import { Navigationbar } from "../components/Navigationbar";
 import { BlockScrollingText } from "../components/BlockScrollingText";
+import { BlockSponsorsCarousel } from "../components/BlockSponsorsCarousel";
 
 const HomePage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);

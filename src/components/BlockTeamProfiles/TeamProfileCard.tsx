@@ -167,7 +167,7 @@ import {
             justifyContent={"center"}
             marginBottom={{ base: "0.3rem", lg: "0.8rem" }}
           >
-            <Box as="a" href={linkedinHref} target="_blank">
+            <Box as="a" href={linkedinHref} target="_blank" rel="noopener noreferrer">
               <IconButton
                 aria-label="linkedin"
                 variant="ghost"
@@ -184,7 +184,7 @@ import {
                 opacity="1"
               />
             </Box>
-            <Box as="a" href={twitterHref} target="_blank">
+            <Box as="a" href={twitterHref} target="_blank" rel="noopener noreferrer">
               <IconButton
                 aria-label="twitter"
                 variant="ghost"
@@ -201,7 +201,7 @@ import {
                 opacity="1"
               />
             </Box>
-            <Box as="a" href={tedHref} target="_blank">
+            <Box as="a" href={tedHref} target="_blank" rel="noopener noreferrer">
               <IconButton
                 aria-label="ted"
                 variant="ghost"
