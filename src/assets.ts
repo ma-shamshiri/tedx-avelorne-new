@@ -223,9 +223,11 @@ import zahra from "./assets/images/Zahra-removedBG.webp";
 import zahraBadge from "./assets/images/badge-content-creator.webp";
 import zahraBG from "./assets/images/Zahra.webp";
 import zproduction from "./assets/images/ZProduction.webp";
+import galleryImage1 from "./assets/images/galleryImage1.webp";
 
 
 export {
+    galleryImage1,
     alina_talk10,
     alina_talk100,
     alina_talk110,

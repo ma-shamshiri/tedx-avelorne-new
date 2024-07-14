@@ -70,8 +70,6 @@ export const BlockScrollingTeamImage: React.FC = () => {
                     position="relative"
                     className="btn btn--secondary btn--block"
                     href="/team/"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     border="2px solid #F04E2D"
                     borderRadius="7px"
                     cursor="pointer"

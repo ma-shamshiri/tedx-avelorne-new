@@ -67,7 +67,6 @@ export const sliderCards: SliderCard[] = [
         text: "How can we make computers understand natural language?",
         image: leila_talk70,
     },
-
     {
         title: 'Flore Deshayes',
         text: "La pouvoir du silence dans nos interactions humaines",
