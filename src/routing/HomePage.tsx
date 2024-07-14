@@ -5,7 +5,7 @@ import { BlockHeroHome } from "../components/BlockHeroHome";
 import { BlockStatistics } from "../components/BlockStatistics";
 import { Navigationbar } from "../components/Navigationbar";
 import { BlockScrollingText } from "../components/BlockScrollingText";
-import { BlockSponsorsCarousel } from "../components/BlockSponsorsCarousel";
+import { ParallaxSection } from "../components/ParallaxSection";
 
 const HomePage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +23,8 @@ const HomePage: React.FC = () => {
       <Navigationbar />
       <BlockHeroHome />
       <BlockStatistics />
-      <BlockScrollingText />
+      <ParallaxSection />
+      {/* <BlockScrollingText /> */}
       <BlockFeatures />
       <BlockFooter />
     </>

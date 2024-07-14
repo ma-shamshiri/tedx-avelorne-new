@@ -96,11 +96,11 @@ export const BlockSponsorsCarousel: React.FC = () => {
         ],
         appendDots: (dots: React.ReactNode) => (
             <Box
-                padding="10px"
                 position="absolute"
-                bottom={{ base: "-61", lg: "-20" }}
+                bottom={{ base: "-61px", lg: "-20" }}
+                padding="10px"
             >
-                <Box margin="0">{dots}</Box>
+                <Box>{dots}</Box>
             </Box>
         ),
         customPaging: (i: number) => (
@@ -143,6 +143,7 @@ export const BlockSponsorsCarousel: React.FC = () => {
                         transition="opacity 0.6s ease"
                         // opacity={centerSlide === index ? 1 : 0.2}
                         width="100%"
+                        marginBottom="3rem"
                     >
                         <CarouselCard
                             imageUrl={d.imageUrl}

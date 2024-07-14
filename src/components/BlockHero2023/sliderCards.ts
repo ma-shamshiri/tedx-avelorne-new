@@ -34,7 +34,7 @@ export const sliderCards: SliderCard[] = [
     },
     {
         title: 'TEDxAveLorne | September 2023',
-        text: "Capturing the moments that made our event unforgettable",
+        text: "Our remarkable speakers at TEDxAveLorne 2023",
         image: event2023Pic1,
     },
     {

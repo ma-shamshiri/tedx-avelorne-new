@@ -1,256 +1,103 @@
-// import React, { useEffect, useState } from 'react';
-// import {
-//     Box,
-//     HStack,
-//     Image,
-//     useColorModeValue
-// } from '@chakra-ui/react';
-// import { scrollingData, TeamMember } from './scrollingData';
-
-// export const BlockScrollingTeamImage: React.FC = () => {
-//     const [offset, setOffset] = useState(0);
-
-//     useEffect(() => {
-//         const handleScroll = () => {
-//             setOffset(window.pageYOffset);
-//         };
-
-//         window.addEventListener('scroll', handleScroll);
-
-//         return () => {
-//             window.removeEventListener('scroll', handleScroll);
-//         };
-//     }, []);
-
-//     return (
-//         <Box
-//             position="relative"
-//             display="flex"
-//             justifyContent="center"
-//             alignItems="center"
-//             bg={useColorModeValue("white", "black")}
-//             height={{ base: "12rem", lg: "25rem" }}
-//             overflow="hidden"
-//         >
-//             {scrollingData.map((member: TeamMember) => (
-//                 <HStack key={member.id} paddingX="2.5rem">
-//                     <Box
-//                         className='carousel_card'
-//                         position="relative"
-//                         width={{ base: "9rem", md: "20rem", lg: "12rem" }}
-//                         height={{ base: "9rem", md: "20rem", lg: "12rem" }}
-//                         borderRadius="100%"
-//                         bg="white"
-//                         border="2px solid"
-//                         borderColor={useColorModeValue("black", "white")}
-//                         _hover={{ textDecoration: "none" }}
-//                         style={{
-//                             transform: `translateX(${offset * -1}px)`, // Adjust factor here for faster horizontal movement
-//                             transition: 'transform 0.6s ease-out', // Smooth transition
-//                         }}
-//                         overflow="hidden"
-//                     >
-//                         <Image
-//                             src={member.imageUrl}
-//                             objectFit="cover"
-//                         />
-//                     </Box>
-//                 </HStack>
-//             ))}
-//         </Box>
-//     );
-// };
-
-import React, { useEffect, useState } from 'react';
-import {
-    Box,
-    HStack,
-    Image,
-    useBreakpointValue,
-    useColorModeValue
-} from '@chakra-ui/react';
-import {
-    TeamMember,
-    scrollingDataFirstRow,
-    scrollingDataSecondRow,
-    scrollingDataThirdRow
-} from './scrollingData';
+import React, { useState } from "react";
+import { Box, Flex, Link, Text, useColorModeValue } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
+import ScrollingTeamImage from "./ScrollingTeamImage";
 
 export const BlockScrollingTeamImage: React.FC = () => {
-    const [offset, setOffset] = useState(0);
+    const { t } = useTranslation();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setOffset(window.pageYOffset);
-        };
+    const [isHoveredButton, setIsHoveredButton] = useState(false);
 
-        window.addEventListener('scroll', handleScroll);
+    const handleHoverButton = () => {
+        setIsHoveredButton(true);
+    };
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    const getImageSize = (index: number) => {
-        const baseSize = index % 2 === 0 ? "10rem" : "12rem";
-        const mdSize = index % 2 === 0 ? "10rem" : "15rem";
-        const lgSize = index % 2 === 0 ? "17rem" : "22rem";
-
-        return { baseSize, mdSize, lgSize };
+    const handleUnHoverButton = () => {
+        setIsHoveredButton(false);
     };
 
     return (
         <Box
-            position="relative"
-            display="flex"
-            flexDirection="column"
-            justifyContent="center"
-            alignItems="center"
+            className="block_scrolling"
+            width="100%"
             bg={useColorModeValue("white", "black")}
+            padding={{ base: "6rem 0rem", lg: "10rem 0rem" }}
             overflow="hidden"
         >
-            {/* First Row */}
+            {/* --------------- SCROLLING HEADER --------------- */}
             <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                width="100%"
+                className="header_container"
+                textAlign="center"
+                paddingBottom={{ base: "0", lg: "2rem" }}
             >
-                {scrollingDataFirstRow.map((member: TeamMember, index: number) => {
-
-                    const { baseSize, mdSize, lgSize } = getImageSize(index);
-
-                    return (
-                        <HStack key={member.id} paddingX="2.5rem">
-                            <Box
-                                className='carousel_card'
-                                position="relative"
-                                width={useBreakpointValue({
-                                    base: baseSize,
-                                    md: mdSize,
-                                    lg: lgSize,
-                                })}
-                                height={useBreakpointValue({
-                                    base: baseSize,
-                                    md: mdSize,
-                                    lg: lgSize,
-                                })}
-                                borderRadius="100%"
-                                bg="white"
-                                border="2px solid"
-                                borderColor={useColorModeValue("black", "white")}
-                                _hover={{ textDecoration: "none" }}
-                                style={{
-                                    transform: `translateX(${offset * -1}px)`, // Adjust factor here for faster horizontal movement
-                                    transition: 'transform 0.6s ease-out', // Smooth transition
-                                }}
-                                overflow="hidden"
-                            >
-                                <Image
-                                    src={member.imageUrl}
-                                    objectFit="cover"
-                                />
-                            </Box>
-                        </HStack>
-                    );
-                })}
+                <Text
+                    className="h2"
+                    color={useColorModeValue("gray.800", "gray.100")}
+                    marginBottom="1rem"
+                    marginTop="0"
+                    fontSize={{ base: "2.8rem", lg: "4rem" }}
+                    fontWeight="bold"
+                    lineHeight="1.1"
+                >
+                    {t("scrollingTeamTitle")}
+                </Text>
+                <Text
+                    className="p"
+                    color={useColorModeValue("gray.700", "gray.200")}
+                    fontSize={{ base: "1.5rem", lg: "2.1rem" }}
+                >
+                    {t("scrollingTeamSubTitle")}
+                </Text>
             </Box>
 
-            {/* Second Row */}
+            {/* --------------- SCROLLING IMAGE --------------- */}
             <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                width="100%"
-                marginTop="4rem"
+                className="block__header"
+                bg={useColorModeValue("white", "black")}
+                paddingTop="8rem"
+                paddingBottom={{ base: "2rem", lg: "4rem" }}
             >
-                {scrollingDataSecondRow.map((member: TeamMember, index: number) => {
-
-                    const { baseSize, mdSize, lgSize } = getImageSize(index);
-
-                    return (
-                        <HStack key={member.id} paddingX="2.5rem">
-                            <Box
-                                className='carousel_card'
-                                position="relative"
-                                width={useBreakpointValue({
-                                    base: baseSize,
-                                    md: mdSize,
-                                    lg: lgSize,
-                                })}
-                                height={useBreakpointValue({
-                                    base: baseSize,
-                                    md: mdSize,
-                                    lg: lgSize,
-                                })}
-                                borderRadius="100%"
-                                bg="white"
-                                border="2px solid"
-                                borderColor={useColorModeValue("black", "white")}
-                                _hover={{ textDecoration: "none" }}
-                                style={{
-                                    transform: `translateX(${offset * 1}px)`, // Adjust factor here for faster horizontal movement
-                                    transition: 'transform 0.6s ease-out', // Smooth transition
-                                }}
-                                overflow="hidden"
-                            >
-                                <Image
-                                    src={member.imageUrl}
-                                    objectFit="cover"
-                                />
-                            </Box>
-                        </HStack>
-                    );
-                })}
+                <ScrollingTeamImage />
             </Box>
 
-            {/* Third Row */}
-            <Box
-                display="flex"
+            <Flex
+                bg={useColorModeValue("white", "black")}
                 justifyContent="center"
                 alignItems="center"
-                width="100%"
-                marginTop="4rem"
+                paddingTop="6rem"
             >
-                {scrollingDataThirdRow.map((member: TeamMember, index: number) => {
-
-                    const { baseSize, mdSize, lgSize } = getImageSize(index);
-
-                    return (
-                        <HStack key={member.id} paddingX="2.5rem">
-                            <Box
-                                className='carousel_card'
-                                position="relative"
-                                width={useBreakpointValue({
-                                    base: baseSize,
-                                    md: mdSize,
-                                    lg: lgSize,
-                                })}
-                                height={useBreakpointValue({
-                                    base: baseSize,
-                                    md: mdSize,
-                                    lg: lgSize,
-                                })}
-                                borderRadius="100%"
-                                bg="white"
-                                border="2px solid"
-                                borderColor={useColorModeValue("black", "white")}
-                                _hover={{ textDecoration: "none" }}
-                                style={{
-                                    transform: `translateX(${offset * -1}px)`,
-                                    transition: 'transform 0.6s ease-out',
-                                }}
-                                overflow="hidden"
-                            >
-                                <Image
-                                    src={member.imageUrl}
-                                    objectFit="cover"
-                                />
-                            </Box>
-                        </HStack>
-                    );
-                })}
-            </Box>
+                <Link
+                    position="relative"
+                    className="btn btn--secondary btn--block"
+                    href="/team/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    border="2px solid #F04E2D"
+                    borderRadius="7px"
+                    cursor="pointer"
+                    fontSize={{ base: "1.8rem", lg: "2rem" }}
+                    padding="1.5rem"
+                    textAlign="center"
+                    whiteSpace="nowrap"
+                    bg="#f04e2d"
+                    color="#fff"
+                    boxShadow="0px 6px 10px rgba(0, 0, 0, 0.2), 0px -6px 10px rgba(0, 0, 0, 0.2)"
+                    display="inline-block"
+                    width={{ base: "20rem", lg: "20rem" }}
+                    _hover={{
+                        border: "0.2rem solid #f75540",
+                        bg: "transparent",
+                        color: "#f04e2d",
+                        boxShadow:
+                            "0px 8px 14px rgba(0, 0, 0, 0.3), 0px -8px 14px rgba(0, 0, 0, 0.3)",
+                    }}
+                    transition="background-color 0.25s ease-out, border 0.25s ease-out, box-shadow 0.25s ease"
+                    onMouseEnter={handleHoverButton}
+                    onMouseLeave={handleUnHoverButton}
+                >
+                    <Text>{t("scrollingTeamButtonLabel")}</Text>
+                </Link>
+            </Flex>
         </Box>
     );
 };
