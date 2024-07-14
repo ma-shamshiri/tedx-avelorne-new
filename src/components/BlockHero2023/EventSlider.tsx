@@ -5,11 +5,10 @@ import {
   Box,
   IconButton,
   Stack,
-  Heading,
   Text,
-  Container,
   useBreakpointValue,
   useColorModeValue,
+  useColorMode,
 } from '@chakra-ui/react';
 import Slider from 'react-slick';
 import { sliderCards } from './sliderCards'; // Import cards from the new file
@@ -17,13 +16,13 @@ import { PiArrowFatLineLeftLight, PiArrowFatLineRightLight } from "react-icons/p
 
 // Settings for the slider
 const settings = {
-  dots: true,
+  dots: false,
   arrows: true,
   fade: true,
   infinite: true,
   autoplay: true,
-  speed: 500,
-  autoplaySpeed: 3500,
+  speed: 1200,
+  autoplaySpeed: 3000,
   pauseOnHover: false,
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -32,9 +31,21 @@ const settings = {
 const EventSlider: React.FC = () => {
   const sliderRef = useRef<Slider | null>(null);
 
+  const { colorMode } = useColorMode();
+
+  const titleColor = useBreakpointValue({
+    base: colorMode === 'dark' ? 'white' : 'gray.800',
+    lg: 'white',
+  });
+
+  const subTitleColor = useBreakpointValue({
+    base: colorMode === 'dark' ? 'white' : 'gray.700',
+    lg: 'white',
+  });
+
   const arrowIconSize = useBreakpointValue({ base: "45px", lg: '55px' });
   const arrowIconColor = useColorModeValue('black', 'white');
-  const hoverArrowIconColor = useColorModeValue('white', 'black');
+  const hoverArrowIconColor = useColorModeValue('#16F8B6', '#16F8B6');
 
   return (
     <Box
@@ -112,13 +123,13 @@ const EventSlider: React.FC = () => {
             <Stack
               // spacing={6}
               position="absolute"
-              top="10%"
+              top="8%"
               left="10%"
             // transform="translate(0, -10%)"
             >
               <Text
-                color="white"
-                fontSize={{ base: '2.1rem', md: '4rem', lg: "5rem" }}
+                color={titleColor}
+                fontSize={{ base: '1.9rem', md: '4rem', lg: "5rem" }}
                 fontWeight="bold"
                 // fontFamily="Chicle', serif"
                 fontFamily="'Acme', sans-serif"
@@ -128,7 +139,7 @@ const EventSlider: React.FC = () => {
                 {card.title}
               </Text>
               <Text
-                color="white"
+                color={subTitleColor}
                 fontSize={{ base: 'md', md: "", lg: '2.5rem' }}
               >
                 {card.text}
