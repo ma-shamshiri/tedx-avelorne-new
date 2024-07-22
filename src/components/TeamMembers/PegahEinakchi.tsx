@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { pegah, pegahBadge } from "../../assets";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const PegahEinakchi: React.FC = () => {
   const { t } = useTranslation();
@@ -57,4 +58,5 @@ const PegahEinakchi: React.FC = () => {
   );
 };
 
+// export default PageTransition(PegahEinakchi);
 export default PegahEinakchi;

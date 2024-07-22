@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Flex, Link, Text, useColorModeValue } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ScrollingTeamImage from "./ScrollingTeamImage";
 
@@ -69,7 +70,9 @@ export const BlockScrollingTeamImage: React.FC = () => {
                 <Link
                     position="relative"
                     className="btn btn--secondary btn--block"
-                    href="/team/"
+                    as={RouterLink}
+                    to={"/team/"}
+                    // href="/team/"
                     border="2px solid #F04E2D"
                     borderRadius="7px"
                     cursor="pointer"

@@ -5,6 +5,8 @@ import { BlockHero2023 } from "../components/BlockHero2023";
 import { BlockScrollingTeamImage } from "../components/BlockScrollingTeamImage";
 import { BlockSponsors } from "../components/BlockSponsors";
 import { Navigationbar } from "../components/Navigationbar";
+import { PageTransition } from "../components/PageTransition";
+import { PageTransition2 } from "../components/PageTransition2";
 
 const Event2023Page: React.FC = () => {
   const [boxLoaded, setBoxLoaded] = useState(false);
@@ -35,4 +37,6 @@ const Event2023Page: React.FC = () => {
   );
 };
 
+// export default PageTransition(Event2023Page);
+// export default PageTransition2(Event2023Page);
 export default Event2023Page;

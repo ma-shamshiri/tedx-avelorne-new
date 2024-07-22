@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { unknownGirlProfile, reihanehBadge } from "../../assets";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const ReihanehGhoroghchian: React.FC = () => {
   const { t } = useTranslation();
@@ -57,4 +58,5 @@ const ReihanehGhoroghchian: React.FC = () => {
   );
 };
 
+// export default PageTransition(ReihanehGhoroghchian);
 export default ReihanehGhoroghchian;

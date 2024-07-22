@@ -7,6 +7,7 @@ import { GiLaptop } from "react-icons/gi";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const BaharanNouriinanloo: React.FC = () => {
   const { t } = useTranslation();
@@ -57,4 +58,5 @@ const BaharanNouriinanloo: React.FC = () => {
   );
 };
 
+// export default PageTransition(BaharanNouriinanloo);
 export default BaharanNouriinanloo;

@@ -7,6 +7,7 @@ import { IoNutritionSharp } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const GezalNajafi: React.FC = () => {
   const { t } = useTranslation();
@@ -57,4 +58,5 @@ const GezalNajafi: React.FC = () => {
   );
 };
 
+// export default PageTransition(GezalNajafi);
 export default GezalNajafi;

@@ -7,6 +7,7 @@ import { motahareh, motaharehBadge } from "../../assets";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const MotaharehPourrahimi: React.FC = () => {
   const { t } = useTranslation();
@@ -57,4 +58,5 @@ const MotaharehPourrahimi: React.FC = () => {
   );
 };
 
+// export default PageTransition(MotaharehPourrahimi);
 export default MotaharehPourrahimi;

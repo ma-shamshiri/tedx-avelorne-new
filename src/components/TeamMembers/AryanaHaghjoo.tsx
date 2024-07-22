@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { SiNeutralinojs } from "react-icons/si";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const AryanaHaghjoo: React.FC = () => {
   const { t } = useTranslation();
@@ -58,4 +59,5 @@ const AryanaHaghjoo: React.FC = () => {
   );
 };
 
+// export default PageTransition(AryanaHaghjoo);
 export default AryanaHaghjoo;

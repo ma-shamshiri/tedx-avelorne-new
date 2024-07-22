@@ -3,6 +3,7 @@ import { BlockFooter } from "../components/BlockFooter";
 import { BlockJoinUsSpeaker } from "../components/BlockJoinUsSpeaker";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../components/Navigationbar";
+import { PageTransition } from "../components/PageTransition";
 
 const JoinUsSpeakerPage: React.FC = () => {
   const [boxLoaded, setBoxLoaded] = useState(false);
@@ -30,4 +31,5 @@ const JoinUsSpeakerPage: React.FC = () => {
     </>
   );
 };
+// export default PageTransition(JoinUsSpeakerPage);
 export default JoinUsSpeakerPage;

@@ -39,12 +39,12 @@ export const BlockStatistics: React.FC = () => {
       overflow={"hidden"}
     >
       <Flex justifyContent="center" alignItems="center">
-        <motion.div
+        {/* <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 150 }}
           animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 150 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-        >
+        > */}
           <Box
             className="block__header container"
             textAlign="center"
@@ -73,12 +73,12 @@ export const BlockStatistics: React.FC = () => {
               {t("statisticsSubTitle")}
             </Text>
             <Center>
-              <motion.div
+              {/* <motion.div
                 ref={ref}
                 initial={{ opacity: 0, y: 150 }}
                 animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 150 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-              >
+              > */}
                 <SimpleGrid
                   columns={{ sm: 2, base: 2, md: 2, lg: 2, xl: 4 }}
                   spacing={{ base: "3rem", lg: "10rem" }}
@@ -215,10 +215,10 @@ export const BlockStatistics: React.FC = () => {
                     numberColor="#FF9F24"
                   />
                 </SimpleGrid>
-              </motion.div>
+              {/* </motion.div> */}
             </Center>
           </Box>
-        </motion.div>
+        {/* </motion.div> */}
       </Flex>
     </Box>
   );

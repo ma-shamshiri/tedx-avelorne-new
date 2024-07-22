@@ -7,6 +7,7 @@ import { hamidreza, hamidrezaBadge } from "../../assets";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const HamidrezaErmagan: React.FC = () => {
   const { t } = useTranslation();
@@ -57,4 +58,5 @@ const HamidrezaErmagan: React.FC = () => {
   );
 };
 
+// export default PageTransition(HamidrezaErmagan);
 export default HamidrezaErmagan;

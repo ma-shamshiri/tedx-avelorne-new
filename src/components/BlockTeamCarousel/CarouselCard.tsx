@@ -11,6 +11,7 @@ import {
     Link,
     useBreakpointValue
 } from '@chakra-ui/react';
+import { Link as RouterLink } from "react-router-dom";
 import Badges from './Badges';
 import { BsPersonLinesFill } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
@@ -217,7 +218,9 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
                         <Link
                             className="button"
                             position="relative"
-                            href={profileUrl}
+                            as={RouterLink}
+                            to={profileUrl}
+                            // href={profileUrl}
                             width={{ base: "50%", lg: "11rem" }}
                             bg="#7B4CF6"
                             color="#fff"

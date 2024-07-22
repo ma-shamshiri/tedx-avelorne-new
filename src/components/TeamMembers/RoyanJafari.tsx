@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { royan, royanBadgeSrc } from "../../assets";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const RoyanJafari: React.FC = () => {
   const { t } = useTranslation();
@@ -57,4 +58,5 @@ const RoyanJafari: React.FC = () => {
   );
 };
 
+// export default PageTransition(RoyanJafari);
 export default RoyanJafari;

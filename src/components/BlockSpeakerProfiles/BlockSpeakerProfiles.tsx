@@ -3,192 +3,208 @@ import {
   Box,
   Flex,
   Image,
+  Link,
   Text,
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import ReactPlayer from "react-player";
 import SpeakerProfileCard from "./SpeakerProfileCard";
-import { backgroundImg, videoThumbnail } from "../../assets";
+import { sliderDataProps } from './sliderData';
+import SpeakerSlider from "./SpeakerSlider";
+import { videoThumbnail } from "../../assets";
 
 interface BlockSpeakerProfilesProps {
-  name: string;
-  position: string;
-  talkTopic: string;
-  imageSrc: string;
-  videoSrc: string;
+  name?: string;
+  title?: string;
+  biography?: string;
+  talkTopic?: string;
+  imageSrc?: string;
+  videoSrc?: string;
+  videoDescription?: string;
+  slides: sliderDataProps[];
 }
 
 export const BlockSpeakerProfiles: React.FC<BlockSpeakerProfilesProps> = ({
   name,
-  position,
+  title,
+  biography,
   talkTopic,
   imageSrc,
-  videoSrc,
+  videoSrc = "",
+  videoDescription = "",
+  slides
 }) => {
   const { t } = useTranslation();
-  const [showVideo, setShowVideo] = useState(true);
+
+  const [isHoveredButton, setIsHoveredButton] = useState(false);
+
+  const handleHoverButton = () => {
+    setIsHoveredButton(true);
+  };
+
+  const handleUnHoverButton = () => {
+    setIsHoveredButton(false);
+  };
 
   return (
-    <Flex
-      direction={{ base: "column", md: "column", lg: "row" }}
-      height={{ base: "auto", lg: "100vh" }}
-      width="100%"
-      overflow="hidden"
+    <Box
       position="relative"
+      // width="100vw"
+      overflow="hidden"
     >
-      {/* Left Section */}
-      <Box
-        className="left-section"
-        flex="1.5"
-        backgroundColor={useColorModeValue("#F1F1F1", "black")}
-        display="flex"
-        flexDirection="column"
+      <SpeakerSlider slides={slides} />
+
+      <SpeakerProfileCard
+        name={name}
+        title={title}
+        imageSrc={imageSrc}
+        biography={biography}
+      />
+
+      <Flex
+        className="video_section_container"
+        position="relative"
+        width="100%"
+        height="fit-content"
+        bg={useColorModeValue("black", "black")}
         justifyContent="center"
         alignItems="center"
-        position="relative"
-        minHeight="100%"
-        marginTop={{ lg: "-30rem" }}
-      >
-        {/* Speaker Profile Card */}
-        <SpeakerProfileCard
-          imageSrc={imageSrc}
-          name={name}
-          position={position}
-          talkTopic={talkTopic}
-        />
-      </Box>
-
-      {/* Right Section */}
-      <Box
-        className="right-section"
-        flex="3"
-        position="relative"
+        paddingY={{ base: "4rem", lg: "6rem" }}
+        flexDirection="column"
         overflow="hidden"
       >
-        <Image
-          className="background-image"
-          src={backgroundImg}
-          alt="Background Image"
-          width="100%"
-          height="100%"
-          objectFit="cover"
-          objectPosition="center"
-        />
-
         <Box
-          className="video_image_outer_container"
-          position="absolute"
-          top="50%"
-          left="50%"
-          transform="translate(-50%, -50%)"
-          width={{ base: "90%", lg: "71rem" }}
-          // zIndex="1"
-          overflow="hidden"
-          borderRadius="2rem"
-          boxShadow="0 0 30px 1px black"
+          className="video_embed_container"
+          position="relative"
+          width={{ base: "90vw", lg: "55vw" }}
+          height={{ base: "50.5vw", lg: "31vw" }}
         >
-          <Box
-            className="video_image_inner_container"
-            width="100%"
-            height="100%"
-            position="relative"
-          >
-            <Image
-              className="vide_thumbnail"
-              src={videoThumbnail}
-              alt="Video Thumbnail Image"
-              objectFit="cover"
-              opacity="0.5"
-              display={videoSrc === "" ? "block" : "none"}
-            />
-            {!showVideo ? (
-              // Display thumbnail if showVideo is false
-              <Box
-                className="video_embed_container"
-                position="relative"
-                width="100%"
-                overflow="hidden"
-                borderRadius="2rem"
-                cursor="pointer"
-                onClick={() => setShowVideo(true)}
-                opacity={"0.1"}
-                display={videoSrc === "" ? "none" : "block"}
-              >
-                <Image
-                  src={videoThumbnail}
-                  alt="Video Thumbnail Image"
-                  objectFit="cover"
-                  opacity="0.5"
-                  width="100%"
-                  height="100%"
-                />
-              </Box>
-            ) : (
-              <Box
-                className="video_embed_container"
-                position="relative"
-                width="100%"
-                paddingBottom="56.25%" // 16:9 aspect ratio
-                overflow="hidden"
-                borderRadius="2rem"
-                display={videoSrc === "" ? "none" : "block"}
-              >
-                <iframe
-                  style={{
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    width: "100%",
-                    height: "100%",
-                    border: "none",
-                  }}
-                  src={videoSrc}
-                  title="Dailymotion Video Player"
-                  allowFullScreen
-                />
-              </Box>
-            )}
-
-            {/* The title is not shown as the zIndex={-1} */}
-            <Box
-              className="title_container"
-              // display="flex"
-              position="absolute"
-              top={0}
-              left={0}
+          {videoSrc !== "" ? (
+            <ReactPlayer
+              className="react-player"
+              url={videoSrc}
+              controls={true}
               width="100%"
               height="100%"
-              bg="white"
-              opacity="0.6"
-              justifyContent="center"
-              alignItems="center"
-              display={videoSrc === "" ? "flex" : "none"}
-              // zIndex={-1}
-            >
-              <VStack>
-                <Text
-                  className="title"
-                  fontSize={{ base: "3rem", lg: "5rem" }}
-                  fontWeight="bold"
-                  color={useColorModeValue("black", "black")}
-                >
-                  {t("videoThumbnailTitle")}
-                </Text>
-                <Text
-                  className="title"
-                  fontSize={{ base: "1.8rem", lg: "3rem" }}
-                  fontWeight="bold"
-                  color={useColorModeValue("black", "black")}
-                >
-                  {t("videoThumbnailSubTitle")}
-                </Text>
-              </VStack>
-            </Box>
-          </Box>
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0
+              }}
+              allowFullScreen
+            />
+          ) : (
+            <>
+              <Image
+                className="video_thumbnail"
+                src={videoThumbnail}
+                alt="Video Thumbnail Image"
+                objectFit="cover"
+                opacity="0.5"
+                borderRadius="20px"
+
+              />
+              <Box
+                className="title_container"
+                position="absolute"
+                top={0}
+                left={0}
+                width="100%"
+                height="100%"
+                bg="white"
+                opacity="0.55"
+                justifyContent="center"
+                alignItems="center"
+                display={videoSrc === "" ? "flex" : "none"}
+                borderRadius="20px"
+              // zIndex={2}
+              >
+                <VStack>
+                  <Text
+                    className="title"
+                    fontSize={{ base: "3rem", lg: "5rem" }}
+                    fontWeight="bold"
+                    color={useColorModeValue("black", "black")}
+                  >
+                    {t("videoThumbnailTitle")}
+                  </Text>
+                  <Text
+                    className="title"
+                    fontSize={{ base: "1.8rem", lg: "3rem" }}
+                    fontWeight="bold"
+                    color={useColorModeValue("black", "black")}
+                  >
+                    {t("videoThumbnailSubTitle")}
+                  </Text>
+                </VStack>
+              </Box>
+            </>
+          )}
         </Box>
-      </Box>
-    </Flex>
+        {videoDescription &&
+          <Box
+            className="video_description"
+            position="relative"
+            display="flex"
+            width="100%"
+            maxWidth={{ base: "90vw", lg: "55vw" }}
+            paddingTop="4rem"
+          >
+            <Text
+              className="speaker_title"
+              fontSize={{ base: "1.5rem", lg: "1.8rem" }}
+              lineHeight={{ base: "", lg: "32px" }}
+              color={useColorModeValue("gray.200", "gray.200")}
+            >
+              {videoDescription}
+            </Text>
+          </Box>
+        }
+
+        <Flex
+          bg={useColorModeValue("black", "black")}
+          justifyContent="center"
+          alignItems="center"
+          paddingTop="6rem"
+          display={{ base: "none", lg: "block" }}
+        >
+          <Link
+            position="relative"
+            className="btn btn--secondary btn--block"
+            as={RouterLink}
+            to={"/videos/"}
+            // href="/videos/"
+            border="2px solid #F04E2D"
+            borderRadius="7px"
+            cursor="pointer"
+            fontSize={{ base: "1.8rem", lg: "2rem" }}
+            padding="1.5rem"
+            textAlign="center"
+            whiteSpace="nowrap"
+            bg="#f04e2d"
+            color="#fff"
+            boxShadow="0px 6px 10px rgba(0, 0, 0, 0.2), 0px -6px 10px rgba(0, 0, 0, 0.2)"
+            display="inline-block"
+            width={{ base: "fit-content", lg: "fit-content" }}
+            _hover={{
+              border: "0.2rem solid #f75540",
+              bg: "transparent",
+              color: "#f04e2d",
+              boxShadow:
+                "0px 8px 14px rgba(0, 0, 0, 0.3), 0px -8px 14px rgba(0, 0, 0, 0.3)",
+            }}
+            transition="background-color 0.25s ease-out, border 0.25s ease-out, box-shadow 0.25s ease"
+            onMouseEnter={handleHoverButton}
+            onMouseLeave={handleUnHoverButton}
+          >
+            <Text>{t("exploreAllTalks")}</Text>
+          </Link>
+        </Flex>
+      </Flex>
+    </Box>
   );
 };
 

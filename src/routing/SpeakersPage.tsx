@@ -4,6 +4,7 @@ import { BlockSpeakerGrid } from "../components/BlockSpeakerGrid";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../components/Navigationbar";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../components/PageTransition";
 
 const SpeakersPage: React.FC = () => {
   const { t } = useTranslation();
@@ -33,4 +34,6 @@ const SpeakersPage: React.FC = () => {
     </>
   );
 };
+
+// export default PageTransition(SpeakersPage);
 export default SpeakersPage;

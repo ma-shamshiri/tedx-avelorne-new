@@ -8,6 +8,7 @@ import { mohammad, mohammadBadge } from "../../assets";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const MohammadZaid: React.FC = () => {
   const { t } = useTranslation();
@@ -58,4 +59,5 @@ const MohammadZaid: React.FC = () => {
   );
 };
 
+// export default PageTransition(MohammadZaid);
 export default MohammadZaid;

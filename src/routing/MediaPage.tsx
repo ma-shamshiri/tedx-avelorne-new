@@ -3,6 +3,7 @@ import { BlockFooter } from "../components/BlockFooter";
 import { BlockGallery } from "../components/BlockGallery";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../components/Navigationbar";
+import { PageTransition } from "../components/PageTransition";
 
 const MediaPage: React.FC = () => {
   const [boxLoaded, setBoxLoaded] = useState(false);
@@ -30,4 +31,5 @@ const MediaPage: React.FC = () => {
     </>
   );
 };
+// export default PageTransition(MediaPage);
 export default MediaPage;

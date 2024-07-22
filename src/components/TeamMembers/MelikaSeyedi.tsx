@@ -8,6 +8,7 @@ import { melika, melikaBadge } from "../../assets";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const MelikaSeyedi: React.FC = () => {
   const { t } = useTranslation();
@@ -58,4 +59,5 @@ const MelikaSeyedi: React.FC = () => {
   );
 };
 
+// export default PageTransition(MelikaSeyedi);
 export default MelikaSeyedi;

@@ -1,12 +1,27 @@
-import { Box, List, ListItem, Text, useColorModeValue, Link as ChakraLink } from "@chakra-ui/react";
+import { Box, List, ListItem, Text, useColorModeValue, Link } from "@chakra-ui/react";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { SubLinksBoxProps } from "./interfaces";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export const SubLinksBox = (props: SubLinksBoxProps) => {
   const { subLinks, extraLinks } = props;
 
   const { t } = useTranslation();
+
+  const navigate = useNavigate();
+
+    const handleNavigation = (link: string) => {
+        if (window.location.hash === link) {
+            // Temporarily remove the hash using history.replaceState
+            history.replaceState(null, '', ' ');
+            // Navigate after a brief delay to ensure the hash is processed
+            setTimeout(() => {
+                navigate(link);
+            }, 0);
+        } else {
+            navigate(link);
+        }
+    };
 
   return (
     <Box
@@ -45,9 +60,16 @@ export const SubLinksBox = (props: SubLinksBoxProps) => {
             cursor="pointer"
             paddingY="3rem"
           >
-            <ChakraLink
-              href={subLink.link}
+            <Link
               className="flex items-center"
+              as={RouterLink}
+              to={subLink.link}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation(subLink.link);
+              }}
+              cursor="pointer"
+              // href={subLink.link}
               _hover={{ textDecoration: 'none' }}
             >
               <Box
@@ -83,7 +105,7 @@ export const SubLinksBox = (props: SubLinksBoxProps) => {
                   {t(subLink.description)}
                 </Text>
               </Box>
-            </ChakraLink>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -92,9 +114,12 @@ export const SubLinksBox = (props: SubLinksBoxProps) => {
           <div className="h-[calc(100%-3em)] my-auto w-[1px] bg-gray-300 dark:bg-gray-700" />
           <ul className="w-56 p-2">
             {extraLinks?.map((extraLink) => (
-              <ChakraLink
-                href={extraLink.link}
+              <Link
                 className="flex items-center w-full"
+                as={RouterLink}
+                to={extraLink.link}
+                cursor="pointer"
+                // href={extraLink.link}
                 _hover={{ textDecoration: 'none' }}
               >
                 <li
@@ -103,7 +128,7 @@ export const SubLinksBox = (props: SubLinksBoxProps) => {
                 >
                   {extraLink.name}
                 </li>
-              </ChakraLink>
+              </Link>
             ))}
           </ul>
         </div>

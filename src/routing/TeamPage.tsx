@@ -4,6 +4,7 @@ import { BlockTeamGrid } from "../components/BlockTeamGrid";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../components/Navigationbar";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../components/PageTransition";
 
 const TeamPage: React.FC = () => {
   const { t } = useTranslation();
@@ -33,4 +34,5 @@ const TeamPage: React.FC = () => {
     </>
   );
 };
+// export default PageTransition(TeamPage);
 export default TeamPage;

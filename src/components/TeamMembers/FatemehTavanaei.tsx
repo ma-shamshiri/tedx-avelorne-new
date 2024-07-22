@@ -7,6 +7,7 @@ import { GiMining } from "react-icons/gi";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const FatemehTavanaei: React.FC = () => {
   const { t } = useTranslation();
@@ -57,4 +58,5 @@ const FatemehTavanaei: React.FC = () => {
   );
 };
 
+// export default PageTransition(FatemehTavanaei);
 export default FatemehTavanaei;

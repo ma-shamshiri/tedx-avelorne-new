@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { useTranslation } from "react-i18next";
 import { zahra, zahraBadge } from "../../assets";
+import { PageTransition } from "../PageTransition";
 
 const ZahraAhmadi: React.FC = () => {
   const { t } = useTranslation();
@@ -57,4 +58,5 @@ const ZahraAhmadi: React.FC = () => {
   );
 };
 
+// export default PageTransition(ZahraAhmadi);
 export default ZahraAhmadi;

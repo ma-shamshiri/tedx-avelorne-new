@@ -9,6 +9,7 @@ import { Navigationbar } from "../Navigationbar";
 import { samin, saminBadge } from "../../assets";
 import { SiNeutralinojs } from "react-icons/si";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const SaminMajidi: React.FC = () => {
   const { t } = useTranslation();
@@ -59,4 +60,5 @@ const SaminMajidi: React.FC = () => {
   );
 };
 
+// export default PageTransition(SaminMajidi);
 export default SaminMajidi;

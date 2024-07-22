@@ -10,34 +10,6 @@ import {
 } from "../../assets";
 
 export const speakerData = [
-    /* ======================== Myra Virgil ======================== */
-    {
-        name: `Myra Virgil`,
-        title: `Philanthropy Executive | Strategist | Storyteller`,
-        avatarUrl: `${myra}`,
-        profileUrl: `/speakers/myra-virgil`,
-        // badgeText: `Organizer`,
-        badgeTextColor: { light: "black", dark: "black" },
-        badgeBackgroundColor: { light: "gold", dark: "gold" },
-        badgeBorderColor: { light: "#b38300", dark: "#b38300" },
-        starColor: { light: "gold", dark: "gold" },
-        testimonial: `myraVirgilQuote`,
-    },
-
-    /* ======================== Kira Dolhan ======================== */
-    {
-        name: `Kira Dolhan`,
-        title: `Search and Rescue Volunteer`,
-        avatarUrl: `${kira}`,
-        profileUrl: `/speakers/kira-dolhan`,
-        // badgeText: `Co-organizer`,
-        badgeTextColor: { light: "white", dark: "white" },
-        badgeBackgroundColor: { light: "tomato", dark: "tomato" },
-        badgeBorderColor: { light: "red", dark: "red" },
-        starColor: { light: "#fc3512", dark: "#fc3512" },
-        testimonial: `kiraDolhanQuote`,
-    },
-
     /* ======================== Flore Deshayes ======================== */
     {
         name: `Flore Deshayes`,
@@ -80,6 +52,36 @@ export const speakerData = [
         testimonial: `andrewChurchilQuote`,
     },
 
+    /* ======================== Myra Virgil ======================== */
+    {
+        name: `Myra Virgil`,
+        title: `Philanthropy Executive | Strategist | Storyteller`,
+        avatarUrl: `${myra}`,
+        profileUrl: `/speakers/myra-virgil`,
+        // badgeText: `Organizer`,
+        badgeTextColor: { light: "black", dark: "black" },
+        badgeBackgroundColor: { light: "gold", dark: "gold" },
+        badgeBorderColor: { light: "#b38300", dark: "#b38300" },
+        starColor: { light: "gold", dark: "gold" },
+        testimonial: `myraVirgilQuote`,
+    },
+
+    /* ======================== Kira Dolhan ======================== */
+    {
+        name: `Kira Dolhan`,
+        title: `Search and Rescue Volunteer`,
+        avatarUrl: `${kira}`,
+        profileUrl: `/speakers/kira-dolhan`,
+        // badgeText: `Co-organizer`,
+        badgeTextColor: { light: "white", dark: "white" },
+        badgeBackgroundColor: { light: "tomato", dark: "tomato" },
+        badgeBorderColor: { light: "red", dark: "red" },
+        starColor: { light: "#fc3512", dark: "#fc3512" },
+        testimonial: `kiraDolhanQuote`,
+    },
+
+
+
     /* ======================== Janet Perlman ======================== */
     {
         name: `Janet Perlman`,
@@ -92,6 +94,20 @@ export const speakerData = [
         badgeBorderColor: { light: "#4d02c4", dark: "#4d02c4" },
         starColor: { light: "#7611d4", dark: "#7611d4" },
         testimonial: `janetPerlmanQuote`,
+    },
+
+    /* ======================== Alina Gutierrez Mejia ======================== */
+    {
+        name: `Alina Gutierrez Mejia`,
+        title: `Graphic Facilitator | Creative Consultant`,
+        avatarUrl: `${alina}`,
+        profileUrl: `/speakers/alina-gutierrez-mejia`,
+        // badgeText: `Content Creator`,
+        badgeTextColor: { light: "black", dark: "black" },
+        badgeBackgroundColor: { light: "#02fafa", dark: "#02fafa" },
+        badgeBorderColor: { light: "#02b3b3", dark: "#02b3b3" },
+        starColor: { light: "#00cddb", dark: "#00cddb" },
+        testimonial: `alinaQuote`,
     },
 
     /* ======================== Peggy Bell ======================== */
@@ -108,19 +124,7 @@ export const speakerData = [
         testimonial: `peggyBellQuote`,
     },
 
-    /* ======================== Alina Gutierrez Mejia ======================== */
-    {
-        name: `Alina Gutierrez Mejia`,
-        title: `Graphic Facilitator | Creative Consultant`,
-        avatarUrl: `${alina}`,
-        profileUrl: `/speakers/alina-gutierrez-mejia`,
-        // badgeText: `Content Creator`,
-        badgeTextColor: { light: "black", dark: "black" },
-        badgeBackgroundColor: { light: "#02fafa", dark: "#02fafa" },
-        badgeBorderColor: { light: "#02b3b3", dark: "#02b3b3" },
-        starColor: { light: "#00cddb", dark: "#00cddb" },
-        testimonial: `alinaQuote`,
-    },
+
 ];
 
 // export default speakerData;

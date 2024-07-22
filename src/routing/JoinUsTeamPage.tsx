@@ -3,6 +3,7 @@ import { BlockFooter } from "../components/BlockFooter";
 import { BlockJoinusTeam } from "../components/BlockJoinusTeam";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../components/Navigationbar";
+import { PageTransition } from "../components/PageTransition";
 
 const JoinUsTeamPage: React.FC = () => {
   const [boxLoaded, setBoxLoaded] = useState(false);
@@ -30,4 +31,5 @@ const JoinUsTeamPage: React.FC = () => {
     </>
   );
 };
+// export default PageTransition(JoinUsTeamPage);
 export default JoinUsTeamPage;

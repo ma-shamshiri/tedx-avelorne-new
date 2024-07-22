@@ -23,6 +23,7 @@ import { event2024, heroimage, mountainsImage, planetsImage, starsImage, sunImag
 import { Link as ScrollLink } from 'react-scroll';
 import { CgEventbrite } from "react-icons/cg";
 import { SiTed } from "react-icons/si";
+import { useLocation } from "react-router-dom";
 
 
 export const BlockHeroHome: React.FC = () => {
@@ -95,8 +96,21 @@ export const BlockHeroHome: React.FC = () => {
 
   useEffect(() => { }, [boxLoaded]);
 
+  const { hash } = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (hash) {
+      const element = document.getElementById(hash.replace('#', ''));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [hash]);
+
+  useEffect(() => {
+    // window.scrollTo(0, 0);
 
     const handleResize = () => {
       setIsLargeScreen(window.innerWidth >= 1024);

@@ -67,7 +67,7 @@ interface NavItem {
     // },
     {
       label: "media",
-      href: "/media/",
+      href: "/photos/",
     },
     {
       label: "joinUs",

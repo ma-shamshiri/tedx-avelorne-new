@@ -8,9 +8,10 @@ import {
   Image,
   List,
   ListItem,
-  Link as ChakraLink,
+  Link,
   useColorMode,
 } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { IconButton, Stack, useColorModeValue } from "@chakra-ui/react";
 import { BsInstagram, BsLinkedin, BsTwitter, BsFacebook } from "react-icons/bs";
@@ -82,15 +83,15 @@ export const BlockFooter = () => {
       // bg="#E04140"
       // bg="#E4593E"
       bg={useColorModeValue("gray.300", "#232323")}
-      // bg={useColorModeValue(
-      //   "linear-gradient(45deg, #685ACD, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)",
-      //   "black"
-      // )}
-      // bg={useColorModeValue(
-      //   "linear-gradient(45deg, #EE8B35, #E4593E, #E04140, #DD2D43, #D7264E, #CC2364, #BE1984)",
-      //   "black"
-      // )}
-      // ------------------------------------------------------------------------------------------
+    // bg={useColorModeValue(
+    //   "linear-gradient(45deg, #685ACD, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)",
+    //   "black"
+    // )}
+    // bg={useColorModeValue(
+    //   "linear-gradient(45deg, #EE8B35, #E4593E, #E04140, #DD2D43, #D7264E, #CC2364, #BE1984)",
+    //   "black"
+    // )}
+    // ------------------------------------------------------------------------------------------
     >
       <Box className="grid grid--1x2" maxWidth="1140px" margin="0 auto">
         <Grid
@@ -131,9 +132,12 @@ export const BlockFooter = () => {
                   paddingLeft="0"
                 >
                   <ListItem className="list__item" paddingBottom="0.5rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/"
+                      as={RouterLink}
+                      to={"/"}
+                      // href="/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.900", "#777")}
@@ -141,12 +145,15 @@ export const BlockFooter = () => {
                       _hover={{ color: "#fff" }}
                     >
                       TED
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="0.5rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/"
+                      as={RouterLink}
+                      to={"/"}
+                      // href="/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
@@ -154,12 +161,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       TEDx
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="0.5rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/"
+                      as={RouterLink}
+                      to={"/"}
+                      // href="/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
@@ -167,16 +177,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       TEDxAveLorne
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
             </Box>
           ) : (
             <Box
-              className={`collapsible footer__section ${
-                column1Expanded ? "collapsible--expanded" : ""
-              }`}
+              className={`collapsible footer__section ${column1Expanded ? "collapsible--expanded" : ""
+                }`}
               padding="2rem"
               borderBottom={{
                 base: `1px solid ${useColorModeValue("#999", "#393939")}`,
@@ -202,9 +211,8 @@ export const BlockFooter = () => {
                   {t("programs")}
                 </Text>
                 <Icon
-                  className={`icon icon--white collapsible__chevron ${
-                    column1Expanded ? "collapsible--expanded" : ""
-                  }`}
+                  className={`icon icon--white collapsible__chevron ${column1Expanded ? "collapsible--expanded" : ""
+                    }`}
                   as={IoIosArrowDropdownCircle}
                   width="40px"
                   height="40px"
@@ -230,9 +238,12 @@ export const BlockFooter = () => {
                   paddingLeft="0"
                 >
                   <ListItem className="list__item" paddingBottom="1rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/"
+                      as={RouterLink}
+                      to={"/"}
+                      // href="/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       textTransform="uppercase"
@@ -240,12 +251,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       TED
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="1rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/"
+                      as={RouterLink}
+                      to={"/"}
+                      // href="/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       textTransform="uppercase"
@@ -253,12 +267,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       TEDx
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/"
+                      as={RouterLink}
+                      to={"/"}
+                      // href="/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       textTransform="uppercase"
@@ -266,7 +283,7 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       TEDxAveLorne
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
@@ -301,22 +318,44 @@ export const BlockFooter = () => {
                   paddingLeft="0"
                 >
                   <ListItem className="list__item" paddingBottom="0.5rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/media/"
+                      as={RouterLink}
+                      to={"/photos"}
+                      // href="/photos/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
-                      {t("media")}
-                    </ChakraLink>
+                      {t("photos")}
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="0.5rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/team/"
+                      as={RouterLink}
+                      to={"/videos"}
+                      // href="/videos/"
+                      cursor="pointer"
+                      fontSize={{ base: "2rem", lg: "1.5rem" }}
+                      // fontWeight="bold"
+                      color={useColorModeValue("gray.800", "#777")}
+                      // textTransform="uppercase"
+                      _hover={{ color: useColorModeValue("#fff", "#fff") }}
+                    >
+                      {t("videos")}
+                    </Link>
+                  </ListItem>
+                  <ListItem className="list__item" paddingBottom="0.5rem">
+                    <Link
+                      className="link-arrow"
+                      as={RouterLink}
+                      to={"/team"}
+                      // href="/team/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
@@ -324,12 +363,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       {t("team")}
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="0.5rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/event/"
+                      as={RouterLink}
+                      to={"/event"}
+                      // href="/event/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
@@ -337,16 +379,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       {t("event")}
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
             </Box>
           ) : (
             <Box
-              className={`collapsible footer__section ${
-                column2Expanded ? "collapsible--expanded" : ""
-              }`}
+              className={`collapsible footer__section ${column2Expanded ? "collapsible--expanded" : ""
+                }`}
               padding="2rem"
               borderBottom={{
                 base: `1px solid ${useColorModeValue("#999", "#393939")}`,
@@ -372,9 +413,8 @@ export const BlockFooter = () => {
                   SECTION
                 </Text>
                 <Icon
-                  className={`icon icon--white collapsible__chevron ${
-                    column2Expanded ? "collapsible--expanded" : ""
-                  }`}
+                  className={`icon icon--white collapsible__chevron ${column2Expanded ? "collapsible--expanded" : ""
+                    }`}
                   as={IoIosArrowDropdownCircle}
                   width="40px"
                   height="40px"
@@ -400,9 +440,12 @@ export const BlockFooter = () => {
                   paddingLeft="0"
                 >
                   <ListItem className="list__item" paddingBottom="1rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/media/"
+                      as={RouterLink}
+                      to={"/photos"}
+                      // href="/media/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
 
@@ -411,35 +454,39 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       {t("media")}
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="1rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/team/"
+                      as={RouterLink}
+                      to={"/team"}
+                      // href="/team/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-
                       color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       {t("team")}
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/event/"
+                      as={RouterLink}
+                      to={"/event"}
+                      // href="/event/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-
                       color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       {t("event")}
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
@@ -474,10 +521,12 @@ export const BlockFooter = () => {
                   paddingLeft="0"
                 >
                   <ListItem className="list__item" paddingBottom="0.5rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/joinus/team/"
-                      // target="_blank"
+                      as={RouterLink}
+                      to={"/joinus/team"}
+                      // href="/joinus/team/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
@@ -485,12 +534,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       {t("organizers")}
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="0.5rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/joinus/speaker/"
+                      as={RouterLink}
+                      to={"/joinus/speaker"}
+                      // href="/joinus/speaker/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
@@ -498,13 +550,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       {t("speakers")}
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="0.5rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/joinus/sponsor/"
-                      // target="_blank"
+                      as={RouterLink}
+                      to={"/joinus/sponsor"}
+                      // href="/joinus/sponsor/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
@@ -512,16 +566,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       {t("sponsors")}
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
             </Box>
           ) : (
             <Box
-              className={`collapsible footer__section ${
-                column3Expanded ? "collapsible--expanded" : ""
-              }`}
+              className={`collapsible footer__section ${column3Expanded ? "collapsible--expanded" : ""
+                }`}
               padding="2rem"
               borderBottom={{
                 base: `1px solid ${useColorModeValue("#999", "#393939")}`,
@@ -547,9 +600,8 @@ export const BlockFooter = () => {
                   {t("ourCommunity")}
                 </Text>
                 <Icon
-                  className={`icon icon--white collapsible__chevron ${
-                    column3Expanded ? "collapsible--expanded" : ""
-                  }`}
+                  className={`icon icon--white collapsible__chevron ${column3Expanded ? "collapsible--expanded" : ""
+                    }`}
                   as={IoIosArrowDropdownCircle}
                   width="40px"
                   height="40px"
@@ -575,9 +627,12 @@ export const BlockFooter = () => {
                   paddingLeft="0"
                 >
                   <ListItem className="list__item" paddingBottom="1rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/joinus/team/"
+                      as={RouterLink}
+                      to={"/joinus/team"}
+                      // href="/joinus/team/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
@@ -585,13 +640,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       {t("organizers")}
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="1rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/joinus/speaker/"
-                      // target="_blank"
+                      as={RouterLink}
+                      to={"/joinus/speaker"}
+                      // href="/joinus/speaker/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
@@ -599,12 +656,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       {t("speakers")}
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="1rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="/joinus/sponsor/"
+                      as={RouterLink}
+                      to={"/joinus/sponsor"}
+                      // href="/joinus/sponsor/"
+                      cursor="pointer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
                       color={useColorModeValue("gray.800", "#777")}
@@ -612,7 +672,7 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       {t("sponsors")}
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
@@ -647,9 +707,12 @@ export const BlockFooter = () => {
                   paddingLeft="0"
                 >
                   <ListItem className="list__item" paddingBottom="0.5rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="https://www.linkedin.com/company/tedxavelorne/"
+                      as={RouterLink}
+                      to={"https://www.linkedin.com/company/tedxavelorne/"}
+                      cursor="pointer"
+                      // href="https://www.linkedin.com/company/tedxavelorne/"
                       target="_blank"
                       rel="noopener noreferrer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
@@ -659,12 +722,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       LinkedIn
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="0.5rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="https://instagram.com/tedxavelorne?igshid=MzRIODBiNWFIZA=="
+                      as={RouterLink}
+                      to={"https://instagram.com/tedxavelorne?igshid=MzRIODBiNWFIZA=="}
+                      cursor="pointer"
+                      // href="https://instagram.com/tedxavelorne?igshid=MzRIODBiNWFIZA=="
                       target="_blank"
                       rel="noopener noreferrer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
@@ -674,12 +740,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       Instagram
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="0.5rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="https://twitter.com/tedxavelorne?=gQ5JPPcDU0I54uaHmdPlew&s=35"
+                      as={RouterLink}
+                      to={"https://twitter.com/tedxavelorne?=gQ5JPPcDU0I54uaHmdPlew&s=35"}
+                      cursor="pointer"
+                      // href="https://twitter.com/tedxavelorne?=gQ5JPPcDU0I54uaHmdPlew&s=35"
                       target="_blank"
                       rel="noopener noreferrer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
@@ -689,11 +758,14 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       Twitter
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="0.5rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
+                      as={RouterLink}
+                      // to={"#"}
+                      cursor="pointer"
                       // href="#"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
@@ -702,16 +774,15 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       Facebook
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
             </Box>
           ) : (
             <Box
-              className={`collapsible footer__section ${
-                column4Expanded ? "collapsible--expanded" : ""
-              }`}
+              className={`collapsible footer__section ${column4Expanded ? "collapsible--expanded" : ""
+                }`}
               padding="2rem"
               borderBottom={{
                 base: `1px solid ${useColorModeValue("#999", "#393939")}`,
@@ -737,9 +808,8 @@ export const BlockFooter = () => {
                   {t("followUs")}
                 </Text>
                 <Icon
-                  className={`icon icon--white collapsible__chevron ${
-                    column4Expanded ? "collapsible--expanded" : ""
-                  }`}
+                  className={`icon icon--white collapsible__chevron ${column4Expanded ? "collapsible--expanded" : ""
+                    }`}
                   as={IoIosArrowDropdownCircle}
                   width="40px"
                   height="40px"
@@ -765,9 +835,12 @@ export const BlockFooter = () => {
                   paddingLeft="0"
                 >
                   <ListItem className="list__item" paddingBottom="1rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="https://www.linkedin.com/company/tedxavelorne/"
+                      as={RouterLink}
+                      to={"https://www.linkedin.com/company/tedxavelorne/"}
+                      cursor="pointer"
+                      // href="https://www.linkedin.com/company/tedxavelorne/"
                       target="_blank"
                       rel="noopener noreferrer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
@@ -778,43 +851,50 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       LinkedIn
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="1rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="https://instagram.com/tedxavelorne?igshid=MzRIODBiNWFIZA=="
+                      as={RouterLink}
+                      to={"https://instagram.com/tedxavelorne?igshid=MzRIODBiNWFIZA=="}
+                      cursor="pointer"
+                      // href="https://instagram.com/tedxavelorne?igshid=MzRIODBiNWFIZA=="
                       target="_blank"
                       rel="noopener noreferrer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-
                       color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       Instagram
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="1rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
-                      href="https://twitter.com/tedxavelorne?=gQ5JPPcDU0I54uaHmdPlew&s=35"
+                      as={RouterLink}
+                      to={"https://twitter.com/tedxavelorne?=gQ5JPPcDU0I54uaHmdPlew&s=35"}
+                      cursor="pointer"
+                      // href="https://twitter.com/tedxavelorne?=gQ5JPPcDU0I54uaHmdPlew&s=35"
                       target="_blank"
                       rel="noopener noreferrer"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
-
                       color={useColorModeValue("gray.800", "#777")}
                       // textTransform="uppercase"
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       Twitter
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                   <ListItem className="list__item" paddingBottom="1rem">
-                    <ChakraLink
+                    <Link
                       className="link-arrow"
+                      as={RouterLink}
+                      // to={"#"}
+                      cursor="pointer"
                       // href="#"
                       fontSize={{ base: "2rem", lg: "1.5rem" }}
                       // fontWeight="bold"
@@ -823,7 +903,7 @@ export const BlockFooter = () => {
                       _hover={{ color: useColorModeValue("#fff", "#fff") }}
                     >
                       Facebook
-                    </ChakraLink>
+                    </Link>
                   </ListItem>
                 </List>
               </Box>
@@ -840,9 +920,9 @@ export const BlockFooter = () => {
             marginRight={0}
             justifyContent={"center"}
             alignItems={"center"}
-            // marginLeft={{ lg: "-8rem" }}
+          // marginLeft={{ lg: "-8rem" }}
           >
-            <ChakraLink>
+            <Link>
               {/* <Image
                   src={logo}
                   width="6.5rem"
@@ -855,7 +935,7 @@ export const BlockFooter = () => {
                 width={{ lg: "50rem" }}
                 marginBottom="1rem"
               />
-            </ChakraLink>
+            </Link>
             <Text
               className="p footer__copyright"
               marginTop="0"

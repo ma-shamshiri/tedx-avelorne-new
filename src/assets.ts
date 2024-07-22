@@ -1,5 +1,6 @@
 // import testimonial from "./assets/images/testimonial.jpg";
 import alina from "./assets/images/Alina.webp";
+import alina_noBG from "./assets/images/alina_talk60_noBG_cropped.png";
 import alina_talk10 from "./assets/images/alina_talk10.webp";
 import alina_talk100 from "./assets/images/alina_talk100.webp";
 import alina_talk110 from "./assets/images/alina_talk110.webp";
@@ -20,6 +21,7 @@ import amin from "./assets/images/Amin-removedBG.webp";
 import aminBadge from "./assets/images/badge-webmaster.webp";
 import aminBG from "./assets/images/Amin.webp";
 import andrew from "./assets/images/Andrew.webp";
+import andrew_noBG from "./assets/images/andrew_talk70_noBG_cropped.png";
 import andrew_talk10 from "./assets/images/andrew_talk10.webp";
 import andrew_talk100 from "./assets/images/andrew_talk100.webp";
 import andrew_talk110 from "./assets/images/andrew_talk110.webp";
@@ -74,6 +76,7 @@ import fathima from "./assets/images/Fathima-removedBG.webp";
 import fathimaBadge from "./assets/images/badge-operation.webp";
 import fathimaBG from "./assets/images/Fathima.webp";
 import flore from "./assets/images/Flore.webp";
+import flore_noBG from "./assets/images/flore_talk80_noBG_cropped.png";
 import flore_talk10 from "./assets/images/flore_talk10.webp";
 import flore_talk100 from "./assets/images/flore_talk100.webp";
 import flore_talk110 from "./assets/images/flore_talk110.webp";
@@ -94,6 +97,7 @@ import flore_talk60 from "./assets/images/flore_talk60.webp";
 import flore_talk70 from "./assets/images/flore_talk70.webp";
 import flore_talk80 from "./assets/images/flore_talk80.webp";
 import flore_talk90 from "./assets/images/flore_talk90.webp";
+import galleryImage1 from "./assets/images/galleryImage1.webp";
 import gezal from "./assets/images/Gezal-removedBG.webp";
 import gezalBadge from "./assets/images/badge-operation.webp";
 import gezalBG from "./assets/images/Gezal.webp";
@@ -104,6 +108,7 @@ import hamidrezaBadge from "./assets/images/badge-curation.webp";
 import hamidrezaBG from "./assets/images/Hamidreza.webp";
 import heroimage from "./assets/images/heroimage.webp";
 import janet from "./assets/images/Janet.webp";
+import janet_noBG from "./assets/images/janet_talk80_noBG_cropped.png";
 import janet_talk10 from "./assets/images/janet_talk10.webp";
 import janet_talk20 from "./assets/images/janet_talk20.webp";
 import janet_talk30 from "./assets/images/janet_talk30.webp";
@@ -113,6 +118,7 @@ import janet_talk60 from "./assets/images/janet_talk60.webp";
 import janet_talk70 from "./assets/images/janet_talk70.webp";
 import janet_talk80 from "./assets/images/janet_talk80.webp";
 import kira from "./assets/images/Kira.webp";
+import kira_noBG from "./assets/images/kira_talk70_noBG_cropped.png";
 import kira_talk10 from "./assets/images/kira_talk10.webp";
 import kira_talk20 from "./assets/images/kira_talk20.webp";
 import kira_talk30 from "./assets/images/kira_talk30.webp";
@@ -122,6 +128,7 @@ import kira_talk60 from "./assets/images/kira_talk60.webp";
 import kira_talk70 from "./assets/images/kira_talk70.webp";
 import kira_talk80 from "./assets/images/kira_talk80.webp";
 import leila from "./assets/images/Leila.webp";
+import leila_noBG from "./assets/images/leila_talk10_noBG_cropped.png";
 import leila_talk10 from "./assets/images/leila_talk10.webp";
 import leila_talk100 from "./assets/images/leila_talk100.webp";
 import leila_talk110 from "./assets/images/leila_talk110.webp";
@@ -149,6 +156,7 @@ import motaharehBadge from "./assets/images/badge-curation.webp";
 import motaharehBG from "./assets/images/Motahareh.webp";
 import mountainsImage from "./assets/images/mountains.webp";
 import myra from "./assets/images/Myra.webp";
+import myra_noBG from "./assets/images/myra_talk100_noBG_cropped.png";
 import myra_talk10 from "./assets/images/myra_talk10.webp";
 import myra_talk100 from "./assets/images/myra_talk100.webp";
 import myra_talk110 from "./assets/images/myra_talk110.webp";
@@ -167,6 +175,8 @@ import pegah from "./assets/images/Pegah-removedBG.webp";
 import pegahBadge from "./assets/images/badge-creativity.webp";
 import pegahBG from "./assets/images/Pegah.webp";
 import peggy from "./assets/images/Peggy.webp";
+import peggy_noBG1 from "./assets/images/peggy_talk40_noBG_cropped.png";
+import peggy_noBG2 from "./assets/images/peggy_talk120_noBG_cropped.png";
 import peggy_talk10 from "./assets/images/peggy_talk10.webp";
 import peggy_talk100 from "./assets/images/peggy_talk100.webp";
 import peggy_talk110 from "./assets/images/peggy_talk110.webp";
@@ -223,11 +233,10 @@ import zahra from "./assets/images/Zahra-removedBG.webp";
 import zahraBadge from "./assets/images/badge-content-creator.webp";
 import zahraBG from "./assets/images/Zahra.webp";
 import zproduction from "./assets/images/ZProduction.webp";
-import galleryImage1 from "./assets/images/galleryImage1.webp";
 
 
 export {
-    galleryImage1,
+    alina_noBG,
     alina_talk10,
     alina_talk100,
     alina_talk110,
@@ -248,6 +257,7 @@ export {
     amin,
     aminBadge,
     aminBG,
+    andrew_noBG,
     andrew_talk10,
     andrew_talk100,
     andrew_talk110,
@@ -302,6 +312,7 @@ export {
     fathima,
     fathimaBadge,
     fathimaBG,
+    flore_noBG,
     flore_talk10,
     flore_talk100,
     flore_talk110,
@@ -323,6 +334,7 @@ export {
     flore_talk80,
     flore_talk90,
     flore,
+    galleryImage1,
     gezal,
     gezalBadge,
     gezalBG,
@@ -332,6 +344,7 @@ export {
     hamidrezaBadge,
     hamidrezaBG,
     heroimage,
+    janet_noBG,
     janet_talk10,
     janet_talk20,
     janet_talk30,
@@ -341,6 +354,7 @@ export {
     janet_talk70,
     janet_talk80,
     janet,
+    kira_noBG,
     kira_talk10,
     kira_talk20,
     kira_talk30,
@@ -350,6 +364,7 @@ export {
     kira_talk70,
     kira_talk80,
     kira,
+    leila_noBG,
     leila_talk10,
     leila_talk100,
     leila_talk110,
@@ -377,6 +392,7 @@ export {
     motaharehBadge,
     motaharehBG,
     mountainsImage,
+    myra_noBG,
     myra_talk10,
     myra_talk100,
     myra_talk110,
@@ -395,6 +411,8 @@ export {
     pegah,
     pegahBadge,
     pegahBG,
+    peggy_noBG1,
+    peggy_noBG2,
     peggy_talk10,
     peggy_talk100,
     peggy_talk110,

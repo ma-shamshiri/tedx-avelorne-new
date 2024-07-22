@@ -7,6 +7,7 @@ import { GiMining } from "react-icons/gi";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const MohammaderfanMohit: React.FC = () => {
   const { t } = useTranslation();
@@ -57,4 +58,5 @@ const MohammaderfanMohit: React.FC = () => {
   );
 };
 
+// export default PageTransition(MohammaderfanMohit);
 export default MohammaderfanMohit;

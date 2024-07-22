@@ -24,6 +24,8 @@
   import { FaUsers } from "react-icons/fa";
   import { IoDiamond } from "react-icons/io5";
   import { IoIosPeople } from "react-icons/io";
+  import { ImVideoCamera } from "react-icons/im";
+  import { FaPhotoVideo } from "react-icons/fa";
 
   export const navigationLinks = [
     {
@@ -32,21 +34,21 @@
         {
           name: "ted",
           description: "tedSubLabel",
-          link: "/",
+          link: "/#more-info-section",
           color: "red",
           icon: <SiTed size="25px" color="white" />,
         },
         {
           name: "tedx",
           description: "tedxSubtitle",
-          link: "/",
+          link: "/#more-info-section",
           color: "#c40253",
           icon: <FaUniversity size="25px" color="white"/>,
         },
         {
           name: "tedxavelorne",
           description: "tedxavelorneSubtitle",
-          link: "/",
+          link: "/#more-info-section",
           color: "#0a75f0",
           icon: <PiTelevision size="25px" color="white" />,
         },
@@ -102,11 +104,18 @@
       link: "/media",
       subLinks: [
         {
-          name: "media",
-          description: "mediaSubtitle",
-          link: "/media",
-          color: "#d40083",
-          icon: <MdLocalMovies size="25px" color="white" />,
+          name: "videos",
+          description: "videosSubtitle",
+          link: "/videos",
+          color: "#fa7705",
+          icon: <ImVideoCamera size="25px" color="white" />,
+        },
+        {
+          name: "photos",
+          description: "photosSubtitle",
+          link: "/photos",
+          color: "#0217fa",
+          icon: <FaPhotoVideo size="25px" color="white" />,
         },
       ],
     },

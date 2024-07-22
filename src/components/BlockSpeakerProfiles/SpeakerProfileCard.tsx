@@ -1,89 +1,132 @@
-import React, { useState } from "react";
-import { Box, useColorModeValue, Text } from "@chakra-ui/react";
-import { GiOldMicrophone } from "react-icons/gi";
-import { useTranslation } from "react-i18next";
-import FlipCard from "./FlipCard";
+import React from "react";
+import {
+    Box,
+    Flex,
+    Image,
+    Text,
+    VStack,
+    useBreakpointValue,
+    useColorModeValue,
+} from "@chakra-ui/react";
+import { BsChatRightQuoteFill } from "react-icons/bs";
 
 interface SpeakerProfileCardProps {
-  name: string;
-  position: string;
-  talkTopic: string;
-  imageSrc: string;
+    name?: string;
+    title?: string;
+    biography?: string;
+    imageSrc?: string;
 }
 
-const SpeakerProfileCard: React.FC<SpeakerProfileCardProps> = ({
-  name,
-  position,
-  talkTopic,
-  imageSrc,
+export const SpeakerProfileCard: React.FC<SpeakerProfileCardProps> = ({
+    name,
+    title,
+    biography,
+    imageSrc,
 }) => {
-  const { t } = useTranslation();
+    const iconSize = useBreakpointValue({ base: "25px", lg: "55px" });
+    return (
+        <Flex
+            position="relative"
+            direction={{ base: "column", md: "column", lg: "row" }}
+            height={{ base: "auto", lg: "fit-content" }}
+            width="100%"
+            bg={useColorModeValue("white", "black")}
+            overflow="hidden"
+        >
+            {/* Left Section */}
+            <Box
+                className="left-section"
+                position="relative"
+                display="flex"
+                flex={{ base: "1", lg: "1" }}
+            >
+                <Image src={imageSrc} zIndex={1} />
+            </Box>
 
-  const [isFlipped, setIsFlipped] = useState(false);
+            {/* Right Section */}
+            <Box
+                className="right-section"
+                position="relative"
+                display="flex"
+                flex={{ base: "1", lg: "1" }}
+                justifyContent="center"
+                alignItems="center"
+            >
+                <Flex
+                    position="relative"
+                    direction={{ base: "column", md: "column", lg: "column" }}
+                    justifyContent="center"
+                    alignItems="center"
+                    width="100%"
+                    height={{ base: "100%", lg: "100%" }}
+                    zIndex={1}
+                >
+                    {/* Top Section */}
+                    <Box
+                        className="top_section"
+                        position="relative"
+                        display="flex"
+                        flex={{ lg: "1" }}
+                        justifyContent="center"
+                        alignItems="center"
+                        width="100%"
+                        height="100%"
+                    >
+                        <VStack>
+                            <Text
+                                className="speaker_title"
+                                fontSize={{ base: "2.8rem", lg: "4.5rem" }}
+                                fontWeight="bold"
+                                fontFamily="'Acme', sans-serif"
+                                letterSpacing="2px"
+                                textAlign="center"
+                                paddingTop={{ base: "2rem", lg: "0" }}
 
-  const handleCardHover = () => {
-    setIsFlipped(!isFlipped);
-  };
+                                color={useColorModeValue("black", "white")}
+                            >
+                                {name}
+                            </Text>
+                            <Text
+                                className="speaker_title"
+                                fontSize={{ base: "1.4rem", lg: "2rem" }}
+                                textAlign="center"
+                                color={useColorModeValue("black", "white")}
+                                paddingBottom="2rem"
+                            >
+                                {title}
+                            </Text>
+                        </VStack>
+                    </Box>
 
-  return (
-    <>
-      <Box
-        className="profile_image_container"
-        position="relative"
-        margin="2rem 0"
-        width={{ base: "20rem", lg: "35rem" }}
-        height={{ base: "20rem", lg: "35rem" }}
-        overflow="hidden"
-        borderRadius="50%"
-        boxShadow="0 0 30px 1px gray"
-        border="2px solid transparent"
-        _hover={{
-          borderColor: "#16F8B6",
-        }}
-        transition="border-color 0.9s ease-out 0.8s"
-        onMouseEnter={handleCardHover}
-        onMouseLeave={handleCardHover}
-      >
-        {/* <Image
-          className="profile_image"
-          src={imageSrc}
-          alt="Profile Image"
-          objectFit="fill"
-          width="100%"
-          height="100%"
-        /> */}
-        <FlipCard
-          name={t("talkTopic")}
-          title={talkTopic}
-          frontImageHref={imageSrc}
-          backImageHref={imageSrc}
-          objectFit="fill"
-          nameColor={useColorModeValue("gray.700", "gray.100")}
-          titleColor={useColorModeValue("gray.700", "gray.100")}
-          icon={GiOldMicrophone}
-          iconColor={useColorModeValue("black", "#F8F0B3")}
-          imageBackgroundColor={useColorModeValue("#F8F0C6", "#0E041C")}
-        />
-      </Box>
-      <Text
-        fontWeight="bold"
-        color={useColorModeValue("gray.600", "#F8F0C6")}
-        fontSize={{ base: "3rem", lg: "3.5rem" }}
-        marginTop={5}
-      >
-        {name}
-      </Text>
-      <Text
-        fontSize={{ base: "1.8rem", lg: "1.8rem" }}
-        color={useColorModeValue("#F926AE", "#48F380")}
-        marginBottom={10}
-        maxWidth="35rem"
-        textAlign="center"
-      >
-        {position}
-      </Text>
-    </>
-  );
+                    {/* Bottom Section */}
+                    <Box
+                        className="bottom_section"
+                        position="relative"
+                        display="flex"
+                        flex={{ base: "2", lg: "2" }}
+                        maxWidth="75%"
+                        paddingBottom={{ base: "4rem", lg: "0" }}
+                    >
+                        <Text
+                            className="speaker_title"
+                            fontSize={{ base: "1.5rem", lg: "1.8rem" }}
+                            lineHeight={{ base: "initial", lg: "32px" }}
+                            color={useColorModeValue("black", "gray.300")}
+                            letterSpacing={{ base: "initial", lg: "2px" }}
+                            fontFamily="'Literata', serif"
+                        // textAlign="center"
+                        >
+                            <Box as="span" display="inline-block">
+                                <BsChatRightQuoteFill size={iconSize} color="#fc5a03" />
+                            </Box>
+                            {" "}
+                            {biography}
+                        </Text>
+                    </Box>
+                </Flex>
+            </Box>
+        </Flex>
+    );
 };
 
 export default SpeakerProfileCard;

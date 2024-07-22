@@ -7,6 +7,7 @@ import { mina, minaBadge } from "../../assets";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../Navigationbar";
 import { useTranslation } from "react-i18next";
+import { PageTransition } from "../PageTransition";
 
 const MinaTaraghi: React.FC = () => {
   const { t } = useTranslation();
@@ -57,4 +58,5 @@ const MinaTaraghi: React.FC = () => {
   );
 };
 
+// export default PageTransition(MinaTaraghi);
 export default MinaTaraghi;

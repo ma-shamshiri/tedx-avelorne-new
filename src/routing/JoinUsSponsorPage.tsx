@@ -3,6 +3,7 @@ import { BlockFooter } from "../components/BlockFooter";
 import { BlockJoinusSponsor } from "../components/BlockJoinusSponsor";
 import { motion } from "framer-motion";
 import { Navigationbar } from "../components/Navigationbar";
+import { PageTransition } from "../components/PageTransition";
 
 const JoinUsSponsorPage: React.FC = () => {
   const [boxLoaded, setBoxLoaded] = useState(false);
@@ -30,4 +31,5 @@ const JoinUsSponsorPage: React.FC = () => {
     </>
   );
 };
+// export default PageTransition(JoinUsSponsorPage);
 export default JoinUsSponsorPage;

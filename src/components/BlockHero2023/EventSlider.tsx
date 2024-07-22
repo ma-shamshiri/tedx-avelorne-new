@@ -11,7 +11,7 @@ import {
   useColorMode,
 } from '@chakra-ui/react';
 import Slider from 'react-slick';
-import { sliderCards } from './sliderCards'; // Import cards from the new file
+import { sliderData } from './sliderData'; // Import cards from the new file
 import { PiArrowFatLineLeftLight, PiArrowFatLineRightLight } from "react-icons/pi";
 
 // Settings for the slider
@@ -110,7 +110,7 @@ const EventSlider: React.FC = () => {
 
       {/* Slider */}
       <Slider {...settings} ref={sliderRef}>
-        {sliderCards.map((card, index) => (
+        {sliderData.map((slide, index) => (
           <Box
             key={index}
             height={{ base: "65vh", lg: `calc(100vh - 6rem)` }}
@@ -118,7 +118,7 @@ const EventSlider: React.FC = () => {
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize={{ base: "contain", lg: "cover" }}
-            backgroundImage={`url(${card.image})`}
+            backgroundImage={`url(${slide.image})`}
           >
             <Stack
               // spacing={6}
@@ -136,13 +136,13 @@ const EventSlider: React.FC = () => {
                 letterSpacing="1px"
               // fontFamily="'Englebert', cursive"
               >
-                {card.title}
+                {slide.title}
               </Text>
               <Text
                 color={subTitleColor}
                 fontSize={{ base: 'md', md: "", lg: '2.5rem' }}
               >
-                {card.text}
+                {slide.text}
               </Text>
             </Stack>
           </Box>
