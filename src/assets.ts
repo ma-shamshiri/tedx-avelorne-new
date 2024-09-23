@@ -217,6 +217,10 @@ import sponsor from "./assets/images/sponsor.webp";
 import sponsorBackgroundImage from "./assets/images/sponsor-page-bg.webp";
 import starsImage from "./assets/images/stars.webp";
 import sunImage from "./assets/images/sun.webp";
+import teamGroupPic1 from "./assets/images/teamGroupPic1.webp"
+import teamGroupPic2 from "./assets/images/teamGroupPic2.webp"
+import teamGroupPic3 from "./assets/images/teamGroupPic3.webp"
+import teamGroupPic4 from "./assets/images/teamGroupPic4.webp"
 import teamMember from "./assets/images/teamMember.webp";
 import ted from "./assets/images/ted.webp";
 import tedx from "./assets/images/tedx.webp";
@@ -233,7 +237,6 @@ import zahra from "./assets/images/Zahra-removedBG.webp";
 import zahraBadge from "./assets/images/badge-content-creator.webp";
 import zahraBG from "./assets/images/Zahra.webp";
 import zproduction from "./assets/images/ZProduction.webp";
-
 
 export {
     alina_noBG,
@@ -454,6 +457,10 @@ export {
     sponsorBackgroundImage,
     starsImage,
     sunImage,
+    teamGroupPic1,
+    teamGroupPic2,
+    teamGroupPic3,
+    teamGroupPic4,
     teamMember,
     ted,
     tedx,

@@ -45,7 +45,7 @@ export const BlockJoinusSponsor: React.FC = () => {
               <Text
                 className="h2 block__heading"
                 color={useColorModeValue("gray.800", "#fff")}
-                fontSize={{ base: "4rem", lg: "6rem" }}
+                fontSize={{ base: "2.8rem", lg: "4rem" }}
                 fontWeight="bold"
                 lineHeight="1.1"
               >
@@ -55,7 +55,7 @@ export const BlockJoinusSponsor: React.FC = () => {
                 className="p"
                 marginTop={10}
                 color={useColorModeValue("gray.600", "#fff")}
-                fontSize={{ base: "2rem", lg: "2.5rem" }}
+                fontSize={{ base: "1.5rem", lg: "2.1rem" }}
               >
                 {t("joinUsSponsorPageSubTitle")}
               </Text>

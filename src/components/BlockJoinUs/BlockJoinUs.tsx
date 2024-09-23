@@ -60,7 +60,7 @@ export const BlockJoinUs: React.FC = () => {
               color={useColorModeValue("gray.900", "gray.100")}
               marginBottom="4rem"
               marginTop="0"
-              fontSize={{ base: "4rem", lg: "6rem" }}
+              fontSize={{ base: "2.8rem", lg: "4rem" }}
               fontWeight="bold"
               lineHeight="1.1"
             >
@@ -71,7 +71,7 @@ export const BlockJoinUs: React.FC = () => {
               color={useColorModeValue("gray.800", "gray.300")}
               marginBottom="10rem"
               marginTop="0"
-              fontSize={{ base: "2.0rem", lg: "2.5rem" }}
+              fontSize={{ base: "1.5rem", lg: "2.1rem" }}
               lineHeight="1.5"
             >
               {t("joinUsPageSubTitle")}
